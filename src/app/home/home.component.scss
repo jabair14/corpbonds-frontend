@@ -10,7 +10,7 @@
     flex-wrap: inherit;
     // background-color: orange;
     background-image: linear-gradient(to right, rgb(255, 94, 0) , rgb(255, 191, 0));
-    height: 400px;
+    height: 475px;
     width: auto;
     justify-content: center;
     border-bottom: 2px solid black;
@@ -21,7 +21,8 @@
     // background-color: white;
     height: 300px;
     width: 550px;
-    margin: 40px;
+    margin-top: 5%;
+    padding-left: 100px;
     
 }
 
@@ -29,7 +30,8 @@
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 20px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
+                    'Lucida Sans', Arial, sans-serif
 }
 
 .left button {
@@ -38,19 +40,140 @@
 
 .right {
     background-color: white;
-    border-radius: 50px;
+    border-radius: 5px;
     height: 300px;
     width: 550px;
-    margin: 40px;
+    margin: 5%;
 }
 
 .coverlogo {
-    // height: 300px;
-    // width: 550px;
     max-width: 100%;
     max-height: 100%;
     justify-content: center;
     margin: 20%;
     flex-wrap: inherit;
-    // padding: 100px;
+}
+
+.schedule {
+    text-align: center;
+    text-decoration: underline;
+    border-bottom: 2px solid black;
+}
+
+.schedule p {
+    padding-bottom: 15px;
+}
+
+.bonds {
+    background-color: beige;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: inherit;
+    height: 475px;
+    width: auto;
+    justify-content: center;
+    border-bottom: 2px solid black;
+}
+
+.bonds-left {
+    // background-color: white;
+    height: 300px;
+    width: 550px;
+    margin-top: 5%;
+}
+
+.bonds-right {
+    // background-color: white;
+    height: 300px;
+    width: 550px;
+    // margin: 5%;
+    padding-top: 10px;
+}
+
+.bonds-left-img{
+    max-height: 100%;
+    max-width: 100%;
+    // padding-left: 20px;
+}
+
+.bonds li {
+    list-style-type: square;
+    padding-top: 10px;
+}
+
+.bonds-list li{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
+                    'Lucida Sans', Arial, sans-serif
+}
+
+.bonds-title {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
+                    'Lucida Sans', Arial, sans-serif
+}
+
+.bond-btn {
+    background-color: black;
+    color: white;
+    margin-left: 200px;
+    margin-top: 10px;  
+}
+
+.mutual-funds-btn {
+    background-color: white;
+    color: black;
+    margin-left: 150px;
+    margin-top: 10px; 
+}
+
+.stocks-btn{
+    background-color: white;
+    color: black;
+    margin-left: 150px;
+    margin-top: 10px; 
+}
+
+.etf-btn{
+    background-color: white;
+    color: black;
+    margin-left: 150px;
+    margin-top: 10px; 
+}
+
+.mutual-funds {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: inherit;
+    background-color: rgba(255, 166, 0, 0.861);
+    // background-image: linear-gradient(to right, rgb(255, 94, 0) , rgb(255, 191, 0));
+    height: 425px;
+    width: auto;
+    justify-content: center;
+    border-bottom: 2px solid black;
+}
+
+.far-left, .near-left, .near-right, .far-right {
+    h1 {
+        padding-left: 30px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
+                    'Lucida Sans', Arial, sans-serif
+    }
+    // background-color: white;
+    height: 300px;
+    width: 550px;
+    // border: 2px solid black;
+    margin-top: 1%;
+    padding: 60px;
+    
+}
+
+.computer-logo {
+    max-height: 100%;
+    max-width: 100%;
 }
