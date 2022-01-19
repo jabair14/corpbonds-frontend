@@ -9,4 +9,9 @@ export class AppComponent {
   title = 'capstone-frontend';
   imageSrc = "./assets/default-monochrome.svg"
   imageAlt = "logo"
+
+  ngOnInit(): void {
+    
+  }
 }
+

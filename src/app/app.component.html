@@ -2,7 +2,9 @@
   <header>
     <div class="nav-bar">
       <button mat-menu-item>
-        <img class="logo" src={{imageSrc}} />
+        <a routerLink="/home">
+          <img class="logo" src={{imageSrc}} />
+        </a>
       </button>
       <button mat-menu-item [matMenuTriggerFor]="products" xPosition="after">Products 
         <img src="https://img.icons8.com/ios/48/000000/sort-down.png" height="10px"/> 
@@ -11,9 +13,18 @@
       <button mat-menu-item> Support </button>
       <button mat-menu-item> Who we are </button>
       <button mat-menu-item >Login</button>
-      <button mat-menu-item > Home </button>
+      <button mat-menu-item > 
+        <a routerLink="/home">
+          Home 
+        </a>
+      </button>
       <mat-menu #products="matMenu">
-        <button mat-menu-item >Bonds</button>
+        <button mat-menu-item >
+          <a routerLink= "/bonds">
+            Bonds
+          </a>
+          
+        </button>
         <button mat-menu-item >Mutual Funds</button>
         <button mat-menu-item >Stocks</button>
         <button mat-menu-item >ETF's</button>
