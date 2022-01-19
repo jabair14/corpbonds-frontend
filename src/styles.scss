@@ -47,18 +47,19 @@ body {
     margin: 0%;
     justify-content: center;
     column-gap: 10px;
+    border-bottom: 1px solid black;
     
 }
 
 .nav-bar button {
     width: 10px;
     text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
     
     
 }
 .logo {
-    width: 75px;
-    height: 75px;
+    margin-top: 8px;
 }
 
 .mat-menu-panel {

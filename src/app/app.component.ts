@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'capstone-frontend';
-  imageSrc = "./assets/kitmutuallogo.png"
+  imageSrc = "./assets/default-monochrome.svg"
   imageAlt = "logo"
 }

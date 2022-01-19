@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: inherit;
+}
+
+.orange {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: inherit;
+    // background-color: orange;
+    background-image: linear-gradient(to right, rgb(255, 94, 0) , rgb(255, 191, 0));
+    height: 400px;
+    width: auto;
+    justify-content: center;
+    border-bottom: 2px solid black;
+    
+}
+
+.left {
+    // background-color: white;
+    height: 300px;
+    width: 550px;
+    margin: 40px;
+    
+}
+
+.left h1, p {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.left button {
+    margin-left: 70px;
+}
+
+.right {
+    background-color: white;
+    border-radius: 50px;
+    height: 300px;
+    width: 550px;
+    margin: 40px;
+}
+
+.coverlogo {
+    // height: 300px;
+    // width: 550px;
+    max-width: 100%;
+    max-height: 100%;
+    justify-content: center;
+    margin: 20%;
+    flex-wrap: inherit;
+    // padding: 100px;
+}
