@@ -146,6 +146,12 @@
     margin-top: 10px; 
 }
 
+.retire-btn{
+    background-color: orange;
+    margin-left: 180px;
+    margin-top: 10px;
+}
+
 .mutual-funds {
     display: flex;
     flex-direction: row;
@@ -164,10 +170,8 @@
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
                     'Lucida Sans', Arial, sans-serif
     }
-    // background-color: white;
     height: 300px;
     width: 550px;
-    // border: 2px solid black;
     margin-top: 1%;
     padding: 60px;
     
@@ -177,3 +181,45 @@
     max-height: 100%;
     max-width: 100%;
 }
+
+.retirement{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: inherit;
+    background-color: rgba(0, 0, 0, 0.861);
+    // background-image: linear-gradient(to right, rgb(255, 94, 0) , rgb(255, 191, 0));
+    height: 500px;
+    width: auto;
+    justify-content: center;
+    border-bottom: 2px solid black;
+}
+
+.retire-left{
+    // background-color: white;
+    height: 400px;
+    width: 550px;
+    margin-top: 5%;
+}
+
+.retire-right{
+    h1 {
+        padding-left: 30px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
+                    'Lucida Sans', Arial, sans-serif
+    }
+    p {
+        font-size: 20px;
+    }
+    // background-color: inherit;
+    color: white;
+    height: 300px;
+    width: 550px;
+    margin-top: 5%;
+}
+
+.retirement-img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+
