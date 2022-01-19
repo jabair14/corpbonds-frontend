@@ -1,11 +1,13 @@
 <div class="nav-bar">
   <!-- <img class="logo" src={{imageSrc}} /> -->
-  <button mat-menu-item [matMenuTriggerFor]="products">Products</button>
+  <button mat-menu-item [matMenuTriggerFor]="products" xPosition="after">Products 
+    <img src="https://img.icons8.com/ios/48/000000/sort-down.png" height="10px"/> 
+  </button>
   <button mat-menu-item> Learn </button>
   <button mat-menu-item> Support </button>
   <button mat-menu-item> Who we are </button>
   <button mat-menu-item >Login</button>
-  <button mat-menu-item >Home</button>
+  <button mat-menu-item > Home </button>
 <mat-menu #products="matMenu">
   <button mat-menu-item >Bonds</button>
   <button mat-menu-item >Mutual Funds</button>
