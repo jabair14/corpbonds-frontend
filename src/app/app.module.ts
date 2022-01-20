@@ -12,12 +12,16 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFilm } from '@fortawesome/free-solid-svg-icons';
 import { BondsComponent } from './bonds/bonds.component';
+import { BondComponent } from './bond/bond.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    BondsComponent
+    BondsComponent,
+    BondComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -27,6 +31,7 @@ import { BondsComponent } from './bonds/bonds.component';
     MatButtonModule,
     FontAwesomeModule,
     HttpClientModule,
+
     
   ],
   providers: [],

@@ -1,10 +1,8 @@
 <div class="container">
   <header>
     <div class="nav-bar">
-      <button mat-menu-item>
-        <a routerLink="/home">
+      <button mat-menu-item routerLink="/home">
           <img class="logo" src={{imageSrc}} />
-        </a>
       </button>
       <button mat-menu-item [matMenuTriggerFor]="products" xPosition="after">Products 
         <img src="https://img.icons8.com/ios/48/000000/sort-down.png" height="10px"/> 
@@ -18,10 +16,7 @@
       </button>
       <mat-menu #products="matMenu">
         <button mat-menu-item routerLink= "/bonds" >
-          <!-- <a routerLink= "/bonds"> -->
             Bonds
-          <!-- </a> -->
-          
         </button>
         <button mat-menu-item >Mutual Funds</button>
         <button mat-menu-item >Stocks</button>

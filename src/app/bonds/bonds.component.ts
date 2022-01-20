@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BondService } from '../bond.service';
 import { Bond } from './bond.model';
+import {MatTableModule} from '@angular/material/table';
 
 @Component({
   selector: 'app-bonds',
@@ -12,6 +13,7 @@ export class BondsComponent implements OnInit {
   constructor(private bondService: BondService) { }
 
   bonds:Bond[] = []
+  // displayedColumns = ['issuerName', 'issuerName'];
 
   ngOnInit(): void {
     this.bondService.getBonds().subscribe(
