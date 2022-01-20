@@ -1,1 +1,35 @@
-<p>bond works!</p>
+
+ <h1> {{bond.issuerName}}</h1>
+
+<div class="main-bond">
+    <!-- main bond -->
+    <div class="bond-info">
+        <!-- bond info  -->
+        <div class="bond-info-right">
+            <img class="image-one"src="./assets/undraw_our_solution_re_8yk6.svg" alt="image">
+        </div>
+        <div class="bond-info-left">
+           <h3> Bond Facts </h3>
+           <hr>
+           <p> Id - {{bond.id}}</p>
+           <hr>
+           <p> Symbol - {{bond.bondSymbol}}</p>
+           <hr>
+           <p> Maturity Date - {{bond.maturityDate | date: "shortDate"}}</p>
+           <hr>
+           <p> Interest Rate - {{bond.interestRate | number : '1.00'}} </p>
+           <hr>
+           <p> Face Value - {{bond.faceValue | currency}}</p>
+           <hr>
+           <p> Bypass Clearance - {{bond.bypassClearance}}</p>
+           <hr>
+           <button mat-raised-button class="invest-btn">
+            Start Investment
+            </button>
+            <button mat-raised-button class="back-btn" routerLink="/bonds">
+                Go Back
+            </button>
+        </div>
+    </div>
+</div>
+

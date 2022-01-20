@@ -8,7 +8,6 @@
     display: flex;
     flex-direction: row;
     flex-wrap: inherit;
-    // background-color: orange;
     background-image: linear-gradient(to right, rgba(255, 94, 0, 0.82) , rgba(255, 191, 0, 0.943));
     height: 475px;
     width: auto;
@@ -18,7 +17,6 @@
 }
 
 .left {
-    // background-color: white;
     height: 300px;
     width: 550px;
     margin-top: 5%;
@@ -76,24 +74,21 @@
 }
 
 .bonds-left {
-    // background-color: white;
     height: 300px;
     width: 550px;
     margin-top: 5%;
 }
 
 .bonds-right {
-    // background-color: white;
     height: 300px;
     width: 550px;
-    // margin: 5%;
     padding-top: 10px;
 }
 
 .bonds-left-img{
     max-height: 100%;
     max-width: 100%;
-    // padding-left: 20px;
+
 }
 
 .bonds li {
@@ -157,7 +152,6 @@
     flex-direction: row;
     flex-wrap: inherit;
     background-color: rgba(255, 166, 0, 0.861);
-    // background-image: linear-gradient(to right, rgb(255, 94, 0) , rgb(255, 191, 0));
     height: 425px;
     width: auto;
     justify-content: center;
@@ -187,7 +181,6 @@
     flex-direction: row;
     flex-wrap: inherit;
     background-color: rgba(0, 0, 0, 0.861);
-    // background-image: linear-gradient(to right, rgb(255, 94, 0) , rgb(255, 191, 0));
     height: 500px;
     width: auto;
     justify-content: center;
@@ -195,7 +188,6 @@
 }
 
 .retire-left{
-    // background-color: white;
     height: 400px;
     width: 550px;
     margin-top: 5%;
@@ -210,7 +202,6 @@
     p {
         font-size: 20px;
     }
-    // background-color: inherit;
     color: white;
     height: 300px;
     width: 550px;
