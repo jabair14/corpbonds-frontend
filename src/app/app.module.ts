@@ -13,6 +13,9 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFilm } from '@fortawesome/free-solid-svg-icons';
 import { BondsComponent } from './bonds/bonds.component';
 import { BondComponent } from './bond/bond.component';
+import { RetcalcComponent } from './retcalc/retcalc.component';
+import { AngularMaterialModule } from './angular-material.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,6 +24,7 @@ import { BondComponent } from './bond/bond.component';
     HomeComponent,
     BondsComponent,
     BondComponent,
+    RetcalcComponent,
   
   ],
   imports: [
@@ -31,7 +35,8 @@ import { BondComponent } from './bond/bond.component';
     MatButtonModule,
     FontAwesomeModule,
     HttpClientModule,
-
+    AngularMaterialModule,
+    FormsModule
     
   ],
   providers: [],
