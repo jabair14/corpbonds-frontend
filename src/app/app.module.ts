@@ -15,6 +15,7 @@ import { BondsComponent } from './bonds/bonds.component';
 import { BondComponent } from './bond/bond.component';
 import { EtfComponent } from './etf/etf.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -34,8 +35,8 @@ import { MatTableModule } from '@angular/material/table';
     MatButtonModule,
     FontAwesomeModule,
     HttpClientModule,
-    MatTableModule
-    
+    MatTableModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

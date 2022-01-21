@@ -29,7 +29,8 @@ export class EtfComponent implements OnInit {
     "oneYear", 
     "fiveYear", 
     "tenYear", 
-    "sinceInception"
+    "sinceInception",
+    "actions"
   ];
 
   ngOnInit(): void {

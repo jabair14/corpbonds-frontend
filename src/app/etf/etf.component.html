@@ -13,52 +13,58 @@
        <div class="mat-elevation-z8">
            <mat-table [dataSource]="etfData">
                <ng-container matColumnDef="name">
-                   <mat-header-cell *matHeaderCellDef>name</mat-header-cell>
+                   <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
                    <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
                </ng-container>
                <ng-container matColumnDef="ticker">
-                <mat-header-cell *matHeaderCellDef>ticker</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef>Ticker</mat-header-cell>
                 <mat-cell *matCellDef="let element">{{element.ticker}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="assetClass">
-                <mat-header-cell *matHeaderCellDef>assetClass</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef>Asset Class</mat-header-cell>
                 <mat-cell *matCellDef="let element">{{element.assetClass}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="expenseRatio">
-                <mat-header-cell *matHeaderCellDef>expenseRatio</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.expenseRatio}}</mat-cell>
+                <mat-header-cell *matHeaderCellDef>Expense Ratio</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.expenseRatio | percent}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="price">
-                <mat-header-cell *matHeaderCellDef>price</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.price}}</mat-cell>
+                <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.price | currency}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="change">
-                <mat-header-cell *matHeaderCellDef>change</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.change}}</mat-cell>
+                <mat-header-cell *matHeaderCellDef>Change</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.change | currency}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="SEC_yield">
-                <mat-header-cell *matHeaderCellDef>SEC_yield</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.SEC_yield}}</mat-cell>
+                <mat-header-cell *matHeaderCellDef>SEC Yield</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.SEC_yield | percent}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="YTD">
                 <mat-header-cell *matHeaderCellDef>YTD</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.YTD}}</mat-cell>
+                <mat-cell *matCellDef="let element">{{element.YTD | percent}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="oneYear">
-                <mat-header-cell *matHeaderCellDef>oneYear</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.oneYear}}</mat-cell>
+                <mat-header-cell *matHeaderCellDef>1-Year</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.oneYear | percent}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="fiveYear">
-                <mat-header-cell *matHeaderCellDef>fiveYear</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.fiveYear}}</mat-cell>
+                <mat-header-cell *matHeaderCellDef>5-Year</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.fiveYear | percent}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="tenYear">
-                <mat-header-cell *matHeaderCellDef>tenYear</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.tenYear}}</mat-cell>
+                <mat-header-cell *matHeaderCellDef>10-Year</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.tenYear | percent}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="sinceInception">
-                <mat-header-cell *matHeaderCellDef>sinceInception</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.sinceInception}}</mat-cell>
+                <mat-header-cell *matHeaderCellDef>Since Inception</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.sinceInception | percent}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="actions">
+                <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                    <button mat-icon-button color="primary"><mat-icon>launch</mat-icon></button>
+                </mat-cell>
             </ng-container>
                <mat-header-row *matHeaderRowDef="tableConfig"></mat-header-row>
                <mat-row *matRowDef="let row; columns: tableConfig;"></mat-row>
