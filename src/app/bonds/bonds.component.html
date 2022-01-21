@@ -8,7 +8,13 @@
             quod dolore, illum atque! Neque odit ratione nam voluptatem perferendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum mollitia obcaecati eligendi ex modi et fuga omnis labore temporibus nihil illo error deleniti eaque 
             sit, libero hic dignissimos vitae. Accusantium.
         </p>
+        <div class="searchbar-div">
+            <p>Use the seach bar to discover a variety of corporate bonds.</p>
+            <input type="text" class="searchbar" placeholder="search.." [(ngModel)]="term" >
+        </div>
     </div>
+    
+
     
     <div class="bonds-div">
         <table class="bonds-table" id="fixed_headers">
@@ -62,7 +68,7 @@
                
                 </tr>
             
-            <tr  *ngFor="let bond of bonds">
+            <tr  *ngFor="let bond of bonds | filter: term">
                 <th>
                      {{bond.id}}
                 </th>

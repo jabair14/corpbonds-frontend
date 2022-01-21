@@ -12,6 +12,8 @@ export class BondsComponent implements OnInit {
 
   constructor(private bondService: BondService) { }
 
+  term:string = '' 
+
   bonds:Bond[] = []
   // displayedColumns = ['issuerName', 'issuerName'];
 

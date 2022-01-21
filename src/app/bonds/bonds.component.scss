@@ -48,3 +48,21 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
     'Lucida Sans', Arial, sans-serif
   }
+
+  .searchbar-div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: inherit;
+    // padding: 20px;
+      
+  }
+  .searchbar {
+    position: relative;
+    display: block;
+    min-width:  90%;
+    padding: 5px;
+    border-radius: 2px;
+    // margin:auto ;
+    font-size: 12px; 
+    border: 2px solid rgb(12, 12, 12); 
+  }
