@@ -66,8 +66,14 @@
                     <button mat-icon-button color="primary"><mat-icon>launch</mat-icon></button>
                 </mat-cell>
             </ng-container>
+            <ng-container matColumnDef="loading">
+                <mat-footer-cell *matFooterCellDef colspan="6">
+                    Loading data.... 
+                </mat-footer-cell>
+            </ng-container>
                <mat-header-row *matHeaderRowDef="tableConfig"></mat-header-row>
                <mat-row *matRowDef="let row; columns: tableConfig;"></mat-row>
+               <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide': etfData.length !== 0}"></mat-footer-row>
            </mat-table>
        </div>
     </main>
