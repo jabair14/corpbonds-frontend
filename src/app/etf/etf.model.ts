@@ -1,0 +1,15 @@
+export interface ETF {
+    id?: number,
+    name?: string,
+    ticker?: string,
+    price?: number,
+    assetClass?: string,
+    expenseRatio?: number,
+    change?: number,
+    SEC_yield?: number,
+    YTD?: number,
+    oneYear?: number,
+    fiveYear?: number,
+    tenYear?: number,
+    sinceInception?: number,
+}

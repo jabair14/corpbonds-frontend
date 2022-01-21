@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { BondComponent } from './bond/bond.component';
 import { BondsComponent } from './bonds/bonds.component';
 import { HomeComponent } from './home/home.component';
+import { EtfComponent } from './etf/etf.component';
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
   {path: "bonds", component: BondsComponent},
   {path: "bonds/:id", component: BondComponent},
+  {path: "etfs", component: EtfComponent},
   {path: "", component: HomeComponent, pathMatch: "full"},
 ];
 

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main class="etf-container">
+        <h3>This will be the ETF page</h3>
+
+       <div class="mat-elevation-z8">
+           <mat-table [dataSource]="etfData">
+               <ng-container matColumnDef="name">
+                   <mat-header-cell *matHeaderCellDef>name</mat-header-cell>
+                   <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
+               </ng-container>
+               <ng-container matColumnDef="ticker">
+                <mat-header-cell *matHeaderCellDef>ticker</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.ticker}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="assetClass">
+                <mat-header-cell *matHeaderCellDef>assetClass</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.assetClass}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="expenseRatio">
+                <mat-header-cell *matHeaderCellDef>expenseRatio</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.expenseRatio}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="price">
+                <mat-header-cell *matHeaderCellDef>price</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.price}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="change">
+                <mat-header-cell *matHeaderCellDef>change</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.change}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="SEC_yield">
+                <mat-header-cell *matHeaderCellDef>SEC_yield</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.SEC_yield}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="YTD">
+                <mat-header-cell *matHeaderCellDef>YTD</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.YTD}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="oneYear">
+                <mat-header-cell *matHeaderCellDef>oneYear</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.oneYear}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="fiveYear">
+                <mat-header-cell *matHeaderCellDef>fiveYear</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.fiveYear}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="tenYear">
+                <mat-header-cell *matHeaderCellDef>tenYear</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.tenYear}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="sinceInception">
+                <mat-header-cell *matHeaderCellDef>sinceInception</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.sinceInception}}</mat-cell>
+            </ng-container>
+               <mat-header-row *matHeaderRowDef="tableConfig"></mat-header-row>
+               <mat-row *matRowDef="let row; columns: tableConfig;"></mat-row>
+           </mat-table>
+       </div>
+    </main>
+</body>
+</html>

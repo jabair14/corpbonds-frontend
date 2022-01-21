@@ -13,6 +13,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFilm } from '@fortawesome/free-solid-svg-icons';
 import { BondsComponent } from './bonds/bonds.component';
 import { BondComponent } from './bond/bond.component';
+import { EtfComponent } from './etf/etf.component';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
@@ -21,6 +23,7 @@ import { BondComponent } from './bond/bond.component';
     HomeComponent,
     BondsComponent,
     BondComponent,
+    EtfComponent,
   
   ],
   imports: [
@@ -31,7 +34,7 @@ import { BondComponent } from './bond/bond.component';
     MatButtonModule,
     FontAwesomeModule,
     HttpClientModule,
-
+    MatTableModule
     
   ],
   providers: [],
