@@ -11,8 +11,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFilm } from '@fortawesome/free-solid-svg-icons';
-import { BondsComponent } from './bonds/bonds.component';
-import { BondComponent } from './bond/bond.component';
+import { BondsComponent } from './bondsFolder/bonds/bonds.component';
+import { BondComponent } from './bondsFolder/bond/bond.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
 

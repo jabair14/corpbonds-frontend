@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BondService } from '../bond.service';
-import { Bond } from './bond.model';
+import { Bond } from '../bond/bond.model';
 import {MatTableModule} from '@angular/material/table';
 
 @Component({

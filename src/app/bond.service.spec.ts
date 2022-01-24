@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BondService } from './bond.service';
+import { BondService } from './bondsFolder/bond.service';
 
 describe('BondService', () => {
   let service: BondService;
