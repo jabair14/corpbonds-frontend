@@ -15,7 +15,7 @@ export class BondService {
   // }
 
   getBonds(): Observable<any> {
-    return this.http.get("https://corp-bonds-new-db.herokuapp.com/bonds/random")
+    return this.http.get("https://corp-bonds-new-db.herokuapp.com/bonds")
   }
 
   getBond(id: number): Observable<any> {

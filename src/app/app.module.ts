@@ -15,6 +15,9 @@ import { BondsComponent } from './bondsFolder/bonds/bonds.component';
 import { BondComponent } from './bondsFolder/bond/bond.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 
 @NgModule({
@@ -35,6 +38,8 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     Ng2SearchPipeModule,
     FormsModule,
+    MatPaginatorModule,
+    NgxPaginationModule,
 
 
     
