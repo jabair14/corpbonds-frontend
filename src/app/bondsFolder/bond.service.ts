@@ -10,11 +10,15 @@ export class BondService {
   constructor(private http:HttpClient) { }
 
 
+  // getBonds(): Observable<any> {
+  //   return this.http.get("http://localhost:4000/bonds/random")
+  // }
+
   getBonds(): Observable<any> {
-    return this.http.get("http://localhost:4000/bonds/random")
+    return this.http.get("https://corp-bonds-new-db.herokuapp.com/bonds/random")
   }
 
   getBond(id: number): Observable<any> {
-    return this.http.get(`http://localhost:4000/bonds/${id}`)
+    return this.http.get(`https://corp-bonds-new-db.herokuapp.com/bonds/${id}`)
   }
 }
