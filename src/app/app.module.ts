@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import {MatInputModule} from '@angular/material/input';
 
+//Bonds Imports
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,6 +18,11 @@ import { BondComponent } from './bondsFolder/bond/bond.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
 
+//Closed-End Funds Imports
+import { EditFundsComponent } from './fundsPlace/editfunds/editfunds.component';
+import { CreateFundsComponent } from './fundsPlace/createfunds/createfunds.component';
+import { FundsComponent } from './fundsPlace/funds/funds.component';
+import { FundComponent } from './fundsPlace/fund/fund.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +30,11 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     BondsComponent,
     BondComponent,
-  
+    EditFundsComponent,
+    CreateFundsComponent,
+    FundsComponent,
+    FundComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -35,6 +46,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     Ng2SearchPipeModule,
     FormsModule,
+    MatInputModule
 
 
     
