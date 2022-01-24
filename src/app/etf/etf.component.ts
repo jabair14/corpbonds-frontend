@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { EtfService } from '../etf.service';
 import { ETF } from './etf.model'
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-etf',
@@ -16,6 +19,11 @@ export class EtfComponent implements OnInit {
   ) { }
 
   etfData: ETF[] = [];
+  dataSource = new MatTableDataSource<any>(this.etfData)
+  @ViewChild(MatSort, { static: false }) sort!: MatSort;
+  @ViewChild(MatPaginator, {static: false}) paginator!: MatPaginator;
+  searchKey: string = '';
+  
 
   tableConfig: string[] = [
     "name", 
@@ -37,8 +45,11 @@ export class EtfComponent implements OnInit {
     this.etfService.getETFs().subscribe(payload => {
       console.log("this is the ETF data:", payload);
       this.etfData = payload;
-  console.log("look at dis data", this.etfData)
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
 
+
+      console.log("look at dis data", this.etfData)
     })
   }
 

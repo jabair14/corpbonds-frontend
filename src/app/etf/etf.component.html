@@ -9,55 +9,64 @@
 <body>
     <main class="etf-container">
         <h3>This will be the ETF page</h3>
+        
+        <div class="search-div">
+            <mat-form-field class="search-form-field">
+                <input matInput [(ngModel)]="searchKey" placeholder="search" autocomplete="off">
+                <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
 
        <div class="mat-elevation-z8">
-           <mat-table [dataSource]="etfData">
+           <mat-table [dataSource]="etfData" matSort>
                <ng-container matColumnDef="name">
-                   <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+                   <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
                    <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
                </ng-container>
                <ng-container matColumnDef="ticker">
-                <mat-header-cell *matHeaderCellDef>Ticker</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Ticker</mat-header-cell>
                 <mat-cell *matCellDef="let element">{{element.ticker}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="assetClass">
-                <mat-header-cell *matHeaderCellDef>Asset Class</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Asset Class</mat-header-cell>
                 <mat-cell *matCellDef="let element">{{element.assetClass}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="expenseRatio">
-                <mat-header-cell *matHeaderCellDef>Expense Ratio</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Expense Ratio</mat-header-cell>
                 <mat-cell *matCellDef="let element">{{element.expenseRatio | percent}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="price">
-                <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Price</mat-header-cell>
                 <mat-cell *matCellDef="let element">{{element.price | currency}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="change">
-                <mat-header-cell *matHeaderCellDef>Change</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Change</mat-header-cell>
                 <mat-cell *matCellDef="let element">{{element.change | currency}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="SEC_yield">
-                <mat-header-cell *matHeaderCellDef>SEC Yield</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header>SEC Yield</mat-header-cell>
                 <mat-cell *matCellDef="let element">{{element.SEC_yield | percent}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="YTD">
-                <mat-header-cell *matHeaderCellDef>YTD</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header>YTD</mat-header-cell>
                 <mat-cell *matCellDef="let element">{{element.YTD | percent}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="oneYear">
-                <mat-header-cell *matHeaderCellDef>1-Year</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header>1-Year</mat-header-cell>
                 <mat-cell *matCellDef="let element">{{element.oneYear | percent}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="fiveYear">
-                <mat-header-cell *matHeaderCellDef>5-Year</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header>5-Year</mat-header-cell>
                 <mat-cell *matCellDef="let element">{{element.fiveYear | percent}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="tenYear">
-                <mat-header-cell *matHeaderCellDef>10-Year</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header>10-Year</mat-header-cell>
                 <mat-cell *matCellDef="let element">{{element.tenYear | percent}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="sinceInception">
-                <mat-header-cell *matHeaderCellDef>Since Inception</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Since Inception</mat-header-cell>
                 <mat-cell *matCellDef="let element">{{element.sinceInception | percent}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="actions">
@@ -75,6 +84,7 @@
                <mat-row *matRowDef="let row; columns: tableConfig;"></mat-row>
                <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide': etfData.length !== 0}"></mat-footer-row>
            </mat-table>
+           <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="10"></mat-paginator>
        </div>
     </main>
 </body>
