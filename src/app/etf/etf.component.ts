@@ -19,9 +19,9 @@ export class EtfComponent implements OnInit {
   ) { }
 
   etfData: ETF[] = [];
-  dataSource = new MatTableDataSource<any>(this.etfData)
-  @ViewChild(MatSort, { static: false }) sort!: MatSort;
-  @ViewChild(MatPaginator, {static: false}) paginator!: MatPaginator;
+  // dataSource = new MatTableDataSource<any>(this.etfData)
+  // @ViewChild(MatSort, { static: false }) sort!: MatSort;
+  // @ViewChild(MatPaginator, {static: false}) paginator!: MatPaginator;
   searchKey: string = '';
   
 
@@ -45,12 +45,16 @@ export class EtfComponent implements OnInit {
     this.etfService.getETFs().subscribe(payload => {
       console.log("this is the ETF data:", payload);
       this.etfData = payload;
-      this.dataSource.sort = this.sort;
-      this.dataSource.paginator = this.paginator;
+      // this.dataSource.sort = this.sort;
+      // this.dataSource.paginator = this.paginator;
 
 
       console.log("look at dis data", this.etfData)
     })
   }
+
+  // applyFilter(){
+  //   this.etfData[1].filter = this.searchKey.trim().toLocaleLowerCase();
+  // }
 
 }
