@@ -1,6 +1,6 @@
 export interface ETF {
     id?: number,
-    name?: string,
+    name: string,
     ticker?: string,
     price?: number,
     assetClass?: string,

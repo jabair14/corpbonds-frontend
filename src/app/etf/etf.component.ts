@@ -19,7 +19,7 @@ export class EtfComponent implements OnInit {
   ) { }
 
   etfData: ETF[] = [];
-  // dataSource = new MatTableDataSource<any>(this.etfData)
+  dataSource: any = new MatTableDataSource<ETF>(this.etfData)
   // @ViewChild(MatSort, { static: false }) sort!: MatSort;
   // @ViewChild(MatPaginator, {static: false}) paginator!: MatPaginator;
   searchKey: string = '';
@@ -44,7 +44,8 @@ export class EtfComponent implements OnInit {
   ngOnInit(): void {
     this.etfService.getETFs().subscribe(payload => {
       console.log("this is the ETF data:", payload);
-      this.etfData = payload;
+      this.dataSource = payload;
+      
       // this.dataSource.sort = this.sort;
       // this.dataSource.paginator = this.paginator;
 
@@ -53,8 +54,20 @@ export class EtfComponent implements OnInit {
     })
   }
 
-  // applyFilter(){
-  //   this.etfData[1].filter = this.searchKey.trim().toLocaleLowerCase();
-  // }
+  applyFilter(filterValue: any){
+    console.log("im running", this.dataSource)
+    console.log(filterValue)
+
+    // this.dataSource.filter = filterValue.trim().toLowerCase();
+
+   this.dataSource = this.dataSource.filter((el: any) => {
+    return el.name.toLowerCase().includes(filterValue.toLowerCase()) 
+    }) 
+  }
+
+  applyClear(){
+     this.searchKey = ''
+     this.ngOnInit()
+  }
 
 }
