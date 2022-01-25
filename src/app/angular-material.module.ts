@@ -6,6 +6,7 @@ import { PortalModule } from '@angular/cdk/portal';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
@@ -35,6 +36,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 
 
+
 const materialModules = [
   CdkTreeModule,
   MatAutocompleteModule,
@@ -54,10 +56,10 @@ const materialModules = [
   MatSelectModule,
   MatSidenavModule,
   MatSnackBarModule,
-  MatSortModule,
   MatTableModule,
   MatTabsModule,
   MatToolbarModule,
+  MatSortModule,
   MatFormFieldModule,
   MatButtonToggleModule,
   MatTreeModule,
@@ -68,12 +70,14 @@ const materialModules = [
   MatRadioModule,
   MatDatepickerModule,
   MatTooltipModule,
-  Ng2GoogleChartsModule
+  Ng2GoogleChartsModule,
+  BrowserAnimationsModule,
+  MatPaginatorModule
 ];
 
 @NgModule({
   imports: [
-    CommonModule,
+    // CommonModule,
     ...materialModules
   ],
   exports: [

@@ -11,14 +11,21 @@ import { MatButtonModule } from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFilm } from '@fortawesome/free-solid-svg-icons';
-import { BondsComponent } from './bonds/bonds.component';
-import { BondComponent } from './bond/bond.component';
+import { BondsComponent } from './bondsFolder/bonds/bonds.component';
+import { BondComponent } from './bondsFolder/bond/bond.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FormsModule } from '@angular/forms';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { NgxPaginationModule } from 'ngx-pagination';
+
+
+
 import { LocationsComponent } from './locationsFolder/locations/locations.component';
 import { LocationComponent } from './locationsFolder/location/location.component';
 import { RetcalcComponent } from './retcalc/retcalc.component';
 import { AngularMaterialModule } from './angular-material.module';
-import { FormsModule } from '@angular/forms';
 import { SocialmediaComponent } from './socialmedia/socialmedia.component';
+import { EtfComponent } from './etf/etf.component';
 
 
 @NgModule({
@@ -27,6 +34,7 @@ import { SocialmediaComponent } from './socialmedia/socialmedia.component';
     HomeComponent,
     BondsComponent,
     BondComponent,
+    EtfComponent,
     LocationsComponent,
     LocationComponent,
     RetcalcComponent,
@@ -41,8 +49,13 @@ import { SocialmediaComponent } from './socialmedia/socialmedia.component';
     MatButtonModule,
     FontAwesomeModule,
     HttpClientModule,
+    FormsModule,
+    Ng2SearchPipeModule,
+    FormsModule,
+    MatPaginatorModule,
+    NgxPaginationModule,
     AngularMaterialModule,
-    FormsModule
+    FormsModule,
     
   ],
   providers: [],
