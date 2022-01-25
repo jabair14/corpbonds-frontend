@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ETF } from './etf/etf.model'
+import { ETF } from './etf.model'
 
 @Injectable({
   providedIn: 'root'

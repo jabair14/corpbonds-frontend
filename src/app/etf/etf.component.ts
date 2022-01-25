@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { EtfService } from '../etf.service';
+import { EtfService } from './etf.service';
 import { ETF } from './etf.model'
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -11,6 +11,7 @@ import { MatPaginator } from '@angular/material/paginator';
   templateUrl: './etf.component.html',
   styleUrls: ['./etf.component.scss']
 })
+
 export class EtfComponent implements OnInit {
 
   constructor(
@@ -45,10 +46,6 @@ export class EtfComponent implements OnInit {
     this.etfService.getETFs().subscribe(payload => {
       console.log("this is the ETF data:", payload);
       this.dataSource = payload;
-      
-      // this.dataSource.sort = this.sort;
-      // this.dataSource.paginator = this.paginator;
-
 
       console.log("look at dis data", this.etfData)
     })
@@ -57,8 +54,6 @@ export class EtfComponent implements OnInit {
   applyFilter(filterValue: any){
     console.log("im running", this.dataSource)
     console.log(filterValue)
-
-    // this.dataSource.filter = filterValue.trim().toLowerCase();
 
    this.dataSource = this.dataSource.filter((el: any) => {
     return el.name.toLowerCase().includes(filterValue.toLowerCase()) 
