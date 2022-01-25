@@ -19,6 +19,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 
+
+import { LocationsComponent } from './locationsFolder/locations/locations.component';
+import { LocationComponent } from './locationsFolder/location/location.component';
 import { RetcalcComponent } from './retcalc/retcalc.component';
 import { AngularMaterialModule } from './angular-material.module';
 
@@ -30,6 +33,8 @@ import { AngularMaterialModule } from './angular-material.module';
     HomeComponent,
     BondsComponent,
     BondComponent,
+    LocationsComponent,
+    LocationComponent,
     RetcalcComponent,
   
   ],
