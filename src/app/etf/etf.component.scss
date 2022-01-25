@@ -1,5 +1,10 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+
+}
+
 .etf-container {
-    background-color: aquamarine;
+    min-height: max-content;
     height: 100%;
     width: 1300px;
     position: absolute;
@@ -23,20 +28,32 @@ mat-header-cell{
     background-color: rgb(170, 168, 168);
 }
 
-.etf-info-card {
-    // display: flex;
-    // flex-direction: row;
-    // padding: 10px;
-    max-width: 600px;
+.etf-info-div {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    max-width: 700px;
     margin: 5px auto;
 }
 
 .etf-img {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
+    margin-left: 60px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .etf-data-div {
     width: 90%;
     margin: 5px auto;
+}
+
+.search-div {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.bottom-container {
+    padding-top: 50px;
 }
