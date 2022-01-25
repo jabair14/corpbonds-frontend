@@ -1,5 +1,4 @@
-// .tableFixHead          { overflow: auto; height: 100px; }
-// .tableFixHead thead th { position: sticky; top: 0; z-index: 1; }
+
 
 
 .bonds-table{
@@ -55,7 +54,6 @@
   }
 
   .searchbar-div {
-    // display: block;
     position: relative;
     margin-bottom: -2.5em;
     margin-left: auto;
@@ -73,10 +71,7 @@
  .page-div{
    display: flex;
    flex-direction: column;
-  //  text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   align-items: left;
-  // margin-left: 5em;
-  // margin-left: auto;
   margin-left: 2em;
  }

@@ -19,7 +19,7 @@ export class BondsComponent implements OnInit {
   term:string = '' 
 
   bonds:Bond[] = []
-  // displayedColumns = ['issuerName', 'issuerName'];
+
   
   ngOnInit(): void {
     this.bondService.getBonds().subscribe(
