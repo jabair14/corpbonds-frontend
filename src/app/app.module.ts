@@ -13,7 +13,13 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFilm } from '@fortawesome/free-solid-svg-icons';
 import { BondsComponent } from './bonds/bonds.component';
 import { BondComponent } from './bond/bond.component';
+<<<<<<< HEAD
 import { StocksComponent } from './stocks/stocks.component';
+=======
+import { RetcalcComponent } from './retcalc/retcalc.component';
+import { AngularMaterialModule } from './angular-material.module';
+import { FormsModule } from '@angular/forms';
+>>>>>>> 5898bf434789d95abccc0296e96bd5552cf58b24
 
 
 @NgModule({
@@ -22,7 +28,11 @@ import { StocksComponent } from './stocks/stocks.component';
     HomeComponent,
     BondsComponent,
     BondComponent,
+<<<<<<< HEAD
     StocksComponent,
+=======
+    RetcalcComponent,
+>>>>>>> 5898bf434789d95abccc0296e96bd5552cf58b24
   
   ],
   imports: [
@@ -33,7 +43,8 @@ import { StocksComponent } from './stocks/stocks.component';
     MatButtonModule,
     FontAwesomeModule,
     HttpClientModule,
-
+    AngularMaterialModule,
+    FormsModule
     
   ],
   providers: [],
