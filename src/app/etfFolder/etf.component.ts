@@ -5,6 +5,7 @@ import { ETF } from './etf.model'
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-etf',
@@ -16,7 +17,8 @@ export class EtfComponent implements OnInit, AfterViewInit {
 
   constructor(
     private etfService: EtfService,
-    private http: HttpClient
+    private http: HttpClient,
+    public dialog: MatDialog
   ) { }
 
   etfData: ETF[] = [];
@@ -64,6 +66,10 @@ export class EtfComponent implements OnInit, AfterViewInit {
   applyClear(){
      this.searchKey = ''
      this.ngOnInit()
+  }
+
+  openDialog() {
+    //  this.dialog.open();
   }
 
 }
