@@ -1,0 +1,45 @@
+.stocks-table{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    max-width: 90%;
+    margin: auto;
+    th { position: sticky; top: 0; z-index: 1; }
+  }
+
+  .stocks-table td, .stocks-table th {
+    border: 1px solid rgba(246, 245, 245, 0.868);
+    padding: 8px;
+}
+
+.stocks-table tr:nth-child(even){background-color: #f2f2f2;}
+
+.stocks-table tr:hover {background-color: #ddd;}
+
+.stocks-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    color: white;
+    background-color: rgb(255, 166, 0),
+    
+  }
+
+  .stocks-div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: inherit;
+    padding: 20px;
+    height: 200px;
+  }
+
+  .stock-header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: inherit;
+    padding: 20px;
+  }
+
+  h1, p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
+    'Lucida Sans', Arial, sans-serif
+  }

@@ -13,6 +13,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFilm } from '@fortawesome/free-solid-svg-icons';
 import { BondsComponent } from './bonds/bonds.component';
 import { BondComponent } from './bond/bond.component';
+import { StocksComponent } from './stocks/stocks.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { BondComponent } from './bond/bond.component';
     HomeComponent,
     BondsComponent,
     BondComponent,
+    StocksComponent,
   
   ],
   imports: [

@@ -1,0 +1,45 @@
+<div class="stock-header">
+    <h1> Stocks </h1>
+        <p> 
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro molestiae sit velit ut modi eius nobis soluta beatae similique repellendus 
+            explicabo earum aliquid, minima quis quasi nihil, quae qui doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis cupiditate aspernatur, delectus earum eligendi doloremque illum tempore facilis officiis non aut. 
+            Porro aspernatur quam voluptas sunt maiores consequatur excepturi tempore? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae autem aspernatur consectetur, explicabo cumque ex dicta repellat expedita aperiam repellendus 
+            quod dolore, illum atque! Neque odit ratione nam voluptatem perferendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum mollitia obcaecati eligendi ex modi et fuga omnis labore temporibus nihil illo error deleniti eaque 
+            sit, libero hic dignissimos vitae. Accusantium.
+        </p>
+</div>
+<div class="stocks-div">
+   
+
+    <table class="stocks-table">
+        <tr>
+            <th>id</th>
+            <th>Symbol</th>
+            <th>Company Name</th>
+            <th>Country</th>
+            <th>IPO Year</th>
+            <th>Last Sale Price</th>
+            <th>Net Change</th>
+            <th>Percent Change</th>
+            <th>Market Cap</th>
+            <th>Volume</th>
+        </tr>
+        <tr *ngFor="let stock of data">
+            <th>{{stock.id}}</th>
+            <th>{{stock.symbol}}</th>
+            <th>{{stock.name}}</th>
+            <th>{{stock.country}}</th>
+            <th>{{stock.ipoYear}}</th>
+            <th *ngIf="stock.dynamicInfo">{{stock.dynamicInfo.lastSale}}</th>
+            <th *ngIf="stock.dynamicInfo">{{stock.dynamicInfo.netChange}}</th>
+            <th *ngIf="stock.dynamicInfo">{{stock.dynamicInfo.percentChange}}</th>
+            <th *ngIf="stock.dynamicInfo">{{stock.dynamicInfo.marketCap}}</th>
+            <th *ngIf="stock.dynamicInfo">{{stock.dynamicInfo.volume}}</th>
+
+        </tr>
+    </table>
+
+
+</div>
+
+
