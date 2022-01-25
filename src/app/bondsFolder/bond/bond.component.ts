@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BondService } from '../bond.service';
-import { Bond } from '../bonds/bond.model';
+import { Bond } from './bond.model';
 
 @Component({
   selector: 'app-bond',

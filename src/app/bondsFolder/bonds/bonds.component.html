@@ -10,9 +10,19 @@
         </p>
     </div>
     
+    
+    
     <div class="bonds-div">
+        <div class="table-controls">
+            <div class="searchbar-div">
+                <input type="text" class="searchbar" placeholder="search.." [(ngModel)]="term" >
+            </div>
+            <div class="page-div">
+                <!-- <p>Use the seach bar to discover a variety of corporate bonds.</p> -->
+                <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+            </div>
+        </div>
         <table class="bonds-table" id="fixed_headers">
-            
                 <tr>
                     <th>
                         ID
@@ -23,7 +33,7 @@
                     <th>
                         Name
                     </th>
-                    <th>
+                    <th> 
                         Interest Rate
                     </th>
                     <th>
@@ -62,7 +72,7 @@
                
                 </tr>
             
-            <tr  *ngFor="let bond of bonds">
+            <tr  *ngFor="let bond of bonds | filter: term | paginate: config ">
                 <th>
                      {{bond.id}}
                 </th>
