@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 //Bonds Imports
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +24,9 @@ import { EditFundsComponent } from './fundsPlace/editfunds/editfunds.component';
 import { CreateFundsComponent } from './fundsPlace/createfunds/createfunds.component';
 import { FundsComponent } from './fundsPlace/funds/funds.component';
 import { FundComponent } from './fundsPlace/fund/fund.component';
+import { SortDirective } from './directive/sort.directive';
+
+
 
 @NgModule({
   declarations: [
@@ -34,6 +38,7 @@ import { FundComponent } from './fundsPlace/fund/fund.component';
     CreateFundsComponent,
     FundsComponent,
     FundComponent,
+    SortDirective,
 
   ],
   imports: [
@@ -46,10 +51,9 @@ import { FundComponent } from './fundsPlace/fund/fund.component';
     HttpClientModule,
     Ng2SearchPipeModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    NgxPaginationModule,
 
-
-    
   ],
   providers: [],
   bootstrap: [AppComponent]

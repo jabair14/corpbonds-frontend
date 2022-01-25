@@ -1,20 +1,12 @@
-body{
-    background-image: url('/assets/bgCEF.jpg'); 
-    margin: 0;
-    height: 100vh;
-    padding-bottom: 20px;
-    overflow-x: hidden; 
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    display: flex;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+html{
+    background: linear-gradient(to right, rgb(137, 139, 101), rgb(212, 24, 65))!important;
 }
 .fundsedit{
     justify-content: center;
+    width: 100vw;
+    height: 100vh;
     display: flex;
+    background: linear-gradient(to right, rgb(137, 139, 101), rgb(212, 24, 65));
 }
 
 .center{
