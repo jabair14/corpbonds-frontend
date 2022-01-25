@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { BondService } from '../bond.service';
 import { Bond } from '../bond/bond.model';
 
@@ -18,8 +19,12 @@ export class BondsComponent implements OnInit {
 
   term:string = '' 
 
+  
   bonds:Bond[] = []
 
+  
+  
+  
   
   ngOnInit(): void {
     this.bondService.getBonds().subscribe(
@@ -30,14 +35,19 @@ export class BondsComponent implements OnInit {
           currentPage: 1,
           totalItems: this.bonds.length
         };
-      
+        
       }
       )
     }
 
+  
+    
     pageChanged(event: any){
       this.config.currentPage = event;
     }
+
+    
+
 
     
     

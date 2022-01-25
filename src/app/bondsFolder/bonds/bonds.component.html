@@ -33,7 +33,7 @@
                     <th>
                         Name
                     </th>
-                    <th>
+                    <th> 
                         Interest Rate
                     </th>
                     <th>
@@ -72,7 +72,7 @@
                
                 </tr>
             
-            <tr  *ngFor="let bond of bonds | filter: term | paginate: config">
+            <tr  *ngFor="let bond of bonds | filter: term | paginate: config ">
                 <th>
                      {{bond.id}}
                 </th>
