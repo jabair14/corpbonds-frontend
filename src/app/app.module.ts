@@ -19,6 +19,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 
+import { RetcalcComponent } from './retcalc/retcalc.component';
+import { AngularMaterialModule } from './angular-material.module';
+
+
 
 @NgModule({
   declarations: [
@@ -26,6 +30,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HomeComponent,
     BondsComponent,
     BondComponent,
+    RetcalcComponent,
   
   ],
   imports: [
@@ -42,6 +47,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     NgxPaginationModule,
 
 
+    AngularMaterialModule,
+    FormsModule
     
   ],
   providers: [],
