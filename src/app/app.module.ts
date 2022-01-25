@@ -18,6 +18,7 @@ import { LocationComponent } from './locationsFolder/location/location.component
 import { RetcalcComponent } from './retcalc/retcalc.component';
 import { AngularMaterialModule } from './angular-material.module';
 import { FormsModule } from '@angular/forms';
+import { SocialmediaComponent } from './socialmedia/socialmedia.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { FormsModule } from '@angular/forms';
     LocationsComponent,
     LocationComponent,
     RetcalcComponent,
+    SocialmediaComponent,
   
   ],
   imports: [

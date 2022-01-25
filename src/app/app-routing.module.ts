@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { LocationsComponent } from './locationsFolder/locations/locations.component';
 import { LocationComponent } from './locationsFolder/location/location.component';
 import { RetcalcComponent } from './retcalc/retcalc.component';
+import { SocialmediaComponent } from './socialmedia/socialmedia.component';
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: "", component: HomeComponent, pathMatch: "full"},
   {path: "locations", component: LocationsComponent, pathMatch: "full"},
   {path: "locations/:id", component: LocationComponent},
-  {path: "retcalc", component: RetcalcComponent}
+  {path: "retcalc", component: RetcalcComponent},
+  {path: "socialmedias", component: SocialmediaComponent}
 ];
 
 @NgModule({
