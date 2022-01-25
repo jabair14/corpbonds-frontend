@@ -14,8 +14,10 @@ import { faFilm } from '@fortawesome/free-solid-svg-icons';
 import { BondsComponent } from './bonds/bonds.component';
 import { BondComponent } from './bond/bond.component';
 import { LocationsComponent } from './locationsFolder/locations/locations.component';
-import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { LocationComponent } from './locationsFolder/location/location.component';
+import { RetcalcComponent } from './retcalc/retcalc.component';
+import { AngularMaterialModule } from './angular-material.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,6 +28,7 @@ import { LocationComponent } from './locationsFolder/location/location.component
     BondComponent,
     LocationsComponent,
     LocationComponent,
+    RetcalcComponent,
   
   ],
   imports: [
@@ -36,7 +39,8 @@ import { LocationComponent } from './locationsFolder/location/location.component
     MatButtonModule,
     FontAwesomeModule,
     HttpClientModule,
-    Ng2GoogleChartsModule
+    AngularMaterialModule,
+    FormsModule
     
   ],
   providers: [],

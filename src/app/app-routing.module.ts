@@ -5,6 +5,7 @@ import { BondsComponent } from './bonds/bonds.component';
 import { HomeComponent } from './home/home.component';
 import { LocationsComponent } from './locationsFolder/locations/locations.component';
 import { LocationComponent } from './locationsFolder/location/location.component';
+import { RetcalcComponent } from './retcalc/retcalc.component';
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: "bonds/:id", component: BondComponent},
   {path: "", component: HomeComponent, pathMatch: "full"},
   {path: "locations", component: LocationsComponent, pathMatch: "full"},
-  {path: "locations/:id", component: LocationComponent}
+  {path: "locations/:id", component: LocationComponent},
+  {path: "retcalc", component: RetcalcComponent}
 ];
 
 @NgModule({
