@@ -13,19 +13,10 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFilm } from '@fortawesome/free-solid-svg-icons';
 import { BondsComponent } from './bonds/bonds.component';
 import { BondComponent } from './bond/bond.component';
-import { EtfComponent } from './etf/etf.component';
-import { MatTableModule } from '@angular/material/table';
-import { MatIconModule } from '@angular/material/icon';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { RetcalcComponent } from './retcalc/retcalc.component';
+import { AngularMaterialModule } from './angular-material.module';
 import { FormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatCardModule } from '@angular/material/card';
-
-
-
-
+import { EtfComponent } from './etf/etf.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +25,7 @@ import { MatCardModule } from '@angular/material/card';
     BondsComponent,
     BondComponent,
     EtfComponent,
+    RetcalcComponent,
   
   ],
   imports: [
@@ -44,14 +36,10 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonModule,
     FontAwesomeModule,
     HttpClientModule,
-    MatTableModule,
-    MatIconModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatFormFieldModule,
     FormsModule,
-    MatInputModule,
-    MatCardModule,
+    AngularMaterialModule,
+    FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

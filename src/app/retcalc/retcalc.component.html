@@ -1,0 +1,52 @@
+<div class="r-div">
+    <div class="calc-div">
+        <mat-card>
+            <h2>Retirement Account Value Calculator</h2>
+            <p>Input your information to see how your retirement account looks</p>
+            <form class="form">
+                <mat-form-field class="inp yi" appearance="outline" color="warn">
+                    <mat-label>Yearly Income $</mat-label>
+                    <input matInput [(ngModel)]="newcalc.yrlyIncome" name="yrlyIncome">
+                </mat-form-field>
+                <mat-form-field class="inp ca" appearance="outline" color="warn">
+                    <mat-label>Current Age</mat-label>
+                    <input matInput [(ngModel)]="newcalc.currAge" name="currAge">
+                </mat-form-field>
+                <mat-form-field class="inp ra" appearance="outline" color="warn">
+                    <mat-label>Retirement Age</mat-label>
+                    <input matInput [(ngModel)]="newcalc.retAge" name="retAge">
+                </mat-form-field>
+                <mat-form-field class="inp mc" appearance="outline" color="warn">
+                    <mat-label>Monthly 401k Contribution $</mat-label>
+                    <input matInput [(ngModel)]="newcalc.monthlyCont" name="monthlyCont">
+                </mat-form-field>
+                <mat-form-field class="inp rr" appearance="outline" color="warn">
+                    <mat-label>Rate of Return %</mat-label>
+                    <input matInput [(ngModel)]="newcalc.rateReturn" name="rateReturn">
+                </mat-form-field>
+                <mat-form-field class="inp sb" appearance="outline" color="warn">
+                    <mat-label>Current Savings Balance $</mat-label>
+                    <input matInput [(ngModel)]="newcalc.savBalance" name="savBalance">
+                </mat-form-field>
+                <button mat-stroked-button class="calc-btn"  color="warn"><a (click)="addCalc(newcalc)">calculate</a></button>
+            </form>
+        </mat-card>
+    
+    </div>
+    
+    <div class="results-div">
+        <mat-card>
+            <h2>Calculation Results</h2>
+            <h4>Your 401k Account's Value in {{newcalc.retAge-newcalc.currAge}} years will be:</h4>
+            <span>${{ ravC }}</span>
+            <br>
+            <h3>What does this mean?</h3>
+            <p>This is a rough estimation of what your retirement account will look like by the time you retire. Of course there are other important factors to be considered, including Employer 401k matches, but this is a good starting point for determining where your account is headed. </p>
+            <h3>What should my account look like?</h3>
+            <p></p>
+        </mat-card>
+    
+    </div>
+
+
+</div>

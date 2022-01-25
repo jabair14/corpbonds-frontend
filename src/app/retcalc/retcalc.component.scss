@@ -1,0 +1,57 @@
+.inp {
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  //   align-items: center;
+  justify-content: center;
+  width: auto;
+}
+
+.calc-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.results-div {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  text-align: center;
+  width: auto;
+  max-width: 30%;
+}
+
+.r-div {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+h2 {
+  margin: 1rem;
+}
+
+p {
+  font-size: 0.8rem;
+  padding: 0;
+  width: auto;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  text-align: center;
+  font-weight: normal;
+}
+
+span {
+  font-size: 2rem;
+}
+
+mat-card {
+  border-radius: 0;
+  border: rgb(212, 212, 212) solid 0.01rem;
+}
