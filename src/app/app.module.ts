@@ -13,6 +13,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFilm } from '@fortawesome/free-solid-svg-icons';
 import { BondsComponent } from './bonds/bonds.component';
 import { BondComponent } from './bond/bond.component';
+import { LocationsComponent } from './locationsFolder/locations/locations.component';
+import { LocationComponent } from './locationsFolder/location/location.component';
 import { RetcalcComponent } from './retcalc/retcalc.component';
 import { AngularMaterialModule } from './angular-material.module';
 import { FormsModule } from '@angular/forms';
@@ -25,6 +27,8 @@ import { EtfComponent } from './etf/etf.component';
     BondsComponent,
     BondComponent,
     EtfComponent,
+    LocationsComponent,
+    LocationComponent,
     RetcalcComponent,
   
   ],

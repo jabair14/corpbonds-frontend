@@ -1,0 +1,24 @@
+<body>
+	<section>
+        <h1>Consultants of {{location.city}}, {{location.country}}</h1>
+		<div class="container">
+            
+			<div class="card" *ngFor="let consultant of consultants">
+				<div class="content">
+					<div class="imgBx">
+						<img src={{consultant.picture}}>
+					</div>
+					<div class="contentBx">
+						<h3>{{consultant.name}}<br><span>Consultant</span></h3>
+                        
+					</div>
+				</div>
+				<ul class="sci">
+					<li>
+						<a href="mailto:{{consultant.email}}">{{consultant.email}}</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+</body>

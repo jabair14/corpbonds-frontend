@@ -4,6 +4,8 @@ import { BondComponent } from './bond/bond.component';
 import { BondsComponent } from './bonds/bonds.component';
 import { HomeComponent } from './home/home.component';
 import { EtfComponent } from './etf/etf.component';
+import { LocationsComponent } from './locationsFolder/locations/locations.component';
+import { LocationComponent } from './locationsFolder/location/location.component';
 import { RetcalcComponent } from './retcalc/retcalc.component';
 
 const routes: Routes = [
@@ -11,8 +13,10 @@ const routes: Routes = [
   {path: "bonds", component: BondsComponent},
   {path: "bonds/:id", component: BondComponent},
   {path: "etfs", component: EtfComponent},
+  {path: "locations", component: LocationsComponent, pathMatch: "full"},
+  {path: "locations/:id", component: LocationComponent},
+  {path: "retcalc", component: RetcalcComponent},
   {path: "", component: HomeComponent, pathMatch: "full"},
-  {path: "retcalc", component: RetcalcComponent}
 ];
 
 @NgModule({
