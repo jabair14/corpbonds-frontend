@@ -26,7 +26,7 @@
         </div>
 
        <div class="mat-elevation-z8 etf-data-div">
-           <mat-table [dataSource]="dataSource" matSort>
+           <mat-table [dataSource]="this.dataSource" matSort>
                <ng-container matColumnDef="name">
                    <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
                    <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
@@ -88,9 +88,9 @@
             </ng-container>
                <mat-header-row *matHeaderRowDef="tableConfig"></mat-header-row>
                <mat-row *matRowDef="let row; columns: tableConfig;"></mat-row>
-               <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide': dataSource !== null}"></mat-footer-row>
+               <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide': dataSource != null}"></mat-footer-row>
            </mat-table>
-           <!-- <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="10"></mat-paginator> -->
+           <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
        </div>
 
        <div class="bottom-container">

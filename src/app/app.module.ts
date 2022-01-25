@@ -42,7 +42,7 @@ import { EtfComponent } from './etf/etf.component';
     HttpClientModule,
     FormsModule,
     AngularMaterialModule,
-    FormsModule
+    FormsModule,
     
   ],
   providers: [],

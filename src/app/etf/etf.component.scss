@@ -25,7 +25,7 @@ mat-footer-row mat-footer-cell {
     font-style: italic;
 }
 mat-header-cell{
-    background-color: rgb(170, 168, 168);
+    background-color: rgba(255, 166, 0, 0.861);
 }
 
 .etf-info-div {
@@ -44,7 +44,7 @@ mat-header-cell{
 }
 
 .etf-data-div {
-    width: 90%;
+    width: 100%;
     margin: 5px auto;
 }
 
@@ -57,3 +57,14 @@ mat-header-cell{
 .bottom-container {
     padding-top: 50px;
 }
+
+.mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    // cursor: pointer;
+  }
+
+.mat-row:hover .mat-cell {
+    border-color: currentColor;
+  }
+
