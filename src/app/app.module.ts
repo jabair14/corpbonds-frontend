@@ -13,6 +13,9 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFilm } from '@fortawesome/free-solid-svg-icons';
 import { BondsComponent } from './bonds/bonds.component';
 import { BondComponent } from './bond/bond.component';
+import { LocationsComponent } from './locationsFolder/locations/locations.component';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+import { LocationComponent } from './locationsFolder/location/location.component';
 
 
 @NgModule({
@@ -21,6 +24,8 @@ import { BondComponent } from './bond/bond.component';
     HomeComponent,
     BondsComponent,
     BondComponent,
+    LocationsComponent,
+    LocationComponent,
   
   ],
   imports: [
@@ -31,7 +36,7 @@ import { BondComponent } from './bond/bond.component';
     MatButtonModule,
     FontAwesomeModule,
     HttpClientModule,
-
+    Ng2GoogleChartsModule
     
   ],
   providers: [],

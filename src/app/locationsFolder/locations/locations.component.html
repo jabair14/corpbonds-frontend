@@ -1,0 +1,17 @@
+<div class="locations-div">  
+    <div class="map-div">
+        <google-chart [data]="geoChart" *ngIf=mapReady></google-chart>
+    </div>
+    <div class="table-div">
+        <table>
+            <tr *ngFor="let location of locations">
+                <td>
+                    <a [routerLink]="['/locations',location.id]">{{location.city}}, {{location.country}}</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<!-- <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTUeeQXnGDtHvHtx2fQGgXUFgNPoweRDuO_cQYEMOYMqpn6cf39Y8ebU4bvHt1auVnvIuoF19Wo_Kt1/pubchart?oid=754428300&amp;format=interactive"></iframe> -->
