@@ -20,7 +20,7 @@ export class EtfComponent implements OnInit, AfterViewInit {
   ) { }
 
   etfData: ETF[] = [];
-  dataSource: any = new MatTableDataSource<ETF>(this.etfData)
+  dataSource: any = new MatTableDataSource(this.etfData)
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
   @ViewChild(MatPaginator, {static: false}) paginator!: MatPaginator;
   searchKey: string = '';

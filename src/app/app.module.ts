@@ -14,7 +14,6 @@ import { faFilm } from '@fortawesome/free-solid-svg-icons';
 import { BondsComponent } from './bondsFolder/bonds/bonds.component';
 import { BondComponent } from './bondsFolder/bond/bond.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { FormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
 
@@ -24,13 +23,10 @@ import { LocationsComponent } from './locationsFolder/locations/locations.compon
 import { LocationComponent } from './locationsFolder/location/location.component';
 import { RetcalcComponent } from './retcalc/retcalc.component';
 import { AngularMaterialModule } from './angular-material.module';
-<<<<<<< HEAD
 import { FormsModule } from '@angular/forms';
 import { EtfComponent } from './etf/etf.component';
-=======
 
 
->>>>>>> bd791eabf2e866a6ba508c01af044f20e7cf55ea
 
 @NgModule({
   declarations: [
@@ -52,16 +48,11 @@ import { EtfComponent } from './etf/etf.component';
     MatButtonModule,
     FontAwesomeModule,
     HttpClientModule,
-<<<<<<< HEAD
     FormsModule,
-=======
     Ng2SearchPipeModule,
     FormsModule,
     MatPaginatorModule,
     NgxPaginationModule,
-
-
->>>>>>> bd791eabf2e866a6ba508c01af044f20e7cf55ea
     AngularMaterialModule,
     FormsModule,
     

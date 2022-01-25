@@ -28,6 +28,14 @@ mat-header-cell{
     background-color: rgba(255, 166, 0, 0.861);
 }
 
+mat-cell {
+    width:150px;
+    text-align:center;
+    border:1px none;
+    padding:5px 
+
+}
+
 .etf-info-div {
     display: flex;
     flex-direction: row;
