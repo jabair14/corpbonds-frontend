@@ -7,6 +7,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogEtfComponent } from './dialog-etf/dialog-etf.component';
+import { DialogSingleEtfComponent } from './dialog-single-etf/dialog-single-etf.component';
 
 @Component({
   selector: 'app-etf',
@@ -67,5 +68,10 @@ export class EtfComponent implements OnInit, AfterViewInit {
 
   openDialog() {
     this.dialog.open(DialogEtfComponent);
+  }
+
+  openSingleETF(data: any) {
+    console.log('this is the incoming id:', data);
+    this.dialog.open(DialogSingleEtfComponent, {data: data})
   }
 }

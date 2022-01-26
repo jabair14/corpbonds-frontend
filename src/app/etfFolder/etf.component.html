@@ -146,8 +146,8 @@
           </ng-container>
           <ng-container matColumnDef="actions">
             <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
-            <mat-cell *matCellDef="let row">
-              <button mat-icon-button color="primary">
+            <mat-cell *matCellDef="let element">
+              <button (click)="openSingleETF(element)" class="launch" mat-icon-button color="primary">
                 <mat-icon>launch</mat-icon>
               </button>
             </mat-cell>

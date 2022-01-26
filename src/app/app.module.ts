@@ -18,7 +18,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogEtfComponent } from './etfFolder/dialog-etf/dialog-etf.component';
-
+import { DialogSingleEtfComponent } from './etfFolder/dialog-single-etf/dialog-single-etf.component';
 
 import { LocationsComponent } from './locationsFolder/locations/locations.component';
 import { LocationComponent } from './locationsFolder/location/location.component';
@@ -40,6 +40,7 @@ import { EtfComponent } from './etfFolder/etf.component';
     LocationsComponent,
     LocationComponent,
     RetcalcComponent,
+    DialogSingleEtfComponent,
   
   ],
   imports: [
@@ -62,7 +63,7 @@ import { EtfComponent } from './etfFolder/etf.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [DialogEtfComponent],
+  entryComponents: [DialogEtfComponent, DialogSingleEtfComponent],
 
 })
 export class AppModule { 
