@@ -21,9 +21,9 @@
             odio quidem, impedit velit et?
           </p>
           <button mat-raised-button class="etf-button" (click)="openDialog()">
-            BUTTON
+            What is an ETF
           </button>
-          <button mat-raised-button class="etf-button">BUTTON</button>
+          <!-- <button mat-raised-button class="etf-button">BUTTON</button> -->
         </div>
         <img src="../../assets/undraw_investment_xv-9-d.svg" class="etf-img" />
       </div>
@@ -62,7 +62,7 @@
             <mat-header-cell *matHeaderCellDef mat-sort-header
               >Ticker</mat-header-cell
             >
-            <mat-cell *matCellDef="let element">{{ element.ticker }}</mat-cell>
+            <mat-cell *matCellDef="let element"><b>{{ element.ticker }}</b></mat-cell>
           </ng-container>
           <ng-container matColumnDef="assetClass">
             <mat-header-cell *matHeaderCellDef mat-sort-header
