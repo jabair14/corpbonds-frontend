@@ -19,6 +19,8 @@ import { BondsComponent } from './bondsFolder/bonds/bonds.component';
 import { BondComponent } from './bondsFolder/bond/bond.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MatPaginatorModule } from '@angular/material/paginator';
+// import { NgxPaginationModule } from 'ngx-pagination';
+// import { SortDirective } from './bondsFolder/directive/sort.directive';
 
 
 
@@ -37,6 +39,7 @@ import { CreateFundsComponent } from './fundsPlace/createfunds/createfunds.compo
 import { FundsComponent } from './fundsPlace/funds/funds.component';
 import { FundComponent } from './fundsPlace/fund/fund.component';
 import { SortDirective } from './directive/sort.directive';
+import { SocialmediaComponent } from './socialmedia/socialmedia.component';
 
 
 
@@ -46,11 +49,12 @@ import { SortDirective } from './directive/sort.directive';
     HomeComponent,
     BondsComponent,
     BondComponent,
-
     EtfComponent,
     LocationsComponent,
     LocationComponent,
     RetcalcComponent,
+    SocialmediaComponent,
+    SortDirective,
   
     EditFundsComponent,
     CreateFundsComponent,
@@ -74,8 +78,6 @@ import { SortDirective } from './directive/sort.directive';
     FormsModule,
     MatPaginatorModule,
     NgxPaginationModule,
-
-
     AngularMaterialModule,
     FormsModule,
     

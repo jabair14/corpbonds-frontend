@@ -9,6 +9,7 @@ import { EtfComponent } from './etf/etf.component';
 import { LocationsComponent } from './locationsFolder/locations/locations.component';
 import { LocationComponent } from './locationsFolder/location/location.component';
 import { RetcalcComponent } from './retcalc/retcalc.component';
+import { SocialmediaComponent } from './socialmedia/socialmedia.component';
 
 //Closed-End Funds Routes
 import { FundComponent } from './fundsPlace/fund/fund.component';
@@ -29,7 +30,8 @@ const routes: Routes = [
   {path: "locations", component: LocationsComponent, pathMatch: "full"},
   {path: "locations/:id", component: LocationComponent},
   {path: "retcalc", component: RetcalcComponent},
-  {path: "", component: HomeComponent, pathMatch: "full"},
+  {path: "socialmedias", component: SocialmediaComponent},
+  {path: "", component: HomeComponent, pathMatch: "full"}
 ];
 
 @NgModule({
