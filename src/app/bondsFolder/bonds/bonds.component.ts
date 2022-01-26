@@ -13,6 +13,11 @@ import { Bond } from '../bond/bond.model';
 export class BondsComponent implements OnInit {
 
   
+
+  sortFlag: boolean = false
+  show = false;
+
+  
   constructor(private bondService: BondService) { }
 
   config: any;
@@ -38,16 +43,36 @@ export class BondsComponent implements OnInit {
           currentPage: 1,
           totalItems: this.bonds.length
         };
-        
+
+
       }
-      )
-    }
+    )
+  }
 
   
     
     pageChanged(event: any){
       this.config.currentPage = event;
     }
+
+    clickSort(){
+
+      this.sortFlag = !this.sortFlag
+      if (this.sortFlag) {
+        this.show = true
+        this.bonds.sort(
+          (a: any, b: any) => a.interestRate - b.interestRate
+        )
+      } else {
+        this.show = false
+        this.bonds.sort (
+          (a: any, b: any) => b.interestRate - a.interestRate
+        )
+      }
+    }
+
+
+
 
     
 

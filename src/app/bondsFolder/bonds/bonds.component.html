@@ -34,22 +34,21 @@
                     <th >
                         Name
                     </th>
-                    <th scope="col" 
-                    [appSort]="bonds" 
-                    data-order='desc' 
-                    data-name='interestRate'
-                    
-                    > 
-                    <a> Interest Rate </a> 
-                    <img class="sort" src="./assets/sort-up.png" alt="">
-                    
+                    <th> 
+                    Interest Rate 
+                    <br>
+                    <mat-icon class="icon" (click)="clickSort()" (click)="show">
+                        {{show == false ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon>
                     </th>
-                    <th scope="col" 
+                    <th 
+                        scope="col" 
                         [appSort]="bonds" 
                         data-order='desc' 
                         data-name='maturityDate'
                     >
                         Maturity Date
+                        <br>
+                        <mat-icon class="icon">sort</mat-icon>
                     </th>
                     <th >
                         Face Value

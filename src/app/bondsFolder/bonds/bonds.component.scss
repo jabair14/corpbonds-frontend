@@ -21,8 +21,9 @@
 .bonds-table tr:hover {background-color: #ddd;}
 
 .bonds-table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
     text-align: left;
     color: white;
     background-color: rgb(255, 166, 0),
@@ -70,17 +71,15 @@
   }
 
  .page-div{
-   display: flex;
-   flex-direction: column;
-  font-family: Arial, Helvetica, sans-serif;
-  align-items: left;
-  margin-left: 2em;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: left;
+    margin-left: 2em;
  }
 
- .sort {
-   height: 17px;
-   width: 17px;
-  //  padding-top: 10px;
-   margin: 0;
-  
- }
+.icon{
+  float: left;
+  // margin-left: 10px;
+
+}
