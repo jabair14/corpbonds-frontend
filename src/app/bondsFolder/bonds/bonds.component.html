@@ -34,10 +34,19 @@
                     <th >
                         Name
                     </th>
-                    <th scope="col" [appSort]="bonds" data-order='desc' data-name='interestRate'> 
-                        Interest Rate 
+                    <th scope="col" 
+                        [appSort]="bonds" 
+                        data-order='desc' 
+                        data-name='interestRate'
+                        
+                    > 
+                        <a> Interest Rate </a> 
                     </th>
-                    <th scope="col" >
+                    <th scope="col" 
+                        [appSort]="bonds" 
+                        data-order='desc' 
+                        data-name='maturityDate'
+                    >
                         Maturity Date
                     </th>
                     <th >
@@ -84,10 +93,10 @@
                     {{bond.issuerName}}
                 </td>
                 <td>
-                    {{bond.interestRate | number : '1.00'}} 
+                    {{(bond.interestRate/100) | percent: '1.2'}} 
                 </td>
                 <td>
-                    {{bond.maturityDate | date : 'shortDate'}}
+                    {{bond.maturityDate | date : 'mediumDate'}}
                 </td>
                 <td>
                     {{bond.faceValue | currency}}
