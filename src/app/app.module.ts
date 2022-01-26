@@ -25,8 +25,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 //Location Imports
-import { LocationsComponent } from './locationsFolder/locations/locations.component';
 import { LocationComponent } from './locationsFolder/location/location.component';
+import { LocationsComponent } from './locationsFolder/locations/locations.component';
 import { RetcalcComponent } from './retcalc/retcalc.component';
 import { AngularMaterialModule } from './angular-material.module';
 import { FormsModule } from '@angular/forms';

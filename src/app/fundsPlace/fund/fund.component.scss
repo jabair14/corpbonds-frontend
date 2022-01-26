@@ -1,108 +1,104 @@
-body{
-
-    background: linear-gradient(to right, rgb(189, 186, 186), rgb(168, 165, 165));
-
+@import "/src/styles.scss";
+body {
+  background: linear-gradient(to right, rgb(189, 186, 186), rgb(168, 165, 165));
 }
-.main-bond{
-    // background-color: blue;
-    background: linear-gradient(to right, rgb(189, 186, 186), rgb(168, 165, 165));
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    align-items: center;
-    
-    // flex-wrap: inherit;
+.main-bond {
+  // background-color: blue;
+  background: linear-gradient(to right, rgb(189, 186, 186), rgb(168, 165, 165));
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+
+  // flex-wrap: inherit;
 }
-title{
-    background-image: linear-gradient(to right, rgba(255, 94, 0, 0.82) , rgba(255, 191, 0, 0.943));
-    color: rgb(27, 3, 3);
-    align-items: center;
-    font-size: 72px;
-    flex-direction: column;
-    display: flex;
-    resize: both;
-    
-  }
+title {
+  background-image: linear-gradient(to right, $dorange, $lorange);
+  color: rgb(27, 3, 3);
+  align-items: center;
+  font-size: 72px;
+  flex-direction: column;
+  display: flex;
+  resize: both;
+}
 .bond-info {
-    align-items: center;
-    position: relative;
-    // background-color: red;
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    height: 100vh;
+  align-items: center;
+  position: relative;
+  // background-color: red;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100vh;
 }
 
 .bond-info-left {
-    position: absolute;
-    padding-top: 20px;
-    height: 414px;
-    width: 400px;
-    background-color: white;
-    margin-right: auto;
-    border-bottom: 1px solid black;
+  position: absolute;
+  padding-top: 20px;
+  height: 414px;
+  width: 400px;
+  background-color: white;
+  margin-right: auto;
+  border-bottom: 1px solid black;
 }
 
 .bond-info-right {
-    position: absolute;
-    padding-top: 20px;
-    height: 414px;
-    width: 400px;
-    // background-color: black;
-    padding-right: 10px;
-    
-    margin-left: auto;
-    resize: auto;
-    border-bottom: 1px solid black;
+  position: absolute;
+  padding-top: 20px;
+  height: 414px;
+  width: 400px;
+  // background-color: black;
+  padding-right: 10px;
 
+  margin-left: auto;
+  resize: auto;
+  border-bottom: 1px solid black;
 }
 
 hr {
-    border-top: 1px dashed gray;
-    margin: 2px;
+  border-top: 1px dashed gray;
+  margin: 2px;
 }
 
 p {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
-    'Lucida Sans', Arial, sans-serif;
-    font-size: 15px;
-    font-weight: bold;
-    padding-left: 30px;
-    margin: 5px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  padding-left: 30px;
+  margin: 5px;
 }
 
 h1 {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
-    'Lucida Sans', Arial, sans-serif;
-    padding-left: 40px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  padding-left: 40px;
 }
 
 h3 {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
-    'Lucida Sans', Arial, sans-serif;
-    color: orange;
-    padding-left: 10px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: $rorange;
+  padding-left: 10px;
 }
 
 .image-one {
-    max-height: 100%;
-    max-width: 100%;
-    padding-top: 70px;
-    
+  max-height: 100%;
+  max-width: 100%;
+  padding-top: 70px;
 }
 
 .invest-btn {
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    color: black;
-    background-color: orange;
-    display: inline-block;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  color: black;
+  background-color: $rorange;
+  display: inline-block;
 }
 
 .back-btn {
-    margin-top: 10px;
-    float: right;
+  margin-top: 10px;
+  float: right;
 }
