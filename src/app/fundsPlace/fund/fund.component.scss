@@ -15,7 +15,16 @@ body{
     
     // flex-wrap: inherit;
 }
-
+title{
+    background-color: orange;
+    color: rgb(27, 3, 3);
+    align-items: center;
+    font-size: 72px;
+    flex-direction: column;
+    display: flex;
+    resize: both;
+    
+  }
 .bond-info {
     align-items: center;
     position: relative;

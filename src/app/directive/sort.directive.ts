@@ -1,4 +1,4 @@
-import { Directive, Input, ElementRef, Renderer2, HostListener, OnInit, OnDestroy } from '@angular/core';
+import { Directive, Input, ElementRef, Renderer2, HostListener, OnInit } from '@angular/core';
 import { Sort} from '../util/sort';
 
 @Directive({
@@ -7,7 +7,7 @@ import { Sort} from '../util/sort';
 
 
 
-export class SortDirective implements OnInit, OnDestroy{
+export class SortDirective implements OnInit{
 
 
   @Input()
@@ -15,9 +15,6 @@ export class SortDirective implements OnInit, OnDestroy{
   sortService: any;
 
   constructor(private renderer: Renderer2, private targetElem: ElementRef) { }
-  ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
-  }
  @HostListener("click")
   sortData() {
    // Create object of Sort Class
@@ -43,6 +40,8 @@ export class SortDirective implements OnInit, OnDestroy{
 
   ngOnInit(): void { 
     this.sortData();
-    
       }
-  }
+      
+}
+  
+  
