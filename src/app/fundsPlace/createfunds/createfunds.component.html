@@ -1,0 +1,37 @@
+<body>
+    
+
+    <div class ="fundsedit">
+    <div class = "center" id = "centerText" id ="text">
+        <!-- ID: <input [(ngModel)] ="fund.id" id ="inputText" type = "text" value = "" placeholder="e.g. (John Smith)"/> -->
+        <label>Symbol: </label>
+        <input [(ngModel)] ="createFund.symbol" id ="inputText" type = "text" value = "" placeholder="e.g. (PHYS)"/>
+         <label>Name: </label>
+        <input [(ngModel)] ="createFund.name" id ="inputText" type = "text" value = "" placeholder="e.g. (Sprott Physical Gold Trust CEF)"/>
+        <label>Inception Date: </label>
+         <input [(ngModel)] ="createFund.inceptionDate" id ="inputText" type = "text" value = "" placeholder="e.g. (2010-02-26)"/>
+         <label>Category One: </label>
+        <input [(ngModel)] ="createFund.categoryOne" id ="inputText" type = "text" value = "" placeholder="e.g. (Commodities)"/>
+         <label>Category Two: </label>
+        <input [(ngModel)] ="createFund.categoryTwo" id ="inputText" type = "text" value = "" placeholder="e.g. (Broad Market)"/>
+         <label>Category Three: </label>
+        <input [(ngModel)] ="createFund.categoryThree" id ="inputText" type = "text" value = "" placeholder="e.g. (Actively Managed)"/>
+         <label>Market Cap: </label>
+        <input [(ngModel)] ="createFund.marketCap" id ="inputText" type = "text" value = "" placeholder="e.g. (4,852,252,666 $)"/>
+         <label>Current Dividend Yield: </label>
+        <input [(ngModel)] ="createFund.currentDividendYield" id ="inputText" type = "text" value = "" placeholder="e.g. (0%)"/>
+         <label>Historical Average Dividend Yield: </label>
+        <input [(ngModel)] ="createFund.historicalAverageDividendYield" id ="inputText" type = "text" value = "" placeholder="e.g. (0%)"/>
+         <label>Leverage Factor: </label>
+        <input [(ngModel)] ="createFund.everageFactor" id ="inputText" type = "number" value = "" placeholder="e.g. (1.0)"/>
+         <label>Average Volume: </label>
+        <input [(ngModel)] ="createFund.averageVolume" id ="inputText" type = "text" value = "" placeholder="e.g. (1,254,234)"/>
+         <label>Action: </label>
+        <input [(ngModel)] ="createFund.action" id ="inputText" type = "text" value = "" placeholder="e.g. (Analyze)"/>
+        <div id="button_div">
+    <button (click) = "createFunds(createFund)" id = "wrapper" class="shadow" value="Shadow"id = "wrapper" class="shadow" value="Shadow">Create</button> 
+    <button id = "wrapper" class="shadow" value="Shadow" routerLink ='/funds'>Go Back</button>
+    </div>
+    </div>
+    
+    </div></body>
