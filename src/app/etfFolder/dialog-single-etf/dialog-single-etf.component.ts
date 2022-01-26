@@ -1,4 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { ETF } from '../etf.model'
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -10,7 +11,7 @@ export class DialogSingleEtfComponent implements OnInit {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
 
-  receivedRow: Object = {};
+  receivedRow: any = {};
 
   ngOnInit(): void {
     this.receivedRow = this.data;
