@@ -36,6 +36,7 @@ import { EtfComponent } from './etfFolder/etf.component';
     BondsComponent,
     BondComponent,
     EtfComponent,
+    DialogEtfComponent,
     LocationsComponent,
     LocationComponent,
     RetcalcComponent,
