@@ -1,0 +1,90 @@
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.etf-container {
+  min-height: max-content;
+  height: 100%;
+  width: 1300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 80px;
+  transform: translate(-50%, -50%);
+  align-content: center;
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+mat-footer-row mat-footer-cell {
+  justify-content: center;
+  font-style: italic;
+}
+mat-header-cell {
+  background-color: rgba(255, 166, 0, 0.861);
+}
+
+mat-cell {
+  width: 150px;
+  text-align: center;
+  border: 1px none;
+  padding: 5px;
+}
+
+.etf-info-div {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  max-width: 700px;
+  margin: 5px auto;
+}
+
+.etf-img {
+  width: 300px;
+  height: 300px;
+  margin-left: 80px;
+  // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.etf-data-div {
+  width: 100%;
+  margin: 5px auto;
+}
+
+.search-div {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.bottom-container {
+  padding-top: 50px;
+}
+
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  // cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+}
+
+.etf-button {
+  margin: 5px;
+  background-color: rgba(255, 166, 0, 0.861);
+}
+
+.etf-button:hover {
+  background-color: whitesmoke;
+}
+
+.launch:hover {
+  color: whitesmoke;
+  background-color: rgba(255, 166, 0, 0.861);
+}

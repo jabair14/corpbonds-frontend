@@ -72,7 +72,7 @@ const materialModules = [
   MatTooltipModule,
   Ng2GoogleChartsModule,
   BrowserAnimationsModule,
-  MatPaginatorModule
+  MatPaginatorModule,
 ];
 
 @NgModule({

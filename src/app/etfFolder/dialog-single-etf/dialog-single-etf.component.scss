@@ -1,0 +1,39 @@
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+
+.row-div {
+    display: flex;
+    flex-direction: row;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    margin-left: 20px;
+}
+
+mat-dialog-actions {
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.close-btn:hover {
+    background-color: rgba(255, 166, 0, 0.861);
+}
+
+.buy-btn:hover {
+    color: whitesmoke;
+    background-color: rgb(67, 223, 67);
+}
+
+li {
+    list-style-type: none;
+    list-style-position: outside;
+    margin: 3px;
+}
+
+h1 {
+   color: rgba(255, 94, 0, 0.82)
+}

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
-import { NgxPaginationModule } from 'ngx-pagination';
 
 
 //Bonds Imports
@@ -23,6 +22,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 // import { SortDirective } from './bondsFolder/directive/sort.directive';
 
 
+import { NgxPaginationModule } from 'ngx-pagination';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 //Location Imports
 import { LocationComponent } from './locationsFolder/location/location.component';
@@ -30,7 +32,6 @@ import { LocationsComponent } from './locationsFolder/locations/locations.compon
 import { RetcalcComponent } from './retcalc/retcalc.component';
 import { AngularMaterialModule } from './angular-material.module';
 import { FormsModule } from '@angular/forms';
-import { EtfComponent } from './etf/etf.component';
 
 
 //Closed-End Funds Imports
@@ -41,6 +42,11 @@ import { FundComponent } from './fundsPlace/fund/fund.component';
 import { SortDirective } from './directive/sort.directive';
 import { SocialmediaComponent } from './socialmedia/socialmedia.component';
 
+// ETF Imports
+import { EtfComponent } from './etfFolder/etf.component';
+import { DialogEtfComponent } from './etfFolder/dialog-etf/dialog-etf.component';
+import { DialogSingleEtfComponent } from './etfFolder/dialog-single-etf/dialog-single-etf.component';
+
 
 
 @NgModule({
@@ -50,11 +56,13 @@ import { SocialmediaComponent } from './socialmedia/socialmedia.component';
     BondsComponent,
     BondComponent,
     EtfComponent,
+    DialogEtfComponent,
     LocationsComponent,
     LocationComponent,
     RetcalcComponent,
     SocialmediaComponent,
     SortDirective,
+    DialogSingleEtfComponent,
   
     EditFundsComponent,
     CreateFundsComponent,
@@ -80,6 +88,7 @@ import { SocialmediaComponent } from './socialmedia/socialmedia.component';
     NgxPaginationModule,
     AngularMaterialModule,
     FormsModule,
+    MatDialogModule,
     
 
     MatInputModule,
@@ -88,7 +97,9 @@ import { SocialmediaComponent } from './socialmedia/socialmedia.component';
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogEtfComponent, DialogSingleEtfComponent],
+
 })
 export class AppModule { 
     constructor() {

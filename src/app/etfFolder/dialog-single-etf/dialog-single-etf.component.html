@@ -1,0 +1,30 @@
+<main>
+  <mat-dialog-content>
+    <h1>{{ receivedRow.name }}</h1>
+    <hr />
+    <div class="row-div">
+      <div>
+        <ul>
+          <li><b>Ticker:</b> {{ receivedRow.ticker }}</li>
+          <li><b>Asset Class:</b>  {{ receivedRow.assetClass }}</li>
+          <li><b>Expense Ratio:</b> {{ receivedRow.expenseRatio }} %</li>
+          <li><b>Price:</b> {{ receivedRow.price | currency }}</li>
+          <li><b>Change:</b> {{ receivedRow.change }} %</li>
+          <li><b>YTD:</b> {{ receivedRow.YTD }} %</li>
+          <li><b>SEC Yield:</b> {{ receivedRow.SEC_yield }} %</li>
+          <li><b>1-Year:</b> {{ receivedRow.oneYear }} %</li>
+          <li><b>5-Year:</b> {{ receivedRow.fiveYear }} %</li>
+          <li><b>10-Year:</b> {{ receivedRow.tenYear }} %</li>
+          <li><b>Since Inception:</b> {{ receivedRow.sinceInception }} %</li>
+        </ul>
+      </div>
+      <div>
+        <img src="../../../assets/undraw_receipt_re_fre3.svg" />
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+      <button class="buy-btn" mat-raised-button>BUY</button>
+      <button class="close-btn" mat-raised-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>
+</main>
