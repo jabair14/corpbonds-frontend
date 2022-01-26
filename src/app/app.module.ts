@@ -16,7 +16,8 @@ import { BondComponent } from './bondsFolder/bond/bond.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogEtfComponent } from './etfFolder/dialog-etf/dialog-etf.component';
 
 
 import { LocationsComponent } from './locationsFolder/locations/locations.component';
@@ -24,7 +25,7 @@ import { LocationComponent } from './locationsFolder/location/location.component
 import { RetcalcComponent } from './retcalc/retcalc.component';
 import { AngularMaterialModule } from './angular-material.module';
 import { FormsModule } from '@angular/forms';
-import { EtfComponent } from './etf/etf.component';
+import { EtfComponent } from './etfFolder/etf.component';
 
 
 
@@ -55,10 +56,13 @@ import { EtfComponent } from './etf/etf.component';
     NgxPaginationModule,
     AngularMaterialModule,
     FormsModule,
+    MatDialogModule,
     
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogEtfComponent],
+
 })
 export class AppModule { 
     constructor() {

@@ -6,6 +6,7 @@ import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
+import { DialogEtfComponent } from './dialog-etf/dialog-etf.component';
 
 @Component({
   selector: 'app-etf',
@@ -69,7 +70,7 @@ export class EtfComponent implements OnInit, AfterViewInit {
   }
 
   openDialog() {
-    //  this.dialog.open();
+     this.dialog.open(DialogEtfComponent);
   }
 
 }

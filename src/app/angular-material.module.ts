@@ -34,7 +34,6 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
-import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -74,7 +73,6 @@ const materialModules = [
   Ng2GoogleChartsModule,
   BrowserAnimationsModule,
   MatPaginatorModule,
-  MatDialogModule,
 ];
 
 @NgModule({
