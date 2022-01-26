@@ -23,54 +23,55 @@
             </div>
         </div>
         <table class="bonds-table" id="fixed_headers">
+            <thead>
                 <tr>
-                    <th>
+                    <th >
                         ID
                     </th>
-                    <th>
+                    <th >
                         Symbol
                     </th>
-                    <th>
+                    <th >
                         Name
                     </th>
-                    <th> 
-                        Interest Rate
+                    <th scope="col" [appSort]="bonds" data-order='desc' data-name='interestRate'> 
+                        Interest Rate 
                     </th>
-                    <th>
+                    <th scope="col" >
                         Maturity Date
                     </th>
-                    <th>
+                    <th >
                         Face Value
                     </th>
-                    <th>
+                    <th >
                         Underlying
                     </th>
-                    <th>
+                    <th >
                         Alternate Symbol
                     </th>
-                    <th>
+                    <th >
                         Suffix
                     </th>
-                    <th>
+                    <th >
                         Issue Type
                     </th>
-                    <th>
+                    <th >
                         Bypass Clearance
                     </th>
-                    <th>
+                    <th >
                         Currency Code
                     </th>
-                    <th>
+                    <th >
                         Flat
                     </th>
-                    <th>
+                    <th >
                         Bankrupt?
                     </th>
-                    <th>
+                    <th >
                         Exchange
                     </th>
-               
                 </tr>
+            </thead>
             
             <tr  *ngFor="let bond of bonds | filter: term | paginate: config ">
                 <th>

@@ -17,6 +17,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { SortDirective } from './bondsFolder/directive/sort.directive';
 
 
 
@@ -36,6 +37,7 @@ import { AngularMaterialModule } from './angular-material.module';
     LocationsComponent,
     LocationComponent,
     RetcalcComponent,
+    SortDirective,
   
   ],
   imports: [
