@@ -1,50 +1,58 @@
+@import "/src/styles.scss";
+
 // .tableFixHead          { overflow: auto; height: 100px; }
 // .tableFixHead thead th { position: sticky; top: 0; z-index: 1; }
 
-
-.bonds-table{
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    max-width: 90%;
-    margin: auto;
-    th { position: sticky; top: 0; z-index: 1; }
+.bonds-table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  max-width: 90%;
+  margin: auto;
+  th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
   }
-  
-
-.bonds-table td, .bonds-table th {
-    border: 1px solid rgba(246, 245, 245, 0.868);
-    padding: 8px;
 }
 
-.bonds-table tr:nth-child(even){background-color: #f2f2f2;}
+.bonds-table td,
+.bonds-table th {
+  border: 1px solid rgba(246, 245, 245, 0.868);
+  padding: 8px;
+}
 
-.bonds-table tr:hover {background-color: #ddd;}
+.bonds-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.bonds-table tr:hover {
+  background-color: #ddd;
+}
 
 .bonds-table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    color: white;
-    background-color: rgb(255, 166, 0),
-    
-  }
-
-  .bonds-div {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: inherit;
-    padding: 20px;
-    height: 200px;
-  }
-.bonds-info {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: inherit;
-    padding: 20px;
-
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  color: white;
+  background-color: $rorange;
 }
 
-  h1, p {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
-    'Lucida Sans', Arial, sans-serif
-  }
+.bonds-div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: inherit;
+  padding: 20px;
+  height: 200px;
+}
+.bonds-info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: inherit;
+  padding: 20px;
+}
+
+h1,
+p {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
