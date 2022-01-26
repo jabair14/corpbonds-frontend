@@ -53,9 +53,9 @@
   
   <table class="info-table" >
       <tr>
-          <th  scope ="col" [appSort]="funds" data-order="desc" data-name="id">
+          <!-- <th  scope ="col" [appSort]="funds" data-order="desc" data-name="id">
                ID
-          </th>
+          </th> -->
           <th scope ="col" [appSort]="funds" data-order="desc" data-name="symbol">
               Symbol
          </th>
@@ -98,14 +98,14 @@
          
       </tr>
       <tr  *ngFor="let fund of funds | filter:term | paginate: config ">
-          <td>
+          <!-- <td>
                {{fund.id}}
+          </td> -->
+          <td style="">
+               {{fund.symbol}}
           </td>
           <td>
-              <a [routerLink]="['/funds', fund.id]"> {{fund.symbol}}</a>
-          </td>
-          <td>
-              {{fund.name}}
+            <a [routerLink]="['/funds', fund.id]"> {{fund.name}}</a>
           </td>
           <td>
               {{fund.inceptionDate}}

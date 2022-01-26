@@ -2,12 +2,12 @@
 body, html{  
   margin: 0;
   padding: 0;
-  background: linear-gradient(to right, rgb(137, 139, 101), rgb(212, 24, 65));
+  background: linear-gradient(to right, rgb(189, 186, 186), rgb(168, 165, 165));
   overflow: hidden;
 }
 
 header {
-  background: linear-gradient(to right, rgb(137, 139, 101), rgb(212, 24, 65));
+  background-image: linear-gradient(to right, rgba(255, 94, 0, 0.82) , rgba(255, 191, 0, 0.943));
   margin: 0;
   padding-bottom: 20px;
   overflow-x: hidden; 
@@ -22,7 +22,7 @@ header {
 
 }
 title{
-  background-color: orange;
+  background-color: rgb(184, 181, 177);
   color: rgb(27, 3, 3);
   align-items: center;
   font-size: 72px;
@@ -67,10 +67,7 @@ h2{
     font-weight: 900;
     font-family: "Myriad Pro","Helvetica Neue",Helvetica,Arial,Sans-Serif;
 }
-a { 
-    // text-decoration: none; 
-    color: rgb(73, 14, 235);
-}
+
 
 .page-div{
   bottom: 20%;
@@ -193,7 +190,7 @@ table {
   }
 
   tr:hover {
-    background-color: #f1f1f1;
+    background-color: #fccf7d;
 
   }
   
@@ -332,7 +329,11 @@ table th {
 a:link, a:active, a:visited {
   color: black;
   font-weight: bold;
-  text-decoration:none !important;
+  text-decoration:none;
+}
+
+a:link:hover {
+  text-decoration: underline;
 }
 
 // #wrapper

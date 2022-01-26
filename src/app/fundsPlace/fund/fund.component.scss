@@ -1,11 +1,11 @@
 body{
 
-    background: linear-gradient(to right, rgb(137, 139, 101), rgb(212, 24, 65));
+    background: linear-gradient(to right, rgb(189, 186, 186), rgb(168, 165, 165));
 
 }
 .main-bond{
     // background-color: blue;
-    background: linear-gradient(to right, rgb(137, 139, 101), rgb(212, 24, 65));
+    background: linear-gradient(to right, rgb(189, 186, 186), rgb(168, 165, 165));
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -16,7 +16,7 @@ body{
     // flex-wrap: inherit;
 }
 title{
-    background-color: orange;
+    background-image: linear-gradient(to right, rgba(255, 94, 0, 0.82) , rgba(255, 191, 0, 0.943));
     color: rgb(27, 3, 3);
     align-items: center;
     font-size: 72px;
