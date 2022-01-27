@@ -10,7 +10,6 @@ import { FundService } from '../fund.service';
 })
 
 export class FundsComponent implements OnInit {
-
   public maxSize: number = 5;
   public directionLinks: boolean = true;
   public autoHide: boolean = false;
@@ -33,6 +32,27 @@ export class FundsComponent implements OnInit {
   collection = {};
   term: string = '';
   funds:Fund[] = [];
+    
+  isShowDivIf  = false;
+   
+  toggleDisplayDiv() {
+    this.isShowDivIf  = !this.isShowDivIf;
+  }
+showDiv = {
+  symbol : false,
+  name : false,
+  incep : false,
+  cat1 : false,
+  cat2 : false,
+  cat3 : false,
+  mark : false,
+  curr : false,
+  hist : false,
+  lev : false,
+  av : false,
+  act : false,
+  ed : false,
+}
 
   // this should be in hte dyn-table.component.ts
   sortChanged(e: any) {

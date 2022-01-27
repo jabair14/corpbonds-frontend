@@ -3,14 +3,15 @@ body, html{
   margin: 0;
   padding: 0;
   background: linear-gradient(to right, rgb(189, 186, 186), rgb(168, 165, 165));
-  overflow: hidden;
+
+
 }
 
 header {
   background-image: linear-gradient(to right, rgba(255, 94, 0, 0.82) , rgba(255, 191, 0, 0.943));
   margin: 0;
   padding-bottom: 20px;
-  overflow-x: hidden; 
+
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -28,7 +29,7 @@ title{
   font-size: 72px;
   flex-direction: column;
   display: flex;
-  resize: both;
+
   
 }
 h1 {
@@ -112,7 +113,8 @@ h2{
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  overflow-x: scroll;
+  
 }
 .imagee{
   position: relative;   
@@ -132,15 +134,255 @@ h2{
   left: 25%;
   font-size: 16px; /* Increase font-size */
   padding: 12px 20px 12px 40px; /* Add some padding */
-  border: 2px solid rgb(12, 12, 12); /* Add a grey border */
+  border: 2px solid rgb(247, 243, 243); /* Add a grey border */
   margin-top: 55px;
   margin-bottom: 12px; /* Add some space below the input */
 }
 
+th, td {
+  padding: 4px;
+}
+
+th:focus-within p{
+  color: #FFCE00;
+ }
+
+p{
+  cursor: pointer;
+  margin: 15px 0px;
+  
+}
+    
+tr:hover {
+  background-color: #fccf7d;
+
+}
+
+.asc{
+
+  position: absolute;  
+  cursor: pointer; 
+  left: 75%;
+  top: 33px;
+  width: 20%;
+  height: 25%;    
+   z-index: 2;
+  filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
+
+}
+
+.desc{
+  position: absolute;  
+  cursor: pointer; 
+  left: 80.7%;
+  top: 45px;
+  width: 9%;
+  height: 5.7%; 
+  z-index: 2;
+  filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
+  
+}
+
+.asc2{
+
+  position: absolute;  
+  cursor: pointer; 
+  left: 65.7%;
+  top: 33px;
+  width: 16%;
+  height: 25%;    
+   z-index: 2;
+  filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
+
+}
+
+.desc2{
+  position: absolute;  
+  cursor: pointer; 
+  left: 69.7%;
+  top: 45px;
+  width: 8.5%;
+  height: 5.7%; 
+  z-index: 2;
+  filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
+  
+}
+.asc3{
+
+  position: absolute;  
+  cursor: pointer; 
+  left: 72%;
+  top: 33px;
+  width: 11%;
+  height: 25%;    
+   z-index: 2;
+  filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
+
+}
+.desc3{
+  position: absolute;  
+  cursor: pointer; 
+  left: 75.7%;
+  top: 45px;
+  width: 5%;
+  height: 5.7%; 
+  z-index: 2;
+  filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
+  
+}
+
+.asc4{
+
+  position: absolute;  
+  cursor: pointer; 
+  left: 65.7%;
+  top: 33px;
+  width: 12%;
+  height: 25%;    
+   z-index: 2;
+  filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
+
+}
+
+.desc4{
+  position: absolute;  
+  cursor: pointer; 
+  left: 69.7%;
+  top: 45px;
+  width: 5.5%;
+  height: 5.7%; 
+  z-index: 2;
+  filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
+  
+}
+
+.asc5{
+
+  position: absolute;  
+  cursor: pointer; 
+  left: 68.7%;
+  top: 33px;
+  width: 12%;
+  height: 25%;    
+   z-index: 2;
+  filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
+
+}
+
+.desc5{
+  position: absolute;  
+  cursor: pointer; 
+  left: 72.7%;
+  top: 45px;
+  width: 5.5%;
+  height: 5.7%; 
+  z-index: 2;
+  filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
+  
+}
+
+.asc6{
+
+  position: absolute;  
+  cursor: pointer; 
+  left: 70.7%;
+  top: 33px;
+  width: 12%;
+  height: 25%;    
+   z-index: 2;
+  filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
+
+}
+
+.desc6{
+  position: absolute;  
+  cursor: pointer; 
+  left: 74.7%;
+  top: 45px;
+  width: 5.5%;
+  height: 5.7%; 
+  z-index: 2;
+  filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
+  
+}
+.asc7{
+
+  position: absolute;  
+  cursor: pointer; 
+  left: 82.7%;
+  top: 33px;
+  width: 12%;
+  height: 25%;    
+   z-index: 2;
+  filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
+
+}
+
+.desc7{
+  position: absolute;  
+  cursor: pointer; 
+  left: 86.7%;
+  top: 45px;
+  width: 5.5%;
+  height: 5.7%; 
+  z-index: 2;
+  filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
+  
+}
+
+.asc9{
+
+  position: absolute;  
+  cursor: pointer; 
+  left: 72%;
+  top: 33px;
+  width: 20%;
+  height: 25%;    
+   z-index: 2;
+  filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
+
+}
+
+.desc9{
+  position: absolute;  
+  cursor: pointer; 
+  left: 77.7%;
+  top: 45px;
+  width: 9%;
+  height: 5.7%; 
+  z-index: 2;
+  filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
+  
+}
+// img.asc:hover{
+//   background-image: url('/assets/searchIcon.png'); 
+//   position: absolute;  
+//   left: 75%;
+//    top: 33px;
+//    width: 20%;
+//    height: 25%;   
+// }
+// .desc:hover{
+//   position: absolute;  
+//   cursor: pointer; 
+//   left: 80.7%;
+//   top: 45px;
+//   width: 9%;
+//   height: 5.7%; 
+//   z-index: 2;
+//   filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
+  
+// }
+
 
 table {
-  
-    width: 85%;
+    background-color: #ffffffbd;
+    font-family: MYingHeiHK-Medium,Arial,sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    flex-grow: 1;
+    text-align: center;
+   
     border-collapse: collapse;
     border: 3px solid rgb(255, 23, 23);
     th { 
@@ -154,7 +396,14 @@ table {
   }
 
       
-
+  table td {
+    border: 1px solid rgb(172, 172, 172);
+    padding-left: 5px;
+  }
+  table th {
+    border: 1px solid rgb(0, 0, 0);
+    padding:0 25px 0 25px;
+  }
 
 
    tr:last-child {
@@ -162,11 +411,11 @@ table {
    }
 
    td:nth-child(n), th:nth-child(n) {
-    border-left: solid 2px rgb(228, 10, 10);
+    border-left: solid 2px rgb(189, 189, 189);
    }
 
    tr:nth-child(n) {
-    border-bottom: solid 2px green;
+    border-bottom: solid 2px rgb(2, 2, 2);
    }
 
    tr:nth-child(1), th:nth-child(1) { width: 30px; }
@@ -185,18 +434,7 @@ table {
    tr:nth-child(14), th:nth-child(14) { width: 60px; }
    
 
-  th, td {
-    padding: 4px;
-  }
-
-  tr:hover {
-    background-color: #fccf7d;
-
-  }
   
-  table {
-    background-color: #ffffffbd;
-  }
 
   #wrapper
   {
@@ -317,14 +555,7 @@ table {
   
   font-weight: bold;
 }
-table td {
-  border: 1px solid rgb(2, 1, 1);
-  padding-left: 5px;
-}
-table th {
-  border: 1px solid rgb(255, 255, 255);
-  padding:0 25px 0 25px;
-}
+
 
 a:link, a:active, a:visited {
   color: black;
