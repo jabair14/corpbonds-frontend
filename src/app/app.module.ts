@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { LoaderService } from './services/loader.service'; //loading screen
+import { LoaderInterceptor } from './interceptors/loader-interceptor.service';
+import { MyLoaderComponent } from './loader/my-loader.component';
+
 
 
 //Bonds Imports
@@ -61,6 +65,7 @@ import { SocialmediaComponent } from './socialmedia/socialmedia.component';
     FundsComponent,
     FundComponent,
     SortDirective,
+    MyLoaderComponent,
 
 
 
@@ -86,8 +91,12 @@ import { SocialmediaComponent } from './socialmedia/socialmedia.component';
     NgxPaginationModule,
 
 
+
   ],
-  providers: [],
+  providers: [
+    LoaderService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

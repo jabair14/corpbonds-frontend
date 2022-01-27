@@ -14,18 +14,19 @@ export class BondsComponent implements OnInit {
 
   
 
-  sortFlag: boolean = false
+  sortFlag: boolean = false;
   show = false;
+  
 
   
   constructor(private bondService: BondService) { }
 
   config: any;
+
   collection = {};
 
   term:string = '' 
 
-  
   bonds:Bond[] = []
 
   
@@ -33,23 +34,26 @@ export class BondsComponent implements OnInit {
   
   
   
+
   
   ngOnInit(): void {
     this.bondService.getBonds().subscribe(
-      payload => {
+       payload => {
+        if (payload) {
+      
+        }
         this.bonds = payload
         this.config = {
           itemsPerPage: 100,
           currentPage: 1,
           totalItems: this.bonds.length
         };
-
-
       }
-    )
-  }
+      )
+     
+      
 
-  
+  }
     
     pageChanged(event: any){
       this.config.currentPage = event;
