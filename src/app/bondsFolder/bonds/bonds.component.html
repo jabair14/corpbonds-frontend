@@ -12,7 +12,6 @@
     
     
     
-    <app-my-loader></app-my-loader>
     <div class="bonds-div">
         <div class="table-controls">
             <div class="searchbar-div">
@@ -23,12 +22,13 @@
                 <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
             </div>
         </div>
+        <app-my-loader></app-my-loader>
         <table class="bonds-table" id="fixed_headers">
             <thead>
                 <tr>
-                    <th >
+                    <!-- <th >
                         ID
-                    </th>
+                    </th> -->
                     <th >
                         Symbol
                     </th>
@@ -36,17 +36,17 @@
                         Name
                     </th>
                     <th> 
-                    Interest Rate 
-                    <br>
-                    <mat-icon class="icon" (click)="clickSort()" (click)="show">
-                        {{show == false ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon>
-                    </th>
-                    <th 
+                        Interest Rate 
+                        <br>
+                        <mat-icon class="icon" (click)="clickSort()" (click)="show" >
+                            {{show == false ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon>
+                        </th>
+                        <th 
                         scope="col" 
                         [appSort]="bonds" 
                         data-order='desc' 
                         data-name='maturityDate'
-                    >
+                        >
                         Maturity Date
                         <br>
                         <mat-icon class="icon">sort</mat-icon>
@@ -85,9 +85,9 @@
             </thead>
             
             <tr  *ngFor="let bond of bonds | filter: term | paginate: config ">
-                <th>
+                <!-- <th>
                      {{bond.id}}
-                </th>
+                </th> -->
                 <td>
                     <a [routerLink]="['/bonds', bond.id]"> {{bond.bondSymbol}}</a>
                 </td>
