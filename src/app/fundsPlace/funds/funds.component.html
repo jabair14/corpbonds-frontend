@@ -40,6 +40,11 @@
                   <div class="pagination-next" [class.disabled]="p.isLastPage()">
                     <span *ngIf="!p.isLastPage()" (click)="p.next()"> > </span>
                   </div>
+                  <select [(ngModel)]="config.itemsPerPage">
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
               </div>
           
             </pagination-template>
@@ -51,7 +56,7 @@
 
 <div class="grid-container" id="gridContainer" >
   
-  <table class="info-table" (click)=toggleDisplayDiv()>
+  <table class="info-table">
       <tr>
           <!-- <th  scope ="col" [appSort]="funds" data-order="desc" data-name="id">
                ID
@@ -71,7 +76,7 @@
           showDiv.act = false;
           showDiv.ed = false;">
             <img src='/assets/asc.png'  
-            *ngIf="showDiv.symbol"  
+            *ngIf=" showDiv.symbol"  
             class ="asc">
             <img src='/assets/desc.png'  
             *ngIf="!showDiv.symbol" 
@@ -412,6 +417,11 @@
         <div class="pagination-next" [class.disabled]="p.isLastPage()">
           <span *ngIf="!p.isLastPage()" (click)="p.next()"> > </span>
         </div>
+        <select [(ngModel)]="config.itemsPerPage">
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
     </div>
 
   </pagination-template>

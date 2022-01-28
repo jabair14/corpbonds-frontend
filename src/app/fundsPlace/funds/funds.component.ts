@@ -14,6 +14,8 @@ export class FundsComponent implements OnInit {
   public directionLinks: boolean = true;
   public autoHide: boolean = false;
   public responsive: boolean = true;
+  public changeText: boolean;
+
   public labels: any = {
       previousLabel: '<--',
       nextLabel: '-->',
@@ -25,7 +27,7 @@ export class FundsComponent implements OnInit {
 
   constructor(private router: Router, 
     private fundService: FundService, 
-    private route: ActivatedRoute) {  }
+    private route: ActivatedRoute) { this.changeText = false; }
 
 
   config: any;
@@ -33,11 +35,7 @@ export class FundsComponent implements OnInit {
   term: string = '';
   funds:Fund[] = [];
     
-  isShowDivIf  = false;
-   
-  toggleDisplayDiv() {
-    this.isShowDivIf  = !this.isShowDivIf;
-  }
+
 showDiv = {
   symbol : false,
   name : false,
@@ -69,8 +67,8 @@ showDiv = {
         this.funds = payload;
         
         this.config ={
-          id: 'custom',
-          itemsPerPage: 50,
+          id: '1',
+          itemsPerPage: 25,
           currentPage: 1,
           totalItems: this.funds.length,
           
