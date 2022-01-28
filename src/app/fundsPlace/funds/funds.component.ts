@@ -10,11 +10,12 @@ import { FundService } from '../fund.service';
 })
 
 export class FundsComponent implements OnInit {
-
   public maxSize: number = 5;
   public directionLinks: boolean = true;
   public autoHide: boolean = false;
   public responsive: boolean = true;
+  public changeText: boolean;
+
   public labels: any = {
       previousLabel: '<--',
       nextLabel: '-->',
@@ -26,13 +27,30 @@ export class FundsComponent implements OnInit {
 
   constructor(private router: Router, 
     private fundService: FundService, 
-    private route: ActivatedRoute) {  }
+    private route: ActivatedRoute) { this.changeText = false; }
 
 
   config: any;
   collection = {};
   term: string = '';
   funds:Fund[] = [];
+    
+
+showDiv = {
+  symbol : false,
+  name : false,
+  incep : false,
+  cat1 : false,
+  cat2 : false,
+  cat3 : false,
+  mark : false,
+  curr : false,
+  hist : false,
+  lev : false,
+  av : false,
+  act : false,
+  ed : false,
+}
 
   // this should be in hte dyn-table.component.ts
   sortChanged(e: any) {
@@ -49,8 +67,8 @@ export class FundsComponent implements OnInit {
         this.funds = payload;
         
         this.config ={
-          id: 'custom',
-          itemsPerPage: 50,
+          id: '1',
+          itemsPerPage: 25,
           currentPage: 1,
           totalItems: this.funds.length,
           

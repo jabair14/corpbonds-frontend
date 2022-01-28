@@ -44,6 +44,9 @@ $capstone-frontend-theme: mat.define-light-theme(
 // that you are using.
 @include mat.all-component-themes($capstone-frontend-theme);
 
+html {
+    font-size: 10px
+}
 /* You can add global styles to this file, and also import other style files */
 body {
   margin: 0;
