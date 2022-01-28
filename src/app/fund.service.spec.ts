@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BondService } from './bondsFolder/bond.service';
+import { FundService } from './fundsPlace/fund.service';
 
-describe('BondService', () => {
-  let service: BondService;
+describe('FundService', () => {
+  let service: FundService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(BondService);
+    service = TestBed.inject(FundService);
   });
 
   it('should be created', () => {

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+// import { SortDirective } from '../directive/sort.directive'
 import { BondService } from '../bond.service';
-import { Bond } from './bond.model';
-import {MatTableModule} from '@angular/material/table';
+import { Bond } from '../bond/bond.model';
+
+
 
 @Component({
   selector: 'app-bonds',
@@ -10,17 +12,48 @@ import {MatTableModule} from '@angular/material/table';
 })
 export class BondsComponent implements OnInit {
 
+  
   constructor(private bondService: BondService) { }
 
-  bonds:Bond[] = []
-  // displayedColumns = ['issuerName', 'issuerName'];
+  config: any;
+  collection = {};
 
+  term:string = '' 
+
+  
+  bonds:Bond[] = []
+
+  
+
+  
+  
+  
+  
   ngOnInit(): void {
     this.bondService.getBonds().subscribe(
       payload => {
         this.bonds = payload
+        this.config = {
+          itemsPerPage: 100,
+          currentPage: 1,
+          totalItems: this.bonds.length
+        };
+        
       }
-    )
-  }
+      )
+    }
+
+  
+    
+    pageChanged(event: any){
+      this.config.currentPage = event;
+    }
+
+    
+
+
+    
+    
+
 
 }

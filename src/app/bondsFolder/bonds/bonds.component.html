@@ -10,59 +10,81 @@
         </p>
     </div>
     
+    
+    
     <div class="bonds-div">
+        <div class="table-controls">
+            <div class="searchbar-div">
+                <input type="text" class="searchbar" placeholder="search.." [(ngModel)]="term" >
+            </div>
+            <div class="page-div">
+                <!-- <p>Use the seach bar to discover a variety of corporate bonds.</p> -->
+                <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+            </div>
+        </div>
         <table class="bonds-table" id="fixed_headers">
-            
+            <thead>
                 <tr>
-                    <th>
+                    <th >
                         ID
                     </th>
-                    <th>
+                    <th >
                         Symbol
                     </th>
-                    <th>
+                    <th >
                         Name
                     </th>
-                    <th>
-                        Interest Rate
+                    <th scope="col" 
+                    [appSort]="bonds" 
+                    data-order='desc' 
+                    data-name='interestRate'
+                    
+                    > 
+                    <a> Interest Rate </a> 
+                    <img class="sort" src="./assets/sort-up.png" alt="">
+                    
                     </th>
-                    <th>
+                    <th scope="col" 
+                        [appSort]="bonds" 
+                        data-order='desc' 
+                        data-name='maturityDate'
+                    >
                         Maturity Date
                     </th>
-                    <th>
+                    <th >
                         Face Value
                     </th>
-                    <th>
+                    <th >
                         Underlying
                     </th>
-                    <th>
+                    <th >
                         Alternate Symbol
                     </th>
-                    <th>
+                    <th >
                         Suffix
                     </th>
-                    <th>
+                    <th >
                         Issue Type
                     </th>
-                    <th>
+                    <th >
                         Bypass Clearance
                     </th>
-                    <th>
+                    <th >
                         Currency Code
                     </th>
-                    <th>
+                    <th >
                         Flat
                     </th>
-                    <th>
+                    <th >
                         Bankrupt?
                     </th>
-                    <th>
+                    <th >
                         Exchange
                     </th>
-               
                 </tr>
+            </thead>
             
-            <tr  *ngFor="let bond of bonds">
+            <tr  *ngFor="let bond of bonds | filter: term | paginate: config ">
                 <th>
                      {{bond.id}}
                 </th>
@@ -73,10 +95,10 @@
                     {{bond.issuerName}}
                 </td>
                 <td>
-                    {{bond.interestRate | number : '1.00'}} 
+                    {{(bond.interestRate/100) | percent: '1.2'}} 
                 </td>
                 <td>
-                    {{bond.maturityDate | date : 'shortDate'}}
+                    {{bond.maturityDate | date : 'mediumDate'}}
                 </td>
                 <td>
                     {{bond.faceValue | currency}}

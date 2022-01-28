@@ -1,7 +1,6 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -12,21 +11,33 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
+
+$rorange: #ffa600;
+$lorange: #ffbf00;
+$dorange: #ff5e00;
+
 $capstone-frontend-primary: mat.define-palette(mat.$indigo-palette);
-$capstone-frontend-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$capstone-frontend-accent: mat.define-palette(
+  mat.$pink-palette,
+  A200,
+  A100,
+  A400
+);
 
 // The warn palette is optional (defaults to red).
 $capstone-frontend-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$capstone-frontend-theme: mat.define-light-theme((
-  color: (
-    primary: $capstone-frontend-primary,
-    accent: $capstone-frontend-accent,
-    warn: $capstone-frontend-warn,
+$capstone-frontend-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $capstone-frontend-primary,
+      accent: $capstone-frontend-accent,
+      warn: $capstone-frontend-warn,
+    ),
   )
-));
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -38,35 +49,38 @@ html {
 }
 /* You can add global styles to this file, and also import other style files */
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-size: 100%;
+  background-repeat: repeat-x;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
 }
 
 .nav-bar {
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(239, 239, 246);
-    box-shadow: 0px 0px 5px 0px black;
-    margin: 0%;
-    justify-content: center;
-    column-gap: 10px;
-    border-bottom: 1px solid black;
-    
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(239, 239, 246);
+  box-shadow: 0px 0px 5px 0px black;
+  margin: 0%;
+  justify-content: center;
+  column-gap: 10px;
+  border-bottom: 1px solid black;
 }
 
 .nav-bar button {
-    width: 10px;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-    
-    
+  width: 10px;
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 .logo {
-    margin-top: 8px;
-    // position: absolute;
+  margin-top: 8px;
+  // position: absolute;
 }
 
 .mat-menu-panel {
-    margin-left: 50px;
+  margin-left: 50px;
 }
-

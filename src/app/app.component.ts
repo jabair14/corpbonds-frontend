@@ -16,9 +16,5 @@ export class AppComponent {
 
   ngOnInit(): void {
   }
-
-  goToStocks():void{
-    this.router.navigateByUrl('stocks')
-  }
 }
 

@@ -1,0 +1,10 @@
+
+<a href="mailto:{{email[0].link}}">
+    <img class="socialicon" src="https://img.icons8.com/ios/50/000000/gmail--v2.png"/>
+</a>
+
+<div *ngFor="let socialmedia of socialmedias">
+    <a href="{{socialmedia.link}}">
+        <img class="socialicon" src="https://img.icons8.com/ios/50/000000/{{socialmedia.platform}}--v2.png"/>
+    </a>
+</div>
