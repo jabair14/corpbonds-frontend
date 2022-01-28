@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class StocksService {
-  url: string = "http://localhost:3000";
+  url: string = "https://stocks-microservice-app.herokuapp.com";
 
   constructor(private http:HttpClient) { }
 
