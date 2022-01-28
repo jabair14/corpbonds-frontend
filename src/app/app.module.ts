@@ -40,6 +40,8 @@ import { FundsComponent } from './fundsPlace/funds/funds.component';
 import { FundComponent } from './fundsPlace/fund/fund.component';
 import { SortDirective } from './directive/sort.directive';
 import { SocialmediaComponent } from './socialmedia/socialmedia.component';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
 
 
 
@@ -80,8 +82,9 @@ import { SocialmediaComponent } from './socialmedia/socialmedia.component';
     NgxPaginationModule,
     AngularMaterialModule,
     FormsModule,
-    
-
+    MatSortModule,
+    MatTableModule,
+  
     MatInputModule,
     NgxPaginationModule,
 
