@@ -109,6 +109,7 @@
     margin-top: 70px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 80px;
     // margin: auto;
     // padding: 10px;
 
@@ -122,6 +123,9 @@
 .example-card {
     max-width: 300px;
     margin: 20px;
+    :hover{
+        padding: 20px;
+    }
 
     
   }
@@ -134,5 +138,43 @@ button {
     position: absolute;
     right: 0;
     bottom: 0;
+}
+
+.more-learn {
+    // border-top: 1px solid black;
+    text-align: center;
+    h1 {
+        padding-top: 20px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+                        "Lucida Sans", Arial, sans-serif;
+        font-weight: lighter;
+        font-size: 30px;
+    }
+}
+
+.list {
+    display: inline-block;
+    // border: 1px solid black;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    width: 550px;
+}
+
+.list-item{
+    display: flex;
+    justify-content: space-between;
+    :hover{
+        padding: 10px;
+    }
+}
+
+.arrow-right{
+    padding-top: 10px;
+    :hover{
+        padding: -20px;
+        overflow: hidden;
+    }
 }
 
