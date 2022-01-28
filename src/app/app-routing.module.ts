@@ -16,6 +16,7 @@ import { FundComponent } from './fundsPlace/fund/fund.component';
 import { FundsComponent } from './fundsPlace/funds/funds.component';
 import { CreateFundsComponent } from './fundsPlace/createfunds/createfunds.component';
 import { EditFundsComponent } from './fundsPlace/editfunds/editfunds.component';
+import { LearnComponent } from './learn/learn.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path: "locations/:id", component: LocationComponent},
   {path: "retcalc", component: RetcalcComponent},
   {path: "socialmedias", component: SocialmediaComponent},
+  {path: "learn", component:LearnComponent},
   {path: "", component: HomeComponent, pathMatch: "full"}
 ];
 

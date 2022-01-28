@@ -44,6 +44,7 @@ import { FundsComponent } from './fundsPlace/funds/funds.component';
 import { FundComponent } from './fundsPlace/fund/fund.component';
 import { SortDirective } from './directive/sort.directive';
 import { SocialmediaComponent } from './socialmedia/socialmedia.component';
+import { LearnComponent } from './learn/learn.component';
 
 
 
@@ -66,6 +67,7 @@ import { SocialmediaComponent } from './socialmedia/socialmedia.component';
     FundComponent,
     SortDirective,
     MyLoaderComponent,
+    LearnComponent,
 
 
 

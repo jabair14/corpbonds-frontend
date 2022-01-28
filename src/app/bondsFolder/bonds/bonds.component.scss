@@ -86,7 +86,7 @@ p {
   position: relative;
   margin-bottom: -2.5em;
   margin-left: auto;
-  margin-right: 5em;
+  // margin-right: 5em;
 }
 .searchbar {
   padding: 5px;
@@ -105,6 +105,14 @@ p {
 
 .icon{
   float: left;
+}
+
+.ngx-pagination{
+}
+pagination-controls{
+  display: inline-block;
+  margin-left: -3em;
+  
 }
 
 app-my-loader{
