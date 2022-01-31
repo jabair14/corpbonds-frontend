@@ -1,0 +1,40 @@
+<div *ngIf="redir" class="container">
+  <div class="loginbox">
+    <h2 class="loginbox--header">
+      Congrats on starting your invest journey! <br />
+      Make Your Account!
+    </h2>
+    <div class="input input1">
+      <label for="phone">Phone Number</label>
+      <br />
+      <br />
+      <input
+        type="text"
+        id="phone"
+        [(ngModel)]="accountObj.phone"
+        class="inputbox"
+        required
+      />
+    </div>
+    <div class="input input2">
+      <label for="investment">Money to Transfer</label>
+      <br />
+      <br />
+      <input
+        type="text"
+        id="investment"
+        [(ngModel)]="accountObj.money"
+        class="inputbox"
+        required
+      />
+    </div>
+    <div class="submit">
+      <a (click)="postMe()" class="btn"> Submit</a>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!redir" class="wrapper">
+  <div class="welcome__card">Hello, {{ this.name }}</div>
+  <div class="Account">Your Balance Today : {{ this.balance }}</div>
+</div>

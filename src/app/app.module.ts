@@ -4,7 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
 import { NgxPaginationModule } from 'ngx-pagination';
 
-
+///////// COOKIE IMPORT
+import { CookieService } from 'ngx-cookie-service';
 //Bonds Imports
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,8 +23,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 // import { NgxPaginationModule } from 'ngx-pagination';
 // import { SortDirective } from './bondsFolder/directive/sort.directive';
 
-
-
 //Location Imports
 import { LocationComponent } from './locationsFolder/location/location.component';
 import { LocationsComponent } from './locationsFolder/locations/locations.component';
@@ -32,7 +31,6 @@ import { AngularMaterialModule } from './angular-material.module';
 import { FormsModule } from '@angular/forms';
 import { EtfComponent } from './etf/etf.component';
 
-
 //Closed-End Funds Imports
 import { EditFundsComponent } from './fundsPlace/editfunds/editfunds.component';
 import { CreateFundsComponent } from './fundsPlace/createfunds/createfunds.component';
@@ -40,8 +38,10 @@ import { FundsComponent } from './fundsPlace/funds/funds.component';
 import { FundComponent } from './fundsPlace/fund/fund.component';
 import { SortDirective } from './directive/sort.directive';
 import { SocialmediaComponent } from './socialmedia/socialmedia.component';
-
-
+import { LoginComponent } from './usersFolder/login/login.component';
+import { AccountsComponent } from './usersFolder/accounts/accounts.component';
+import { RegisterComponent } from './usersFolder/register/register.component';
+import { TokenComponent } from './usersFolder/token/token.component';
 
 @NgModule({
   declarations: [
@@ -55,15 +55,16 @@ import { SocialmediaComponent } from './socialmedia/socialmedia.component';
     RetcalcComponent,
     SocialmediaComponent,
     SortDirective,
-  
+
     EditFundsComponent,
     CreateFundsComponent,
     FundsComponent,
     FundComponent,
     SortDirective,
-
-
-
+    LoginComponent,
+    AccountsComponent,
+    RegisterComponent,
+    TokenComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,18 +81,15 @@ import { SocialmediaComponent } from './socialmedia/socialmedia.component';
     NgxPaginationModule,
     AngularMaterialModule,
     FormsModule,
-    
 
     MatInputModule,
     NgxPaginationModule,
-
-
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [CookieService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { 
-    constructor() {
-      library.add(faFilm)
+export class AppModule {
+  constructor() {
+    library.add(faFilm);
   }
 }

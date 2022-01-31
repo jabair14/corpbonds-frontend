@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="loginbox">
+    <h2 class="loginbox--header">Sign Up</h2>
+    <div class="input input1">
+      <label for="email">EMAIL</label>
+      <br />
+      <br />
+      <input
+        type="text"
+        id="email"
+        [(ngModel)]="registerObj.email"
+        class="inputbox"
+        required
+      />
+    </div>
+    <div class="input input2">
+      <label for="NAME">NAME</label>
+      <br />
+      <br />
+      <input
+        type="NAME"
+        id="text"
+        [(ngModel)]="registerObj.name"
+        class="inputbox"
+        required
+      />
+    </div>
+    <div class="input input2">
+      <label for="password">PASSWORD</label>
+      <br />
+      <br />
+      <input
+        type="password"
+        id="password"
+        [(ngModel)]="registerObj.password"
+        class="inputbox"
+        required
+      />
+    </div>
+    <div class="input input2">
+      <label for="confirm_password">CONFIRM PASSWORD</label>
+      <br />
+      <br />
+      <input
+        type="password"
+        id="confirm_password"
+        [(ngModel)]="registerObj.confirm_password"
+        class="inputbox"
+        required
+      />
+    </div>
+    <div class="submit">
+      <a (click)="postMe()" class="btn"> Submit</a>
+    </div>
+  </div>
+</div>
