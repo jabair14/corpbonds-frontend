@@ -74,17 +74,17 @@ body, html {
   .stock-searchbar {
       margin: 10px;
       width: 20vw;
-      color: white;
+      color: rgb(255, 166, 0);
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
       'Lucida Sans', Arial, sans-serif;
       font-size: 30px;
-      background-color: rgb(255, 166, 0);
+      background-color: white;
       border-radius: 5px;
       padding-left: 10px;
   }
 
   ::placeholder {
-      color: white;
+      color: rgb(255, 166, 0);
   }
 
   .investBtn {
@@ -100,8 +100,8 @@ body, html {
   }
 
   .arrow {
-      color: white;
-      background-color: rgba(255, 166, 0, 0.861);
+      color: rgba(255, 166, 0, 0.861);
+      background-color: white;
       padding: 0;
       margin: 0;
       border: none;
