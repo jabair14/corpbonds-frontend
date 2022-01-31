@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'
+
 
 @Component({
   selector: 'app-root',
@@ -10,8 +12,9 @@ export class AppComponent {
   imageSrc = "./assets/default-monochrome.svg"
   imageAlt = "logo"
 
+  constructor(private router:Router){}
+
   ngOnInit(): void {
-    
   }
 }
 

@@ -40,6 +40,11 @@
                   <div class="pagination-next" [class.disabled]="p.isLastPage()">
                     <span *ngIf="!p.isLastPage()" (click)="p.next()"> > </span>
                   </div>
+                  <select [(ngModel)]="config.itemsPerPage">
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
               </div>
           
             </pagination-template>
@@ -51,61 +56,306 @@
 
 <div class="grid-container" id="gridContainer" >
   
-  <table class="info-table" >
+  <table class="info-table">
       <tr>
-          <th  scope ="col" [appSort]="funds" data-order="desc" data-name="id">
+          <!-- <th  scope ="col" [appSort]="funds" data-order="desc" data-name="id">
                ID
-          </th>
-          <th scope ="col" [appSort]="funds" data-order="desc" data-name="symbol">
-              Symbol
+          </th> --> 
+          <th tabindex ="0" role="button" scope ="col" [appSort]="funds" data-order="asc" data-name="symbol" 
+          (click)="showDiv.symbol = !showDiv.symbol;
+          showDiv.name = false;
+          showDiv.incep = false;
+          showDiv.cat1 = false;
+          showDiv.cat2 = false;
+          showDiv.cat3 = false;
+          showDiv.mark = false;
+          showDiv.curr = false;
+          showDiv.hist = false;
+          showDiv.lev = false;
+          showDiv.av = false;
+          showDiv.act = false;
+          showDiv.ed = false;">
+            <img src='/assets/asc.png'  
+            *ngIf=" showDiv.symbol"  
+            class ="asc">
+            <img src='/assets/desc.png'  
+            *ngIf="!showDiv.symbol" 
+            class ="desc">            
+            <p> Symbol</p>
          </th>
-         <th scope ="col" [appSort]="funds" data-order="desc" data-name="name">
-              Name
+         <th tabindex ="0" role="button" scope ="col" [appSort]="funds" data-order="asc" data-name="name" 
+         (click)="showDiv.name = !showDiv.name;
+          showDiv.symbol = false;
+          showDiv.incep = false;
+          showDiv.cat1 = false;
+          showDiv.cat2 = false;
+          showDiv.cat3 = false;
+          showDiv.mark = false;
+          showDiv.curr = false;
+          showDiv.hist = false;
+          showDiv.lev = false;
+          showDiv.av = false;
+          showDiv.act = false;
+          showDiv.ed = false;">
+          <img src='/assets/asc.png'  
+            *ngIf="showDiv.name"  
+            class ="asc2">
+            <img src='/assets/desc.png'  
+            *ngIf="!showDiv.name" 
+            class ="desc2">            
+            <p> Name</p>
           </th>
-          <th scope ="col" [appSort]="funds" data-order="desc" data-name="inceptionDate">
-              Inception Date
+          <th tabindex ="0" role="button" scope ="col" [appSort]="funds" data-order="asc" data-name="inceptionDate"
+          (click)="showDiv.incep = !showDiv.incep;
+          showDiv.symbol = false;
+          showDiv.name = false;
+          showDiv.cat1 = false;
+          showDiv.cat2 = false;
+          showDiv.cat3 = false;
+          showDiv.mark = false;
+          showDiv.curr = false;
+          showDiv.hist = false;
+          showDiv.lev = false;
+          showDiv.av = false;
+          showDiv.act = false;
+          showDiv.ed = false;">
+          <img src='/assets/asc.png'  
+            *ngIf="showDiv.incep"  
+            class ="asc3">
+            <img src='/assets/desc.png'  
+            *ngIf="!showDiv.incep" 
+            class ="desc3">            
+            <p>Inception Date</p>
           </th>
-          <th scope ="col" [appSort]="funds" data-order="desc" data-name="categoryOne">
-              Category1
+          <th tabindex ="0" role="button" scope ="col" [appSort]="funds" data-order="asc" data-name="categoryOne"
+          (click)="showDiv.cat1 = !showDiv.cat1;
+          showDiv.symbol = false;
+          showDiv.incep = false;
+          showDiv.name = false;
+          showDiv.cat2 = false;
+          showDiv.cat3 = false;
+          showDiv.mark = false;
+          showDiv.curr = false;
+          showDiv.hist = false;
+          showDiv.lev = false;
+          showDiv.av = false;
+          showDiv.act = false;
+          showDiv.ed = false;">
+          <img src='/assets/asc.png'  
+            *ngIf="showDiv.cat1"  
+            class ="asc4">
+            <img src='/assets/desc.png'  
+            *ngIf="!showDiv.cat1" 
+            class ="desc4">            
+            <p>Category1</p>
           </th>
-          <th scope ="col" [appSort]="funds" data-order="desc" data-name="categoryTwo">
-              Category2
+          <th tabindex ="0" role="button" scope ="col" [appSort]="funds" data-order="asc" data-name="categoryTwo"
+          (click)="showDiv.cat2 = !showDiv.cat2;
+          showDiv.symbol = false;
+          showDiv.incep = false;
+          showDiv.cat1 = false;
+          showDiv.name = false;
+          showDiv.cat3 = false;
+          showDiv.mark = false;
+          showDiv.curr = false;
+          showDiv.hist = false;
+          showDiv.lev = false;
+          showDiv.av = false;
+          showDiv.act = false;
+          showDiv.ed = false;">
+          <img src='/assets/asc.png'  
+            *ngIf="showDiv.cat2"  
+            class ="asc5">
+            <img src='/assets/desc.png'  
+            *ngIf="!showDiv.cat2" 
+            class ="desc5">       
+            <p>Category2</p>
           </th>
-          <th scope ="col" [appSort]="funds" data-order="desc" data-name="categoryThree">
-              Category3
+          <th tabindex ="0" role="button" scope ="col" [appSort]="funds" data-order="asc" data-name="categoryThree"
+          (click)="showDiv.cat3 = !showDiv.cat3;
+          showDiv.symbol = false;
+          showDiv.incep = false;
+          showDiv.cat1 = false;
+          showDiv.cat2 = false;
+          showDiv.name = false;
+          showDiv.mark = false;
+          showDiv.curr = false;
+          showDiv.hist = false;
+          showDiv.lev = false;
+          showDiv.av = false;
+          showDiv.act = false;
+          showDiv.ed = false;">
+          <img src='/assets/asc.png'  
+            *ngIf="showDiv.cat3"  
+            class ="asc5">
+            <img src='/assets/desc.png'  
+            *ngIf="!showDiv.cat3" 
+            class ="desc5">  
+            <p>Category3</p>
           </th>
-          <th scope ="col" [appSort]="funds" data-order="desc" data-name="marketCap">
-              Market Cap
+          <th tabindex ="0" role="button" scope ="col" [appSort]="funds" data-order="asc" data-name="marketCap"
+          (click)="showDiv.mark = !showDiv.mark;
+          showDiv.symbol = false;
+          showDiv.incep = false;
+          showDiv.cat1 = false;
+          showDiv.cat2 = false;
+          showDiv.cat3 = false;
+          showDiv.name = false;
+          showDiv.curr = false;
+          showDiv.hist = false;
+          showDiv.lev = false;
+          showDiv.av = false;
+          showDiv.act = false;
+          showDiv.ed = false;">
+          <img src='/assets/asc.png'  
+            *ngIf="showDiv.mark"  
+            class ="asc6">
+            <img src='/assets/desc.png'  
+            *ngIf="!showDiv.mark" 
+            class ="desc6">  
+            <p>Market Cap</p>
           </th>
-          <th scope ="col" [appSort]="funds" data-order="desc" data-name="currentDividendYield">
-              Current Dividend Yield
+          <th tabindex ="0" role="button" scope ="col" [appSort]="funds" data-order="asc" data-name="currentDividendYield"
+          (click)="showDiv.curr = !showDiv.curr;
+          showDiv.symbol = false;
+          showDiv.incep = false;
+          showDiv.cat1 = false;
+          showDiv.cat2 = false;
+          showDiv.cat3 = false;
+          showDiv.mark = false;
+          showDiv.name = false;
+          showDiv.hist = false;
+          showDiv.lev = false;
+          showDiv.av = false;
+          showDiv.act = false;
+          showDiv.ed = false;">
+          <img src='/assets/asc.png'  
+            *ngIf="showDiv.curr"  
+            class ="asc7">
+            <img src='/assets/desc.png'  
+            *ngIf="!showDiv.curr" 
+            class ="desc7">  
+            <p>Current Dividend Yield</p>
           </th>
-          <th scope ="col" [appSort]="funds" data-order="desc" data-name="historicalAverageDividendYield">
-              Historical Average Divided Yield
+          <th tabindex ="0" role="button" scope ="col" [appSort]="funds" data-order="asc" data-name="historicalAverageDividendYield"
+          (click)="showDiv.hist = !showDiv.hist;
+          showDiv.symbol = false;
+          showDiv.incep = false;
+          showDiv.cat1 = false;
+          showDiv.cat2 = false;
+          showDiv.cat3 = false;
+          showDiv.mark = false;
+          showDiv.curr = false;
+          showDiv.name = false;
+          showDiv.lev = false;
+          showDiv.av = false;
+          showDiv.act = false;
+          showDiv.ed = false;">
+          <img src='/assets/asc.png'  
+            *ngIf="showDiv.hist"  
+            class ="asc">
+            <img src='/assets/desc.png'  
+            *ngIf="!showDiv.hist" 
+            class ="desc">  
+            <p>Historical Average Divided Yield</p>
           </th>
-          <th scope ="col" [appSort]="funds" data-order="desc" data-name="everageFactor">
-              Leverage Factor
+          <th tabindex ="0" role="button" scope ="col" [appSort]="funds" data-order="asc" data-name="everageFactor"
+          (click)="showDiv.lev = !showDiv.lev;
+          showDiv.symbol = false;
+          showDiv.incep = false;
+          showDiv.cat1 = false;
+          showDiv.cat2 = false;
+          showDiv.cat3 = false;
+          showDiv.mark = false;
+          showDiv.curr = false;
+          showDiv.hist = false;
+          showDiv.name = false;
+          showDiv.av = false;
+          showDiv.act = false;
+          showDiv.ed = false;">
+          <img src='/assets/asc.png'  
+            *ngIf="showDiv.lev"  
+            class ="asc9">
+            <img src='/assets/desc.png'  
+            *ngIf="!showDiv.lev" 
+            class ="desc9">  
+            <p>Leverage Factor</p>
           </th>
-          <th scope ="col" [appSort]="funds" data-order="desc" data-name="averageVolume">
-              Average Volume
+          <th tabindex ="0" role="button" scope ="col" [appSort]="funds" data-order="asc" data-name="averageVolume"
+          (click)="showDiv.av = !showDiv.av;
+          showDiv.symbol = false;
+          showDiv.incep = false;
+          showDiv.cat1 = false;
+          showDiv.cat2 = false;
+          showDiv.cat3 = false;
+          showDiv.mark = false;
+          showDiv.curr = false;
+          showDiv.hist = false;
+          showDiv.lev = false;
+          showDiv.name = false;
+          showDiv.act = false;
+          showDiv.ed = false;">
+          <img src='/assets/asc.png'  
+            *ngIf="showDiv.av"  
+            class ="asc9">
+            <img src='/assets/desc.png'  
+            *ngIf="!showDiv.av" 
+            class ="desc9">  
+            <p>Average Volume</p>
           </th>
-          <th scope ="col" [appSort]="funds" data-order="desc" data-name="action">
-              Action
+          <!-- <th tabindex ="0" role="button" scope ="col" [appSort]="funds" data-order="asc" data-name="action"
+          (click)="showDiv.act = !showDiv.act;
+          showDiv.symbol = false;
+          showDiv.incep = false;
+          showDiv.cat1 = false;
+          showDiv.cat2 = false;
+          showDiv.cat3 = false;
+          showDiv.mark = false;
+          showDiv.curr = false;
+          showDiv.hist = false;
+          showDiv.lev = false;
+          showDiv.av = false;
+          showDiv.name = false;
+          showDiv.ed = false;">
+          <img src='/assets/asc.png'  
+            *ngIf="showDiv.act"  
+            class ="asc2">
+            <img src='/assets/desc.png'  
+            *ngIf="!showDiv.act" 
+            class ="desc2">  
+            <p>Action</p>
+          </th> -->
+          <th>
+            <p>E/D</p>
           </th>
-          <th scope ="col" [appSort]="funds" data-order="desc" data-name="id">
-              E/D
-          </th>
+          <!-- <th tabindex ="0" role="button" scope ="col" [appSort]="funds" data-order="asc" data-name="id"
+          (click)="showDiv.ed = !showDiv.ed;
+          showDiv.symbol = false;
+          showDiv.incep = false;
+          showDiv.cat1 = false;
+          showDiv.cat2 = false;
+          showDiv.cat3 = false;
+          showDiv.mark = false;
+          showDiv.curr = false;
+          showDiv.hist = false;
+          showDiv.lev = false;
+          showDiv.av = false;
+          showDiv.act = false;
+          showDiv.name = false;">
+            <p>E/D</p>
+          </th> -->
+          
          
       </tr>
       <tr  *ngFor="let fund of funds | filter:term | paginate: config ">
-          <td>
+          <!-- <td>
                {{fund.id}}
+          </td> -->
+          <td>
+               {{fund.symbol}}
           </td>
           <td>
-              <a [routerLink]="['/funds', fund.id]"> {{fund.symbol}}</a>
-          </td>
-          <td>
-              {{fund.name}}
+            <a [routerLink]="['/funds', fund.id]"> {{fund.name}}</a>
           </td>
           <td>
               {{fund.inceptionDate}}
@@ -134,9 +384,9 @@
           <td>
               {{fund.averageVolume}}
           </td>
-          <td>
+          <!-- <td>
               {{fund.action}}
-          </td>
+          </td> -->
           <td>
           <div id="button_div">
               <button (click) = "deleteFunds(fund.id)" id = "wrapper" class="shadow" value="Shadow">delete</button>
@@ -167,6 +417,11 @@
         <div class="pagination-next" [class.disabled]="p.isLastPage()">
           <span *ngIf="!p.isLastPage()" (click)="p.next()"> > </span>
         </div>
+        <select [(ngModel)]="config.itemsPerPage">
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
     </div>
 
   </pagination-template>
