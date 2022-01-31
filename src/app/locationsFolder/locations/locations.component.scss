@@ -21,6 +21,11 @@
     width: 30%;
 }
 
+.table-div2 {
+    width: 30%;
+    text-align: center;
+}
+
 a {
     color: darkorange;
     text-decoration: none;
@@ -34,4 +39,13 @@ a:hover {
 
 td {
     padding-bottom: 10px;
+}
+
+h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
+                    'Lucida Sans', Arial, sans-serif
+}
+
+google-chart {
+    cursor: pointer;
 }

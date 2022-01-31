@@ -1,3 +1,12 @@
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: rgba(255, 166, 0, 0.861)!important;
+}
+// mat-label normal state style
+::ng-deep .mat-form-field-label {
+  color: rgba(0,0,0,.6)!important;
+  // color: $mainColor!important;
+}
+
 .inp {
   margin: 0.5rem;
   display: flex;
