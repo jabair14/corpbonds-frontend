@@ -28,18 +28,19 @@ export class EtfComponent implements OnInit, AfterViewInit {
   searchKey: string = '';
 
   tableConfig: string[] = [
-    'name',
-    'ticker',
-    'assetClass',
-    'expenseRatio',
-    'price',
-    'change',
-    'SEC_yield',
-    'YTD',
-    'oneYear',
-    'fiveYear',
-    'tenYear',
-    'sinceInception',
+    'id',
+    'fund_symbol',
+    'fund_long_name',
+    'fund_family',
+    'total_net_assets',
+    'fund_yield',
+    'fund_annual_report_net_expense_ratio',
+    'category_return_ytd',
+    'fund_return_ytd',
+    'week52_high_change',
+    'week52_low_change',
+    'inception_date',
+    'exchange_name',
     'actions',
   ];
 

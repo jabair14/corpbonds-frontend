@@ -52,96 +52,104 @@
 
       <div class="mat-elevation-z8 etf-data-div">
         <mat-table [dataSource]="this.dataSource" matSort>
-          <ng-container matColumnDef="name">
+          <ng-container matColumnDef="id">
             <mat-header-cell *matHeaderCellDef mat-sort-header
-              >Name</mat-header-cell
+              >ID</mat-header-cell
             >
-            <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+            <mat-cell *matCellDef="let element">{{ element.id }}</mat-cell>
           </ng-container>
-          <ng-container matColumnDef="ticker">
+          <ng-container matColumnDef="fund_symbol">
             <mat-header-cell *matHeaderCellDef mat-sort-header
               >Ticker</mat-header-cell
             >
-            <mat-cell *matCellDef="let element"><b>{{ element.ticker }}</b></mat-cell>
+            <mat-cell *matCellDef="let element"><b>{{ element.fund_symbol }}</b></mat-cell>
           </ng-container>
-          <ng-container matColumnDef="assetClass">
+          <ng-container matColumnDef="fund_long_name">
             <mat-header-cell *matHeaderCellDef mat-sort-header
-              >Asset Class</mat-header-cell
+              >Fund Long Name</mat-header-cell
             >
             <mat-cell *matCellDef="let element">{{
-              element.assetClass
+              element.fund_long_name
             }}</mat-cell>
           </ng-container>
-          <ng-container matColumnDef="expenseRatio">
+          <ng-container matColumnDef="fund_family">
             <mat-header-cell *matHeaderCellDef mat-sort-header
-              >Expense Ratio</mat-header-cell
+              >Fund Family</mat-header-cell
             >
             <mat-cell *matCellDef="let element"
-              >{{ element.expenseRatio | number }} %</mat-cell
+              >{{ element.fund_family }}</mat-cell
             >
           </ng-container>
-          <ng-container matColumnDef="price">
+          <ng-container matColumnDef="total_net_assets">
             <mat-header-cell *matHeaderCellDef mat-sort-header
-              >Price</mat-header-cell
+              >Total Net Assets</mat-header-cell
             >
             <mat-cell *matCellDef="let element">{{
-              element.price | currency
+              element.total_net_assets
             }}</mat-cell>
           </ng-container>
-          <ng-container matColumnDef="change">
+          <ng-container matColumnDef="fund_yield">
             <mat-header-cell *matHeaderCellDef mat-sort-header
-              >Change</mat-header-cell
+              >Fund Yield</mat-header-cell
             >
             <mat-cell *matCellDef="let element">{{
-              element.change | currency
+              element.fund_yield
             }}</mat-cell>
           </ng-container>
-          <ng-container matColumnDef="SEC_yield">
+          <ng-container matColumnDef="fund_annual_report_net_expense_ratio">
             <mat-header-cell *matHeaderCellDef mat-sort-header
-              >SEC Yield</mat-header-cell
+              >Annual Net Expense Ratio</mat-header-cell
             >
             <mat-cell *matCellDef="let element"
-              >{{ element.SEC_yield | number }} %</mat-cell
+              >{{ element.fund_annual_report_net_expense_ratio | number }} %</mat-cell
             >
           </ng-container>
-          <ng-container matColumnDef="YTD">
+          <ng-container matColumnDef="category_return_ytd">
             <mat-header-cell *matHeaderCellDef mat-sort-header
-              >YTD</mat-header-cell
+              >Category Return YTD</mat-header-cell
             >
             <mat-cell *matCellDef="let element"
-              >{{ element.YTD | number }} %</mat-cell
+              >{{ element.category_return_ytd | number }} %</mat-cell
             >
           </ng-container>
-          <ng-container matColumnDef="oneYear">
+          <ng-container matColumnDef="fund_return_ytd">
             <mat-header-cell *matHeaderCellDef mat-sort-header
-              >1-Year</mat-header-cell
+              >Fund Return YTD</mat-header-cell
             >
             <mat-cell *matCellDef="let element"
-              >{{ element.oneYear | number }} %</mat-cell
+              >{{ element.fund_return_ytd | number }} %</mat-cell
             >
           </ng-container>
-          <ng-container matColumnDef="fiveYear">
+          <ng-container matColumnDef="week52_high_change">
             <mat-header-cell *matHeaderCellDef mat-sort-header
-              >5-Year</mat-header-cell
+              >WK 52 High Change</mat-header-cell
             >
             <mat-cell *matCellDef="let element"
-              >{{ element.fiveYear | number }} %</mat-cell
+              >{{ element.week52_high_change | number }} %</mat-cell
             >
           </ng-container>
-          <ng-container matColumnDef="tenYear">
+          <ng-container matColumnDef="week52_low_change">
             <mat-header-cell *matHeaderCellDef mat-sort-header
-              >10-Year</mat-header-cell
+              >WK 52 Low Change</mat-header-cell
             >
             <mat-cell *matCellDef="let element"
-              >{{ element.tenYear | number }} %</mat-cell
+              >{{ element.week52_low_change | number }} %</mat-cell
             >
           </ng-container>
-          <ng-container matColumnDef="sinceInception">
+          <ng-container matColumnDef="inception_date">
             <mat-header-cell *matHeaderCellDef mat-sort-header
               >Since Inception</mat-header-cell
             >
             <mat-cell *matCellDef="let element"
-              >{{ element.sinceInception | number }} %</mat-cell
+              >{{ element.inception_date }} </mat-cell
+            >
+          </ng-container>
+          <ng-container matColumnDef="exchange_name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header
+              >Exchange Name</mat-header-cell
+            >
+            <mat-cell *matCellDef="let element"
+              >{{ element.exchange_name }} </mat-cell
             >
           </ng-container>
           <ng-container matColumnDef="actions">
