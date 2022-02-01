@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BondComponent } from './bondsFolder/bond/bond.component';
 import { BondsComponent } from './bondsFolder/bonds/bonds.component';
 import { HomeComponent } from './home/home.component';
+import { StocksComponent } from './stocks/stocks.component';
 import { EtfComponent } from './etf/etf.component';
 import { LocationsComponent } from './locationsFolder/locations/locations.component';
 import { LocationComponent } from './locationsFolder/location/location.component';
@@ -26,6 +27,9 @@ const routes: Routes = [
   {path: "funds/:id", component: FundComponent},
   {path: "funds/:id/edit", component: EditFundsComponent},
   {path: "bonds/:id", component: BondComponent},
+  {path: "", component: HomeComponent, pathMatch: "full"},
+  {path: "stocks", component: StocksComponent},
+  {path: "retcalc", component: RetcalcComponent},
   {path: "etfs", component: EtfComponent},
   {path: "locations", component: LocationsComponent, pathMatch: "full"},
   {path: "locations/:id", component: LocationComponent},
