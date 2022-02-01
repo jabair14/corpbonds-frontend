@@ -54,7 +54,7 @@ label {
   padding: 0.5rem 1rem;
   background-color: $color--dark;
   font-weight: 600;
-  color: $color--light;
+  color: white;
   margin-left: 1.5rem;
   border-radius: 0.2rem;
 }
@@ -69,7 +69,7 @@ label {
   border-radius: 0.2rem;
   padding: 0.5rem 2rem;
   font-size: 1.3rem;
-  background-color: $color--light;
+  background-color: white;
   margin-right: 3%;
 }
 .submit {
@@ -83,7 +83,7 @@ label {
   font-size: 2rem;
   padding: 1rem 2rem;
   background-color: $color--dark;
-  color: $color--light;
+  color: white;
   align-self: flex-end;
   justify-self: flex-end;
   border: 1px $color--dark solid;
@@ -92,7 +92,7 @@ label {
 
   &:hover {
     background-color: azure;
-    color: $dorange;
+    color: $color--dark;
     transform: translateY(-2px);
     size: 1.2;
     transition: all 0.25s;
