@@ -19,29 +19,38 @@ import { CreateFundsComponent } from './fundsPlace/createfunds/createfunds.compo
 import { EditFundsComponent } from './fundsPlace/editfunds/editfunds.component';
 import { LearnComponent } from './learn/learn.component';
 
+//User-Service Routes
+import { LoginComponent } from './usersFolder/login/login.component';
+import { AccountsComponent } from './usersFolder/accounts/accounts.component';
+import { RegisterComponent } from './usersFolder/register/register.component';
+import { Token } from '@angular/compiler';
+import { TokenComponent } from './usersFolder/token/token.component';
 
 const routes: Routes = [
-  {path: "home", component: HomeComponent},
-  {path: "bonds", component: BondsComponent},
-  {path: "funds", component: FundsComponent},
-  {path: "funds/create", component: CreateFundsComponent},
-  {path: "funds/:id", component: FundComponent},
-  {path: "funds/:id/edit", component: EditFundsComponent},
-  {path: "bonds/:id", component: BondComponent},
-  {path: "", component: HomeComponent, pathMatch: "full"},
-  {path: "stocks", component: StocksComponent},
-  {path: "retcalc", component: RetcalcComponent},
-  {path: "etfs", component: EtfComponent},
-  {path: "locations", component: LocationsComponent, pathMatch: "full"},
-  {path: "locations/:id", component: LocationComponent},
-  {path: "retcalc", component: RetcalcComponent},
-  {path: "socialmedias", component: SocialmediaComponent},
-  {path: "learn", component:LearnComponent},
-  {path: "", component: HomeComponent, pathMatch: "full"}
+  { path: 'home', component: HomeComponent },
+  { path: 'bonds', component: BondsComponent },
+  { path: 'funds', component: FundsComponent },
+  { path: 'funds/create', component: CreateFundsComponent },
+  { path: 'funds/:id', component: FundComponent },
+  { path: 'funds/:id/edit', component: EditFundsComponent },
+  { path: 'bonds/:id', component: BondComponent },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: 'stocks', component: StocksComponent },
+  { path: 'retcalc', component: RetcalcComponent },
+  { path: 'etfs', component: EtfComponent },
+  { path: 'locations', component: LocationsComponent, pathMatch: 'full' },
+  { path: 'locations/:id', component: LocationComponent },
+  { path: 'retcalc', component: RetcalcComponent },
+  { path: 'socialmedias', component: SocialmediaComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'registration/:token', component: TokenComponent },
+  { path: 'account', component: AccountsComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
