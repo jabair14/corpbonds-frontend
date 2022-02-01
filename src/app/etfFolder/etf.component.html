@@ -51,7 +51,7 @@
       </div>
 
       <div class="mat-elevation-z8 etf-data-div">
-        <mat-table [dataSource]="this.dataSource" matSort>
+        <mat-table [dataSource]="this.dataSource | paginate: config" matSort>
           <ng-container matColumnDef="id">
             <mat-header-cell *matHeaderCellDef mat-sort-header
               >ID</mat-header-cell
@@ -172,11 +172,12 @@
             [ngClass]="{ hide: dataSource != null }"
           ></mat-footer-row>
         </mat-table>
-        <mat-paginator
+        <!-- <mat-paginator
           [pageSizeOptions]="[5, 10, 25, 100]"
           [pageSize]="5"
           showFirstLastButtons
-        ></mat-paginator>
+        ></mat-paginator> -->
+        <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
       </div>
 
       <div class="bottom-container"></div>

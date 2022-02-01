@@ -21,11 +21,13 @@ export class EtfComponent implements OnInit, AfterViewInit {
     public dialog: MatDialog,
   ) {}
 
+
   etfData: ETF[] = [];
   dataSource: any = new MatTableDataSource(this.etfData);
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   searchKey: string = '';
+  config: any;
 
   tableConfig: string[] = [
     'id',
@@ -48,6 +50,11 @@ export class EtfComponent implements OnInit, AfterViewInit {
     this.etfService.getETFs().subscribe((payload) => {
       console.log('this is the ETF data:', payload);
       this.dataSource = payload;
+      this.config = {
+        itemsPerPage: 10,
+        currentPage: 1,
+        totalItems: this.dataSource.length
+      };
     });
   }
 
@@ -58,7 +65,7 @@ export class EtfComponent implements OnInit, AfterViewInit {
 
   applyFilter(filterValue: any) {
     this.dataSource = this.dataSource.filter((el: any) => {
-      return el.name.toLowerCase().includes(filterValue.toLowerCase());
+      return el.fund_long_name.toLowerCase().match(filterValue.toLowerCase());
     });
   }
 
@@ -74,5 +81,9 @@ export class EtfComponent implements OnInit, AfterViewInit {
   openSingleETF(data: any) {
     console.log('this is the incoming id:', data);
     this.dialog.open(DialogSingleEtfComponent, {data: data})
+  }
+
+  pageChanged(event: any){
+    this.config.currentPage = event;
   }
 }
