@@ -10,27 +10,37 @@ html {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  background-image: linear-gradient(to right, $dorange, $lorange);
+  // background-image: linear-gradient(to right, $dorange, $lorange);
+  background: linear-gradient(
+      to bottom,
+      rgba(98, 97, 97, 0.486),
+      rgba(255, 255, 255, 0.137)
+    ),
+    url("../../../assets/loginbg.jpg");
+  // -webkit-filter: grayscale(100%);
+  background-size: cover;
+  // filter: grayscale(100%);
   // background-color: linear-gradient(to right, $dorange, $lorange);
 }
 
 .loginbox {
-  background-color: $color--light;
-  margin-top: 10%;
-  width: 40%;
-  height: 60%;
+  background-color: $dorange;
+  margin-top: 5%;
+  width: 30rem;
+  height: 30rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  border: 1px $dorange solid;
+  border: 1px rgba(36, 36, 36, 0.164) solid;
+  border-radius: 5px;
   align-items: center;
   box-shadow: 2px 10px 15px rgba(0, 0, 0, 0.281);
 
   &--header {
     font-family: $logo--font;
-    font-size: 3.5rem;
-    background-color: $dorange;
-    color: white;
+    font-size: 2.8rem;
+
+    color: $color--dark;
     padding: 0.7rem 1.5rem;
     border-radius: 0.2rem;
     margin-top: 3%;
@@ -42,7 +52,7 @@ label {
   font-size: 1.5rem;
   font-family: $text--font;
   padding: 0.5rem 1rem;
-  background-color: $dorange;
+  background-color: $color--dark;
   font-weight: 600;
   color: $color--light;
   margin-left: 1.5rem;
@@ -72,13 +82,13 @@ label {
   font-family: $logo--font;
   font-size: 2rem;
   padding: 1rem 2rem;
-  background-color: $dorange;
+  background-color: $color--dark;
   color: $color--light;
-  border-radius: 0.2rem;
   align-self: flex-end;
   justify-self: flex-end;
   border: 1px $dorange solid;
   margin: 5% 0;
+  border-radius: 0.7rem;
 
   &:hover {
     background-color: azure;
@@ -90,7 +100,7 @@ label {
 
   &:active {
     transform: translateY(0.5px);
-    background-color: $dorange;
+    background-color: $color--dark;
     color: $color--light;
     size: 1;
   }
@@ -104,12 +114,18 @@ label {
 .register {
   margin-top: 2.5%;
   &--link {
+    text-decoration: none;
+
     color: white;
+    background-color: $dorange;
+
     padding: 0.2rem 0.3rem;
     font-size: 125%;
-    &:active {
-      color: $dorange;
+    border-radius: 5px;
+    &:active,
+    &:hover {
       background-color: white;
+      color: $dorange;
     }
   }
 }
