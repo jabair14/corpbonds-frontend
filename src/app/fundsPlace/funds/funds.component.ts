@@ -12,10 +12,8 @@ import { FundService } from '../fund.service';
 export class FundsComponent implements OnInit {
   public maxSize: number = 5;
   public directionLinks: boolean = true;
-  public autoHide: boolean = false;
   public responsive: boolean = true;
   public changeText: boolean;
-
   public labels: any = {
       previousLabel: '<--',
       nextLabel: '-->',
