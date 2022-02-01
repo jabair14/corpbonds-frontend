@@ -6,6 +6,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { LoaderService } from './services/loader.service'; //loading screen
 import { LoaderInterceptor } from './interceptors/loader-interceptor.service';
 import { MyLoaderComponent } from './loader/my-loader.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -91,6 +92,7 @@ import { MatTableModule } from '@angular/material/table';
     MatSortModule,
     MatTableModule,
     MatInputModule,
+    BrowserAnimationsModule,
 
 
 
