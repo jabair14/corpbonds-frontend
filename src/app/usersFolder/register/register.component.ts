@@ -9,7 +9,7 @@ import { UserService } from 'src/app/user.service';
 })
 export class RegisterComponent implements OnInit {
   registerObj: any = {
-    siteName: 'http://127.0.0.1:4200',
+    siteName: 'http://localhost:4200',
   };
   constructor(private user: UserService, private router: Router) {}
 
