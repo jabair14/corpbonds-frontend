@@ -18,7 +18,7 @@ export class EtfComponent implements OnInit, AfterViewInit {
   constructor(
     private etfService: EtfService,
     private http: HttpClient,
-    public dialog: MatDialog
+    public dialog: MatDialog,
   ) {}
 
   etfData: ETF[] = [];
