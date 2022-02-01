@@ -44,8 +44,7 @@ import { SocialmediaComponent } from './socialmedia/socialmedia.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 
-
-// Mutual Funds
+// Mutual Funds Imports
 import { MutualFundsComponent } from './mutual_funds_content/mutual-funds/mutual-funds.component';
 
 

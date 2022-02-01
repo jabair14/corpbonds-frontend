@@ -18,6 +18,9 @@ import { FundsComponent } from './fundsPlace/funds/funds.component';
 import { CreateFundsComponent } from './fundsPlace/createfunds/createfunds.component';
 import { EditFundsComponent } from './fundsPlace/editfunds/editfunds.component';
 
+//Mutual Funds Routes
+import { MutualFundsComponent } from './mutual_funds_content/mutual-funds/mutual-funds.component';
+
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
@@ -35,7 +38,11 @@ const routes: Routes = [
   {path: "locations/:id", component: LocationComponent},
   {path: "retcalc", component: RetcalcComponent},
   {path: "socialmedias", component: SocialmediaComponent},
-  {path: "", component: HomeComponent, pathMatch: "full"}
+  {path: "", component: HomeComponent, pathMatch: "full"},
+  
+  // Mutual Funds Routes
+  {path: "mutual_funds", component: MutualFundsComponent},
+  {path: "mutual_funds/:id", component: MutualFundsComponent}
 ];
 
 @NgModule({

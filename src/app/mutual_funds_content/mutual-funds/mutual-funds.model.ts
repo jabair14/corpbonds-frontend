@@ -1,12 +1,11 @@
-export interface Bills {
-    id: number,
+export interface MutualFunds {
     ticker?: string,
     name?: string,
     assetClass?: string,
     risk?: string,
     expenseRatio?: number,
     secYield?: number,
-    ytd?: string,
+    ytd?: number,
     oneYr?: number,
     threeYr?: number,
     fiveYr?: number,
