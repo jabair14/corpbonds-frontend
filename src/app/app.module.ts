@@ -45,6 +45,9 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 
 
+// Mutual Funds
+import { MutualFundsComponent } from './mutual_funds_content/mutual-funds/mutual-funds.component';
+
 
 @NgModule({
   declarations: [
@@ -63,9 +66,7 @@ import { MatTableModule } from '@angular/material/table';
     CreateFundsComponent,
     FundsComponent,
     FundComponent,
-
-
-
+    MutualFundsComponent,
   ],
   imports: [
     BrowserModule,
@@ -83,8 +84,6 @@ import { MatTableModule } from '@angular/material/table';
     MatSortModule,
     MatTableModule,
     MatInputModule,
-
-
   ],
   providers: [],
   bootstrap: [AppComponent]
