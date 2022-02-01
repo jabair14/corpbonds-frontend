@@ -1,70 +1,71 @@
-body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+@import "/src/styles.scss";
 
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .etf-container {
-    min-height: max-content;
-    height: 100%;
-    width: 1300px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: 80px;
-    transform: translate(-50%, -50%);
-    align-content: center;
-    text-align: center;
+  min-height: max-content;
+  height: 100%;
+  width: 1300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 80px;
+  transform: translate(-50%, -50%);
+  align-content: center;
+  text-align: center;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 mat-footer-row mat-footer-cell {
-    justify-content: center;
-    font-style: italic;
+  justify-content: center;
+  font-style: italic;
 }
-mat-header-cell{
-    background-color: rgba(255, 166, 0, 0.861);
+mat-header-cell {
+  background-color: $rorange;
 }
 
 .etf-info-div {
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
-    max-width: 700px;
-    margin: 5px auto;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  max-width: 700px;
+  margin: 5px auto;
 }
 
 .etf-img {
-    width: 250px;
-    height: 250px;
-    margin-left: 60px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 250px;
+  height: 250px;
+  margin-left: 60px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .etf-data-div {
-    width: 100%;
-    margin: 5px auto;
+  width: 100%;
+  margin: 5px auto;
 }
 
 .search-div {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
 }
 
 .bottom-container {
-    padding-top: 50px;
+  padding-top: 50px;
 }
 
 .mat-row .mat-cell {
-    border-bottom: 1px solid transparent;
-    border-top: 1px solid transparent;
-    // cursor: pointer;
-  }
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  // cursor: pointer;
+}
 
 .mat-row:hover .mat-cell {
-    border-color: currentColor;
-  }
-
+  border-color: currentColor;
+}
