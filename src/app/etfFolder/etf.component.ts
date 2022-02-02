@@ -1,10 +1,8 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { EtfService } from './etf.service';
 import { ETF } from './etf.model';
-import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogEtfComponent } from './dialog-etf/dialog-etf.component';
 import { DialogSingleEtfComponent } from './dialog-single-etf/dialog-single-etf.component';
@@ -14,7 +12,7 @@ import { DialogSingleEtfComponent } from './dialog-single-etf/dialog-single-etf.
   templateUrl: './etf.component.html',
   styleUrls: ['./etf.component.scss'],
 })
-export class EtfComponent implements OnInit, AfterViewInit {
+export class EtfComponent implements OnInit {
   constructor(
     private etfService: EtfService,
     private http: HttpClient,
@@ -24,8 +22,6 @@ export class EtfComponent implements OnInit, AfterViewInit {
 
   etfData: ETF[] = [];
   dataSource: any = new MatTableDataSource(this.etfData);
-  @ViewChild(MatSort, { static: false }) sort!: MatSort;
-  @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   searchKey: string = '';
   config: any;
 
@@ -47,8 +43,11 @@ export class EtfComponent implements OnInit, AfterViewInit {
   ];
 
   ngOnInit(): void {
+    this.getData();
+  }
+
+  getData(): void {
     this.etfService.getETFs().subscribe((payload) => {
-      console.log('this is the ETF data:', payload);
       this.dataSource = payload;
       this.config = {
         itemsPerPage: 10,
@@ -58,31 +57,30 @@ export class EtfComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngAfterViewInit(): void {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-  }
-
   applyFilter(filterValue: any) {
     this.dataSource = this.dataSource.filter((el: any) => {
       return el.fund_long_name.toLowerCase().match(filterValue.toLowerCase());
     });
   }
 
+  // clears the search input field / functionality
   applyClear() {
     this.searchKey = '';
     this.ngOnInit();
   }
 
+  // opens the ETF general information dialog
   openDialog() {
     this.dialog.open(DialogEtfComponent);
   }
 
+  // opens a selected ETF expanded information dialog
   openSingleETF(data: any) {
     console.log('this is the incoming id:', data);
     this.dialog.open(DialogSingleEtfComponent, {data: data})
   }
 
+  // changes table page 
   pageChanged(event: any){
     this.config.currentPage = event;
   }

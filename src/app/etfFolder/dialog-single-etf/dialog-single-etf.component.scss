@@ -8,9 +8,15 @@
     flex-direction: row;
 }
 
+.strategy-div {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+}
+
 img {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: auto;
     margin-left: 20px;
 }
 
@@ -34,6 +40,6 @@ li {
     margin: 3px;
 }
 
-h1 {
+h2 {
    color: rgba(255, 94, 0, 0.82)
 }
