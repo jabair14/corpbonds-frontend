@@ -47,6 +47,7 @@ const routes: Routes = [
   { path: 'account', component: AccountsComponent },
   { path: 'register', component: RegisterComponent },
   { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: 'learn', component: LearnComponent}
 ];
 
 @NgModule({
