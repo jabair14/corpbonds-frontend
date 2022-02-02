@@ -6,6 +6,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogEtfComponent } from './dialog-etf/dialog-etf.component';
 import { DialogSingleEtfComponent } from './dialog-single-etf/dialog-single-etf.component';
+import { MatSort, Sort } from '@angular/material/sort';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
 
 @Component({
   selector: 'app-etf',
@@ -17,11 +19,13 @@ export class EtfComponent implements OnInit {
     private etfService: EtfService,
     private http: HttpClient,
     public dialog: MatDialog,
+    private liveAnnouncer: LiveAnnouncer
   ) {}
 
 
   etfData: ETF[] = [];
   dataSource: any = new MatTableDataSource(this.etfData);
+  @ViewChild(MatSort) sort!: MatSort;
   searchKey: string = '';
   config: any;
 
@@ -49,6 +53,7 @@ export class EtfComponent implements OnInit {
   getData(): void {
     this.etfService.getETFs().subscribe((payload) => {
       this.dataSource = payload;
+      this.dataSource.sort = this.sort;
       this.config = {
         itemsPerPage: 10,
         currentPage: 1,
@@ -83,5 +88,15 @@ export class EtfComponent implements OnInit {
   // changes table page 
   pageChanged(event: any){
     this.config.currentPage = event;
+  }
+
+  announceSortChange(sortState: Sort) {
+    if (sortState.direction) {
+      this.liveAnnouncer.announce(`Sorted ${sortState.direction} ending`);
+    }
+
+    else {
+      this.liveAnnouncer.announce(`Sorting cleared`);
+    }
   }
 }
