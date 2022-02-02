@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
 import { NgxPaginationModule } from 'ngx-pagination';
 
-
+///////// COOKIE IMPORT
+import { CookieService } from 'ngx-cookie-service';
 //Bonds Imports
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,7 +35,6 @@ import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { EtfComponent } from './etf/etf.component';
 
-
 //Closed-End Funds Imports
 import { EditFundsComponent } from './fundsPlace/editfunds/editfunds.component';
 import { CreateFundsComponent } from './fundsPlace/createfunds/createfunds.component';
@@ -46,6 +47,12 @@ import { MatTableModule } from '@angular/material/table';
 
 // Mutual Funds Imports
 import { MutualFundsComponent } from './mutual_funds_content/mutual-funds/mutual-funds.component';
+
+=======
+import { LoginComponent } from './usersFolder/login/login.component';
+import { AccountsComponent } from './usersFolder/accounts/accounts.component';
+import { RegisterComponent } from './usersFolder/register/register.component';
+import { TokenComponent } from './usersFolder/token/token.component';
 
 
 @NgModule({
@@ -65,7 +72,15 @@ import { MutualFundsComponent } from './mutual_funds_content/mutual-funds/mutual
     CreateFundsComponent,
     FundsComponent,
     FundComponent,
+
     MutualFundsComponent,
+
+    SortDirective,
+    LoginComponent,
+    AccountsComponent,
+    RegisterComponent,
+    TokenComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -83,12 +98,19 @@ import { MutualFundsComponent } from './mutual_funds_content/mutual-funds/mutual
     MatSortModule,
     MatTableModule,
     MatInputModule,
+
+
+    FormsModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    NgxPaginationModule,
+
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [CookieService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { 
-    constructor() {
-      library.add(faFilm)
+export class AppModule {
+  constructor() {
+    library.add(faFilm);
   }
 }
