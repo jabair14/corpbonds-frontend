@@ -45,10 +45,15 @@ import { SocialmediaComponent } from './socialmedia/socialmedia.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 
+// Mutual Funds Imports
+import { MutualFundsComponent } from './mutual_funds_content/mutual-funds/mutual-funds.component';
+
+=======
 import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { TokenComponent } from './usersFolder/token/token.component';
+
 
 @NgModule({
   declarations: [
@@ -67,11 +72,15 @@ import { TokenComponent } from './usersFolder/token/token.component';
     CreateFundsComponent,
     FundsComponent,
     FundComponent,
+
+    MutualFundsComponent,
+
     SortDirective,
     LoginComponent,
     AccountsComponent,
     RegisterComponent,
     TokenComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -89,10 +98,13 @@ import { TokenComponent } from './usersFolder/token/token.component';
     MatSortModule,
     MatTableModule,
     MatInputModule,
+
+
     FormsModule,
     BrowserAnimationsModule,
     MatInputModule,
     NgxPaginationModule,
+
   ],
   providers: [CookieService],
   bootstrap: [AppComponent],
