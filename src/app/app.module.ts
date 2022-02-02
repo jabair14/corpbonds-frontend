@@ -61,6 +61,7 @@ import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { TokenComponent } from './usersFolder/token/token.component';
+import { InvestmentComponent } from './bondsFolder/investment/investment.component';
 
 
 @NgModule({
@@ -93,6 +94,7 @@ import { TokenComponent } from './usersFolder/token/token.component';
     AccountsComponent,
     RegisterComponent,
     TokenComponent,
+    InvestmentComponent,
 
   ],
   imports: [

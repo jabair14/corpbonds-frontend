@@ -2,33 +2,71 @@
  <h1> {{bond.issuerName}}</h1>
 
 <div class="main-bond">
-    <!-- main bond -->
-    <div class="bond-info">
-        <!-- bond info  -->
-        <div class="bond-info-right">
-            <img class="image-one"src="./assets/undraw_our_solution_re_8yk6.svg" alt="image">
+    <div class="bond-container">
+        <div class="bond-info">
+            <div class="bond-info-right">
+                <img class="image-one"src="./assets/undraw_our_solution_re_8yk6.svg" alt="image">
+            </div>
+            <div class="bond-info-left">
+               <h3> Bond Facts </h3>
+               <hr>
+               <p> Id - {{bond.id}}</p>
+               <hr>
+               <p> Symbol - {{bond.bondSymbol}}</p>
+               <hr>
+               <p> Maturity Date - {{bond.maturityDate | date: "shortDate"}}</p>
+               <hr>
+               <p> Interest Rate - {{bond.interestRate | number : '1.00'}} </p>
+               <hr>
+               <p> Face Value - {{bond.faceValue | currency}}</p>
+               <hr>
+               <p> Bypass Clearance - {{bond.bypassClearance}}</p>
+               <hr>
+               <button mat-raised-button class="invest-btn"
+               
+               >
+                Start Investment
+                </button>
+                <button mat-raised-button class="back-btn" routerLink="/bonds">
+                    Go Back
+                </button>
+            </div>
         </div>
-        <div class="bond-info-left">
-           <h3> Bond Facts </h3>
-           <hr>
-           <p> Id - {{bond.id}}</p>
-           <hr>
-           <p> Symbol - {{bond.bondSymbol}}</p>
-           <hr>
-           <p> Maturity Date - {{bond.maturityDate | date: "shortDate"}}</p>
-           <hr>
-           <p> Interest Rate - {{bond.interestRate | number : '1.00'}} </p>
-           <hr>
-           <p> Face Value - {{bond.faceValue | currency}}</p>
-           <hr>
-           <p> Bypass Clearance - {{bond.bypassClearance}}</p>
-           <hr>
-           <button mat-raised-button class="invest-btn">
-            Start Investment
-            </button>
-            <button mat-raised-button class="back-btn" routerLink="/bonds">
-                Go Back
-            </button>
+        <div class="investment">
+                <h3>Investment Form</h3>
+                <form action="">
+                    <div class="form-field">
+                        <label for=""> Bond Symbol </label>
+                        <br>
+                        <input type="text" placeholder="{{bond.bondSymbol}}" [value]="bond.bondSymbol">
+                    </div>
+                   
+                    <div class="form-field">
+                        <label for=""> Bond ID</label>
+                        <br>
+                        <input type="text" placeholder="{{bond.id}}" [value]="bond.id">
+                    </div>
+                
+                    <div class="form-field">
+                        <label for=""> Value </label>
+                        <br>
+                        <input type="text" placeholder="{{bond.faceValue}}" [value]="bond.faceValue" >
+                    </div>
+                    
+                    <div class="form-field">
+                        <label for=""> User ID</label>
+                        <br>
+                        <input type="text" placeholder="{{user.uniqueID}}" [value]="user.uniqueID">
+                    </div>
+
+                    <div class="form-field">
+                        <label for=""> Amount </label>
+                        <br>
+                        <input type="number">
+                    </div>
+                    <br>
+                    <button (click)="onCreateInvestment(investment)"> Submit </button>
+                </form>
         </div>
     </div>
 </div>
