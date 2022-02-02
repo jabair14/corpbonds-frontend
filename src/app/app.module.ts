@@ -47,8 +47,6 @@ import { MatTableModule } from '@angular/material/table';
 
 // Mutual Funds Imports
 import { MutualFundsComponent } from './mutual_funds_content/mutual-funds/mutual-funds.component';
-
-=======
 import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';

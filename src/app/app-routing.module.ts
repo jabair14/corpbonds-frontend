@@ -44,6 +44,7 @@ const routes: Routes = [
   // Mutual Funds Routes
   {path: "mutual_funds", component: MutualFundsComponent},
   {path: "mutual_funds/:id", component: MutualFundsComponent}
+]
 
 //User-Service Routes
 import { LoginComponent } from './usersFolder/login/login.component';
