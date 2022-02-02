@@ -53,10 +53,15 @@ import { LearnComponent } from './learn/learn.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 
+// Mutual Funds Imports
+import { MutualFundsComponent } from './mutual_funds_content/mutual-funds/mutual-funds.component';
+
+
 import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { TokenComponent } from './usersFolder/token/token.component';
+
 
 @NgModule({
   declarations: [
@@ -75,6 +80,9 @@ import { TokenComponent } from './usersFolder/token/token.component';
     CreateFundsComponent,
     FundsComponent,
     FundComponent,
+
+    MutualFundsComponent,
+
     SortDirective,
     MyLoaderComponent,
     LearnComponent,
@@ -85,6 +93,7 @@ import { TokenComponent } from './usersFolder/token/token.component';
     AccountsComponent,
     RegisterComponent,
     TokenComponent,
+
   ],
   imports: [
     BrowserModule,
