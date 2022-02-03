@@ -117,15 +117,14 @@ button{
    z-index: 2;
 
 }
+
 #gridContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-
   overflow-x: scroll;
-
 }
+
 .imagee {
   position: relative;
 
@@ -151,6 +150,8 @@ th, td {
   padding: 4px;
 }
 
+
+
 th:focus-within p{
   color: #FFCE00;
  }
@@ -165,202 +166,398 @@ tr:hover {
   background-color: #fccf7d;
   
 }
-.asc{
 
+p:hover{
+  color: #FFCE00;
+}
+
+
+// ASC, DESC Properties
+.asc{
+  opacity: 0;
   position: absolute;  
   cursor: pointer; 
-  left: 75%;
-  top: 33px;
+  left: 55%;
+  top: 41px;
   width: 20%;
   height: 25%;    
-   z-index: 2;
-filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
-
-}
-
-.desc{
-  position: absolute;  
-  cursor: pointer; 
-  left: 80.7%;
-  top: 45px;
-  width: 9%;
-  height: 5.7%; 
   z-index: 2;
   filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
-  
+
 }
-
-.asc2{
-
+.desc{
+  transform: rotate(180deg);
+  opacity: 0;
   position: absolute;  
   cursor: pointer; 
-  left: 65.7%;
-  top: 33px;
-  width: 16%;
+  left: 55%;
+  top: 41px;
+  width: 20%;
   height: 25%;    
-   z-index: 2;
+  z-index: 2;
   filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
+}
 
+th:hover .asc{
+  transition-duration: 1.0s;
+  opacity: 1;
+}
+th:hover .desc{
+  transition-duration: 1.0s;
+  opacity: 1;
+}
+
+th:focus-within .asc{
+  opacity: 1;
+}
+th:focus-within .desc{
+  opacity: 1;
+}
+//****************************************************************************************************************
+
+
+// ASC2, DESC2 Properties
+.asc2{
+  opacity: 0;
+  position: absolute;  
+  cursor: pointer; 
+  left: 31.9%;
+  top: 43px;
+  width: 14%;
+  height: 25%;    
+  z-index: 2;
+  filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
 }
 
 .desc2{
+  transform: rotate(180deg);
+  opacity: 0;
   position: absolute;  
   cursor: pointer; 
-  left: 69.7%;
-  top: 45px;
-  width: 8.5%;
-  height: 5.7%; 
+  left: 31.9%;
+  top: 43px;
+  width: 14%;
+  height: 25%;    
   z-index: 2;
   filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
   
 }
-.asc3{
 
+th:hover .asc2{
+  opacity: 1;
+  transition-duration: 1.0s;
+}
+th:hover .desc2{
+  opacity: 1;
+  transition-duration: 1.0s;
+}
+
+th:focus-within .asc2{
+  opacity: 1;
+}
+th:focus-within .desc2{
+  opacity: 1;
+}
+//****************************************************************************************************************
+
+
+// ASC3, DESC3 Properties
+.asc3{
+  opacity: 0;
   position: absolute;  
   cursor: pointer; 
-  left: 72%;
-  top: 33px;
-  width: 11%;
+  left: 65.9%;
+  top: 43px;
+  width: 14%;
   height: 25%;    
-   z-index: 2;
+  z-index: 2;
   filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
-
 }
 .desc3{
+  transform: rotate(180deg);
+  opacity: 0;
   position: absolute;  
   cursor: pointer; 
-  left: 75.7%;
-  top: 45px;
-  width: 5%;
-  height: 5.7%; 
+  left: 65.9%;
+  top: 43px;
+  width: 14%;
+  height: 25%;    
   z-index: 2;
   filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
-  
 }
 
-.asc4{
+th:hover .asc3{
+  opacity: 1;
+  transition-duration: 1.0s;
+}
+th:hover .desc3{
+  opacity: 1;
+  transition-duration: 1.0s;
+}
+th:focus-within .asc3{
+  opacity: 1;
+}
+th:focus-within .desc3{
+  opacity: 1;
+}
+//****************************************************************************************************************
 
+
+// ASC4, DESC4 Properties
+.asc4{
+  opacity: 0;
   position: absolute;  
   cursor: pointer; 
-  left: 65.7%;
-  top: 33px;
-  width: 12%;
+  left: 62%;
+  top: 41px;
+  width: 20%;
   height: 25%;    
-   z-index: 2;
+  z-index: 2;
   filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
-
 }
 
 .desc4{
+  transform: rotate(180deg);
+  opacity: 0;
   position: absolute;  
   cursor: pointer; 
-  left: 69.7%;
-  top: 45px;
-  width: 5.5%;
-  height: 5.7%; 
+  left: 62%;
+  top: 41px;
+  width: 20%;
+  height: 25%;    
   z-index: 2;
   filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
-  
 }
+th:hover .asc4{
+  opacity: 1;
+  transition-duration: 1.0s;
+}
+th:hover .desc4{
+  opacity: 1;
+  transition-duration: 1.0s;
+}
+th:focus-within .asc4{
+  opacity: 1;
+}
+th:focus-within .desc4{
+  opacity: 1;
+}
+//****************************************************************************************************************
 
+
+// ASC5, DESC5 Properties
 .asc5{
-
+  opacity: 0;
   position: absolute;  
   cursor: pointer; 
-  left: 68.7%;
-  top: 33px;
-  width: 12%;
+  left: 53.5%;
+  top: 41px;
+  width: 15%;
   height: 25%;    
-   z-index: 2;
+  z-index: 2;
   filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
-
 }
 
 .desc5{
+  transform: rotate(180deg);
+  opacity: 0;
   position: absolute;  
   cursor: pointer; 
-  left: 72.7%;
-  top: 45px;
-  width: 5.5%;
-  height: 5.7%; 
+  left: 53.5%;
+  top: 41px;
+  width: 15%;
+  height: 25%;    
   z-index: 2;
   filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
-  
 }
+th:hover .asc5{
+  opacity: 1;
+  transition-duration: 1.0s;
+}
+th:hover .desc5{
+  opacity: 1;
+  transition-duration: 1.0s;
+}
+th:focus-within .asc5{
+  opacity: 1;
+}
+th:focus-within .desc5{
+  opacity: 1;
+}
+//****************************************************************************************************************
 
+
+// ASC6, DESC6 Properties
 .asc6{
-
+  opacity: 0;
   position: absolute;  
   cursor: pointer; 
-  left: 70.7%;
-  top: 33px;
-  width: 12%;
+  left: 53.5%;
+  top: 66px;
+  width: 23%;
   height: 25%;    
-   z-index: 2;
+  z-index: 2;
   filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
-
 }
 
 .desc6{
+  transform: rotate(180deg);
+  opacity: 0;
   position: absolute;  
   cursor: pointer; 
-  left: 74.7%;
-  top: 45px;
-  width: 5.5%;
-  height: 5.7%; 
+  left: 53.5%;
+  top: 66px;
+  width: 23%;
+  height: 25%;    
   z-index: 2;
   filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
-  
 }
-.asc7{
+th:hover .asc6{
+  opacity: 1;
+  transition-duration: 1.0s;
+}
+th:hover .desc6{
+  opacity: 1;
+  transition-duration: 1.0s;
+}
 
+th:focus-within .asc6{
+  opacity: 1;
+}
+th:focus-within .desc6{
+  opacity: 1;
+}
+//****************************************************************************************************************
+
+
+// ASC7, DESC7 Properties
+.asc7{
+  opacity: 0;
   position: absolute;  
   cursor: pointer; 
-  left: 82.7%;
-  top: 33px;
-  width: 12%;
+  left: 45.5%;
+  top: 73px;
+  width: 23%;
   height: 25%;    
-   z-index: 2;
+  z-index: 2;
   filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
-
 }
 
 .desc7{
+  transform: rotate(180deg);
+  opacity: 0;
   position: absolute;  
   cursor: pointer; 
-  left: 86.7%;
-  top: 45px;
-  width: 5.5%;
-  height: 5.7%; 
+  left: 45.5%;
+  top: 73px;
+  width: 23%;
+  height: 25%;    
   z-index: 2;
   filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
   
 }
+th:hover .asc7{
+  opacity: 1;
+  transition-duration: 1.0s;
+}
+th:hover .desc7{
+  opacity: 1;
+  transition-duration: 1.0s;
+}
+th:focus-within .asc7{
+  opacity: 1;
+}
+th:focus-within .desc7{
+  opacity: 1;
+}
 
-.asc9{
 
+
+// ASC6, DESC6 Properties
+.asc8{
+  opacity: 0;
   position: absolute;  
   cursor: pointer; 
-  left: 72%;
-  top: 33px;
-  width: 20%;
+  left: 66.5%;
+  top: 55px;
+  width: 23%;
   height: 25%;    
-   z-index: 2;
+  z-index: 2;
+  filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
+}
+
+.desc8{
+  transform: rotate(180deg);
+  opacity: 0;
+  position: absolute;  
+  cursor: pointer; 
+  left: 66.5%;
+  top: 55px;
+  width: 23%;
+  height: 25%;    
+  z-index: 2;
+  filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
+}
+th:hover .asc8{
+  opacity: 1;
+  transition-duration: 1.0s;
+}
+th:hover .desc8{
+  opacity: 1;
+  transition-duration: 1.0s;
+}
+
+th:focus-within .asc8{
+  opacity: 1;
+}
+th:focus-within .desc8{
+  opacity: 1;
+}
+//****************************************************************************************************************
+// ASC9, DESC9 Properties
+.asc9{
+  opacity: 0;
+  position: absolute;  
+  cursor: pointer; 
+  left: 71.5%;
+  top: 55px;
+  width: 23%;
+  height: 25%;    
+  z-index: 2;
   filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
 
 }
 
 .desc9{
+  transform: rotate(180deg);
+  opacity: 0;
   position: absolute;  
   cursor: pointer; 
-  left: 77.7%;
-  top: 45px;
-  width: 9%;
-  height: 5.7%; 
+  left: 71.5%;
+  top: 55px;
+  width: 23%;
+  height: 25%;    
   z-index: 2;
   filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
   
 }
+th:hover .asc9{
+  opacity: 1;
+  transition-duration: 1.0s;
+}
+th:hover .desc9{
+  opacity: 1;
+  transition-duration: 1.0s;
+}
+th:focus-within .asc9{
+  opacity: 1;
+
+}
+th:focus-within .desc9{
+  opacity: 1;
+}
+//****************************************************************************************************************
+
 // img.asc:hover{
 //   background-image: url('/assets/searchIcon.png'); 
 //   position: absolute;  
@@ -377,22 +574,25 @@ filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100
 //   width: 9%;
 //   height: 5.7%; 
 //   z-index: 2;
-//   filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
+// filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
   
 // }
 
 
 table {
+    table-layout: fixed;
+    width: 100px;
     background-color: #ffffffbd;
-    font-family: MYingHeiHK-Medium,Arial,sans-serif;
-    font-size: 12px;
-    line-height: 14px;
-    flex-grow: 1;
-    text-align: center;
-   
+    flex-grow: 3!important;
+    max-width: 320px!important;
+    text-align: left;
+    font-family: FortBold,MYingHeiHK-Medium,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 20px;
     border-collapse: collapse;
-    border: 3px solid rgb(255, 23, 23);
+    border: 3px solid rgb(119, 119, 119);
     th { 
+        text-align: left;
         text-decoration: underline;
         color: white; 
         position: sticky;
@@ -405,40 +605,39 @@ table {
       
   table td {
     border: 1px solid rgb(172, 172, 172);
-    padding-left: 5px;
+    padding:0 25px 0 20px;
   }
   table th {
     border: 1px solid rgb(0, 0, 0);
-    padding:0 25px 0 25px;
+    padding:0 25px 0 20px;
   }
 
 
-   tr:last-child {
-    border-bottom: none;
-   }
 
    td:nth-child(n), th:nth-child(n) {
     border-left: solid 2px rgb(189, 189, 189);
+    
    }
 
    tr:nth-child(n) {
     border-bottom: solid 2px rgb(2, 2, 2);
    }
 
-   tr:nth-child(1), th:nth-child(1) { width: 30px; }
-   tr:nth-child(2), th:nth-child(2) { width: 60px; }
+
+  //  tr:nth-child(1), th:nth-child(1) { width: 30px; }
+   tr:nth-child(1), th:nth-child(1) { width: 95px; }
+   tr:nth-child(2), th:nth-child(2) { width: 150px; }
    tr:nth-child(3), th:nth-child(3) { width: 150px; }
-   tr:nth-child(4), th:nth-child(4) { width: 150px; }
+   tr:nth-child(4), th:nth-child(4) { width: 110px; }
    tr:nth-child(5), th:nth-child(5) { width: 110px; }
    tr:nth-child(6), th:nth-child(6) { width: 110px; }
-   tr:nth-child(7), th:nth-child(7) { width: 110px; }
-   tr:nth-child(8), th:nth-child(8) { width: 150px; }
-   tr:nth-child(9), th:nth-child(9) { width: 60px; }
-   tr:nth-child(10), th:nth-child(10) { width: 75px; }
+   tr:nth-child(7), th:nth-child(7) { width: 150px; }
+   tr:nth-child(8), th:nth-child(8) { width: 60px; }
+   tr:nth-child(9), th:nth-child(9) { width: 75px; }
+   tr:nth-child(10), th:nth-child(10) { width: 60px; }
    tr:nth-child(11), th:nth-child(11) { width: 60px; }
    tr:nth-child(12), th:nth-child(12) { width: 60px; }
-   tr:nth-child(13), th:nth-child(13) { width: 60px; }
-   tr:nth-child(14), th:nth-child(14) { width: 60px; }
+  //  tr:nth-child(14), th:nth-child(14) { width: 60px; }
    
 
   
