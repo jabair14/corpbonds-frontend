@@ -1,10 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { LoaderService } from './services/loader.service'; //loading screen
+import { LoaderInterceptor } from './interceptors/loader-interceptor.service';
+import { MyLoaderComponent } from './loader/my-loader.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
+///////// COOKIE IMPORT
+import { CookieService } from 'ngx-cookie-service';
 //Bonds Imports
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,7 +41,6 @@ import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { EtfComponent } from './etf/etf.component';
 
-
 //Closed-End Funds Imports
 import { EditFundsComponent } from './fundsPlace/editfunds/editfunds.component';
 import { CreateFundsComponent } from './fundsPlace/createfunds/createfunds.component';
@@ -41,10 +48,17 @@ import { FundsComponent } from './fundsPlace/funds/funds.component';
 import { FundComponent } from './fundsPlace/fund/fund.component';
 import { SortDirective } from './directive/sort.directive';
 import { SocialmediaComponent } from './socialmedia/socialmedia.component';
+import { LearnComponent } from './learn/learn.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 
+// Mutual Funds Imports
+import { MutualFundsComponent } from './mutual_funds_content/mutual-funds/mutual-funds.component';
 
+import { LoginComponent } from './usersFolder/login/login.component';
+import { AccountsComponent } from './usersFolder/accounts/accounts.component';
+import { RegisterComponent } from './usersFolder/register/register.component';
+import { TokenComponent } from './usersFolder/token/token.component';
 
 @NgModule({
   declarations: [
@@ -64,8 +78,16 @@ import { MatTableModule } from '@angular/material/table';
     FundsComponent,
     FundComponent,
 
+    MutualFundsComponent,
 
+    SortDirective,
+    MyLoaderComponent,
+    LearnComponent,
 
+    LoginComponent,
+    AccountsComponent,
+    RegisterComponent,
+    TokenComponent,
   ],
   imports: [
     BrowserModule,
@@ -83,14 +105,23 @@ import { MatTableModule } from '@angular/material/table';
     MatSortModule,
     MatTableModule,
     MatInputModule,
-
-
+    BrowserAnimationsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    CookieService,
+    LoaderService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
+  ],
+  bootstrap: [
+    AppComponent,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    NgxPaginationModule,
+  ],
 })
-export class AppModule { 
-    constructor() {
-      library.add(faFilm)
+export class AppModule {
+  constructor() {
+    library.add(faFilm);
   }
 }

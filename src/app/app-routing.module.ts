@@ -17,7 +17,17 @@ import { FundComponent } from './fundsPlace/fund/fund.component';
 import { FundsComponent } from './fundsPlace/funds/funds.component';
 import { CreateFundsComponent } from './fundsPlace/createfunds/createfunds.component';
 import { EditFundsComponent } from './fundsPlace/editfunds/editfunds.component';
+import { LearnComponent } from './learn/learn.component';
 
+
+//Mutual Funds Routes
+import { MutualFundsComponent } from './mutual_funds_content/mutual-funds/mutual-funds.component';
+
+import { LoginComponent } from './usersFolder/login/login.component';
+import { AccountsComponent } from './usersFolder/accounts/accounts.component';
+import { RegisterComponent } from './usersFolder/register/register.component';
+import { Token } from '@angular/compiler';
+import { TokenComponent } from './usersFolder/token/token.component';
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
@@ -35,11 +45,23 @@ const routes: Routes = [
   {path: "locations/:id", component: LocationComponent},
   {path: "retcalc", component: RetcalcComponent},
   {path: "socialmedias", component: SocialmediaComponent},
-  {path: "", component: HomeComponent, pathMatch: "full"}
+  {path: "", component: HomeComponent, pathMatch: "full"},
+  
+  // Mutual Funds Routes
+  { path: "mutual_funds", component: MutualFundsComponent},
+  { path: "mutual_funds/:id", component: MutualFundsComponent},
+  { path: 'learn', component: LearnComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'registration/:token', component: TokenComponent },
+  { path: 'account', component: AccountsComponent },
+  { path: 'register', component: RegisterComponent },
+
+//User-Service Routes
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
