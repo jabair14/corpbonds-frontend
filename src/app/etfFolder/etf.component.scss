@@ -6,7 +6,7 @@ body {
 .etf-container {
   min-height: max-content;
   height: 100%;
-  width: 1300px;
+  width: 1400px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -20,19 +20,20 @@ body {
   display: none;
 }
 
-mat-footer-row mat-footer-cell {
-  justify-content: center;
-  font-style: italic;
-}
-mat-header-cell {
+// mat-footer-row mat-footer-cell {
+//   justify-content: center;
+//   font-style: italic;
+// }
+
+th {
   background-color: rgba(255, 166, 0, 0.861);
 }
 
-mat-cell {
-  width: 150px;
-  text-align: center;
-  border: 1px none;
-  padding: 5px;
+th.mat-header-cell,
+td.mat-cell {
+  justify-content: center !important;
+  vertical-align: middle !important;
+  text-align: center !important;
 }
 
 .etf-info-div {
@@ -50,10 +51,10 @@ mat-cell {
   // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.etf-data-div {
-  width: 100%;
-  margin: 5px auto;
-}
+// .etf-data-div {
+//   width: 100%;
+//   margin: 5px auto;
+// }
 
 .search-div {
   min-width: 150px;
