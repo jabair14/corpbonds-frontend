@@ -87,7 +87,7 @@ body, html {
       color: rgb(255, 166, 0);
   }
 
-  .investBtn {
+  .investmentBtn {
       position: absolute;
       right: 6vw;
       margin: 10px;
@@ -99,7 +99,21 @@ body, html {
       border-radius: 5px;
   }
 
+  .resetBtn {
+    position: absolute;
+      left: 5vw;
+      margin: 10px;
+      color: white;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
+      'Lucida Sans', Arial, sans-serif;
+      font-size: 30px;
+      background-color: rgba(255, 166, 0, 0.861);
+      border-radius: 5px;
+  }
+
   .arrow {
+      font-size: 14px;
+      font-weight: bold;
       color: rgba(255, 166, 0, 0.861);
       background-color: white;
       padding: 0;
@@ -130,4 +144,21 @@ body, html {
     display: inline-block;
     
     font-weight: bold;
+  }
+
+  .iconSize{
+    font-size: 20px;
+    position: absolute;
+    bottom: 15px;
+  }
+
+  .addBtn {
+    background-color: transparent;
+    color: white;
+    font-size: 25px;
+    border: none;
+  }
+
+  .addBtn:hover {
+    color: black
   }

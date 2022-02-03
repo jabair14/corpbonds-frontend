@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { StocksService } from '../stocks.service';
-import { Stock } from './stock.model'
-import { NgModule } from '@angular/core';
+import { StocksService } from '../../stocks.service';
+import { Stock } from './stock.model';
+import {MatDialog} from '@angular/material/dialog';
+import { StockInvestModalComponent } from '../stock-invest-modal/stock-invest-modal.component';
+
 
 @Component({
   selector: 'app-stocks',
@@ -9,7 +11,7 @@ import { NgModule } from '@angular/core';
   styleUrls: ['./stocks.component.scss']
 })
 export class StocksComponent implements OnInit {
-  data: Stock[] =[];
+  stocks: Stock[] =[];
   term: string = ""
   idDir: boolean = true //true is a -> z, low -> high,   false is opposite 
   ipoYearDir: boolean = true
@@ -18,21 +20,44 @@ export class StocksComponent implements OnInit {
   percentChangeDir: boolean = true
   marketCapDir: boolean = true
   volumeDir: boolean = true
+  show: boolean = false
   config: any
-  constructor(private stocksService: StocksService) { }
+  constructor(
+    private stocksService: StocksService,
+    public dialog: MatDialog) { }
 
   async ngOnInit(): Promise<void> {
     await this.stocksService.getStocks().subscribe(payload => {
       //this.data.push(...payload.sort(this.sortbyId));
-      this.data = payload
-      console.log(this.data)
+      this.stocks = payload
       this.config = {
         id: "custom",
         itemsPerPage: 100,
         currentPage: 1,
-        totalItems: this.data.length
+        totalItems: this.stocks.length
       }
     })
+  }
+
+  openDialog(stock: Stock): void {
+    const dialogRef = this.dialog.open(StockInvestModalComponent, {
+      width: '400px',
+      data: {stock: stock}
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog Result: ${result}`);
+    })
+  }
+
+  toggleModal() {
+    this.show = !this.show
+  }
+
+  resetFilters() {
+    this.resetArrows()
+    this.term = ""
+    this.idDir = false
+    this.reorderId();
   }
 
   reorderId(): void {
@@ -40,11 +65,11 @@ export class StocksComponent implements OnInit {
     this.resetArrows()
     this.idDir = tempBool
     if(this.idDir) {
-      this.data = this.data.sort(
+      this.stocks = this.stocks.sort(
         (a:any, b:any) => b.id - a.id
       )
     } else {
-      this.data = this.data.sort(
+      this.stocks = this.stocks.sort(
         (a:any, b:any) => a.id - b.id 
       )
     }
@@ -57,11 +82,11 @@ export class StocksComponent implements OnInit {
     this.resetArrows()
     this.ipoYearDir = tempBool
     if(this.ipoYearDir) {
-      this.data = this.data.sort(
+      this.stocks = this.stocks.sort(
         (a:any, b:any) => b.ipoYear - a.ipoYear
       )
     } else {
-      this.data = this.data.sort(
+      this.stocks = this.stocks.sort(
         (a:any, b:any) => a.ipoYear - b.ipoYear 
       )
     }
@@ -73,12 +98,12 @@ export class StocksComponent implements OnInit {
     this.resetArrows()
     this.lastSaleDir = tempBool
     if(this.lastSaleDir) {
-      this.data = this.data.sort(
+      this.stocks = this.stocks.sort(
         (a:any, b:any) => b.dynamicInfo.lastSale - a.dynamicInfo.lastSale
       )
-      console.log("potentially new data", this.data)
+      console.log("potentially new stocks", this.stocks)
     } else {
-      this.data = this.data.sort(
+      this.stocks = this.stocks.sort(
         (a:any, b:any) => a.dynamicInfo.lastSale - b.dynamicInfo.lastSale 
       )
     }
@@ -90,12 +115,12 @@ export class StocksComponent implements OnInit {
     this.resetArrows()
     this.netChangeDir = tempBool
     if(this.netChangeDir) {
-      this.data = this.data.sort(
+      this.stocks = this.stocks.sort(
         (a:any, b:any) => b.dynamicInfo.netChange - a.dynamicInfo.netChange
       )
-      console.log("potentially new data", this.data)
+      console.log("potentially new stocks", this.stocks)
     } else {
-      this.data = this.data.sort(
+      this.stocks = this.stocks.sort(
         (a:any, b:any) => a.dynamicInfo.netChange - b.dynamicInfo.netChange 
       )
     }
@@ -107,12 +132,12 @@ export class StocksComponent implements OnInit {
     this.resetArrows()
     this.percentChangeDir = tempBool
     if(this.percentChangeDir) {
-      this.data = this.data.sort(
+      this.stocks = this.stocks.sort(
         (a:any, b:any) => b.dynamicInfo.percentChange - a.dynamicInfo.percentChange
       )
-      console.log("potentially new data", this.data)
+      console.log("potentially new stocks", this.stocks)
     } else {
-      this.data = this.data.sort(
+      this.stocks = this.stocks.sort(
         (a:any, b:any) => a.dynamicInfo.percentChange - b.dynamicInfo.percentChange 
       )
     }
@@ -124,12 +149,12 @@ export class StocksComponent implements OnInit {
     this.resetArrows()
     this.marketCapDir = tempBool
     if(this.marketCapDir) {
-      this.data = this.data.sort(
+      this.stocks = this.stocks.sort(
         (a:any, b:any) => b.dynamicInfo.marketCap - a.dynamicInfo.marketCap
       )
-      console.log("potentially new data", this.data)
+      console.log("potentially new stocks", this.stocks)
     } else {
-      this.data = this.data.sort(
+      this.stocks = this.stocks.sort(
         (a:any, b:any) => a.dynamicInfo.marketCap - b.dynamicInfo.marketCap 
       )
     }
@@ -141,12 +166,12 @@ export class StocksComponent implements OnInit {
     this.resetArrows()
     this.volumeDir = tempBool
     if(this.volumeDir) {
-      this.data = this.data.sort(
+      this.stocks = this.stocks.sort(
         (a:any, b:any) => b.dynamicInfo.volume - a.dynamicInfo.volume
       )
-      console.log("potentially new data", this.data)
+      console.log("potentially new stocks", this.stocks)
     } else {
-      this.data = this.data.sort(
+      this.stocks = this.stocks.sort(
         (a:any, b:any) => a.dynamicInfo.volume - b.dynamicInfo.volume 
       )
     }

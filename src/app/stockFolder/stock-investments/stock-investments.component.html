@@ -1,10 +1,11 @@
 <body class = "pageContainer">
     <div class="stock-header">
-        <h1 class="title"> Stocks </h1>
+        <h1 class="title"> Investments </h1>
     </div>
     <div class="stocks-div">
+        <button (click) = "resetFilters()" class="resetBtn">Reset</button>
         <input class= "stock-searchbar" placeholder="Search for Stock" type="text" [(ngModel)] ="term">
-        <button class="investBtn">Invest!</button>
+        <button class="investmentBtn" routerLink="/stocks">Stocks</button>
         <!--
         <table mat-table [dataSource]="data">
             <ng-container matColumnDef="Symbol">
@@ -39,49 +40,33 @@
         <table class ="stocks-table">
             <tr>
                 <th style="width: 2vw; background-color: white;">
-                  <button (click) = "reorderId()"  *ngIf = "this.idDir" class="arrow">id &darr;</button>
-                  <button (click) = "reorderId()"  *ngIf = "!this.idDir" class="arrow">id &#8593;</button>
+                  <button (click) = "reorderId()"  *ngIf = "this.idDir" class="arrow">id <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
+                  <button (click) = "reorderId()"  *ngIf = "!this.idDir" class="arrow">id <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
                 </th>
-                <th style="background-color: white; color: rgb(255, 166, 0);">Symbol </th>
+                <th style="width: 2vw; background-color: white;">
+                    <button (click) = "reorderStockId()"  *ngIf = "this.stockIdDir" class="arrow">StockId <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
+                    <button (click) = "reorderStockId()"  *ngIf = "!this.stockIdDir" class="arrow">StockId <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
+                </th>
+                <th style="width: 2vw; background-color: white;">
+                    <button (click) = "reorderNumShares()"  *ngIf = "this.numSharesDir" class="arrow">Number of Shares <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
+                    <button (click) = "reorderNumShares()"  *ngIf = "!this.numSharesDir" class="arrow">Number of Shares <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
+                  </th>
+                <th style="background-color: white; color: rgb(255, 166, 0);">Symbol</th>
                 <th style ="background-color: white; color: rgb(255, 166, 0);">Company Name</th>
                 <th style="background-color: white; color: rgb(255, 166, 0);">Country</th>
-                <th style="width: 4vw; background-color: white;">
-                  <button (click) = "reorderIpoYear()" *ngIf = "this.ipoYearDir" class="arrow">IPO Year &darr;</button>
-                  <button (click) = "reorderIpoYear()" *ngIf = "!this.ipoYearDir" class="arrow">IPO Year &#8593;</button>
-                </th>
                 <th style="width: 5vw; background-color: white;">
-                  <button (click) = "reorderlastSale()" *ngIf = "this.lastSaleDir" class="arrow">Last Sale Price &darr;</button>
-                  <button (click) = "reorderlastSale()" *ngIf = "!this.lastSaleDir" class="arrow">Last Sale Price &#8593;</button>
-                </th>
-                <th style="width: 6vw; background-color: white;">
-                  <button (click) = "reordernetChange()" *ngIf = "this.netChangeDir" class="arrow">Net Change &darr;</button>
-                  <button (click) = "reordernetChange()" *ngIf = "!this.netChangeDir" class="arrow">Net Change &#8593;</button>
-                </th>
-                <th style="width: 6vw; background-color: white;">
-                  <button (click) = "reorderpercentChange()" *ngIf = "this.percentChangeDir" class="arrow">Percent Change &darr;</button>
-                  <button (click) = "reorderpercentChange()" *ngIf = "!this.percentChangeDir" class="arrow">Percent Change &#8593;</button>
-                </th>
-                <th style="width: 6vw; background-color: white;">
-                  <button (click) = "reordermarketCap()" *ngIf = "this.marketCapDir" class="arrow">Market Cap &darr;</button>
-                  <button (click) = "reordermarketCap()" *ngIf = "!this.marketCapDir" class="arrow">Market Cap &#8593;</button>
-                </th>
-                <th style="width: 5vw; background-color: white;">
-                  <button (click) = "reordervolume()" *ngIf = "this.volumeDir" class="arrow">Volume &darr;</button>
-                  <button (click) = "reordervolume()" *ngIf = "!this.volumeDir" class="arrow">Volume &#8593;</button>
+                  <button (click) = "reorderIpoYear()" *ngIf = "this.ipoYearDir" class="arrow">IPO Year <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
+                  <button (click) = "reorderIpoYear()" *ngIf = "!this.ipoYearDir" class="arrow">IPO Year <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
                 </th>
             </tr>
-            <tr *ngFor="let stock of data | filter: term | paginate: config">
-                <th>{{stock.id}}</th>
-                <th>{{stock.symbol}}</th>
-                <th>{{stock.name}}</th>
-                <th>{{stock.country}}</th>
-                <th>{{stock.ipoYear}}</th>
-                <th *ngIf="stock.dynamicInfo">{{stock.dynamicInfo.lastSale}}</th>
-                <th *ngIf="stock.dynamicInfo">{{stock.dynamicInfo.netChange}}</th>
-                <th *ngIf="stock.dynamicInfo">{{stock.dynamicInfo.percentChange}}</th>
-                <th *ngIf="stock.dynamicInfo">{{stock.dynamicInfo.marketCap}}</th>
-                <th *ngIf="stock.dynamicInfo">{{stock.dynamicInfo.volume}}</th>
-
+            <tr *ngFor="let invest of investments | filter: term | paginate: config">
+                <th>{{invest.id}}</th>
+                <th>{{invest.stockId}}</th>
+                <th>{{invest.numShares}}</th>
+                <th>{{invest.stock.symbol}}</th>
+                <th>{{invest.stock.name}}</th>
+                <th>{{invest.stock.country}}</th>
+                <th>{{invest.stock.ipoYear}}</th>
             </tr>
         </table>
 
@@ -109,6 +94,4 @@
         </div>
     </div>
 </body>
-
-
 

@@ -22,7 +22,11 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 // import { SortDirective } from './bondsFolder/directive/sort.directive';
 
 //Stocks imports
-import { StocksComponent } from './stocks/stocks.component';
+import { StocksComponent } from './stockFolder/stocks/stocks.component';
+import { StockInvestModalComponent } from './stockFolder/stock-invest-modal/stock-invest-modal.component';
+import { MatDialogModule} from '@angular/material/dialog';
+import { StockInvestmentsComponent } from './stockFolder/stock-investments/stock-investments.component';
+
 
 //Location Imports
 import { LocationComponent } from './locationsFolder/location/location.component';
@@ -46,6 +50,8 @@ import { MatTableModule } from '@angular/material/table';
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,8 +69,8 @@ import { MatTableModule } from '@angular/material/table';
     CreateFundsComponent,
     FundsComponent,
     FundComponent,
-
-
+    StockInvestModalComponent,
+    StockInvestmentsComponent
 
   ],
   imports: [
@@ -83,7 +89,7 @@ import { MatTableModule } from '@angular/material/table';
     MatSortModule,
     MatTableModule,
     MatInputModule,
-
+    MatDialogModule,
 
   ],
   providers: [],

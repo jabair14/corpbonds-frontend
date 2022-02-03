@@ -13,7 +13,4 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  goToStocks(): void {
-    this.router.navigateByUrl('stocks')
-  }
 }
