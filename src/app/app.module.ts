@@ -11,7 +11,6 @@ import { LoaderInterceptor } from './interceptors/loader-interceptor.service';
 import { MyLoaderComponent } from './loader/my-loader.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 ///////// COOKIE IMPORT
 import { CookieService } from 'ngx-cookie-service';
 //Bonds Imports
@@ -56,12 +55,10 @@ import { MatTableModule } from '@angular/material/table';
 // Mutual Funds Imports
 import { MutualFundsComponent } from './mutual_funds_content/mutual-funds/mutual-funds.component';
 
-
 import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { TokenComponent } from './usersFolder/token/token.component';
-
 
 @NgModule({
   declarations: [
@@ -87,13 +84,10 @@ import { TokenComponent } from './usersFolder/token/token.component';
     MyLoaderComponent,
     LearnComponent,
 
-
-
     LoginComponent,
     AccountsComponent,
     RegisterComponent,
     TokenComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -112,14 +106,11 @@ import { TokenComponent } from './usersFolder/token/token.component';
     MatTableModule,
     MatInputModule,
     BrowserAnimationsModule,
-
-
-
   ],
   providers: [
     CookieService,
     LoaderService,
-    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
   ],
   bootstrap: [
     AppComponent,
@@ -127,9 +118,7 @@ import { TokenComponent } from './usersFolder/token/token.component';
     BrowserAnimationsModule,
     MatInputModule,
     NgxPaginationModule,
-  ]
- 
-
+  ],
 })
 export class AppModule {
   constructor() {
