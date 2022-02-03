@@ -36,6 +36,19 @@ td.mat-cell {
   text-align: center !important;
 }
 
+td {
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+td:first-child {
+  padding-left: 0;
+}
+
+td:last-child {
+  padding-right: 0;
+}
+
 .etf-info-div {
   display: flex;
   flex-direction: row;
