@@ -1,0 +1,26 @@
+
+
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+main{
+    width: 500px;
+}
+
+h1 {
+    color: rgba(255, 94, 0, 0.82);
+}
+
+mat-dialog-actions {
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+button {
+    background-color: rgba(255, 166, 0, 0.861);
+}
+
+button:hover {
+    background-color: whitesmoke;
+}
