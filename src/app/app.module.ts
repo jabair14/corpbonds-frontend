@@ -89,7 +89,6 @@ import { TokenComponent } from './usersFolder/token/token.component';
     MatSortModule,
     MatTableModule,
     MatInputModule,
-    FormsModule,
     BrowserAnimationsModule,
     MatInputModule,
     NgxPaginationModule,
