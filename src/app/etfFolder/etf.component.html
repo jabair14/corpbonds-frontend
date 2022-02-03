@@ -98,16 +98,18 @@
             <mat-header-cell *matHeaderCellDef mat-sort-header
               >Fund Yield</mat-header-cell
             >
-            <mat-cell *matCellDef="let element">{{
-              element.fund_yield
-            }}</mat-cell>
+            <mat-cell *matCellDef="let element"><div *ngIf="element.fund_yield">
+              {{ element.fund_yield | number }} %
+            </div></mat-cell>
           </ng-container>
           <ng-container matColumnDef="fund_annual_report_net_expense_ratio">
             <mat-header-cell *matHeaderCellDef mat-sort-header
               >Annual Net Expense Ratio</mat-header-cell
             >
             <mat-cell *matCellDef="let element"
-              >{{ element.fund_annual_report_net_expense_ratio | number }}
+              ><div *ngIf="element.fund_annual_report_net_expense_ratio">
+                {{ element.fund_annual_report_net_expense_ratio | number }} %
+              </div>
             </mat-cell>
           </ng-container>
           <ng-container matColumnDef="category_return_ytd">
@@ -115,7 +117,9 @@
               >Category Return YTD</mat-header-cell
             >
             <mat-cell *matCellDef="let element"
-              >{{ element.category_return_ytd | number }}
+              ><div *ngIf="element.caegory_return_ytd">
+                {{ element.category_return_ytd | number }} %
+              </div>
             </mat-cell>
           </ng-container>
           <ng-container matColumnDef="fund_return_ytd">
@@ -124,7 +128,7 @@
             >
             <mat-cell *matCellDef="let element"
               ><div *ngIf="element.fund_return_ytd">
-                {{ element.fund_return_ytd | number }}%
+                {{ element.fund_return_ytd | number }} %
               </div>
             </mat-cell>
           </ng-container>
@@ -133,7 +137,9 @@
               >WK 52 High Change</mat-header-cell
             >
             <mat-cell *matCellDef="let element"
-              >{{ element.week52_high_change }}
+              ><div *ngIf="element.week52_high_change">
+                {{ element.week52_high_change | number }} %
+              </div>
             </mat-cell>
           </ng-container>
           <ng-container matColumnDef="week52_low_change">
@@ -141,7 +147,9 @@
               >WK 52 Low Change</mat-header-cell
             >
             <mat-cell *matCellDef="let element"
-              >{{ element.week52_low_change | number }}
+              ><div *ngIf="element.week52_low_change">
+                {{ element.week52_low_change | number }} %
+              </div>
             </mat-cell>
           </ng-container>
           <ng-container matColumnDef="inception_date">
