@@ -50,158 +50,152 @@
         </mat-form-field>
       </div>
 
-      <div class="mat-elevation-z8 etf-data-div">
-        <mat-table
-          [dataSource]="this.dataSource | paginate: config"
-          matSort
-          (matSortChange)="announceSortChange($event)"
-        >
-          <ng-container matColumnDef="id">
-            <mat-header-cell *matHeaderCellDef mat-sort-header
-              >ID</mat-header-cell
-            >
-            <mat-cell *matCellDef="let element">{{ element.id }}</mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="fund_symbol">
-            <mat-header-cell *matHeaderCellDef mat-sort-header
-              >Ticker</mat-header-cell
-            >
-            <mat-cell *matCellDef="let element"
-              ><b>{{ element.fund_symbol }}</b></mat-cell
-            >
-          </ng-container>
-          <ng-container matColumnDef="fund_long_name">
-            <mat-header-cell *matHeaderCellDef mat-sort-header
-              >Fund Long Name</mat-header-cell
-            >
-            <mat-cell *matCellDef="let element">{{
-              element.fund_long_name
-            }}</mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="fund_family">
-            <mat-header-cell *matHeaderCellDef mat-sort-header
-              >Fund Family</mat-header-cell
-            >
-            <mat-cell *matCellDef="let element">{{
-              element.fund_family
-            }}</mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="total_net_assets">
-            <mat-header-cell *matHeaderCellDef mat-sort-header
-              >Total Net Assets</mat-header-cell
-            >
-            <mat-cell *matCellDef="let element">{{
-              element.total_net_assets
-            }}</mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="fund_yield">
-            <mat-header-cell *matHeaderCellDef mat-sort-header
-              >Fund Yield</mat-header-cell
-            >
-            <mat-cell *matCellDef="let element"><div *ngIf="element.fund_yield">
+      <!-- // Actual Table -->
+      <table
+        mat-table
+        class="mat-elevation-z8 etf-data-div"
+        [dataSource]="this.dataSource | paginate: config"
+        matSort
+        (matSortChange)="announceSortChange($event)"
+      >
+        <ng-container matColumnDef="id">
+          <th
+            mat-header-cell
+            class="smaller-cell"
+            *matHeaderCellDef
+            mat-sort-header
+          >
+            ID
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.id }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fund_symbol">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionDescription="Sort by fund_symbol"
+          >
+            Ticker
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <b>{{ element.fund_symbol }}</b>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fund_long_name">
+          <th mat-header-cell *matHeaderCellDef >
+            Fund Long Name
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.fund_long_name }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fund_family">
+          <th mat-header-cell *matHeaderCellDef >Fund Family</th>
+          <td mat-cell *matCellDef="let element">{{ element.fund_family }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="total_net_assets">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Total Net Assets
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.total_net_assets }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fund_yield">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Fund Yield</th>
+          <td mat-cell *matCellDef="let element">
+            <div *ngIf="element.fund_yield">
               {{ element.fund_yield | number }} %
-            </div></mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="fund_annual_report_net_expense_ratio">
-            <mat-header-cell *matHeaderCellDef mat-sort-header
-              >Annual Net Expense Ratio</mat-header-cell
+            </div>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fund_annual_report_net_expense_ratio">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Annual Net Expense Ratio
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <div *ngIf="element.fund_annual_report_net_expense_ratio">
+              {{ element.fund_annual_report_net_expense_ratio | number }} %
+            </div>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fund_return_ytd">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Fund Return YTD
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <div *ngIf="element.fund_return_ytd">
+              {{ element.fund_return_ytd | number }} %
+            </div>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="inception_date">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Inception Date
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.inception_date }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="exchange_name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Exchange Name
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.exchange_name }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let element">
+            <button
+              (click)="openSingleETF(element)"
+              class="launch"
+              mat-icon-button
+              color="primary"
             >
-            <mat-cell *matCellDef="let element"
-              ><div *ngIf="element.fund_annual_report_net_expense_ratio">
-                {{ element.fund_annual_report_net_expense_ratio | number }} %
-              </div>
-            </mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="category_return_ytd">
-            <mat-header-cell *matHeaderCellDef mat-sort-header
-              >Category Return YTD</mat-header-cell
-            >
-            <mat-cell *matCellDef="let element"
-              ><div *ngIf="element.caegory_return_ytd">
-                {{ element.category_return_ytd | number }} %
-              </div>
-            </mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="fund_return_ytd">
-            <mat-header-cell *matHeaderCellDef mat-sort-header
-              >Fund Return YTD</mat-header-cell
-            >
-            <mat-cell *matCellDef="let element"
-              ><div *ngIf="element.fund_return_ytd">
-                {{ element.fund_return_ytd | number }} %
-              </div>
-            </mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="week52_high_change">
-            <mat-header-cell *matHeaderCellDef mat-sort-header
-              >WK 52 High Change</mat-header-cell
-            >
-            <mat-cell *matCellDef="let element"
-              ><div *ngIf="element.week52_high_change">
-                {{ element.week52_high_change | number }} %
-              </div>
-            </mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="week52_low_change">
-            <mat-header-cell *matHeaderCellDef mat-sort-header
-              >WK 52 Low Change</mat-header-cell
-            >
-            <mat-cell *matCellDef="let element"
-              ><div *ngIf="element.week52_low_change">
-                {{ element.week52_low_change | number }} %
-              </div>
-            </mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="inception_date">
-            <mat-header-cell *matHeaderCellDef mat-sort-header
-              >Since Inception</mat-header-cell
-            >
-            <mat-cell *matCellDef="let element"
-              >{{ element.inception_date }}
-            </mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="exchange_name">
-            <mat-header-cell *matHeaderCellDef mat-sort-header
-              >Exchange Name</mat-header-cell
-            >
-            <mat-cell *matCellDef="let element"
-              >{{ element.exchange_name }}
-            </mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="actions">
-            <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
-            <mat-cell *matCellDef="let element">
-              <button
-                (click)="openSingleETF(element)"
-                class="launch"
-                mat-icon-button
-                color="primary"
-              >
-                <mat-icon>launch</mat-icon>
-              </button>
-            </mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="loading">
-            <mat-footer-cell *matFooterCellDef colspan="6">
-              Loading data....
-            </mat-footer-cell>
-          </ng-container>
-          <mat-header-row *matHeaderRowDef="tableConfig"></mat-header-row>
-          <mat-row *matRowDef="let row; columns: tableConfig"></mat-row>
-          <mat-footer-row
-            *matFooterRowDef="['loading']"
-            [ngClass]="{ hide: dataSource != null }"
-          ></mat-footer-row>
-        </mat-table>
-        <!-- <mat-paginator
+              <mat-icon>launch</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="loading">
+          <th mat-footer-cell *matFooterCellDef colspan="6">
+            Loading data....
+          </th>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="tableConfig; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: tableConfig"></tr>
+        <tr
+          mat-footer-row
+          *matFooterRowDef="['loading']"
+          [ngClass]="{ hide: dataSource != null }"
+        ></tr>
+      </table>
+
+      <!-- <mat-paginator
           [pageSizeOptions]="[5, 10, 25, 100]"
           [pageSize]="5"
           showFirstLastButtons
+          aria-label="Select page of ETFs"
         ></mat-paginator> -->
-        <pagination-controls
-          (pageChange)="pageChanged($event)"
-        ></pagination-controls>
-      </div>
+      <pagination-controls
+        (pageChange)="pageChanged($event)"
+      ></pagination-controls>
 
       <div class="bottom-container"></div>
     </main>

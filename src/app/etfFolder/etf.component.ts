@@ -8,6 +8,7 @@ import { DialogEtfComponent } from './dialog-etf/dialog-etf.component';
 import { DialogSingleEtfComponent } from './dialog-single-etf/dialog-single-etf.component';
 import { MatSort, Sort } from '@angular/material/sort';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-etf',
@@ -22,10 +23,10 @@ export class EtfComponent implements OnInit {
     private liveAnnouncer: LiveAnnouncer
   ) {}
 
-
   etfData: ETF[] = [];
   dataSource: any = new MatTableDataSource(this.etfData);
   @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
   searchKey: string = '';
   config: any;
 
@@ -37,10 +38,7 @@ export class EtfComponent implements OnInit {
     'total_net_assets',
     'fund_yield',
     'fund_annual_report_net_expense_ratio',
-    'category_return_ytd',
     'fund_return_ytd',
-    'week52_high_change',
-    'week52_low_change',
     'inception_date',
     'exchange_name',
     'actions',
@@ -52,12 +50,14 @@ export class EtfComponent implements OnInit {
 
   getData(): void {
     this.etfService.getETFs().subscribe((payload) => {
+      console.log('this is the table payload:', payload);
       this.dataSource = payload;
       this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
       this.config = {
         itemsPerPage: 10,
         currentPage: 1,
-        totalItems: this.dataSource.length
+        totalItems: this.dataSource.length,
       };
     });
   }
@@ -82,20 +82,18 @@ export class EtfComponent implements OnInit {
   // opens a selected ETF expanded information dialog
   openSingleETF(data: any) {
     console.log('this is the incoming id:', data);
-    this.dialog.open(DialogSingleEtfComponent, {data: data})
+    this.dialog.open(DialogSingleEtfComponent, { data: data });
   }
 
-  // changes table page 
-  pageChanged(event: any){
+  // changes table page
+  pageChanged(event: any) {
     this.config.currentPage = event;
   }
 
   announceSortChange(sortState: Sort) {
     if (sortState.direction) {
       this.liveAnnouncer.announce(`Sorted ${sortState.direction} ending`);
-    }
-
-    else {
+    } else {
       this.liveAnnouncer.announce(`Sorting cleared`);
     }
   }
