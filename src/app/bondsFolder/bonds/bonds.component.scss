@@ -1,77 +1,115 @@
+@import "/src/styles.scss";
 
-
-
-.bonds-table{
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    max-width: 90%;
-    margin: auto;
-    th { position: sticky; top: 0; z-index: 1; }
+.bonds-table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  // border: 0.1px;
+  max-width: 100%;
+  border-radius: 10px;
+  margin: auto;
+  box-shadow: 5px 5px 5px #999;
+  th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
   }
-  
-
-.bonds-table td, .bonds-table th {
-    border: 1px solid rgba(246, 245, 245, 0.868);
-    padding: 8px;
 }
 
-.bonds-table tr:nth-child(even){background-color: #f2f2f2;}
+.bonds-table td,
+.bonds-table th {
+  font-size: 12px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  border: 1px solid rgba(246, 245, 245, 0.868);
+  // border-radius: 10px;
+  padding: 8px;
+}
 
-.bonds-table tr:hover {background-color: #ddd;}
+.bonds-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.bonds-table tr:hover {
+  background-color: #ddd;
+}
 
 .bonds-table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    color: white;
-    background-color: rgb(255, 166, 0),
-    
-  }
-
-  .bonds-div {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: inherit;
-    padding: 20px;
-    height: 200px;
-  }
-.bonds-info {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: inherit;
-    padding: 20px;
-
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  color: white;
+  background-color: $rorange;
+  border: $rorange;
 }
 
-  h1, p {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
-    'Lucida Sans', Arial, sans-serif
-  }
+.bonds-table th:hover {
+  background-color: black;
+  color: $rorange;
+  // font-size: 17px;
+  
+}
 
-  .table-controls{
-    display: flex;
+.bonds-div {
+  
+  // display: flex;
+  // flex-direction: column;
+  // flex-wrap: inherit;
+  // padding: 20px;
+  display: flex;
     flex-direction: column;
-  }
+    flex-wrap: inherit;
+    padding: 20px;
+    width: 75vw;
+    height: 50vh;
+    margin: auto;
+  
+}
+.bonds-info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: inherit;
+  padding: 20px;
+}
 
-  .searchbar-div {
-    position: relative;
-    margin-bottom: -2.5em;
-    margin-left: auto;
-    margin-right: 5em;
-    
-      
-  }
-  .searchbar {
-    padding: 5px;
-    border-radius: 2px;
-    font-size: 12px; 
-    border: 2px solid rgb(12, 12, 12); 
-  }
+h1,
+p {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.table-controls {
+  text-align: center;
+  // display: inline-block;
+  // flex-direction: column;
+}
+
+.searchbar-div {
+  // margin: auto;
+  // position: relative;
+  // margin-bottom: -2.5em;
+  // margin-left: auto;
+  // margin-right: auto;
+  // margin-right: 5em;
+}
+.searchbar {
+  padding: 5px;
+  border-radius: 2px;
+  font-size: 12px;
+  border: 2px solid rgb(12, 12, 12);
+  width: 400px;
+  
+}
 
  .page-div{
-   display: flex;
-   flex-direction: column;
-  font-family: Arial, Helvetica, sans-serif;
-  align-items: left;
-  margin-left: 2em;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 4.5em;
  }
+
+.icon{
+  float: left;
+}
+
+app-my-loader{
+  z-index: 1;
+}

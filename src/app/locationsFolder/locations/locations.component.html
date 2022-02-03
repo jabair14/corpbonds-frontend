@@ -1,8 +1,9 @@
+<h1 class="toph1">Find a consultant to learn more near you!</h1>
 <div class="locations-div">  
     <div class="map-div">
-        <google-chart [data]="geoChart" *ngIf=mapReady></google-chart>
+        <google-chart [data]="geoChart" (chartSelect)='select($event)' *ngIf=mapReady></google-chart>
     </div>
-    <div class="table-div">
+    <div class="table-div" *ngIf="rightdiv">
         <table>
             <tr *ngFor="let location of locations">
                 <td>
@@ -10,6 +11,16 @@
                 </td>
             </tr>
         </table>
+    </div>
+    <div class="table-div2" *ngIf="rightdivchina">
+        <h1>Which city in China?</h1><br>
+        <a [routerLink]="['/locations',locations[2].id]">Shanghai</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a [routerLink]="['/locations',locations[7].id]">Beijing</a>
+    </div>
+    <div class="table-div2" *ngIf="rightdivindia">
+        <h1>Which city in India?</h1><br>
+        <a [routerLink]="['/locations',locations[1].id]">Delhi</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a [routerLink]="['/locations',locations[8].id]">Mumbai</a>
     </div>
 </div>
 

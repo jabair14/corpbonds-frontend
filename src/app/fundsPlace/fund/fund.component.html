@@ -1,0 +1,70 @@
+<body>
+    
+
+
+    <!-- bonds -->
+    <title> {{fund.name}}</title>
+    <hr>
+    <div class="main-bond">
+        <!-- main bond -->
+        <div class="bond-info">
+            <!-- bond info  -->
+            <div class="bond-info-right">
+                <img class="image-one"src="./assets/undraw_our_solution_re_8yk6.svg" alt="image">
+                <div class="bond-info-left">
+                    <h3> Closed-End Fund Facts </h3>
+                    <hr>
+                    <p> Id - {{fund.id}}</p>
+                    <hr>
+                    <p> Symbol - {{fund.symbol}}</p>
+                    <hr>
+                    <p> Inception Date - {{fund.inceptionDate | date: "shortDate"}}</p>
+                    <hr>
+                    <p> Category One - {{fund.categoryOne}} </p>
+                    <hr>
+                    <p> Category Two - {{fund.categoryTwo}}</p>
+                    <hr>
+                    <p> Category Three - {{fund.categoryThree}}</p>
+                    <hr>
+                    <p> Market Cap - {{fund.marketCap}}</p>
+                    <hr>
+                    <p> Current Divdend Yield - {{fund.currentDividendYield}}</p>
+                    <hr>
+                    <p> Historical Average Divided Yield - {{fund.historicalAverageDividendYield}}</p>
+                    <hr>
+                    <p> Leverage Factor - {{fund.everageFactor}}</p>
+                    <hr>
+                    <p> Average Volume - {{fund.averageVolume}}</p>
+                    <hr>
+                    <p> Action - {{fund.action}}</p>
+                    <hr>
+                    <button mat-raised-button class="invest-btn" (click) = "edit()">
+                     Edit Fund
+                     </button>
+                     <button mat-raised-button class="back-btn" routerLink="/funds">
+                         Go Back
+                     </button>
+                 </div>
+             </div>
+            </div>
+            
+    </div>
+    </body>
+    <!-- <div class = "center" id = "centerText">
+    
+        <p id ="text"> Symbol:<p> {{fund.symbol}}
+        <p id ="text"> Name:<p> {{fund.name}}
+        <p id ="text"> Inception Date:<p>{{fund.inceptionDate}}
+        <p id ="text"> Category One:<p>{{fund.categoryOne}}
+        <p id ="text"> Category Two:<p>{{fund.categoryTwo}}
+        <p id ="text"> Category Three:<p>{{fund.categoryThree}}
+        <p id ="text"> Market Cap:<p>{{fund.marketCap}}
+        <p id ="text"> Current Divdend Yield:<p>{{fund.currentDividendYield}}
+        <p id ="text"> Historical Average Divided Yield:<p>{{fund.historicalAverageDividendYield}}
+        <p id ="text"> Everage Factor:<p>{{fund.everageFactor}}
+        <p id ="text"> Average Volume:<p>{{fund.averageVolume}}
+        <p id ="text"> Action:<p>{{fund.action}}
+    <br>
+    <div id="button_div">
+    <button (click) = "edit()" id = "wrapper" class="shadow" value="Shadow">edit fund</button>
+    </div> -->
