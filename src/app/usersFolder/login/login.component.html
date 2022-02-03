@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="loginbox" @bottomFade>
+    <h2 class="loginbox--header">Hey, Welcome Back!</h2>
+    <div class="input input1">
+      <label for="email">EMAIL</label>
+      <br />
+      <br />
+      <input
+        type="text"
+        id="email"
+        [(ngModel)]="loginObj.email"
+        class="inputbox"
+        required
+      />
+    </div>
+    <div class="input input2">
+      <label for="password">PASSWORD</label>
+      <br />
+      <br />
+      <input
+        type="password"
+        id="password"
+        [(ngModel)]="loginObj.password"
+        class="inputbox"
+        required
+      />
+    </div>
+    <div class="submit">
+      <a (click)="postMe()" class="btn"> Login</a>
+    </div>
+  </div>
+  <div class="register" @bottomFade>
+    <a routerLink="/register" class="register--link"
+      >Don't have an account? Make one!</a
+    >
+  </div>
+</div>
