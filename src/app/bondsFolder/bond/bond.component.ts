@@ -52,8 +52,10 @@ export class BondComponent implements OnInit {
   }
 
   onCreateInvestment(investment: any) {
-    console.log(investment)
+    this.investment.userId = this.user.uniqueID
     this.investmentService.postInvestment(investment).subscribe(payload => {
+      console.log(this.investment.userId)
+      
       console.log("this is the createInvestment payload=", payload)
     })
   }

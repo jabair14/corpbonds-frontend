@@ -34,7 +34,7 @@
         </div>
         <div class="investment">
                 <h3>Investment Form</h3>
-                <form action="">
+                <!-- <form action="Submit"> -->
                     <div class="form-field">
                         <label for=""> Bond Symbol </label>
                         <br>
@@ -44,7 +44,7 @@
                     <div class="form-field">
                         <label for=""> Bond ID</label>
                         <br>
-                        <input type="text" placeholder="{{bond.id}}" [value]="bond.id">
+                        <input type="text"  placeholder="{{bond.id}}" [value]="bond.id">
                     </div>
                 
                     <div class="form-field">
@@ -56,17 +56,17 @@
                     <div class="form-field">
                         <label for=""> User ID</label>
                         <br>
-                        <input type="text" placeholder="{{user.uniqueID}}" [value]="user.uniqueID">
+                        <input type="text" [(ngModel)]="investment.userId"  [value]="user.uniqueID" disabled>
                     </div>
 
                     <div class="form-field">
                         <label for=""> Amount </label>
                         <br>
-                        <input type="number">
+                        <input [(ngModel)]="investment.amount" type="number">
                     </div>
                     <br>
                     <button (click)="onCreateInvestment(investment)"> Submit </button>
-                </form>
+                <!-- </form> -->
         </div>
     </div>
 </div>
