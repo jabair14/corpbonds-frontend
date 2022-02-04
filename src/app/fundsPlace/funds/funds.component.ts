@@ -57,7 +57,9 @@ showDiv = {
   }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params=>{
+    
+    
+      this.route.params.subscribe(params=>{
       const myid = +params['id'];
       this.sortChanged;
       this.fundService.getFunds().subscribe(payload=>{
