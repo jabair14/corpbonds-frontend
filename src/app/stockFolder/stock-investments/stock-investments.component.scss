@@ -17,7 +17,7 @@ body, html {
   }
 
   .stocks-table td, .stocks-table th {
-    border: 1px solid rgba(246, 245, 245, 0.868);
+    border: 1px solid black;
     padding: 8px;
 }
 
@@ -31,8 +31,11 @@ body, html {
     text-align: left;
     color: black;
     background-color: white;
-    
   }
+
+.stocks-table th:hover {
+  background-color: rgba(255, 166, 0, 0.116);
+}
 
 
   .stocks-div {
@@ -122,7 +125,7 @@ body, html {
       'Lucida Sans', Arial, sans-serif;
   }
   .arrow:hover {
-      color: black;
+      color: white;
   }
 
   
@@ -148,6 +151,6 @@ body, html {
   .iconSize{
     font-size: 20px;
     position: absolute;
-    bottom: 15px;
+    bottom: 7px;
   }
 
