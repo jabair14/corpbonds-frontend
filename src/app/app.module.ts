@@ -60,6 +60,7 @@ import { MatTableModule } from '@angular/material/table';
 
 // Mutual Funds Imports
 import { MutualFundsComponent } from './mutual_funds_content/mutual-funds/mutual-funds.component';
+import { StylePaginatorDirective } from './style-paginator.directive';
 
 import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
@@ -92,7 +93,7 @@ import { TokenComponent } from './usersFolder/token/token.component';
     FundComponent,
 
     MutualFundsComponent,
-
+    StylePaginatorDirective,
     SortDirective,
     MyLoaderComponent,
     LearnComponent,
