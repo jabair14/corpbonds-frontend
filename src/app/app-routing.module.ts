@@ -38,23 +38,6 @@ import { Token } from '@angular/compiler';
 import { TokenComponent } from './usersFolder/token/token.component';
 
 const routes: Routes = [
-<<<<<<< HEAD
-  { path: 'home', component: HomeComponent },
-  { path: 'bonds', component: BondsComponent },
-  { path: 'funds', component: FundsComponent },
-  { path: 'funds/create', component: CreateFundsComponent },
-  { path: 'funds/:id', component: FundComponent },
-  { path: 'funds/:id/edit', component: EditFundsComponent },
-  { path: 'bonds/:id', component: BondComponent },
-  { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'stocks', component: StocksComponent },
-  { path: 'retcalc', component: RetcalcComponent },
-  { path: 'etfs', component: EtfComponent },
-  { path: 'locations', component: LocationsComponent, pathMatch: 'full' },
-  { path: 'locations/:id', component: LocationComponent },
-  { path: 'retcalc', component: RetcalcComponent },
-  { path: 'socialmedias', component: SocialmediaComponent },
-=======
   {path: "home", component: HomeComponent},
   {path: "bonds", component: BondsComponent},
   {path: "funds", component: FundsComponent},
@@ -76,7 +59,6 @@ const routes: Routes = [
   {path: "", component: HomeComponent, pathMatch: "full"},
   
   // Mutual Funds Routes
->>>>>>> f0579c1a48a23e8b5632ac9edd836d9c9dcab5d8
   { path: "mutual_funds", component: MutualFundsComponent},
   { path: "mutual_funds/:id", component: MutualFundsComponent},
   { path: 'learn', component: LearnComponent},
