@@ -62,6 +62,7 @@ import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { TokenComponent } from './usersFolder/token/token.component';
 import { InvestmentComponent } from './bondsFolder/investment/investment.component';
+import { BondInvestmentComponent } from './bondsFolder/bond-investment/bond-investment.component';
 
 
 @NgModule({
@@ -95,6 +96,7 @@ import { InvestmentComponent } from './bondsFolder/investment/investment.compone
     RegisterComponent,
     TokenComponent,
     InvestmentComponent,
+    BondInvestmentComponent,
 
   ],
   imports: [

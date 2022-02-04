@@ -28,6 +28,7 @@ import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { Token } from '@angular/compiler';
 import { TokenComponent } from './usersFolder/token/token.component';
+import { InvestmentComponent } from './bondsFolder/investment/investment.component';
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
@@ -37,6 +38,7 @@ const routes: Routes = [
   {path: "funds/:id", component: FundComponent},
   {path: "funds/:id/edit", component: EditFundsComponent},
   {path: "bonds/:id", component: BondComponent},
+  {path: "investments/:id", component: InvestmentComponent},
   {path: "", component: HomeComponent, pathMatch: "full"},
   {path: "stocks", component: StocksComponent},
   {path: "retcalc", component: RetcalcComponent},

@@ -13,8 +13,8 @@ import { Observable } from 'rxjs';
       return this.http.post("https://corp-bonds-new-db.herokuapp.com/investments", investment)
     }
   
-    // getBond(id: number): Observable<any> {
-    //   return this.http.get(`https://corp-bonds-new-db.herokuapp.com/bonds/${id}`)
-    // }
+    getInvestment(id: number): Observable<any> {
+      return this.http.get(`https://corp-bonds-new-db.herokuapp.com/investments/${id}`)
+    }
   }
   

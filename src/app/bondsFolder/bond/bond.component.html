@@ -44,7 +44,13 @@
                     <div class="form-field">
                         <label for=""> Bond ID</label>
                         <br>
-                        <input type="text"  placeholder="{{bond.id}}" [value]="bond.id">
+                        <input type="text"  [(ngModel)]="bondInvestment.bondId" [value]="bond.id" disabled>
+                    </div>
+
+                    <div class="form-field">
+                        <label for=""> Investment ID</label>
+                        <br>
+                        <input type="text"   [value]="investment.id" disabled>
                     </div>
                 
                     <div class="form-field">
@@ -56,7 +62,7 @@
                     <div class="form-field">
                         <label for=""> User ID</label>
                         <br>
-                        <input type="text" [(ngModel)]="investment.userId"  [value]="user.uniqueID" disabled>
+                        <input type="password" [(ngModel)]="investment.userId"  [value]="user.uniqueID" disabled>
                     </div>
 
                     <div class="form-field">
@@ -64,10 +70,24 @@
                         <br>
                         <input [(ngModel)]="investment.amount" type="number">
                     </div>
+
+                    
+
+
                     <br>
-                    <button (click)="onCreateInvestment(investment)"> Submit </button>
+                    <button (click)="onCreateInvestment(investment)" > 
+                        <!-- <a routerLink="/investments/{{investment.id}}"> -->
+                            Submit 
+                        <!-- </a>   -->
+                    </button>
+                    <button (click)="onCreateBondInvestment(bondInvestment)" > 
+                        <!-- <a routerLink="/investments/{{investment.id}}"> -->
+                            Confirm
+                        <!-- </a>   -->
+                    </button>
                 <!-- </form> -->
         </div>
+
     </div>
 </div>
 

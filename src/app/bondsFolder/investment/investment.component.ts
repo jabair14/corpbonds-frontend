@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { AccountsComponent } from 'src/app/usersFolder/accounts/accounts.component';
 import { Investment } from './investment.model';
 import { InvestmentService } from './investment.service';
@@ -18,9 +19,19 @@ export class InvestmentComponent implements OnInit {
 
   
 
-  constructor( private investmentService: InvestmentService ) { }
+  constructor( 
+    private investmentService: InvestmentService,
+    private route: ActivatedRoute
+    ) { }
 
   ngOnInit( ): void {
+    this.route.params.subscribe(params => {
+      const myid = +params['id'];
+      this.investmentService.getInvestment(myid).subscribe(payload => {
+        // console.log("this is payload on bond", payload)
+        this.investment = payload
+      })
+    })
   }
 
   onCreateInvestment(investment: any) {
@@ -28,5 +39,9 @@ export class InvestmentComponent implements OnInit {
       console.log("this is the createInvestment payload=", payload)
     })
   }
+
+  // getInvestment(investment: any) {
+  //   this.investmentService.getInvestment
+  // }
 
 }
