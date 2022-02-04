@@ -4,6 +4,7 @@ import { Purchase } from '../purchase/purchase.model';
 import { PurchaseService } from 'src/app/purchasesPlace/purchase.service';
 import { Fund } from 'src/app/fundsPlace/fund/fund.model';
 import { FundService } from 'src/app/fundsPlace/fund.service';
+import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-createpurchases',
@@ -18,6 +19,8 @@ export class CreatePurchasesComponent implements OnInit {
     name:''
   };
 
+  user: any ={}
+
   createPurchase: any ={
     amount: '',
     fundId: '',
@@ -27,6 +30,7 @@ export class CreatePurchasesComponent implements OnInit {
   constructor(private router: Router,
     private fundService: FundService, 
     private purchaseService: PurchaseService, 
+    private userService: UserService,
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -38,12 +42,19 @@ export class CreatePurchasesComponent implements OnInit {
 
       })
     })
+    this.userService.postAccount().subscribe(payload => {
+
+      this.user = payload.body.data
+      this.createPurchase.userId = this.user.uniqueID
+      console.log("userData", payload.body.data)
+      console.log("purchase userId", this.createPurchase.userId)
+    })
   }
 
 
   createPurchases(createPurchase: any){
     createPurchase.fundId = this.fund.id;
-    if(confirm("Are you sure you want to delete this item?") == true){
+    if(confirm("Please Accept Invest") == true){
     this.purchaseService.createPurchase(createPurchase).subscribe(data => {
       if (data){
         this.router.navigateByUrl("/purchases");

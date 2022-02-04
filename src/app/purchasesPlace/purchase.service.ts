@@ -26,7 +26,7 @@ export class PurchaseService {
   }
 
   getPurchasesByUser(id: any): Observable<any> {
-    return this.http.get(`https://francs.herokuapp.com/purchases/${id}`);
+    return this.http.get(`https://francs.herokuapp.com/purchases/user/${id}`);
 
   }
   updatePurchases(purchase: Purchase): Observable<any>{

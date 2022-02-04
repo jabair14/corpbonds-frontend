@@ -98,7 +98,7 @@ import { TokenComponent } from './usersFolder/token/token.component';
     FundComponent,
     PurchasesComponent,
     CreatePurchasesComponent,
-    PurchaseComponent
+    PurchaseComponent,
 
     MutualFundsComponent,
     StylePaginatorDirective,
