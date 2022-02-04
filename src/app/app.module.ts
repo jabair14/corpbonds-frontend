@@ -66,6 +66,7 @@ import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { TokenComponent } from './usersFolder/token/token.component';
+import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,6 @@ import { TokenComponent } from './usersFolder/token/token.component';
     LocationComponent,
     RetcalcComponent,
     DialogSingleEtfComponent,
-
     StocksComponent,
     LocationsComponent,
     LocationComponent,
@@ -91,17 +91,16 @@ import { TokenComponent } from './usersFolder/token/token.component';
     CreateFundsComponent,
     FundsComponent,
     FundComponent,
-
     MutualFundsComponent,
     StylePaginatorDirective,
     SortDirective,
     MyLoaderComponent,
     LearnComponent,
-
     LoginComponent,
     AccountsComponent,
     RegisterComponent,
     TokenComponent,
+    VerifyDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -126,6 +125,7 @@ import { TokenComponent } from './usersFolder/token/token.component';
     MatTableModule,
     MatInputModule,
     BrowserAnimationsModule,
+    VerifyDialogComponent,
   ],
   providers: [
     CookieService,

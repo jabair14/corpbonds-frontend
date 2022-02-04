@@ -10,6 +10,8 @@ import {
   trigger,
 } from '@angular/animations';
 import { dialcodes } from 'src/assets/data/dialcodes';
+// import { MatDialog } from '@angular/material';
+import { VerifyDialogComponent } from '../verify-dialog/verify-dialog.component';
 
 @Component({
   selector: 'app-accounts',
@@ -24,6 +26,8 @@ import { dialcodes } from 'src/assets/data/dialcodes';
   ],
 })
 export class AccountsComponent implements OnInit {
+  unpressed: boolean = true;
+
   dialcodes: any = [];
 
   redir: boolean = false;
@@ -41,7 +45,8 @@ export class AccountsComponent implements OnInit {
     private user: UserService,
     private router: Router,
     private cookie: CookieService
-  ) {}
+  ) // public dialog: MatDialog
+  {}
 
   ngOnInit(): void {
     this.dialcodes = dialcodes;
@@ -51,6 +56,9 @@ export class AccountsComponent implements OnInit {
       }
       if (data.body.message === 'redirect') {
         this.redir = true;
+      } else if (data.body.message === 'MFArequired') {
+        // this.openDialog();
+        // this.router.navigate(['/verify']);
       } else {
         this.redir = false;
         console.log(data.body);
@@ -70,5 +78,9 @@ export class AccountsComponent implements OnInit {
       console.log('Im workin here', data);
       this.ngOnInit();
     });
+  }
+
+  openDialog() {
+    // this.dialog.open(VerifyDialogComponent);
   }
 }
