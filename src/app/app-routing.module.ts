@@ -16,6 +16,10 @@ import { FundComponent } from './fundsPlace/fund/fund.component';
 import { FundsComponent } from './fundsPlace/funds/funds.component';
 import { CreateFundsComponent } from './fundsPlace/createfunds/createfunds.component';
 import { EditFundsComponent } from './fundsPlace/editfunds/editfunds.component';
+// CEF Purchases
+import { CreatePurchasesComponent } from './purchasesPlace/createpurchases/createpurchases.component';
+import { PurchaseComponent } from './purchasesPlace/purchase/purchase.component';
+import { PurchasesComponent } from './purchasesPlace/purchases/purchases.component';
 
 
 const routes: Routes = [
@@ -25,6 +29,9 @@ const routes: Routes = [
   {path: "funds/create", component: CreateFundsComponent},
   {path: "funds/:id", component: FundComponent},
   {path: "funds/:id/edit", component: EditFundsComponent},
+  {path: "funds/:id/create", component: CreatePurchasesComponent},
+  {path: "purchases", component: PurchasesComponent},
+  {path: "purchases/:id", component: PurchaseComponent},
   {path: "bonds/:id", component: BondComponent},
   {path: "etfs", component: EtfComponent},
   {path: "locations", component: LocationsComponent, pathMatch: "full"},

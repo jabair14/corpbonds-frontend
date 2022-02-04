@@ -122,6 +122,7 @@ button{
 .imagee{
   position: relative;   
 
+  margin-bottom: 50px;
    bottom: 15px;
    
    z-index: 2;
@@ -573,7 +574,65 @@ th:focus-within .desc9{
 // filter: invert(80%) sepia(28%) saturate(1663%) hue-rotate(357deg) brightness(100%) contrast(106%);
   
 // }
+.ie-container{
+  vertical-align:top;
+    display: inline-block;
 
+}
+.invest-delete{
+
+  margin-top: 10px;
+  margin-bottom: 5px;
+
+
+}
+.invest-delete div{
+  position: absolute;
+  background: black;
+  color: white;
+  margin-bottom: 5px;
+  font-family: sans-serif;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: visibility 0s, opacity 0.5s linear; 
+  transition: visibility 0s, opacity 0.5s linear;
+ }
+
+ .invest-delete:hover{
+  cursor: pointer;
+ }
+
+ .invest-delete:hover div{
+  position: absolute;
+  width: 125px;
+  height: 15px;
+  float: bottom;
+  padding: 8px 15px;
+  visibility: visible;
+  opacity: 0.7; 
+  z-index: 3;
+ }
+
+.deleteImg{
+  cursor: pointer;
+  margin-left: 35px;
+  width: 25px;
+}
+
+
+.deleteImg:hover{
+  filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
+}
+
+.investImg{
+  cursor: pointer;
+  width: 25px;
+}
+
+
+.investImg:hover{
+  filter: drop-shadow(16px 16px 20px red) invert(75%);
+}
 
 table {
     table-layout: fixed;
@@ -687,7 +746,8 @@ table {
 
 #button_div1 {
   position:relative;
-  left:86%;
+  margin-left:81%;
+  margin-right: 31%;
 }
 #button_div .shadow
 {

@@ -34,4 +34,8 @@ export class FundComponent implements OnInit {
     edit():void {
       this.router.navigateByUrl(`/funds/${this.fund.id}/edit`);
     }
+
+    purchase():void {
+      this.router.navigateByUrl(`/funds/${this.fund.id}/create`);
+    }
 }

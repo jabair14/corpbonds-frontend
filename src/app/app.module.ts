@@ -42,7 +42,10 @@ import { SortDirective } from './directive/sort.directive';
 import { SocialmediaComponent } from './socialmedia/socialmedia.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
-
+//CEF Purchases
+import { PurchasesComponent } from './purchasesPlace/purchases/purchases.component';
+import { CreatePurchasesComponent } from './purchasesPlace/createpurchases/createpurchases.component';
+import { PurchaseComponent } from './purchasesPlace/purchase/purchase.component';
 
 
 @NgModule({
@@ -63,6 +66,9 @@ import { MatTableModule } from '@angular/material/table';
     FundsComponent,
     FundComponent,
     SortDirective,
+    PurchasesComponent,
+    CreatePurchasesComponent,
+    PurchaseComponent
 
 
 

@@ -108,3 +108,54 @@ h3 {
     margin-top: 10px;
     float: right;
 }
+
+.invest-delete{
+
+    margin-top: 10px;
+    margin-bottom: 5px;
+  
+  
+  }
+  .invest-delete div{
+    position: absolute;
+    background: black;
+    color: white;
+    margin-bottom: 5px;
+    font-family: sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: visibility 0s, opacity 0.5s linear; 
+    transition: visibility 0s, opacity 0.5s linear;
+   }
+  
+   .invest-delete:hover{
+    cursor: pointer;
+   }
+  
+   .invest-delete:hover div{
+    position: absolute;
+    width: 125px;
+    left: 28%;
+    bottom: -75%;
+    height: 15px;
+    float: bottom;
+    padding: 8px 15px;
+    visibility: visible;
+    opacity: 0.7; 
+    z-index: 3;
+   }
+
+   .investImg{
+    position: absolute;
+    cursor: pointer;
+    left: 15%;
+    height: 250px;
+    width: 250px;
+  }
+  
+  
+  .investImg:hover{
+    filter: drop-shadow(16px 16px 20px red) invert(75%);
+  }
+
+  

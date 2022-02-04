@@ -13,11 +13,7 @@
 <div class="imagee">
   <img src='/assets/searchIcon.png' class ="imgg">
   <input type="text"  id="myInput" placeholder="Search for funds.." [(ngModel)]="term">
-  <div id="button_div1">
-    <p>
-     <a routerLink="/funds/create">
-        <button type = "button" id = "wrapper2" class="shadow" value="Shadow">Create Fund</button></a>
-      </p>
+
     </div>
 
     
@@ -49,7 +45,7 @@
           
             </pagination-template>
             </div>
-    </div>
+
   
 
 
@@ -388,10 +384,20 @@
               {{fund.action}}
           </td> -->
           <td>
-          <div id="button_div">
-              <button (click) = "deleteFunds(fund.id)" id = "wrapper" class="shadow" value="Shadow">delete</button>
+          <div class= ".ie-container">
+            <div class= "invest-delete">
+              <img src='/assets/purchase.png' class="investImg"  [routerLink]="['/funds/', fund.id, 'create']">
+            <div>
+              Start Invest
+            </div>
+          </div>
+          <div class= "invest-delete">
+            <img src='/assets/delete.png' class="deleteImg"  (click) = "deleteFunds(fund.id)">
+          <div>
+            Delete
               </div>
-              
+              </div>
+            </div>
           </td>
           
       </tr>
