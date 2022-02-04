@@ -134,6 +134,8 @@ import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog
     AngularMaterialModule,
     FormsModule,
     MatDialogModule,
+    CommonModule,
+    PlotlyModule,
   ],
   entryComponents: [
     DialogEtfComponent,
@@ -141,8 +143,6 @@ import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog
     MatSortModule,
     MatTableModule,
     MatInputModule,
-    CommonModule,
-    PlotlyModule,
     BrowserAnimationsModule,
     VerifyDialogComponent,
   ],
