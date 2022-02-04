@@ -19,7 +19,7 @@ export class StockInvestmentsComponent implements OnInit {
   constructor(private stockService:StocksService) { }
 
   ngOnInit(): void {
-    this.stockService.getInvestments(1).subscribe(payload => {
+    this.stockService.getInvestments("mat123").subscribe(payload => {
       this.investments = payload
       console.log(this.investments)
       this.config = {
@@ -60,11 +60,11 @@ export class StockInvestmentsComponent implements OnInit {
     this.stockIdDir = tempBool
     if(this.stockIdDir) {
       this.investments = this.investments.sort(
-        (a:any, b:any) => b.ipoYear - a.ipoYear
+        (a:any, b:any) => b.stockId - a.stockId
       )
     } else {
       this.investments = this.investments.sort(
-        (a:any, b:any) => a.ipoYear - b.ipoYear 
+        (a:any, b:any) => a.stockId - b.stockId 
       )
     }
     this.stockIdDir = !this.stockIdDir
@@ -72,19 +72,19 @@ export class StockInvestmentsComponent implements OnInit {
 
 
   reorderNumShares(): void {
-    let tempBool = this.stockIdDir
+    let tempBool = this.numSharesDir
     this.resetArrows()
-    this.stockIdDir = tempBool
-    if(this.stockIdDir) {
+    this.numSharesDir = tempBool
+    if(this.numSharesDir) {
       this.investments = this.investments.sort(
-        (a:any, b:any) => b.ipoYear - a.ipoYear
+        (a:any, b:any) => b.numShares - a.numShares
       )
     } else {
       this.investments = this.investments.sort(
-        (a:any, b:any) => a.ipoYear - b.ipoYear 
+        (a:any, b:any) => a.numShares - b.numShares 
       )
     }
-    this.stockIdDir = !this.stockIdDir
+    this.numSharesDir = !this.numSharesDir
   }
 
   reorderIpoYear(): void {
@@ -93,11 +93,11 @@ export class StockInvestmentsComponent implements OnInit {
     this.ipoYearDir = tempBool
     if(this.ipoYearDir) {
       this.investments = this.investments.sort(
-        (a:any, b:any) => b.ipoYear - a.ipoYear
+        (a:any, b:any) => b.stock.ipoYear - a.stock.ipoYear
       )
     } else {
       this.investments = this.investments.sort(
-        (a:any, b:any) => a.ipoYear - b.ipoYear 
+        (a:any, b:any) => a.stock.ipoYear - b.stock.ipoYear 
       )
     }
     this.ipoYearDir = !this.ipoYearDir

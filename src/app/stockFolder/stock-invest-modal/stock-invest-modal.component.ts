@@ -30,7 +30,7 @@ export class StockInvestModalComponent implements OnInit {
 
   makeInvestment(stock: Stock) {
     const investment:Investment = {
-      "userId": 1,
+      "userId": "mat123",
       "stockId": stock.id,
       "numShares": this.purchaseAmount
     }

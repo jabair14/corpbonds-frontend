@@ -20,7 +20,7 @@ export class StocksService {
   }
 
   
-  getInvestments(userId: Number): Observable<any> {
+  getInvestments(userId: String): Observable<any> {
     return this.http.get(`${this.url}/invest/${userId}`)
   }
   

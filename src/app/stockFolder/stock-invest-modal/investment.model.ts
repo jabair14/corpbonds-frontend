@@ -1,6 +1,6 @@
 export interface Investment {
     id?: Number,
-    userId: Number,
+    userId: String,
     stockId: Number,
     numShares: Number
 }

@@ -39,38 +39,38 @@
 
         <table class ="stocks-table">
             <tr>
-                <th style="width: 2vw; background-color: white;">
+                <th style="width: 2vw; background-color: rgb(255, 166, 0);">
                   <button (click) = "reorderId()"  *ngIf = "this.idDir" class="arrow">id <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
                   <button (click) = "reorderId()"  *ngIf = "!this.idDir" class="arrow">id <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
                 </th>
-                <th style="background-color: white; color: rgb(255, 166, 0);">Symbol </th>
-                <th style ="background-color: white; color: rgb(255, 166, 0);">Company Name</th>
-                <th style="background-color: white; color: rgb(255, 166, 0);">Country</th>
-                <th style="width: 5vw; background-color: white;">
+                <th style="background-color: rgb(255, 166, 0); color: black;">Symbol </th>
+                <th style ="background-color: rgb(255, 166, 0); color: black;">Company Name</th>
+                <th style="background-color: rgb(255, 166, 0); color: black;">Country</th>
+                <th style="width: 5vw; background-color: rgb(255, 166, 0);">
                   <button (click) = "reorderIpoYear()" *ngIf = "this.ipoYearDir" class="arrow">IPO Year <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
                   <button (click) = "reorderIpoYear()" *ngIf = "!this.ipoYearDir" class="arrow">IPO Year <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
                 </th>
-                <th style="width: 5vw; background-color: white;">
+                <th style="width: 5vw; background-color: rgb(255, 166, 0);">
                   <button (click) = "reorderlastSale()" *ngIf = "this.lastSaleDir" class="arrow">Last Sale <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
                   <button (click) = "reorderlastSale()" *ngIf = "!this.lastSaleDir" class="arrow">Last Sale <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
                 </th>
-                <th style="width: 6vw; background-color: white;">
+                <th style="width: 6vw; background-color: rgb(255, 166, 0);">
                   <button (click) = "reordernetChange()" *ngIf = "this.netChangeDir" class="arrow">Net Change <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
                   <button (click) = "reordernetChange()" *ngIf = "!this.netChangeDir" class="arrow">Net Change <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
                 </th>
-                <th style="width: 6vw; background-color: white;">
+                <th style="width: 6vw; background-color: rgb(255, 166, 0);">
                   <button (click) = "reorderpercentChange()" *ngIf = "this.percentChangeDir" class="arrow">Percent Change <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
                   <button (click) = "reorderpercentChange()" *ngIf = "!this.percentChangeDir" class="arrow">Percent Change <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
                 </th>
-                <th style="width: 6vw; background-color: white;">
+                <th style="width: 6vw; background-color: rgb(255, 166, 0);">
                   <button (click) = "reordermarketCap()" *ngIf = "this.marketCapDir" class="arrow">Market Cap <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
                   <button (click) = "reordermarketCap()" *ngIf = "!this.marketCapDir" class="arrow">Market Cap <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
                 </th>
-                <th style="width: 5vw; background-color: white;">
+                <th style="width: 5vw; background-color: rgb(255, 166, 0);">
                   <button (click) = "reordervolume()" *ngIf = "this.volumeDir" class="arrow">Volume <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
                   <button (click) = "reordervolume()" *ngIf = "!this.volumeDir" class="arrow">Volume <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
                 </th>
-                <th style="background-color: white; color: rgb(255, 166, 0);"> Invest </th>
+                <th style="background-color: rgb(255, 166, 0); color: black;"> Invest </th>
             </tr>
             <tr (click) = "toggleModal()" *ngFor="let stock of stocks | filter: term | paginate: config">
                 <th>{{stock.id}}</th>
