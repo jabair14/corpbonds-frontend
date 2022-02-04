@@ -1,0 +1,55 @@
+<body>
+    
+    
+    <div class ="fundsedit">
+        
+        <div class = "center" id = "centerText" id ="text">
+            <p>Investing in:</p>
+            <title> {{fund.name}}</title>
+             <h1 style="color: #8B0000">ID: {{fund.id}}</h1>
+            <hr>
+            <!-- ID: <input [(ngModel)] ="fund.id" id ="inputText" type = "text" value = "" placeholder="e.g. (John Smith)"/> -->
+            <label>Symbol: </label>
+            <input [(ngModel)] ="fund.symbol" id ="inputText" disabled/>
+             <label>Name: </label>
+            <input [(ngModel)] ="fund.name" id ="inputText" disabled/>
+            <label>Inception Date: </label>
+            <input [(ngModel)] ="fund.inceptionDate" id ="inputText" disabled/>
+            <label>Category One: </label>
+            <input [(ngModel)] ="fund.categoryOne" id ="inputText" disabled/>
+            <label>Category Two: </label>
+            <input [(ngModel)] ="fund.categoryTwo" id ="inputText" disabled/>
+            <label>Category Three: </label>
+            <input [(ngModel)] ="fund.categoryThree" id ="inputText" disabled/>
+            <label>Market Cap: </label>
+            <input [(ngModel)] ="fund.marketCap" id ="inputText" disabled/>
+            <label>Current Dividend Yield: </label>
+            <input [(ngModel)] ="fund.currentDividendYield" id ="inputText" disabled/>
+            <label>Historical Average Dividend Yield: </label>
+            <input [(ngModel)] ="fund.historicalAverageDividendYield" id ="inputText" disabled/>
+            <label>Leverage Factor: </label>
+            <input [(ngModel)] ="fund.everageFactor" id ="inputText" disabled/>
+            <label>Average Volume: </label>
+            <input [(ngModel)] ="fund.averageVolume" id ="inputText" disabled/>
+        
+        </div>
+
+        <img src='/assets/plain-arrow.png' class="investImg">
+    <div class = "center" id = "centerText" id ="text2">
+
+        <p>Amount Investing:</p>
+
+        <label>Amount: </label>
+        <input [(ngModel)] ="createPurchase.amount" id ="inputText" type = "number" value = "" placeholder="e.g. (255)"/>
+         <label>Fund ID: </label>
+        <input [(ngModel)] ="createPurchase.fundId" id ="inputText" type = "number" value = {{fund.id}}  disabled/>
+        <label>User ID: </label>
+         <input [(ngModel)] ="createPurchase.userId" id ="inputText" type = "string" [value] = "user.uniqueID" disabled/>
+         
+        <div id="button_div">
+    <button (click) = "createPurchases(createPurchase)" id = "wrapper" class="shadow" value="Shadow"id = "wrapper" class="shadow" value="Shadow">Buy</button> 
+    <button id = "wrapper" class="shadow" value="Shadow" routerLink ='/funds'>Go Back</button>
+    </div>
+    </div>
+    </div>
+</body>

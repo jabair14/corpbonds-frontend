@@ -58,10 +58,15 @@ import { LearnComponent } from './learn/learn.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 
+//CEF Purchases
+import { PurchasesComponent } from './purchasesPlace/purchases/purchases.component';
+import { CreatePurchasesComponent } from './purchasesPlace/createpurchases/createpurchases.component';
+import { PurchaseComponent } from './purchasesPlace/purchase/purchase.component';
+
+
 // Mutual Funds Imports
 import { MutualFundsComponent } from './mutual_funds_content/mutual-funds/mutual-funds.component';
 import { StylePaginatorDirective } from './style-paginator.directive';
-
 import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
@@ -92,6 +97,9 @@ import { ConsultantComponent } from './locationsFolder/consultant/consultant.com
     CreateFundsComponent,
     FundsComponent,
     FundComponent,
+    PurchasesComponent,
+    CreatePurchasesComponent,
+    PurchaseComponent,
 
     MutualFundsComponent,
     StylePaginatorDirective,
