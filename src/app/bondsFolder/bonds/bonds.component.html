@@ -1,5 +1,5 @@
 <div class="main">
-    <div class="bonds-info">
+    <div class="bonds-info" >
         <h1> Bonds </h1>
         <p> 
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro molestiae sit velit ut modi eius nobis soluta beatae similique repellendus 
@@ -12,8 +12,8 @@
     
     
     
-    <div class="bonds-div">
-        <div class="table-controls">
+    <div class="bonds-div" >
+        <div class="table-controls" >
             <div class="searchbar-div">
                 <input type="text" class="searchbar" placeholder="search.." [(ngModel)]="term" >
             </div>
@@ -22,34 +22,34 @@
                 <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
             </div>
         </div>
-        <table class="bonds-table" id="fixed_headers">
+        <app-my-loader></app-my-loader>
+        <table class="bonds-table" id="fixed_headers" >
             <thead>
                 <tr>
-                    <th >
+                    <!-- <th >
                         ID
-                    </th>
+                    </th> -->
                     <th >
                         Symbol
                     </th>
                     <th >
                         Name
                     </th>
-                    <th scope="col" 
-                    [appSort]="bonds" 
-                    data-order='desc' 
-                    data-name='interestRate'
-                    
-                    > 
-                    <a> Interest Rate </a> 
-                    <img class="sort" src="./assets/sort-up.png" alt="">
-                    
-                    </th>
-                    <th scope="col" 
+                    <th> 
+                        Interest Rate 
+                        <br>
+                        <mat-icon class="icon" (click)="clickSort()" (click)="show" >
+                            {{show == false ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon>
+                        </th>
+                        <th 
+                        scope="col" 
                         [appSort]="bonds" 
                         data-order='desc' 
                         data-name='maturityDate'
-                    >
+                        >
                         Maturity Date
+                        <br>
+                        <mat-icon class="icon">sort</mat-icon>
                     </th>
                     <th >
                         Face Value
@@ -85,9 +85,9 @@
             </thead>
             
             <tr  *ngFor="let bond of bonds | filter: term | paginate: config ">
-                <th>
+                <!-- <th>
                      {{bond.id}}
-                </th>
+                </th> -->
                 <td>
                     <a [routerLink]="['/bonds', bond.id]"> {{bond.bondSymbol}}</a>
                 </td>

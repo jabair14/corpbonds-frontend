@@ -1,0 +1,60 @@
+
+<div class="main">
+    <div class="leftcontainer">
+        <img class="picture" src="{{consultant.picture}}">
+        <div class="averagerating">
+        <h1>{{consultant.name}}</h1>
+        </div>
+        <h4>{{consultant.email}}</h4>
+       <div class="averagerating">
+            <div class="bar">
+                <div class="rating five">
+                    <p style="text-align:left;">
+                        5&nbsp;stars
+                    </p>
+                </div>
+            </div>
+            <div class="bar">
+                <div class="rating four">
+                    <p style="text-align:left;">
+                        4&nbsp;stars
+                    </p>
+                </div>
+            </div>
+            <div class="bar">
+                <div class="rating three">
+                    <p style="text-align:left;">
+                        3&nbsp;stars
+                    </p>
+                </div>
+            </div>
+            <div class="bar">
+                <div class="rating two">
+                    <p style="text-align:left;">
+                        2&nbsp;stars
+                    </p>
+                </div>
+            </div>
+            <div class="bar">
+                <div class="rating one">
+                    <p style="text-align:left;">
+                        1&nbsp;star
+                    </p>
+                </div>
+            </div>
+       </div>
+    </div>
+    <div class="rightcontainer">
+        <table *ngIf="reviewsTable">
+            <tr *ngFor="let review of reviews">
+                <td>
+                    {{review.rating}} stars
+                </td>
+                <td>
+                    {{review.text}}
+                </td>
+            </tr>
+        </table>
+        <h1 *ngIf="noReviews"> No reviews yet. Login in to leave one!</h1>
+    </div>
+</div>

@@ -11,7 +11,7 @@
           height="10px"
         />
       </button>
-      <button mat-menu-item>Learn</button>
+      <button mat-menu-item routerLink="/learn">Learn</button>
       <button mat-menu-item>Support</button>
       <button mat-menu-item>Who we are</button>
       <button mat-menu-item routerLink="/login">Login</button>
@@ -29,14 +29,9 @@
           Locations
       </button>
 
-        <button mat-menu-item routerLink="/bonds">Bonds</button>
-        <button mat-menu-item>Mutual Funds</button>
-        <button mat-menu-item>Stocks</button>
-        <button mat-menu-item routerLink="/etfs">ETF's</button>
-        <button mat-menu-item routerLink="/funds">Closed End Funds</button>
-        <button mat-menu-item routerLink="/locations">Locations</button>
       </mat-menu>
     </div>
     <router-outlet></router-outlet>
   </header>
 </div>
+<app-my-loader></app-my-loader>

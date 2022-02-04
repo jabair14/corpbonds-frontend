@@ -1,0 +1,98 @@
+.picture {
+    height: 300px;
+}
+
+h1 {
+    text-align: center;
+    font-size:x-large;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.rightcontainer, .leftcontainer {
+    height: 100vh;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    flex-wrap:wrap;
+}
+.rightcontainer {
+    flex: 3;
+    border-left: 1px solid rgba(255, 94, 0, 0.82);
+}
+.leftcontainer {
+    flex: 1;
+    border-right: 1px solid rgba(255, 94, 0, 0.82);
+}
+
+.averagerating {
+    width: 300px;
+}
+
+.bar {
+    width: 100%;
+    background-color: #ddd;
+    margin-bottom: 15px;
+}
+
+.rating {
+    // text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 5px;
+    color: black;
+}
+
+.five {
+    background-color: rgba(255, 94, 0, 0.82);
+}
+
+.four {
+    background-color: rgba(255, 94, 0, 0.82);
+}
+
+.three {
+    background-color: rgba(255, 94, 0, 0.82);
+}
+
+.two {
+    background-color: rgba(255, 94, 0, 0.82);
+}
+
+.one {
+    background-color: rgba(255, 94, 0, 0.82);
+}
+
+p {
+    margin: 0;
+    padding-left: 10px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+table {
+    text-align: left;
+    width: 100%;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+    font-size: medium;
+}
+
+tr {
+    height: 20px;
+}
+
+td {
+    height: 20px;
+}
