@@ -111,11 +111,8 @@ import { ConsultantComponent } from './locationsFolder/consultant/consultant.com
     AccountsComponent,
     RegisterComponent,
     TokenComponent,
-<<<<<<< HEAD
     ConsultantComponent,
 
-=======
->>>>>>> f0579c1a48a23e8b5632ac9edd836d9c9dcab5d8
   ],
   imports: [
     BrowserModule,
