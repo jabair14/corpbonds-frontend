@@ -92,6 +92,8 @@ import { TokenComponent } from './usersFolder/token/token.component';
     EtfComponent,
     SocialmediaComponent,
     SortDirective,
+    DialogSingleEtfComponent,
+  
     EditFundsComponent,
     CreateFundsComponent,
     FundsComponent,
