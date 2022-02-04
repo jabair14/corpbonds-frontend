@@ -56,8 +56,9 @@ export class CreatePurchasesComponent implements OnInit {
     createPurchase.fundId = this.fund.id;
     if(confirm("Please Accept Invest") == true){
     this.purchaseService.createPurchase(createPurchase).subscribe(data => {
+      console.log("this is getting created",data )
       if (data){
-        this.router.navigateByUrl("/purchases");
+        this.router.navigateByUrl("/funds");
       }
       console.log("Purchase is Created ", data);
       this.ngOnInit();
