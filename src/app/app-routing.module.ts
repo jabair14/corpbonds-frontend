@@ -18,6 +18,12 @@ import { FundsComponent } from './fundsPlace/funds/funds.component';
 import { CreateFundsComponent } from './fundsPlace/createfunds/createfunds.component';
 import { EditFundsComponent } from './fundsPlace/editfunds/editfunds.component';
 import { StockInvestmentsComponent } from './stockFolder/stock-investments/stock-investments.component';
+
+// CEF Purchases
+import { CreatePurchasesComponent } from './purchasesPlace/createpurchases/createpurchases.component';
+import { PurchaseComponent } from './purchasesPlace/purchase/purchase.component';
+import { PurchasesComponent } from './purchasesPlace/purchases/purchases.component';
+
 import { LearnComponent } from './learn/learn.component';
 
 
@@ -37,6 +43,9 @@ const routes: Routes = [
   {path: "funds/create", component: CreateFundsComponent},
   {path: "funds/:id", component: FundComponent},
   {path: "funds/:id/edit", component: EditFundsComponent},
+  {path: "funds/:id/create", component: CreatePurchasesComponent},
+  {path: "purchases", component: PurchasesComponent},
+  {path: "purchases/:id", component: PurchaseComponent},
   {path: "bonds/:id", component: BondComponent},
   {path: "", component: HomeComponent, pathMatch: "full"},
   {path: "stocks", component: StocksComponent},

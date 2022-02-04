@@ -1,15 +1,33 @@
 <div *ngIf="redir" class="container">
-  <div class="loginbox">
+  <div class="loginbox" @bottomFade>
     <h2 class="loginbox--header">Let's Get All Of Our Ducks in a Row</h2>
-    <div class="input input1">
+    <div class="input input2 mfa--div">
+      <label for="MFA" class="mfa--label">ENABLE MFA</label>
+      <input
+        type="checkbox"
+        id="MFA"
+        [checked]="enableMFA"
+        (change)="enableMFA = !enableMFA"
+        class="mfa--box"
+      />
+    </div>
+    <div class="input input1" *ngIf="this.enableMFA">
       <label for="phone">Phone Number</label>
       <br />
       <br />
+      <select name="dc" id="dc" [(ngModel)]="this.code">
+        <option
+          *ngFor="let dialcode of dialcodes"
+          [ngValue]="dialcode.dial_code"
+        >
+          {{ dialcode.code }}
+        </option>
+      </select>
       <input
         type="text"
         id="phone"
-        [(ngModel)]="accountObj.phone"
-        class="inputbox"
+        [(ngModel)]="this.num"
+        class="inputbox inputbox--phone"
         required
       />
     </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StocksService } from '../../stocks.service';
 import { Stock } from './stock.model';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { StockInvestModalComponent } from '../stock-invest-modal/stock-invest-modal.component';
 
 
