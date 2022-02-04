@@ -17,19 +17,20 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFilm } from '@fortawesome/free-solid-svg-icons';
 import { BondsComponent } from './bondsFolder/bonds/bonds.component';
 import { BondComponent } from './bondsFolder/bond/bond.component';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MatPaginatorModule } from '@angular/material/paginator';
 // import { NgxPaginationModule } from 'ngx-pagination';
 // import { SortDirective } from './bondsFolder/directive/sort.directive';
 
-
+//Stocks imports
+import { StocksComponent } from './stocks/stocks.component';
 
 //Location Imports
-import { LocationsComponent } from './locationsFolder/locations/locations.component';
 import { LocationComponent } from './locationsFolder/location/location.component';
+import { LocationsComponent } from './locationsFolder/locations/locations.component';
 import { RetcalcComponent } from './retcalc/retcalc.component';
 import { AngularMaterialModule } from './angular-material.module';
 import { FormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { EtfComponent } from './etf/etf.component';
 
 
@@ -54,18 +55,17 @@ import { PurchaseComponent } from './purchasesPlace/purchase/purchase.component'
     HomeComponent,
     BondsComponent,
     BondComponent,
-    EtfComponent,
+    StocksComponent,
     LocationsComponent,
     LocationComponent,
     RetcalcComponent,
+    EtfComponent,
     SocialmediaComponent,
     SortDirective,
-  
     EditFundsComponent,
     CreateFundsComponent,
     FundsComponent,
     FundComponent,
-    SortDirective,
     PurchasesComponent,
     CreatePurchasesComponent,
     PurchaseComponent
@@ -83,16 +83,12 @@ import { PurchaseComponent } from './purchasesPlace/purchase/purchase.component'
     HttpClientModule,
     FormsModule,
     Ng2SearchPipeModule,
-    FormsModule,
     MatPaginatorModule,
     NgxPaginationModule,
     AngularMaterialModule,
-    FormsModule,
     MatSortModule,
     MatTableModule,
-  
     MatInputModule,
-    NgxPaginationModule,
 
 
   ],

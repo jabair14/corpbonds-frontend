@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GoogleChartInterface } from 'ng2-google-charts';
+import { GoogleChartInterface, ChartSelectEvent } from 'ng2-google-charts';
 import { LocationService } from '../location.service';
 import { Routes, Router} from 'node_modules/@angular/router'
 import { Location } from './location.model';
@@ -18,6 +18,9 @@ export class LocationsComponent implements OnInit {
   response: any[]=[];
   locations:Location[] = []
   mapReady=false;
+  rightdiv=true;
+  rightdivchina=false;
+  rightdivindia=false;
 
 
 
@@ -56,7 +59,21 @@ export class LocationsComponent implements OnInit {
       }
     )
   }
-  
+  public select(event: ChartSelectEvent) {
+    console.log('Clicking on the map gets:', event.selectedRowFormattedValues[0])
+    let clickedLocation = this.locations.find(location => location.country == event.selectedRowFormattedValues[0])
+    if (clickedLocation?.country == 'China') {
+      this.rightdiv = false
+      this.rightdivindia = false
+      this.rightdivchina = true
+    }else if (clickedLocation?.country == 'India'){
+      this.rightdiv = false
+      this.rightdivchina = false
+      this.rightdivindia = true
+    }else {
+      this.router.navigate(['/locations', clickedLocation?.id])
+    }
+  }
   
   public geoChart: GoogleChartInterface = {
     chartType: 'GeoChart',
@@ -69,14 +86,6 @@ export class LocationsComponent implements OnInit {
       defaultColor: '#00000',
       'height': 600,
       legend:"none",
-    //   on:{
-    //   	onItemClick:function(clickEvent: MouseEvent){
-    //   		console.log('hiiiiii')
-    //   	},
-    //   	onRegionClick:function(clickEvent: MouseEvent){
-    //   		console.log("Region clicked: "+ clickEvent);
-    //   	}
-    // }
   }
   };
   

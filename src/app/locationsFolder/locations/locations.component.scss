@@ -1,37 +1,55 @@
+@import "/src/styles.scss";
 .locations-div {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .map-div {
-    width: 70%;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: 12px;
-    box-sizing: border-box;
+  width: 70%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 12px;
+  box-sizing: border-box;
 }
 
 .table-div {
+  width: 30%;
+}
+
+.table-div2 {
     width: 30%;
+    text-align: center;
 }
 
 a {
-    color: darkorange;
-    text-decoration: none;
-    font-size: larger;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  color: $rorange;
+  text-decoration: none;
+  font-size: larger;
+  font-family: "Trebuchet MS", "Lucida Sans Unicod$dorangee", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 a:hover {
-    color: rgb(175, 96, 0);
+  color: $dorange;
 }
 
 td {
     padding-bottom: 10px;
 }
+
+h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
+                    'Lucida Sans', Arial, sans-serif
+}
+
+google-chart {
+    cursor: pointer;
+}
+
+
