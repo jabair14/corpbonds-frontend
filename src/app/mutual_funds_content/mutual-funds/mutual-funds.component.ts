@@ -1,6 +1,6 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MutualFundsService } from '../mutual-funds.service';
@@ -110,6 +110,12 @@ export class MutualFundsComponent implements OnInit {
     }
   }
 
+  // syncPrimaryPaginator(event: PageEvent) {
+  //   this.paginator.pageIndex = event.pageIndex;
+  //   this.paginator.pageSize = event.pageSize;
+  //   this.paginator.page.emit(event);
+  // }
+
   announceSortChange(sortState: Sort) {
     if (sortState.direction) {
       this.liveAnnouncer.announce(`Sorted ${sortState.direction} ending`);
@@ -121,7 +127,18 @@ export class MutualFundsComponent implements OnInit {
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
+    
+    // this.dataSource.filter = this.dataSource.filter((element: any) => {
+    //   element.name.toLowerCase().includes(filterValue.trim().toLowerCase())
+    // })
+
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+  // filterTable() {
+  //   this.dataSource.filterPredicate = (data: MutualFunds, filter: string)  => {
+  //       !filter || data.name == filter;
+  //   }
+  // }
 
 }
