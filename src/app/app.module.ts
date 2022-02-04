@@ -59,13 +59,15 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 
 // Mutual Funds Imports
-import { MutualFundsComponent } from './mutual_funds_content/mutual-funds/mutual-funds.component';
+import { MutualFundsComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds/mutual-funds.component';
 import { StylePaginatorDirective } from './style-paginator.directive';
 
 import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { TokenComponent } from './usersFolder/token/token.component';
+import { MutualFundsTableComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-table/mutual-funds-table.component';
+import { MutualFundsSidenavComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-sidenav/mutual-funds-sidenav.component';
 
 @NgModule({
   declarations: [
@@ -102,6 +104,8 @@ import { TokenComponent } from './usersFolder/token/token.component';
     AccountsComponent,
     RegisterComponent,
     TokenComponent,
+    MutualFundsTableComponent,
+    MutualFundsSidenavComponent,
   ],
   imports: [
     BrowserModule,
