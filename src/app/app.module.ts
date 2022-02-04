@@ -63,7 +63,6 @@ import { PurchasesComponent } from './purchasesPlace/purchases/purchases.compone
 import { CreatePurchasesComponent } from './purchasesPlace/createpurchases/createpurchases.component';
 import { PurchaseComponent } from './purchasesPlace/purchase/purchase.component';
 
-
 // Mutual Funds Imports
 import { MutualFundsComponent } from './mutual_funds_content/mutual-funds/mutual-funds.component';
 import { StylePaginatorDirective } from './style-paginator.directive';
@@ -71,6 +70,7 @@ import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { TokenComponent } from './usersFolder/token/token.component';
+import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +84,6 @@ import { TokenComponent } from './usersFolder/token/token.component';
     LocationComponent,
     RetcalcComponent,
     DialogSingleEtfComponent,
-
     StocksComponent,
     LocationsComponent,
     LocationComponent,
@@ -93,7 +92,7 @@ import { TokenComponent } from './usersFolder/token/token.component';
     SocialmediaComponent,
     SortDirective,
     DialogSingleEtfComponent,
-  
+
     EditFundsComponent,
     CreateFundsComponent,
     FundsComponent,
@@ -107,11 +106,11 @@ import { TokenComponent } from './usersFolder/token/token.component';
     SortDirective,
     MyLoaderComponent,
     LearnComponent,
-
     LoginComponent,
     AccountsComponent,
     RegisterComponent,
     TokenComponent,
+    VerifyDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -136,6 +135,7 @@ import { TokenComponent } from './usersFolder/token/token.component';
     MatTableModule,
     MatInputModule,
     BrowserAnimationsModule,
+    VerifyDialogComponent,
   ],
   providers: [
     CookieService,
