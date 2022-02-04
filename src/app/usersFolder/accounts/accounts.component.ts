@@ -10,7 +10,7 @@ import {
   trigger,
 } from '@angular/animations';
 import { dialcodes } from 'src/assets/data/dialcodes';
-// import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { VerifyDialogComponent } from '../verify-dialog/verify-dialog.component';
 
 @Component({
@@ -44,9 +44,9 @@ export class AccountsComponent implements OnInit {
   constructor(
     private user: UserService,
     private router: Router,
-    private cookie: CookieService
-  ) // public dialog: MatDialog
-  {}
+    private cookie: CookieService,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.dialcodes = dialcodes;
@@ -57,7 +57,7 @@ export class AccountsComponent implements OnInit {
       if (data.body.message === 'redirect') {
         this.redir = true;
       } else if (data.body.message === 'MFArequired') {
-        // this.openDialog();
+        this.openDialog();
         // this.router.navigate(['/verify']);
       } else {
         this.redir = false;
@@ -70,8 +70,8 @@ export class AccountsComponent implements OnInit {
   }
 
   postMe() {
-    // this.accountObj.MFA = this.enableMFA;
-    this.accountObj.MFA = false;
+    this.accountObj.MFA = this.enableMFA;
+    // this.accountObj.MFA = false;
     this.accountObj.phone = `${this.code}${this.num}`;
     console.log(this.accountObj, this.enableMFA, this.code, this.num);
     this.user.postMakeAcct(this.accountObj).subscribe((data) => {
@@ -81,6 +81,6 @@ export class AccountsComponent implements OnInit {
   }
 
   openDialog() {
-    // this.dialog.open(VerifyDialogComponent);
+    this.dialog.open(VerifyDialogComponent);
   }
 }
