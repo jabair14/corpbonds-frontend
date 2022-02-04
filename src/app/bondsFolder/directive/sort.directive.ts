@@ -8,6 +8,7 @@ import { BondComponent } from "../bond/bond.component";
 
 export class SortDirective {
     
+    show = false;
 
     @Input()
     appSort: Array<any> = [];
@@ -26,10 +27,12 @@ export class SortDirective {
         const property = elem.getAttribute("data-name");
 
         if (order === 'desc') {
+            this.show = true
             this.appSort.sort(sort.startSort(property, order, type));
             elem.setAttribute("data-order", "asc")
         }
         else {
+            this.show = false
             this.appSort.sort(sort.startSort(property, order, type));
             elem.setAttribute("data-order", "desc")
         }
