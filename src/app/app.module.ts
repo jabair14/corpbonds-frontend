@@ -59,6 +59,7 @@ import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { TokenComponent } from './usersFolder/token/token.component';
+import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog.component';
 
 @NgModule({
   declarations: [
@@ -77,9 +78,7 @@ import { TokenComponent } from './usersFolder/token/token.component';
     CreateFundsComponent,
     FundsComponent,
     FundComponent,
-
     MutualFundsComponent,
-
     SortDirective,
     MyLoaderComponent,
     LearnComponent,
@@ -88,6 +87,7 @@ import { TokenComponent } from './usersFolder/token/token.component';
     AccountsComponent,
     RegisterComponent,
     TokenComponent,
+    VerifyDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -112,6 +112,7 @@ import { TokenComponent } from './usersFolder/token/token.component';
     LoaderService,
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
   ],
+  entryComponents: [VerifyDialogComponent],
   bootstrap: [
     AppComponent,
     FormsModule,
