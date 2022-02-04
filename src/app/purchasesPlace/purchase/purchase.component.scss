@@ -1,0 +1,186 @@
+@import "/src/styles.scss";
+body{
+
+    background: linear-gradient(to right, rgb(189, 186, 186), rgb(168, 165, 165));
+
+}
+
+title{
+    background-image: linear-gradient(to right, rgba(255, 94, 0, 0.82) , rgba(255, 191, 0, 0.943));
+    color: rgb(27, 3, 3);
+    align-items: center;
+    font-size: 72px;
+    flex-direction: column;
+    display: flex;
+    resize: both;
+    
+  }
+.bond-info {
+    align-items: center;
+    position: relative;
+    // background-color: red;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100vh;
+    
+}
+.invest-btn {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    background-color: $rorange;
+    display: inline-block;
+  }
+  
+  .back-btn {
+
+    margin-top: 100px;
+    float: right;
+  }
+
+.bond-info-left {
+    top: 23%;
+    right: 90%;
+    position: absolute;
+    padding-top: 20px;
+    height: 350px;
+    width: 450px;
+    background-color: white;
+    margin-right: auto;
+    border-bottom: 1px solid black;
+
+}
+.bond-info-left p{
+    font-size: 22px;
+}
+button{
+    cursor: pointer;
+}
+hr {
+    border-top: 1px dashed gray;
+    margin: 2px;
+}
+
+p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
+    'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    padding-left: 30px;
+    margin: 5px;
+}
+
+h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
+    'Lucida Sans', Arial, sans-serif;
+    padding-left: 40px;
+}
+
+h3 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
+    'Lucida Sans', Arial, sans-serif;
+    color: orange;
+    padding-left: 10px;
+}
+
+
+.fundsedit{
+    justify-content: center;
+    height: 100vh;
+    display: flex;
+    background: linear-gradient(to right, rgb(189, 186, 186), rgb(168, 165, 165));
+}
+
+
+#text2{
+    margin-top:240px;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.center{
+    display: block;
+    width: 1000px;
+    margin-top: 20px;
+
+
+}
+
+label{
+    font-size: 28px;
+    font-weight: bolder;
+}
+
+input {
+    font-size : 1.5em;
+    width: 50%;
+    background-color: rgb(0, 0, 0);
+}
+
+#text{
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#inputText{
+    font-weight: 500;
+    color: rgb(209, 160, 27);
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.fundInfo{
+    bottom: 32%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 5%;
+    left: 100%;
+}
+
+.fundInfo p{
+    width: 350px;
+}
+
+.fundInfo input{
+    width: 350px;
+}
+p{
+    font-size: 36px;
+    font-weight: 900;
+}
+title{
+    background-image: linear-gradient(to right, rgba(255, 94, 0, 0.82) , rgba(255, 191, 0, 0.943));
+    color: rgb(27, 3, 3);
+    align-items: center;
+    font-size: 36px;
+    flex-direction: column;
+    display: flex;
+    resize: both;
+    
+  }
+
+.investImg{
+    position: absolute;
+      top: 350px;
+      left: 25%;
+      width: 250px;
+      height: 250px;
+}.image-one{
+
+      position: absolute;
+      top: 10px;
+      left: -25%;
+      width: 250px;
+      height: 250px;
+  }
