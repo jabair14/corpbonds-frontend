@@ -1,0 +1,84 @@
+@import "/src/styles.scss";
+
+// .table-header {
+//     background-image: linear-gradient(to right, $rorange, $lorange);
+// }
+
+table {
+    width: 100%;
+}
+
+mat-divider {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    width: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.divider-recolored {
+    width: 100%;
+    background-color: rgb(173, 173, 173);
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+}
+
+.sticky {
+    position: sticky;
+    top: 0%;
+    background-color: white;
+}
+
+.sticky-two {
+    position: sticky;
+    top: 6em;
+}
+
+.sticky-three {
+    position: sticky;
+    top: 6.2em;
+}
+
+.left-align-elements {
+    left: 1em;    
+    position: absolute;  
+    margin: 0;
+}
+
+.right-align-elements { 
+    right: 1em;    
+    position: absolute;  
+    margin: 0;
+}
+
+.mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+}
+  
+.mat-row:hover .mat-cell {
+    border-color: currentColor;
+    background-color: rgb(235, 235, 253);
+}
+
+.pricePercent {
+    color: rgb(92, 92, 92)
+}
+
+.mat-column-changePrice {
+    text-align: right;
+    justify-content: flex-end;
+}
+
+.red {
+    color: red;
+}
+
+.black {
+    color: black;
+}
+
+.table-components {
+    padding: 10px;
+}

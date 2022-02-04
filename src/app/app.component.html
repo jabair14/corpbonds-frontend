@@ -2,31 +2,40 @@
   <header>
     <div class="nav-bar">
       <button mat-menu-item routerLink="/home">
-          <img class="logo" src={{imageSrc}} />
+        <img class="logo" src="{{ imageSrc }}" />
       </button>
-      <button mat-menu-item [matMenuTriggerFor]="products" xPosition="after">Products 
-        <img src="https://img.icons8.com/ios/48/000000/sort-down.png" height="10px"/> 
+      <button mat-menu-item [matMenuTriggerFor]="products" xPosition="after">
+        Products
+        <img
+          src="https://img.icons8.com/ios/48/000000/sort-down.png"
+          height="10px"
+        />
       </button>
-      <button mat-menu-item> Learn </button>
-      <button mat-menu-item> Support </button>
-      <button mat-menu-item> Who we are </button>
-      <button mat-menu-item >Login</button>
-      <button mat-menu-item routerLink="/home"> 
-          Home 
-      </button>
+      <button mat-menu-item routerLink="/learn">Learn</button>
+      <button mat-menu-item>Support</button>
+      <button mat-menu-item>Who we are</button>
+      <button mat-menu-item routerLink="/login">Login</button>
+      <button mat-menu-item routerLink="/home">Home</button>
       <mat-menu #products="matMenu">
+
         <button mat-menu-item routerLink= "/bonds" >
             Bonds
         </button>
         <button mat-menu-item >Mutual Funds</button>
+        <button mat-menu-item >Stocks</button>
+        <button mat-menu-item routerLink="/etfs" >ETF's</button>
+        <button mat-menu-item>Closed End Funds</button>
+        <button mat-menu-item routerLink="/mutual_funds">Mutual Funds</button>
         <button mat-menu-item routerLink="/stocks" >Stocks</button>
         <button mat-menu-item routerLink="/etfs" >ETF's</button>
         <button mat-menu-item routerLink= "/funds">Closed End Funds</button>
         <button mat-menu-item routerLink= "/locations" >
           Locations
       </button>
+
       </mat-menu>
     </div>
-  <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
   </header>
 </div>
+<app-my-loader></app-my-loader>

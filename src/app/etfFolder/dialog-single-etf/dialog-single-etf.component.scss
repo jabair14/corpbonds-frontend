@@ -1,0 +1,50 @@
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+
+.row-div {
+    display: flex;
+    flex-direction: row;
+}
+
+.strategy-div {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+}
+
+.dialog-info-list {
+    width: auto;
+    margin-right: 10px;
+}
+
+img {
+    width: 250px;
+    height: auto;
+    margin-left: 20px;
+}
+
+mat-dialog-actions {
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.close-btn:hover {
+    background-color: rgba(255, 166, 0, 0.861);
+}
+
+.buy-btn:hover {
+    color: whitesmoke;
+    background-color: rgb(67, 223, 67);
+}
+
+li {
+    list-style-type: none;
+    list-style-position: outside;
+    margin: 3px;
+}
+
+h2 {
+   color: rgba(255, 94, 0, 0.82)
+}

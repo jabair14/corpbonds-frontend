@@ -1,0 +1,236 @@
+<p>Placeholder</p>
+
+<mat-form-field class="search-form-field">
+    <input matInput placeholder="Search" (keyup)="applyFilter($event)" #search>
+    <mat-icon matSuffix>search</mat-icon>
+</mat-form-field>
+
+<div class="table-components">
+<mat-grid-list cols="7" rowHeight="10vh" class="sticky">
+
+    <mat-grid-tile colspan="2">
+        <div class="left-align-elements">
+            <button mat-button 
+                    [ngClass]="{'red' : overview, 'black' : !overview}" 
+                    (click)="changeTable('overview')">
+                    Overview
+            </button>
+
+            <button mat-button 
+                    [ngClass]="{'red' : performance, 'black' : !performance}" 
+                    (click)="changeTable('performance')">
+                    Performance
+            </button>
+
+            <button mat-button 
+                    [ngClass]="{'red' : price, 'black' : !price}" 
+                    (click)="changeTable('price')">
+                    Price
+            </button>
+        </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="5">
+        <div class="right-align-elements">
+            <mat-paginator  #paginator
+                            style-paginator 
+                            [pageSizeOptions]="[10, 25, 50, 100]"
+                            showFirstLastButtons
+                            aria-label="Select page of Mutual Funds">
+            </mat-paginator>
+        </div>
+    </mat-grid-tile>
+
+</mat-grid-list>
+
+<mat-divider class="divider-recolored sticky-two"></mat-divider>
+
+<table  mat-table [dataSource]="dataSource"
+        matSort (matSortChange)="announceSortChange($event)"
+        class="mat-elevation-z8">
+        
+    <!-- Ticker Column -->
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef
+            mat-sort-header sortActionDescription="Sort by name"> 
+            Ticker | Fund Name
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+            {{element.ticker}}
+            <mat-divider></mat-divider> 
+            {{element.name}}
+        </td>
+    </ng-container>
+
+    <!-- Asset Class Column -->
+    <ng-container matColumnDef="assetClass">
+        <th mat-header-cell *matHeaderCellDef
+            mat-sort-header sortActionDescription="Sort by assetClass"> 
+            Asset Class 
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.assetClass}} </td>
+    </ng-container>
+
+    <!-- Risk Column -->
+    <ng-container matColumnDef="risk">
+        <th mat-header-cell *matHeaderCellDef
+            mat-sort-header sortActionDescription="Sort by risk"> 
+            Risk 
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.risk}} </td>
+    </ng-container>
+
+    <!-- Expense Ratio Column -->
+    <ng-container matColumnDef="expenseRatio">
+        <th mat-header-cell *matHeaderCellDef
+            mat-sort-header sortActionDescription="Sort by expenseRatio"> 
+            Expense Ratio 
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.expenseRatio}} </td>
+    </ng-container>
+
+    <!-- SEC Yield Column -->
+    <ng-container matColumnDef="secYield">
+        <th mat-header-cell *matHeaderCellDef
+            mat-sort-header sortActionDescription="Sort by secYield"> 
+            SEC Yield 
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.secYield}} </td>
+    </ng-container>
+
+    <!-- YTD Column -->
+    <ng-container matColumnDef="ytd">
+        <th mat-header-cell *matHeaderCellDef
+            mat-sort-header sortActionDescription="Sort by ytd"> 
+            YTD 
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.ytd}} </td>
+    </ng-container>
+
+    <!-- oneYr Column -->
+    <ng-container matColumnDef="oneYr">
+        <th mat-header-cell *matHeaderCellDef
+            mat-sort-header sortActionDescription="Sort by oneYr"> 
+            1-yr 
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.oneYr}} </td>
+    </ng-container>
+
+    <!-- threeYr Column -->
+    <ng-container matColumnDef="threeYr">
+        <th mat-header-cell *matHeaderCellDef
+            mat-sort-header sortActionDescription="Sort by threeYr"> 
+            3-yr 
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.threeYr}} </td>
+    </ng-container>
+
+    <!-- fiveYr Column -->
+    <ng-container matColumnDef="fiveYr">
+        <th mat-header-cell *matHeaderCellDef
+            mat-sort-header sortActionDescription="Sort by fiveYr"> 
+            5-yr 
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.fiveYr}} </td>
+    </ng-container>
+
+    <!-- tenYr Column -->
+    <ng-container matColumnDef="tenYr">
+        <th mat-header-cell *matHeaderCellDef
+            mat-sort-header sortActionDescription="Sort by tenYr"> 
+            10-yr 
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.tenYr}} </td>
+    </ng-container>
+
+    <!-- sinceInception Column -->
+    <ng-container matColumnDef="sinceInception">
+        <th mat-header-cell *matHeaderCellDef
+            mat-sort-header sortActionDescription="Sort by sinceInception"> 
+            Since Inception 
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.sinceInception}} </td>
+    </ng-container>
+
+    <!-- initialInvestment Column -->
+    <ng-container matColumnDef="initialInvestment">
+        <th mat-header-cell *matHeaderCellDef
+            mat-sort-header sortActionDescription="Sort by initialInvestment"> 
+            Initial Investment 
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.initialInvestment}} </td>
+    </ng-container>
+
+    <!-- price Column -->
+    <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef
+            mat-sort-header sortActionDescription="Sort by price"> 
+            Price 
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+    </ng-container>
+
+    <!-- changePrice Column -->
+    <ng-container matColumnDef="changePrice">
+        <th mat-header-cell *matHeaderCellDef
+            mat-sort-header sortActionDescription="Sort by changePrice"> 
+            Change Price 
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.changePrice}} 
+            <br> <div class="pricePercent">( {{element.changePricePercent}} )</div>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row class="table-header sticky-three" *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
+</div>
+
+<!-- <mat-grid-list cols="2" rowHeight="10vh">
+
+    <mat-grid-tile>
+        <div class="left-align-elements">
+            <button mat-button 
+                    [ngClass]="{'red' : overview, 'black' : !overview}" 
+                    (click)="changeTable('overview')">
+                    Overview
+            </button>
+
+            <button mat-button 
+                    [ngClass]="{'red' : performance, 'black' : !performance}" 
+                    (click)="changeTable('performance')">
+                    Performance
+            </button>
+
+            <button mat-button 
+                    [ngClass]="{'red' : price, 'black' : !price}" 
+                    (click)="changeTable('price')">
+                    Price
+            </button>
+        </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+        <div class="right-align-elements">
+            <mat-paginator  (page)="syncPrimaryPaginator($event)" 
+                            [pageSize]="paginator.pageSize" 
+                            [pageIndex]="paginator.pageIndex"
+                            [length]="paginator.length" 
+                            [pageSizeOptions]="paginator.pageSizeOptions"
+                            showFirstLastButtons
+                            aria-label="Select page of Mutual Funds">
+            </mat-paginator>
+        </div>
+    </mat-grid-tile>
+
+</mat-grid-list> -->
+
+<!-- <mat-paginator  (page)="syncPrimaryPaginator($event)" 
+                [pageSize]="paginator.pageSize" 
+                [pageIndex]="paginator.pageIndex"
+                [length]="paginator.length" 
+                [pageSizeOptions]="paginator.pageSizeOptions"
+                showFirstLastButtons
+                aria-label="Select page of Mutual Funds">
+</mat-paginator> -->
