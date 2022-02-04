@@ -8,10 +8,11 @@ import { Observable } from 'rxjs';
 })
 export class MutualFundsService {
   link = "https://mutual-funds-service.herokuapp.com/";
+  // link = "http://localhost:4000/";
 
   constructor(private http: HttpClient) { }
   
-  getMutualFundss(): Observable<any> {
+  getMutualFunds(): Observable<any> {
     return this.http.get(this.link + "mutual_funds");
   }
 
