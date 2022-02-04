@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="etf-container">
+      <h3>This will be the ETF page</h3>
+
+      <div class="etf-info-div">
+        <div>
+          <p>
+            accusamus enim quidem quam recusandae consectetur facere vero
+            cupiditate maiores quod suscipit, eius, necessitatibus harum?
+            Dolores, nemo. Lorem ipsum dolor sit amet consectetur, adipisicing
+            elit. Eum nam ab vero ullam veritatis iure necessitatibus? Esse
+            saepe officiis corporis distinctio quis magni deserunt asperiores
+            odio quidem, impedit velit et?
+          </p>
+          <button mat-raised-button class="etf-button" (click)="openDialog()">
+            What is an ETF
+          </button>
+          <!-- <button mat-raised-button class="etf-button">BUTTON</button> -->
+        </div>
+        <img src="../../assets/undraw_investment_xv-9-d.svg" class="etf-img" />
+      </div>
+
+      <div class="search-div">
+        <mat-form-field class="search-form-field">
+          <input
+            [(ngModel)]="searchKey"
+            (keyup)="applyFilter(search.value)"
+            matInput
+            placeholder="search"
+            autocomplete="off"
+            #search
+          />
+          <button
+            (click)="applyClear()"
+            mat-button
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+
+      <!-- // Actual Table -->
+      <table
+        mat-table
+        class="mat-elevation-z8 etf-data-div"
+        [dataSource]="this.dataSource | paginate: config"
+        matSort
+        (matSortChange)="announceSortChange($event)"
+      >
+        <ng-container matColumnDef="id">
+          <th
+            mat-header-cell
+            class="smaller-cell"
+            *matHeaderCellDef
+            mat-sort-header
+          >
+            ID
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.id }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fund_symbol">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionDescription="Sort by fund_symbol"
+          >
+            Ticker
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <b>{{ element.fund_symbol }}</b>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fund_long_name">
+          <th mat-header-cell *matHeaderCellDef >
+            Fund Long Name
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.fund_long_name }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fund_family">
+          <th mat-header-cell *matHeaderCellDef >Fund Family</th>
+          <td mat-cell *matCellDef="let element">{{ element.fund_family }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="total_net_assets">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Total Net Assets
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.total_net_assets }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fund_yield">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Fund Yield</th>
+          <td mat-cell *matCellDef="let element">
+            <div *ngIf="element.fund_yield">
+              {{ element.fund_yield | number }} %
+            </div>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fund_annual_report_net_expense_ratio">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Annual Net Expense Ratio
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <div *ngIf="element.fund_annual_report_net_expense_ratio">
+              {{ element.fund_annual_report_net_expense_ratio | number }} %
+            </div>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fund_return_ytd">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Fund Return YTD
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <div *ngIf="element.fund_return_ytd">
+              {{ element.fund_return_ytd | number }} %
+            </div>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="inception_date">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Inception Date
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.inception_date }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="exchange_name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Exchange Name
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.exchange_name }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let element">
+            <button
+              (click)="openSingleETF(element)"
+              class="launch"
+              mat-icon-button
+              color="primary"
+            >
+              <mat-icon>launch</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="loading">
+          <th mat-footer-cell *matFooterCellDef colspan="6">
+            Loading data....
+          </th>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="tableConfig; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: tableConfig"></tr>
+        <tr
+          mat-footer-row
+          *matFooterRowDef="['loading']"
+          [ngClass]="{ hide: dataSource != null }"
+        ></tr>
+      </table>
+
+      <!-- <mat-paginator
+          [pageSizeOptions]="[5, 10, 25, 100]"
+          [pageSize]="5"
+          showFirstLastButtons
+          aria-label="Select page of ETFs"
+        ></mat-paginator> -->
+      <pagination-controls
+        (pageChange)="pageChanged($event)"
+      ></pagination-controls>
+
+      <div class="bottom-container"></div>
+    </main>
+  </body>
+</html>
