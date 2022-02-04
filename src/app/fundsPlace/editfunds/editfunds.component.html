@@ -32,7 +32,7 @@
         
         <div id="button_div">
     <button (click) = "update()" id = "wrapper" class="shadow" value="Shadow"id = "wrapper" class="shadow" value="Shadow">Update Fund</button> 
-    <button id = "wrapper" class="shadow" value="Shadow"id = "wrapper" class="shadow" value="Shadow" routerLink ='/funds'>Go Back</button>
+    <button id = "wrapper" class="shadow" value="Shadow"id = "wrapper" class="shadow" value="Shadow" [routerLink]="['/funds/', fund.id]">Go Back</button>
     </div>
     </div>
     

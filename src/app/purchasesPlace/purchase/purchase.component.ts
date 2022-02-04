@@ -22,7 +22,7 @@ export class PurchaseComponent implements OnInit {
     id: 0,
     amount: 0,
     fundId: 0,
-    userId: 0,
+    userId: '',
   };
 
   constructor(private route:ActivatedRoute, 

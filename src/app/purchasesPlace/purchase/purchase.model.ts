@@ -2,5 +2,5 @@ export interface Purchase {
     id: number,
     amount: number,
     fundId: number,
-    userId: number,
+    userId: string,
 }
