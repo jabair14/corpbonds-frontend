@@ -44,7 +44,12 @@ import { SocialmediaComponent } from './socialmedia/socialmedia.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 
+import * as PlotlyJS from 'plotly.js-dist-min';
+import { PlotlyModule } from 'angular-plotly.js';
+import { CommonModule } from '@angular/common';
+import { CarouselComponent } from './home/carousel/carousel.component';
 
+PlotlyModule.plotlyjs = PlotlyJS;
 
 @NgModule({
   declarations: [
@@ -63,6 +68,7 @@ import { MatTableModule } from '@angular/material/table';
     CreateFundsComponent,
     FundsComponent,
     FundComponent,
+    CarouselComponent,
 
 
 
@@ -83,7 +89,8 @@ import { MatTableModule } from '@angular/material/table';
     MatSortModule,
     MatTableModule,
     MatInputModule,
-
+    CommonModule,
+    PlotlyModule
 
   ],
   providers: [],

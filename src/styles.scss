@@ -7,14 +7,30 @@
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat.core();
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap");
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 
-$rorange: #ffa600;
-$lorange: #ffbf00;
-$dorange: #ff5e00;
+//THEME COLORS
+$lorange: #da935b;
+$rorange: #d6782f;
+$dorange: #c85502;
+$lgrey: #808080;
+$dgrey: #515151;
+$dblue: #03017c;
+$navyb: #051c55;
+
+//THEME FONTS
+// $pfont: "Josefin Sans", sans-serif;
+// $hfont: "Playfair Display", serif;
+
+$tfont: "Arimo", sans-serif;
+$hfont: "Josefin Sans", sans-serif;
+$pfont: "Quattrocento Sans", sans-serif;
 
 $capstone-frontend-primary: mat.define-palette(mat.$indigo-palette);
 $capstone-frontend-accent: mat.define-palette(
@@ -45,7 +61,7 @@ $capstone-frontend-theme: mat.define-light-theme(
 @include mat.all-component-themes($capstone-frontend-theme);
 
 html {
-    font-size: 10px
+  font-size: 10px;
 }
 /* You can add global styles to this file, and also import other style files */
 body {
