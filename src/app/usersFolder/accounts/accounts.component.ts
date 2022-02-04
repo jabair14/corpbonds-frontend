@@ -70,8 +70,8 @@ export class AccountsComponent implements OnInit {
   }
 
   postMe() {
-    this.accountObj.MFA = this.enableMFA;
-    // this.accountObj.MFA = false;
+    // this.accountObj.MFA = this.enableMFA;
+    this.accountObj.MFA = false;
     this.accountObj.phone = `${this.code}${this.num}`;
     console.log(this.accountObj, this.enableMFA, this.code, this.num);
     this.user.postMakeAcct(this.accountObj).subscribe((data) => {
