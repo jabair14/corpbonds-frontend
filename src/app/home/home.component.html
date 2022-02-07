@@ -1,4 +1,7 @@
 <div class="container">
+    <div class="carousel">
+        <app-carousel [slides]="slides"></app-carousel>
+    </div>
     <div class="orange">
         <div class="left">
             <h1>Power your future!</h1>
@@ -61,7 +64,7 @@
                 Find different ways to invest, while strategically positioning yourself
                 for the best returns.
             </p>
-            <button mat-raised-button class="stocks-btn" (click)="goToStocks()">
+            <button mat-raised-button class="stocks-btn" routerLink="/stocks">
                 Stocks
             </button>
 
