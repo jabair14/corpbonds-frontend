@@ -20,6 +20,18 @@ export class RetcalcComponent implements OnInit {
     id: 0 
   };
   ravC: string = "";
+  shown: boolean = false;
+  needAV: number = 0;
+  show: boolean = false;
+  diff: number = 0;
+  graph = {
+    data: [
+        
+        { x: ['Predicted Value', 'Needed Value'], y: [this.newcalc.retAccVal, this.needAV], type: 'bar', marker:{color: 'navy'}},
+    ],
+    layout: {width: 600, height: 500}
+};
+  
   constructor(private route: ActivatedRoute, private router: Router, private calcService: CalcService) { }
 
   ngOnInit(): void {
@@ -36,7 +48,28 @@ export class RetcalcComponent implements OnInit {
       this.newcalc = payload;
       console.log(payload)
       this.ravC = payload.retAccVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      this.needAV = (payload.yrlyIncome*.8)*25;
+      this.diff = (payload.retAccVal / this.needAV)*100;
+      if(this.diff > 100){
+        this.diff = 100;
+      }
+      // createGraph(payload.id);
+      this.graph = {
+        data: [
+            
+            { x: ['Predicted Value', 'Needed Value'], y: [this.newcalc.retAccVal, this.needAV], type: 'bar', marker:{color: 'navy'}},
+        ],
+        layout: {width: 600, height: 500}
+    }
     })
+  }
+
+  showRes(): void {
+    this.show = true;
+  }
+
+  toggleGraph(): void {
+    this.shown = !this.shown;
   }
 
 }

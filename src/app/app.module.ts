@@ -58,6 +58,12 @@ import { LearnComponent } from './learn/learn.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 
+import * as PlotlyJS from 'plotly.js-dist-min';
+import { PlotlyModule } from 'angular-plotly.js';
+import { CommonModule } from '@angular/common';
+import { CarouselComponent } from './home/carousel/carousel.component';
+
+PlotlyModule.plotlyjs = PlotlyJS;
 //CEF Purchases
 import { PurchasesComponent } from './purchasesPlace/purchases/purchases.component';
 import { CreatePurchasesComponent } from './purchasesPlace/createpurchases/createpurchases.component';
@@ -103,6 +109,7 @@ import { BondprofileComponent } from './bondsFolder/bondprofile/bondprofile.comp
     CreateFundsComponent,
     FundsComponent,
     FundComponent,
+    CarouselComponent,
     PurchasesComponent,
     CreatePurchasesComponent,
     PurchaseComponent,
@@ -139,6 +146,8 @@ import { BondprofileComponent } from './bondsFolder/bondprofile/bondprofile.comp
     AngularMaterialModule,
     FormsModule,
     MatDialogModule,
+    CommonModule,
+    PlotlyModule,
   ],
   entryComponents: [
     DialogEtfComponent,
