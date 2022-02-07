@@ -10,6 +10,7 @@ import { LoaderService } from './services/loader.service'; //loading screen
 import { LoaderInterceptor } from './interceptors/loader-interceptor.service';
 import { MyLoaderComponent } from './loader/my-loader.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms'
 
 ///////// COOKIE IMPORT
 import { CookieService } from 'ngx-cookie-service';
@@ -133,6 +134,7 @@ import { TokenComponent } from './usersFolder/token/token.component';
     AngularMaterialModule,
     FormsModule,
     MatDialogModule,
+    ReactiveFormsModule
   ],
   entryComponents: [
     DialogEtfComponent,

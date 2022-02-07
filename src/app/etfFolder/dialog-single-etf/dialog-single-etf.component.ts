@@ -19,6 +19,7 @@ export class DialogSingleEtfComponent implements OnInit {
     public dialog: MatDialog,
   ) {}
 
+  // hold user & single etf data
   receivedRow: any = {};
   userInformation: any = [];
 
@@ -34,6 +35,12 @@ export class DialogSingleEtfComponent implements OnInit {
 
   buyETF(): void {
     console.log("clicked buying option")
-    this.dialog.open(BuyDialogComponent, {data: this.userInformation})
+    console.log(this.userInformation)
+    // check to see if user is logged in
+    if(this.userInformation === undefined){
+      alert("Please log in to access the buying portal")
+    } else {
+      this.dialog.open(BuyDialogComponent, {data: this.receivedRow})
+    }
   }
 }
