@@ -10,10 +10,9 @@
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Amount</mat-label>
       <input
-        type="amount"
+        type="number"
         matInput
         [formControl]="numberInputFormControl"
-        placeholder="amount to purchase"
       />
       <mat-error
         *ngIf="
