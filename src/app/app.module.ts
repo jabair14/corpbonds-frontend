@@ -29,8 +29,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatDialogModule } from '@angular/material/dialog';
-import { DialogEtfComponent } from './etfFolder/dialog-etf/dialog-etf.component';
-import { DialogSingleEtfComponent } from './etfFolder/dialog-single-etf/dialog-single-etf.component';
+
 
 import { LocationsComponent } from './locationsFolder/locations/locations.component';
 // import { NgxPaginationModule } from 'ngx-pagination';
@@ -45,7 +44,12 @@ import { LocationComponent } from './locationsFolder/location/location.component
 import { RetcalcComponent } from './retcalc/retcalc.component';
 import { AngularMaterialModule } from './angular-material.module';
 import { FormsModule } from '@angular/forms';
+
+// ETF Imports
 import { EtfComponent } from './etfFolder/etf.component';
+import { DialogEtfComponent } from './etfFolder/dialog-etf/dialog-etf.component';
+import { DialogSingleEtfComponent } from './etfFolder/dialog-single-etf/dialog-single-etf.component';
+import { BuyDialogComponent } from './etfFolder/buy-dialog/buy-dialog.component';
 
 //Closed-End Funds Imports
 import { EditFundsComponent } from './fundsPlace/editfunds/editfunds.component';
@@ -84,6 +88,7 @@ import { TokenComponent } from './usersFolder/token/token.component';
     LocationComponent,
     RetcalcComponent,
     DialogSingleEtfComponent,
+    BuyDialogComponent,
 
     StocksComponent,
     LocationsComponent,

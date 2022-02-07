@@ -35,6 +35,7 @@ export class EtfComponent implements OnInit {
     'fund_symbol',
     'fund_long_name',
     'fund_family',
+    "price",
     'total_net_assets',
     'fund_yield',
     'fund_annual_report_net_expense_ratio',

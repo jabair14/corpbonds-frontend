@@ -36,6 +36,7 @@
     "ng2-search-filter": "^0.5.1",
     "ngx-cookie-service": "^13.1.2",
     "ngx-pagination": "^5.1.1",
+    "nodemon": "^2.0.15",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.1",
     "zone.js": "~0.11.4"
