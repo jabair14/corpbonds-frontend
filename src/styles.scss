@@ -18,6 +18,7 @@ $dorange: #ff5e00;
 
 $color--light: beige;
 $color--dark: rgb(47, 47, 47);
+$color--nav: rgb(239, 239, 246);
 
 $logo--font: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande";
 $text--font: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande";
@@ -51,7 +52,7 @@ $capstone-frontend-theme: mat.define-light-theme(
 @include mat.all-component-themes($capstone-frontend-theme);
 
 html {
-    font-size: 10px
+  font-size: 10px;
 }
 /* You can add global styles to this file, and also import other style files */
 body {

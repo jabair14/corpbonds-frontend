@@ -157,3 +157,86 @@ select {
     background-color: #000;
   }
 }
+
+////////////////////////////////////////////////// ACCOUNT PAGE
+
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.welcome__card {
+  background-image: linear-gradient(to right, $dorange, $lorange);
+  height: 18rem;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: start;
+
+  & h2 {
+    color: $color--nav;
+    font-family: $logo--font;
+    font-size: 6rem;
+    margin-left: 2rem;
+    margin-bottom: 3rem;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.267);
+  }
+}
+
+.account {
+  // background-color: $color--nav;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: start;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  background-image: linear-gradient(to right, $dorange, $lorange);
+  display: flex;
+  height: 3.3rem;
+  border-bottom: 0.1rem solid $dorange;
+}
+
+li {
+  list-style: none;
+}
+
+.servicelink {
+  text-decoration: none;
+  font-size: 2rem;
+  font-family: $text--font;
+  background-color: white;
+  padding: 1rem 2rem;
+  &:first-child {
+    border-bottom: 0.1rem solid white;
+  }
+  &:not(:last-child) {
+    border-right: 1px solid rgba(0, 0, 0, 0.226);
+  }
+
+  &:not(:first-child) {
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.226);
+  }
+}
+
+.balance {
+  width: 100vw;
+  font-family: $logo--font;
+  font-size: 2.5rem;
+  margin-top: 4rem;
+}
+
+.btn {
+  // align-items: flex-end;
+  justify-self: flex-end;
+}

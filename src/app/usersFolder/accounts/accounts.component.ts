@@ -30,16 +30,22 @@ export class AccountsComponent implements OnInit {
 
   dialcodes: any = [];
 
+  ///////////////////////////////Account redirection
   redir: boolean = false;
+  accountDis: boolean = false;
 
+  /////////////////////////////////Account Object for creation
   enableMFA: boolean = false;
   code: any;
   num: string = '';
   accountObj: any = {};
-
   name: string = '';
-
   balance: string = '';
+  ver = {
+    verificationCode: '',
+  };
+
+  /////////////////////////////////////////constructor
 
   constructor(
     private user: UserService,
@@ -48,6 +54,7 @@ export class AccountsComponent implements OnInit {
     public dialog: MatDialog
   ) {}
 
+  ////////////////////////////////////////////////Init function
   ngOnInit(): void {
     this.dialcodes = dialcodes;
     this.user.postAccount().subscribe((data) => {
@@ -58,9 +65,9 @@ export class AccountsComponent implements OnInit {
         this.redir = true;
       } else if (data.body.message === 'MFArequired') {
         this.openDialog();
-        // this.router.navigate(['/verify']);
-      } else {
+      } else if (data.body.message === 'success') {
         this.redir = false;
+        this.accountDis = true;
         console.log(data.body);
         this.name = data.body.name.split(' ')[0].toLowerCase();
         this.balance = data.body.data.Account_Balance.toFixed(2);
@@ -69,18 +76,35 @@ export class AccountsComponent implements OnInit {
     });
   }
 
+  //////////////////////////////Functions
+
   postMe() {
-    // this.accountObj.MFA = this.enableMFA;
-    this.accountObj.MFA = false;
+    this.accountObj.MFA = this.enableMFA;
     this.accountObj.phone = `${this.code}${this.num}`;
     console.log(this.accountObj, this.enableMFA, this.code, this.num);
     this.user.postMakeAcct(this.accountObj).subscribe((data) => {
-      console.log('Im workin here', data);
       this.ngOnInit();
     });
   }
 
   openDialog() {
-    this.dialog.open(VerifyDialogComponent);
+    let dialogRef = this.dialog.open(VerifyDialogComponent, {
+      panelClass: 'textVerBox',
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('Im closed');
+      this.user.postVerCode(result).subscribe((data) => {
+        console.log(data);
+        if (data.body.valid) this.ngOnInit();
+        else if (!data.body.valid) this.openDialog();
+      });
+    });
+  }
+
+  logOut() {
+    this.user.postLogOut().subscribe((data) => {
+      console.log('logged out!', data);
+      this.router.navigate(['/login']);
+    });
   }
 }
