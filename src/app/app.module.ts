@@ -10,6 +10,7 @@ import { LoaderService } from './services/loader.service'; //loading screen
 import { LoaderInterceptor } from './interceptors/loader-interceptor.service';
 import { MyLoaderComponent } from './loader/my-loader.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms'
 
 ///////// COOKIE IMPORT
 import { CookieService } from 'ngx-cookie-service';
@@ -29,8 +30,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatDialogModule } from '@angular/material/dialog';
-import { DialogEtfComponent } from './etfFolder/dialog-etf/dialog-etf.component';
-import { DialogSingleEtfComponent } from './etfFolder/dialog-single-etf/dialog-single-etf.component';
+
 
 import { LocationsComponent } from './locationsFolder/locations/locations.component';
 // import { NgxPaginationModule } from 'ngx-pagination';
@@ -45,7 +45,12 @@ import { LocationComponent } from './locationsFolder/location/location.component
 import { RetcalcComponent } from './retcalc/retcalc.component';
 import { AngularMaterialModule } from './angular-material.module';
 import { FormsModule } from '@angular/forms';
+
+// ETF Imports
 import { EtfComponent } from './etfFolder/etf.component';
+import { DialogEtfComponent } from './etfFolder/dialog-etf/dialog-etf.component';
+import { DialogSingleEtfComponent } from './etfFolder/dialog-single-etf/dialog-single-etf.component';
+import { BuyDialogComponent } from './etfFolder/buy-dialog/buy-dialog.component';
 
 //Closed-End Funds Imports
 import { EditFundsComponent } from './fundsPlace/editfunds/editfunds.component';
@@ -58,12 +63,12 @@ import { LearnComponent } from './learn/learn.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 
-// import * as PlotlyJS from 'plotly.js-dist-min';
-// import { PlotlyModule } from 'angular-plotly.js';
+import * as PlotlyJS from 'plotly.js-dist-min';
+import { PlotlyModule } from 'angular-plotly.js';
 import { CommonModule } from '@angular/common';
 import { CarouselComponent } from './home/carousel/carousel.component';
 
-// PlotlyModule.plotlyjs = PlotlyJS;
+PlotlyModule.plotlyjs = PlotlyJS;
 //CEF Purchases
 import { PurchasesComponent } from './purchasesPlace/purchases/purchases.component';
 import { CreatePurchasesComponent } from './purchasesPlace/createpurchases/createpurchases.component';
@@ -93,6 +98,8 @@ import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog
     LocationComponent,
     RetcalcComponent,
     DialogSingleEtfComponent,
+    BuyDialogComponent,
+
     StocksComponent,
     LocationsComponent,
     LocationComponent,
@@ -139,8 +146,7 @@ import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog
     AngularMaterialModule,
     FormsModule,
     MatDialogModule,
-    CommonModule,
-    // PlotlyModule,
+    ReactiveFormsModule
   ],
   entryComponents: [
     DialogEtfComponent,

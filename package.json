@@ -40,6 +40,7 @@
     "ngx-pagination": "^5.1.1",
     "nvm": "^0.0.4",
     "plotly.js-dist-min": "^2.8.3",
+    "nodemon": "^2.0.15",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.1",
     "zone.js": "~0.11.4"

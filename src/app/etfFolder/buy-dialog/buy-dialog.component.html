@@ -1,0 +1,35 @@
+<main>
+  <h2 mat-dialog-title>BUY ETF</h2>
+  <h3>{{ receivedEtfData.fund_long_name }}</h3>
+  <hr />
+  <div mat-card-content>
+    <div>
+      <h3>Enter amount you'd like to purchase:</h3>
+      <h3>Current price: {{receivedEtfData.price | currency}}</h3>
+    </div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Amount</mat-label>
+      <input
+        type="amount"
+        matInput
+        [formControl]="numberInputFormControl"
+        placeholder="amount to purchase"
+      />
+      <mat-error
+        *ngIf="
+          numberInputFormControl.hasError('amount') &&
+          !numberInputFormControl.hasError('required')
+        "
+      >
+        Please enter a valid numbered amount
+      </mat-error>
+      <mat-error *ngIf="numberInputFormControl.hasError('required')">
+        Amount <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <mat-dialog-actions>
+    <button mat-raised-button>BUY</button>
+    <button mat-raised-button>CLOSE</button>
+  </mat-dialog-actions>
+</main>
