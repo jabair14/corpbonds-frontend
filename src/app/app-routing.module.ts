@@ -11,6 +11,7 @@ import { LocationsComponent } from './locationsFolder/locations/locations.compon
 import { LocationComponent } from './locationsFolder/location/location.component';
 import { RetcalcComponent } from './retcalc/retcalc.component';
 import { SocialmediaComponent } from './socialmedia/socialmedia.component';
+import { ConsultantComponent } from './locationsFolder/consultant/consultant.component';
 
 //Closed-End Funds Routes
 import { FundComponent } from './fundsPlace/fund/fund.component';
@@ -29,6 +30,7 @@ import { LearnComponent } from './learn/learn.component';
 //Mutual Funds Routes
 import { MutualFundsComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds/mutual-funds.component';
 
+//User-Service Routes
 import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
@@ -64,6 +66,7 @@ const routes: Routes = [
   { path: 'registration/:token', component: TokenComponent },
   { path: 'account', component: AccountsComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'consultants/:id', component: ConsultantComponent}
 
 //User-Service Routes
 

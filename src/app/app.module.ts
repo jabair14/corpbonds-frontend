@@ -76,6 +76,7 @@ import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { TokenComponent } from './usersFolder/token/token.component';
+import { ConsultantComponent } from './locationsFolder/consultant/consultant.component';
 import { MutualFundsTableComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-table/mutual-funds-table.component';
 import { MutualFundsSidenavComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-sidenav/mutual-funds-sidenav.component';
 import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog.component';
@@ -120,6 +121,7 @@ import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog
     AccountsComponent,
     RegisterComponent,
     TokenComponent,
+    ConsultantComponent,
     MutualFundsTableComponent,
     MutualFundsSidenavComponent,
     VerifyDialogComponent,
