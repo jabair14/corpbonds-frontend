@@ -5,8 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { BondComponent } from './bondsFolder/bond/bond.component';
 import { BondsComponent } from './bondsFolder/bonds/bonds.component';
 import { HomeComponent } from './home/home.component';
+import { EtfComponent } from './etfFolder/etf.component';
 import { StocksComponent } from './stocks/stocks.component';
-import { EtfComponent } from './etf/etf.component';
 import { LocationsComponent } from './locationsFolder/locations/locations.component';
 import { LocationComponent } from './locationsFolder/location/location.component';
 import { RetcalcComponent } from './retcalc/retcalc.component';
@@ -17,11 +17,17 @@ import { FundComponent } from './fundsPlace/fund/fund.component';
 import { FundsComponent } from './fundsPlace/funds/funds.component';
 import { CreateFundsComponent } from './fundsPlace/createfunds/createfunds.component';
 import { EditFundsComponent } from './fundsPlace/editfunds/editfunds.component';
+
+// CEF Purchases
+import { CreatePurchasesComponent } from './purchasesPlace/createpurchases/createpurchases.component';
+import { PurchaseComponent } from './purchasesPlace/purchase/purchase.component';
+import { PurchasesComponent } from './purchasesPlace/purchases/purchases.component';
+
 import { LearnComponent } from './learn/learn.component';
 
 
 //Mutual Funds Routes
-import { MutualFundsComponent } from './mutual_funds_content/mutual-funds/mutual-funds.component';
+import { MutualFundsComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds/mutual-funds.component';
 
 import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
@@ -37,6 +43,9 @@ const routes: Routes = [
   {path: "funds/create", component: CreateFundsComponent},
   {path: "funds/:id", component: FundComponent},
   {path: "funds/:id/edit", component: EditFundsComponent},
+  {path: "funds/:id/create", component: CreatePurchasesComponent},
+  {path: "purchases", component: PurchasesComponent},
+  {path: "purchases/:id", component: PurchaseComponent},
   {path: "bonds/:id", component: BondComponent},
   {path: "investments/:id", component: InvestmentComponent},
   {path: "", component: HomeComponent, pathMatch: "full"},

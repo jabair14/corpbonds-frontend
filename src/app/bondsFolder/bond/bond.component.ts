@@ -88,18 +88,15 @@ export class BondComponent implements OnInit {
     console.log("bond Investment bond ID, after confirm ", this.bondInvestment.bondId)
     console.log(bondInvestment)
     this.bondInvestmentService.postBondInvestment(bondInvestment).subscribe(payload => {
-      // this.bondInvestment = payload
-      // this.bondInvestment.bondId = this.bond.id
-      // this.bondInvestment.investmentId = this.investment.id
         this.bondInvestment = payload
         console.log("bondInvestment payload", payload)
       })
   }
 
-  postToJoin(){
-    this.onCreateInvestment(this.investment)
-    // this.onCreateBondInvestment(this.bondInvestment)
-  }
+  // postToJoin(){
+  //   this.onCreateInvestment(this.investment)
+   
+  // }
 
   // onCreateBondInvestment(bondInvestment: any) {
   //   this.bondInvestmentService.postBondInvestment(bondInvestment).subscribe(payload => {

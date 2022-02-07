@@ -1,15 +1,55 @@
-<p>Placeholder</p>
+<p> Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
+    Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
+    Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
+    Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
+</p>
 
 <mat-form-field class="search-form-field">
     <input matInput placeholder="Search" (keyup)="applyFilter($event)" #search>
     <mat-icon matSuffix>search</mat-icon>
 </mat-form-field>
 
-<br>
+<app-mutual-funds-table></app-mutual-funds-table>
 
-<button mat-button class="sticky" [ngClass]="{'red' : overview, 'black' : !overview}" (click)="changeTable('overview')">Overview</button>
-<button mat-button class="sticky" [ngClass]="{'red' : performance, 'black' : !performance}" (click)="changeTable('performance')">Performance</button>
-<button mat-button class="sticky" [ngClass]="{'red' : price, 'black' : !price}" (click)="changeTable('price')">Price</button>
+<div class="table-components">
+<mat-grid-list cols="7" rowHeight="10vh" class="sticky">
+
+    <mat-grid-tile colspan="2">
+        <div class="left-align-elements">
+            <button mat-button 
+                    [ngClass]="{'red' : overview, 'black' : !overview}" 
+                    (click)="changeTable('overview')">
+                    Overview
+            </button>
+
+            <button mat-button 
+                    [ngClass]="{'red' : performance, 'black' : !performance}" 
+                    (click)="changeTable('performance')">
+                    Performance
+            </button>
+
+            <button mat-button 
+                    [ngClass]="{'red' : price, 'black' : !price}" 
+                    (click)="changeTable('price')">
+                    Price
+            </button>
+        </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="5">
+        <div class="right-align-elements">
+            <mat-paginator  #paginator
+                            style-paginator 
+                            [pageSizeOptions]="[10, 25, 50, 100]"
+                            showFirstLastButtons
+                            aria-label="Select page of Mutual Funds">
+            </mat-paginator>
+        </div>
+    </mat-grid-tile>
+
+</mat-grid-list>
+
+<mat-divider class="divider-recolored sticky-two"></mat-divider>
 
 <table  mat-table [dataSource]="dataSource"
         matSort (matSortChange)="announceSortChange($event)"
@@ -147,12 +187,56 @@
         </td>
     </ng-container>
 
-    <tr mat-header-row class="table-header" *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-header-row class="table-header sticky-three" *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
 </table>
+</div>
 
-<mat-paginator  [pageSizeOptions]="[10, 25, 50, 100]"
+<!-- <mat-grid-list cols="2" rowHeight="10vh">
+
+    <mat-grid-tile>
+        <div class="left-align-elements">
+            <button mat-button 
+                    [ngClass]="{'red' : overview, 'black' : !overview}" 
+                    (click)="changeTable('overview')">
+                    Overview
+            </button>
+
+            <button mat-button 
+                    [ngClass]="{'red' : performance, 'black' : !performance}" 
+                    (click)="changeTable('performance')">
+                    Performance
+            </button>
+
+            <button mat-button 
+                    [ngClass]="{'red' : price, 'black' : !price}" 
+                    (click)="changeTable('price')">
+                    Price
+            </button>
+        </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+        <div class="right-align-elements">
+            <mat-paginator  (page)="syncPrimaryPaginator($event)" 
+                            [pageSize]="paginator.pageSize" 
+                            [pageIndex]="paginator.pageIndex"
+                            [length]="paginator.length" 
+                            [pageSizeOptions]="paginator.pageSizeOptions"
+                            showFirstLastButtons
+                            aria-label="Select page of Mutual Funds">
+            </mat-paginator>
+        </div>
+    </mat-grid-tile>
+
+</mat-grid-list> -->
+
+<!-- <mat-paginator  (page)="syncPrimaryPaginator($event)" 
+                [pageSize]="paginator.pageSize" 
+                [pageIndex]="paginator.pageIndex"
+                [length]="paginator.length" 
+                [pageSizeOptions]="paginator.pageSizeOptions"
                 showFirstLastButtons
                 aria-label="Select page of Mutual Funds">
-</mat-paginator>
+</mat-paginator> -->

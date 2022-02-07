@@ -12,8 +12,10 @@ import { FundService } from '../fund.service';
 export class FundsComponent implements OnInit {
   public maxSize: number = 5;
   public directionLinks: boolean = true;
+  public autoHide: boolean = false;
   public responsive: boolean = true;
   public changeText: boolean;
+
   public labels: any = {
       previousLabel: '<--',
       nextLabel: '-->',
@@ -49,7 +51,11 @@ showDiv = {
   act : false,
   ed : false,
 }
-
+fund:Fund = {
+  id: 0,
+  symbol: '',
+  name: ''
+};
   // this should be in hte dyn-table.component.ts
   sortChanged(e: any) {
     // save cookie with table sort data here
@@ -76,11 +82,15 @@ showDiv = {
   })
 }
 
-
   deleteFunds(id: number){
+    if(confirm("Are you sure you want to delete this item?") == true){
     this.fundService.deleteFunds(id).subscribe(data =>{
       this.ngOnInit();
       })
+    }
+    else{
+      
+    }
     }
 
     onPageChanged(event: any){

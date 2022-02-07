@@ -1,0 +1,65 @@
+<main>
+  <mat-dialog-content>
+    <h2>{{ receivedRow.fund_long_name }}</h2>
+    <hr />
+    <div class="row-div">
+      <div class="dialog-info-list">
+        <ul>
+          <li><b>Ticker:</b> {{ receivedRow.fund_symbol }}</li>
+          <li><b>Fund Family:</b> {{ receivedRow.fund_family }}</li>
+          <li><b>Fund Category:</b> {{ receivedRow.fund_category }}</li>
+          <li *ngIf="receivedRow.category_return_ytd">
+            <b>Category Return YTD:</b>
+            {{ receivedRow.category_return_ytd }} %
+          </li>
+          <li *ngIf="receivedRow.fund_return_ytd">
+            <b>Fund Return YTD:</b>
+            {{ receivedRow.fund_return_ytd }} %
+          </li>
+          <li><b>Total Net Assets:</b> {{ receivedRow.total_net_assets }}</li>
+          <li *ngIf="receivedRow.fund_annual_report_net_expense_ratio">
+            <b>Annual Net Expense Ratio:</b>
+            {{ receivedRow.fund_annual_report_net_expense_ratio }} %
+          </li>
+          <li><b>Average 10 Day vol:</b> {{ receivedRow.avg_vol_10day }}</li>
+          <li><b>Average 3 Month vol:</b> {{ receivedRow.avg_vol_3month }}</li>
+          <li *ngIf="receivedRow.week52_high">
+            <b>Week 52 High:</b>
+            {{ receivedRow.week52_high }} %
+          </li>
+          <li *ngIf="receivedRow.week52_high_change">
+            <b>Week 52 High Change:</b>
+            {{ receivedRow.week52_high_change }} %
+          </li>
+          <li *ngIf="receivedRow.week52_low">
+            <b>Week 52 Low:</b>
+            {{ receivedRow.week52_low }} %
+          </li>
+          <li *ngIf="receivedRow.week52_low_change">
+            <b>Week 52 Low Change:</b>
+            {{ receivedRow.week52_low_change }} %
+          </li>
+          <li><b>Exchange Name:</b> {{ receivedRow.exchange_name }}</li>
+          <li><b>Exchange Code:</b> {{ receivedRow.exchange_code }}</li>
+          <li><b>Inception Date:</b> {{ receivedRow.inception_date }}</li>
+        </ul>
+      </div>
+
+      <div>
+        <img src="../../../assets/undraw_receipt_re_fre3.svg" />
+      </div>
+    </div>
+
+    <div class="strategy-div">
+      <hr />
+      <h3>Investment Strategy:</h3>
+      <p>
+        {{ receivedRow.investment_strategy }}
+      </p>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button class="buy-btn" mat-raised-button>BUY</button>
+    <button class="close-btn" mat-raised-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>
+</main>

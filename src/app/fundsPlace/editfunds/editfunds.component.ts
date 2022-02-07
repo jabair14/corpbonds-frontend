@@ -34,7 +34,6 @@ export class EditFundsComponent implements OnInit {
 
   update():void{
     this.fundService.updateFunds(this.fund).subscribe(data => {
-      console.log("here");
       if (data){
         this.router.navigateByUrl(`/funds/${this.fund.id}`);
       }
