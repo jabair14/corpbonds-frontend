@@ -5,8 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { BondComponent } from './bondsFolder/bond/bond.component';
 import { BondsComponent } from './bondsFolder/bonds/bonds.component';
 import { HomeComponent } from './home/home.component';
+import { StocksComponent } from './stockFolder/stocks/stocks.component';
 import { EtfComponent } from './etfFolder/etf.component';
-import { StocksComponent } from './stocks/stocks.component';
 import { LocationsComponent } from './locationsFolder/locations/locations.component';
 import { LocationComponent } from './locationsFolder/location/location.component';
 import { RetcalcComponent } from './retcalc/retcalc.component';
@@ -18,6 +18,7 @@ import { FundComponent } from './fundsPlace/fund/fund.component';
 import { FundsComponent } from './fundsPlace/funds/funds.component';
 import { CreateFundsComponent } from './fundsPlace/createfunds/createfunds.component';
 import { EditFundsComponent } from './fundsPlace/editfunds/editfunds.component';
+import { StockInvestmentsComponent } from './stockFolder/stock-investments/stock-investments.component';
 
 // CEF Purchases
 import { CreatePurchasesComponent } from './purchasesPlace/createpurchases/createpurchases.component';
@@ -56,6 +57,8 @@ const routes: Routes = [
   {path: "locations/:id", component: LocationComponent},
   {path: "retcalc", component: RetcalcComponent},
   {path: "socialmedias", component: SocialmediaComponent},
+  {path: "stockInvestments", component: StockInvestmentsComponent},
+  {path: "", component: HomeComponent, pathMatch: "full"},
   {path: "", component: HomeComponent, pathMatch: "full"},
   
   // Mutual Funds Routes
