@@ -61,6 +61,8 @@ export class CreatePurchasesComponent implements OnInit {
     if(confirm("Please Accept Invest") == true){
     this.purchaseService.createPurchase(createPurchase).subscribe(data => {
       console.log("this is getting created",data )
+      console.log("this purchast is being made", data)
+
       if (data){
         this.router.navigateByUrl("/profile");
       }
