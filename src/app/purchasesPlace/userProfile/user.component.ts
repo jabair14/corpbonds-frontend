@@ -37,7 +37,11 @@ export class UserComponent implements OnInit {
     private fundService: FundService,
     private router: Router,
     ) { }
-    ngOnInit(): void {}
+    ngOnInit(): void {this.purchaseService.getPurchases().subscribe(payload=>{
+        console.log(payload);
+        this.purchases = payload;
+    })
+}
 //   ngOnInit(): void {
 //     this.userService.postAccount().subscribe(payload => {
 

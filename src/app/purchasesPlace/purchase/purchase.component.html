@@ -26,7 +26,10 @@
                     <!-- <button mat-raised-button class="invest-btn" (click) = "edit()">
                      Edit Purchase
                      </button> -->
-                     <button mat-raised-button class="back-btn" style="color: orange; background-color: black;" routerLink="/profile">
+                     <button mat-raised-button class="back-btn" style="color: rgb(5, 4, 1); background-color: rgb(255, 115, 22);" (click) = "sellFund(purchase.id)">
+                        Sell
+                    </button>
+                     <button mat-raised-button class="back-btn" style="color: orange; background-color: black; float: left;" routerLink="/profile">
                          Go Back
                      </button>
                     
