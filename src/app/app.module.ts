@@ -31,13 +31,15 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatDialogModule } from '@angular/material/dialog';
 
-
 import { LocationsComponent } from './locationsFolder/locations/locations.component';
 // import { NgxPaginationModule } from 'ngx-pagination';
 // import { SortDirective } from './bondsFolder/directive/sort.directive';
 
 //Stocks imports
-import { StocksComponent } from './stocks/stocks.component';
+import { StocksComponent } from './stockFolder/stocks/stocks.component';
+import { StockInvestModalComponent } from './stockFolder/stock-invest-modal/stock-invest-modal.component';
+import { StockInvestmentsComponent } from './stockFolder/stock-investments/stock-investments.component';
+
 
 //Location Imports
 import { LocationComponent } from './locationsFolder/location/location.component';
@@ -81,9 +83,14 @@ import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { TokenComponent } from './usersFolder/token/token.component';
+import { ConsultantComponent } from './locationsFolder/consultant/consultant.component';
 import { MutualFundsTableComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-table/mutual-funds-table.component';
 import { MutualFundsSidenavComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-sidenav/mutual-funds-sidenav.component';
 import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog.component';
+import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.component';
+
+
+
 
 
 @NgModule({
@@ -113,6 +120,8 @@ import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog
     CreateFundsComponent,
     FundsComponent,
     FundComponent,
+    StockInvestModalComponent,
+    StockInvestmentsComponent,
     CarouselComponent,
     PurchasesComponent,
     CreatePurchasesComponent,
@@ -127,9 +136,11 @@ import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog
     AccountsComponent,
     RegisterComponent,
     TokenComponent,
+    ConsultantComponent,
     MutualFundsTableComponent,
     MutualFundsSidenavComponent,
     VerifyDialogComponent,
+    SellModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -154,6 +165,7 @@ import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog
     MatSortModule,
     MatTableModule,
     MatInputModule,
+    MatDialogModule,
     BrowserAnimationsModule,
     VerifyDialogComponent,
   ],

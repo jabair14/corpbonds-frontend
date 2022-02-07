@@ -3,12 +3,25 @@ import { GoogleChartInterface, ChartSelectEvent } from 'ng2-google-charts';
 import { LocationService } from '../location.service';
 import { Routes, Router} from 'node_modules/@angular/router'
 import { Location } from './location.model';
-
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger
+} from '@angular/animations';
 
 @Component({
   selector: 'app-locations',
   templateUrl: './locations.component.html',
-  styleUrls: ['./locations.component.scss']
+  styleUrls: ['./locations.component.scss'],
+  animations: [
+    trigger ('bottomFade', [
+      state('void', style({opacity: 0, transform: 'translateY(2rem)'})),
+      state('*', style({opacity: 1, transform: 'translateY(0)'})),
+      transition(':enter', [animate(500), style({ opacity:1})]),
+    ])
+  ]
 })
 export class LocationsComponent implements OnInit {
 

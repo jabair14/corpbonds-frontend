@@ -1,0 +1,10 @@
+.center {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: inherit;
+    align-items: center;
+}
+
+h1, h2 {
+    text-align: center;
+}
