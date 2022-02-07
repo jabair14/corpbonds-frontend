@@ -62,7 +62,7 @@ export class CreatePurchasesComponent implements OnInit {
     this.purchaseService.createPurchase(createPurchase).subscribe(data => {
       console.log("this is getting created",data )
       if (data){
-        this.router.navigateByUrl("/funds");
+        this.router.navigateByUrl("/profile");
       }
       console.log("Purchase is Created ", data);
       this.ngOnInit();
