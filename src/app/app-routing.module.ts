@@ -24,7 +24,6 @@ import { StockInvestmentsComponent } from './stockFolder/stock-investments/stock
 import { CreatePurchasesComponent } from './purchasesPlace/createpurchases/createpurchases.component';
 import { PurchaseComponent } from './purchasesPlace/purchase/purchase.component';
 import { PurchasesComponent } from './purchasesPlace/purchases/purchases.component';
-import { UserComponent } from './purchasesPlace/userProfile/user.component';
 import { LearnComponent } from './learn/learn.component';
 
 
@@ -47,7 +46,6 @@ const routes: Routes = [
   {path: "funds/:id", component: FundComponent},
   {path: "funds/:id/edit", component: EditFundsComponent},
   {path: "funds/:id/create", component: CreatePurchasesComponent},
-  {path: "profile", component: UserComponent},
   {path: "purchases", component: PurchasesComponent},
   {path: "purchases/:id", component: PurchaseComponent},
   {path: "bonds/:id", component: BondComponent},
