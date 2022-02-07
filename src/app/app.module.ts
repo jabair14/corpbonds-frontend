@@ -74,6 +74,7 @@ import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { TokenComponent } from './usersFolder/token/token.component';
 import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog.component';
+import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.component';
 
 
 
@@ -119,6 +120,7 @@ import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog
     RegisterComponent,
     TokenComponent,
     VerifyDialogComponent,
+    SellModalComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { StocksService } from '../../stocks.service';
 import { Stock } from './stock.model';
 import { MatDialog } from '@angular/material/dialog';
 import { StockInvestModalComponent } from '../stock-invest-modal/stock-invest-modal.component';
+import { UserService } from 'src/app/user.service';
 
 
 @Component({
@@ -21,13 +22,25 @@ export class StocksComponent implements OnInit {
   marketCapDir: boolean = true
   volumeDir: boolean = true
   show: boolean = false
+  signedIn: boolean = false
   config: any
   constructor(
     private stocksService: StocksService,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog,
+    private userService: UserService) { }
 
   async ngOnInit(): Promise<void> {
     await this.stocksService.getStocks().subscribe(payload => {
+      this.userService.whoAmI().subscribe(payload => {
+        console.log(payload)
+        console.log("userId:", String(payload.body.userID))
+        if(payload.body.userID) {
+          this.signedIn = true;
+        } else {
+          this.signedIn = false;
+        }
+        
+      })
       //this.data.push(...payload.sort(this.sortbyId));
       this.stocks = payload
       this.config = {

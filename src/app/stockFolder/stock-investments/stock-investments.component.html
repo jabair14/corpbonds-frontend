@@ -1,10 +1,10 @@
-<body class = "pageContainer">
+<body class = "pageContainer" *ngIf = "signedIn">
     <div class="stock-header">
         <h1 class="title"> Investments </h1>
     </div>
     <div class="stocks-div">
         <button (click) = "resetFilters()" class="resetBtn">Reset</button>
-        <input class= "stock-searchbar" placeholder="Search for Stock" type="text" [(ngModel)] ="term">
+        <input class= "stock-searchbar" placeholder="Search your Investments" type="text" [(ngModel)] ="term">
         <button class="investmentBtn" routerLink="/stocks">Stocks</button>
         <!--
         <table mat-table [dataSource]="data">
@@ -39,10 +39,6 @@
 
         <table class ="stocks-table">
             <tr>
-                <th style="width: 2vw; background-color: rgba(255, 166, 0, 0.861);">
-                  <button (click) = "reorderId()"  *ngIf = "this.idDir" class="arrow">id <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
-                  <button (click) = "reorderId()"  *ngIf = "!this.idDir" class="arrow">id <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
-                </th>
                 <th style="width: 4vw; background-color: rgba(255, 166, 0, 0.861);">
                     <button (click) = "reorderStockId()"  *ngIf = "this.stockIdDir" class="arrow">StockId <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
                     <button (click) = "reorderStockId()"  *ngIf = "!this.stockIdDir" class="arrow">StockId <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
@@ -58,15 +54,16 @@
                   <button (click) = "reorderIpoYear()" *ngIf = "this.ipoYearDir" class="arrow">IPO Year <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
                   <button (click) = "reorderIpoYear()" *ngIf = "!this.ipoYearDir" class="arrow">IPO Year <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
                 </th>
+                <th style="background-color: rgba(255, 166, 0, 0.861); color: black;">Sell</th>
             </tr>
             <tr *ngFor="let invest of investments | filter: term | paginate: config">
-                <th>{{invest.id}}</th>
                 <th>{{invest.stockId}}</th>
                 <th>{{invest.numShares}}</th>
                 <th>{{invest.stock.symbol}}</th>
                 <th>{{invest.stock.name}}</th>
                 <th>{{invest.stock.country}}</th>
                 <th>{{invest.stock.ipoYear}}</th>
+                <th><button mat-raised-button (click) = "sellStock(invest)"><mat-icon> attach_money</mat-icon></button></th>
             </tr>
         </table>
 

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { StocksService } from 'src/app/stocks.service';
+import { UserService } from 'src/app/user.service';
 import { Investment } from '../stock-invest-modal/investment.model';
+import { SellModalComponent } from '../sell-modal/sell-modal.component';
 
 @Component({
   selector: 'app-stock-investments',
@@ -9,50 +12,61 @@ import { Investment } from '../stock-invest-modal/investment.model';
 })
 export class StockInvestmentsComponent implements OnInit {
   config: any
+  signedIn: boolean = false;
   term: string = ""
-  idDir: boolean = true //true is a -> z, low -> high,   false is opposite 
-  stockIdDir: boolean = true
+  stockIdDir: boolean = true //true is a -> z, low -> high,   false is opposite 
   numSharesDir: boolean = true
   ipoYearDir: boolean = true
   showDir: boolean = false
+  currentUser: String = ""
   investments:Investment[] = []
-  constructor(private stockService:StocksService) { }
+  constructor(
+    public dialog: MatDialog,
+    private stockService:StocksService,
+    private userService: UserService) { }
 
   ngOnInit(): void {
-    this.stockService.getInvestments("mat123").subscribe(payload => {
-      this.investments = payload
-      console.log(this.investments)
-      this.config = {
-        id: "custom",
-        itemsPerPage: 10,
-        currentPage: 1,
-        totalItems: this.investments.length
+    this.userService.whoAmI().subscribe(payload => {
+      if(payload.body.userID) {
+        console.log("hi")
+        this.signedIn = true;
+        this.stockService.getInvestments(payload.body.userID).subscribe(payload => {
+          this.investments = payload
+          this.reorderStockId()
+          this.config = {
+            id: "custom",
+            itemsPerPage: 10,
+            currentPage: 1,
+            totalItems: this.investments.length
+          }
+        })
+      } else {
+        this.signedIn = false;
       }
+      console.log(payload)
     })
+    
+  }
+
+  sellStock(investment: Investment) {
+      const dialogRef = this.dialog.open(SellModalComponent, {
+        width: '400px',
+        data: {investment: investment}
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog Result: ${result}`);
+        this.ngOnInit()
+      })
+
   }
 
   resetFilters() {
     this.resetArrows()
     this.term = ""
-    this.idDir = false
-    this.reorderId();
+    this.stockIdDir = false
+    this.reorderStockId();
   }
 
-  reorderId(): void {
-    let tempBool = this.idDir
-    this.resetArrows()
-    this.idDir = tempBool
-    if(this.idDir) {
-      this.investments = this.investments.sort(
-        (a:any, b:any) => b.id - a.id
-      )
-    } else {
-      this.investments = this.investments.sort(
-        (a:any, b:any) => a.id - b.id 
-      )
-    }
-    this.idDir = !this.idDir
-  }
 
   reorderStockId(): void {
     let tempBool = this.stockIdDir
@@ -107,8 +121,9 @@ export class StockInvestmentsComponent implements OnInit {
 
 
   resetArrows(): void {
-    this.idDir = true;
+    this.stockIdDir = true;
     this.ipoYearDir = true;
+    this.numSharesDir = true;
   }
 
 }

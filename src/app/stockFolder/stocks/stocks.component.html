@@ -5,7 +5,7 @@
     <div class="stocks-div">
         <button (click) = "resetFilters()" class="resetBtn">Reset</button>
         <input class= "stock-searchbar" placeholder="Search for Stock" type="text" [(ngModel)] ="term">
-        <button class="investmentBtn" routerLink="/stockInvestments">Investments</button>
+        <button class="investmentBtn" routerLink="/stockInvestments" *ngIf = signedIn>Investments</button>
         <!--
         <table mat-table [dataSource]="data">
             <ng-container matColumnDef="Symbol">
