@@ -61,20 +61,30 @@ import { LearnComponent } from './learn/learn.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 
+import * as PlotlyJS from 'plotly.js-dist-min';
+import { PlotlyModule } from 'angular-plotly.js';
+import { CommonModule } from '@angular/common';
+import { CarouselComponent } from './home/carousel/carousel.component';
+
+PlotlyModule.plotlyjs = PlotlyJS;
 //CEF Purchases
 import { PurchasesComponent } from './purchasesPlace/purchases/purchases.component';
 import { CreatePurchasesComponent } from './purchasesPlace/createpurchases/createpurchases.component';
 import { PurchaseComponent } from './purchasesPlace/purchase/purchase.component';
 
 // Mutual Funds Imports
-import { MutualFundsComponent } from './mutual_funds_content/mutual-funds/mutual-funds.component';
+import { MutualFundsComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds/mutual-funds.component';
 import { StylePaginatorDirective } from './style-paginator.directive';
 import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { TokenComponent } from './usersFolder/token/token.component';
+import { ConsultantComponent } from './locationsFolder/consultant/consultant.component';
+import { MutualFundsTableComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-table/mutual-funds-table.component';
+import { MutualFundsSidenavComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-sidenav/mutual-funds-sidenav.component';
 import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog.component';
 import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.component';
+
 
 
 
@@ -106,6 +116,7 @@ import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.componen
     FundComponent,
     StockInvestModalComponent,
     StockInvestmentsComponent,
+    CarouselComponent,
     PurchasesComponent,
     CreatePurchasesComponent,
     PurchaseComponent,
@@ -119,6 +130,9 @@ import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.componen
     AccountsComponent,
     RegisterComponent,
     TokenComponent,
+    ConsultantComponent,
+    MutualFundsTableComponent,
+    MutualFundsSidenavComponent,
     VerifyDialogComponent,
     SellModalComponent,
   ],
@@ -137,6 +151,8 @@ import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.componen
     AngularMaterialModule,
     FormsModule,
     MatDialogModule,
+    CommonModule,
+    PlotlyModule,
   ],
   entryComponents: [
     DialogEtfComponent,

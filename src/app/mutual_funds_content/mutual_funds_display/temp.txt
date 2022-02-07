@@ -1,9 +1,15 @@
-<p>Placeholder</p>
+<p> Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
+    Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
+    Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
+    Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
+</p>
 
 <mat-form-field class="search-form-field">
     <input matInput placeholder="Search" (keyup)="applyFilter($event)" #search>
     <mat-icon matSuffix>search</mat-icon>
 </mat-form-field>
+
+<app-mutual-funds-table></app-mutual-funds-table>
 
 <div class="table-components">
 <mat-grid-list cols="7" rowHeight="10vh" class="sticky">

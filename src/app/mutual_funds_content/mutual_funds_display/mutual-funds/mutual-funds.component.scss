@@ -1,0 +1,92 @@
+@import "/src/styles.scss";
+
+mat-divider {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    width: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.sidenav {
+    margin: 15px;
+    width: 230px;
+    border-right: none;
+    // background: #0053b3;
+    color: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    height: 500px;
+    // position: sticky;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    // height: 300px;
+    // height: calc(100vh - 65px);
+    // background-color: red;
+    padding-top: 15px;
+}
+
+.divider-recolored {
+    width: 100%;
+    background-color: rgb(173, 173, 173);
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+}
+
+.mat-drawer:not(.mat-drawer-side) {
+    position: fixed;
+}
+
+.mat-drawer-backdrop {
+    position: fixed !important;
+}
+
+// .sticky {
+//     position: sticky;
+//     top: 0%;
+//     background-color: white;
+// }
+
+// .sticky-two {
+//     position: sticky;
+//     top: 5.5em;
+// }
+
+// .sticky-three {
+//     position: sticky;
+//     top: 5.6em;
+// }
+
+// .left-align-elements {
+//     left: 1em;    
+//     position: absolute;  
+//     margin: 0;
+// }
+
+// .right-align-elements { 
+//     right: 1em;    
+//     position: absolute;  
+//     margin: 0;
+// }
+
+.red {
+    color: red;
+}
+
+.black {
+    color: black;
+}
+
+mat-sidenav-container, mat-sidenav-content {
+    overflow: initial
+}
+  

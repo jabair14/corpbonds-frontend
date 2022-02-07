@@ -17,6 +17,10 @@
 					<li>
 						<a href="mailto:{{consultant.email}}">{{consultant.email}}</a>
 					</li>
+					<br>
+					<li>
+						<a [routerLink]="['/consultants',consultant.id]">Reviews →</a>
+					</li>
 				</ul>
 			</div>
 		</div>

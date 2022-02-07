@@ -1,0 +1,23 @@
+<p> Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff</p>
+
+<mat-sidenav-container class="container">
+
+    <mat-sidenav #sidenav="matSidenav" class="sidenav mat-elevation-z8" mode="side" opened>
+        Sidenav
+
+        <mat-form-field class="search-form-field">
+            <input matInput placeholder="Search" (keyup)="applyFilter($event)" #search>
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+
+        <div class="content">
+            <app-mutual-funds-table></app-mutual-funds-table>
+        </div>
+
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
