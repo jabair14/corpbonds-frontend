@@ -46,8 +46,8 @@ export class CreatePurchasesComponent implements OnInit {
 
       this.user = payload.body.data
       this.createPurchase.userId = this.user.uniqueID
-      console.log("userData", payload.body.data)
-      console.log("purchase userId", this.createPurchase.userId)
+      // console.log("userData", payload.body.data)
+      // console.log("purchase userId", this.createPurchase.userId)
     })
   }
 
@@ -55,9 +55,9 @@ export class CreatePurchasesComponent implements OnInit {
   createPurchases(createPurchase: any){
     createPurchase.fundId = this.fund.id;
     createPurchase.userId = this.user.uniqueID;
-    console.log('this is the user Id', this.user.uniqueID)
-    console.log('this is the fund Id', this.fund.id)
-    console.log('this is the amount ', this.createPurchase.amount)
+    // console.log('this is the user Id', this.user.uniqueID)
+    // console.log('this is the fund Id', this.fund.id)
+    // console.log('this is the amount ', this.createPurchase.amount)
     if(confirm("Please Accept Invest") == true){
     this.purchaseService.createPurchase(createPurchase).subscribe(data => {
       console.log("this is getting created",data )
