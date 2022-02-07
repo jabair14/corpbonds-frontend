@@ -37,6 +37,11 @@ export class BondComponent implements OnInit {
     bondId: 0,
   }
 
+  show = false
+  showConfirm = false
+
+  total = 0
+
 
 
   constructor(
@@ -52,6 +57,7 @@ export class BondComponent implements OnInit {
       this.bondService.getBond(myid).subscribe(payload => {
         // console.log("this is payload on bond", payload)
         this.bond = payload
+        
       })
     })
     this.userService.postAccount().subscribe(payload => {
@@ -65,12 +71,16 @@ export class BondComponent implements OnInit {
     })
   }
 
+  
+
   onCreateInvestment(investment: any) {
      this.investmentService.postInvestment(investment).subscribe(payload => {
        console.log("this is the createInvestment payload=", payload)
        this.investment = payload
+       this.total = this.investment.amount * 1000
        this.bondInvestment.investmentId = this.investment.id
        this.bondInvestment.bondId = this.bond.id
+       this.showConfirm = true
        console.log("bondInvestmend Investmnet ID", this.bondInvestment.investmentId)
        console.log("bond Investment bond ID ", this.bondInvestment.bondId)
       
@@ -88,11 +98,18 @@ export class BondComponent implements OnInit {
     console.log("bond Investment bond ID, after confirm ", this.bondInvestment.bondId)
     console.log(bondInvestment)
     this.bondInvestmentService.postBondInvestment(bondInvestment).subscribe(payload => {
+      if (payload) {
         this.bondInvestment = payload
         console.log("bondInvestment payload", payload)
+        this.router.navigateByUrl("/bondprofile")
+      } else {
+        alert ("Investment unsuccessful")
+      }
       })
+
   }
 
+  
   // postToJoin(){
   //   this.onCreateInvestment(this.investment)
    

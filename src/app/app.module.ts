@@ -75,6 +75,7 @@ import { BondInvestmentComponent } from './bondsFolder/bond-investment/bond-inve
 import { MutualFundsTableComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-table/mutual-funds-table.component';
 import { MutualFundsSidenavComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-sidenav/mutual-funds-sidenav.component';
 import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog.component';
+import { BondprofileComponent } from './bondsFolder/bondprofile/bondprofile.component';
 
 
 @NgModule({
@@ -121,6 +122,7 @@ import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog
     MutualFundsTableComponent,
     MutualFundsSidenavComponent,
     VerifyDialogComponent,
+    BondprofileComponent,
   ],
   imports: [
     BrowserModule,

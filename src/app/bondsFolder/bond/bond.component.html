@@ -1,4 +1,4 @@
-<!-- bonds -->
+
  <h1> {{bond.issuerName}}</h1>
 
 <div class="main-bond">
@@ -22,72 +22,70 @@
                <hr>
                <p> Bypass Clearance - {{bond.bypassClearance}}</p>
                <hr>
-               <button mat-raised-button class="invest-btn"
-               
+               <button mat-raised-button class="invest-btn" (click)="show = !show"
                >
-                Start Investment
+               {{show == true ? 'Cancel' : 'Start Investment'}}
                 </button>
                 <button mat-raised-button class="back-btn" routerLink="/bonds">
                     Go Back
                 </button>
             </div>
         </div>
-        <div class="investment">
-                <h3>Investment Form</h3>
-                <!-- <form action="Submit"> -->
-                    <div class="form-field">
-                        <label for=""> Bond Symbol </label>
-                        <br>
-                        <input type="text" placeholder="{{bond.bondSymbol}}" [value]="bond.bondSymbol">
-                    </div>
-                   
-                    <div class="form-field">
-                        <label for=""> Bond ID</label>
-                        <br>
-                        <input type="text"  [(ngModel)]="bondInvestment.bondId" [value]="bond.id" disabled>
-                    </div>
+        
+        <div class="investment" *ngIf="show">
+            <h3>Investment Form</h3>
+            <div class="form-field">
+                <label for=""> Bond Symbol </label>
+                <br>
+                <input type="text" placeholder="{{bond.bondSymbol}}" [value]="bond.bondSymbol">
+            </div>
+        
+            <div class="form-field">
+                <label for=""> Bond ID</label>
+                <br>
+                <input type="text" [(ngModel)]="bondInvestment.bondId" [value]="bond.id" disabled>
+            </div>
+        
+            <div class="form-field">
+                <label for=""> Investment ID</label>
+                <br>
+                <input type="text" [value]="investment.id" disabled>
+            </div>
+        
+            <div class="form-field">
+                <label for=""> Value </label>
+                <br>
+                <input type="text" placeholder="{{bond.faceValue}}" [value]="bond.faceValue">
+            </div>
+        
+            <div class="form-field">
+                <label for=""> User ID</label>
+                <br>
+                <input type="password" [(ngModel)]="investment.userId" [value]="user.uniqueID" disabled>
+            </div>
+        
+            <div class="form-field">
+                <label for=""> Amount </label>
+                <br>
+                <input [(ngModel)]="investment.amount" type="number">
+            </div>
+            <br>
+            <button mat-raised-button class="submit" (click)="onCreateInvestment(investment)">
+                Submit
+            </button>
 
-                    <div class="form-field">
-                        <label for=""> Investment ID</label>
-                        <br>
-                        <input type="text"   [value]="investment.id" disabled>
-                    </div>
-                
-                    <div class="form-field">
-                        <label for=""> Value </label>
-                        <br>
-                        <input type="text" placeholder="{{bond.faceValue}}" [value]="bond.faceValue" >
-                    </div>
-                    
-                    <div class="form-field">
-                        <label for=""> User ID</label>
-                        <br>
-                        <input type="password" [(ngModel)]="investment.userId"  [value]="user.uniqueID" disabled>
-                    </div>
-
-                    <div class="form-field">
-                        <label for=""> Amount </label>
-                        <br>
-                        <input [(ngModel)]="investment.amount" type="number">
-                    </div>
-
-                    
-
-
-                    <br>
-                    <button (click)="onCreateInvestment(investment)" > 
-                        <!-- <a routerLink="/investments/{{investment.id}}"> -->
-                            Submit 
-                        <!-- </a>   -->
-                    </button>
-                    <button (click)="onCreateBondInvestment(bondInvestment)" > 
-                        <!-- <a routerLink="/investments/{{investment.id}}"> -->
-                            Confirm
-                        <!-- </a>   -->
-                    </button>
-                <!-- </form> -->
         </div>
-
+        <div class="confirm" *ngIf="showConfirm">
+            <h3>Confirm Section</h3>
+            <p>Congratulations, you bought {{investment.amount}} bonds from {{bond.issuerName}}!</p>
+            <p>Your total Purchase is {{total | currency}}</p>
+            <p>Please click confirm to finalize your purchase.</p>
+            <br>
+            <button mat-raised-button class="submit" (click)="onCreateBondInvestment(bondInvestment)">
+                Confirm
+            </button>
+        
+        </div>
     </div>
 </div>
 

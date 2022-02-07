@@ -35,6 +35,7 @@ import { RegisterComponent } from './usersFolder/register/register.component';
 import { Token } from '@angular/compiler';
 import { TokenComponent } from './usersFolder/token/token.component';
 import { InvestmentComponent } from './bondsFolder/investment/investment.component';
+import { BondprofileComponent } from './bondsFolder/bondprofile/bondprofile.component';
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
@@ -47,6 +48,7 @@ const routes: Routes = [
   {path: "purchases", component: PurchasesComponent},
   {path: "purchases/:id", component: PurchaseComponent},
   {path: "bonds/:id", component: BondComponent},
+  {path: "bondprofile", component: BondprofileComponent},
   {path: "investments/:id", component: InvestmentComponent},
   {path: "", component: HomeComponent, pathMatch: "full"},
   {path: "stocks", component: StocksComponent},
