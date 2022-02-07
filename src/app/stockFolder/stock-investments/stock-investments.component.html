@@ -1,0 +1,94 @@
+<body class = "pageContainer" *ngIf = "signedIn">
+    <div class="stock-header">
+        <h1 class="title"> Investments </h1>
+    </div>
+    <div class="stocks-div">
+        <button (click) = "resetFilters()" class="resetBtn">Reset</button>
+        <input class= "stock-searchbar" placeholder="Search your Investments" type="text" [(ngModel)] ="term">
+        <button class="investmentBtn" routerLink="/stocks">Stocks</button>
+        <!--
+        <table mat-table [dataSource]="data">
+            <ng-container matColumnDef="Symbol">
+                <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                <td mat-cell *matCellDef="let stock"> {{stock.symbol}} </td>
+              </ng-container>
+        </table>
+        -->
+
+        <div style="text-align:center">
+            <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event">
+          
+             
+              <div class="custom-pagination">
+                <div class="pagination-previous" [class.disabled]="p.isFirstPage()">
+                  <span *ngIf="!p.isFirstPage()" (click)="p.previous()"> < </span> 
+                  </div> 
+                  <div class="page-number" *ngFor="let page of p.pages" [class.current]="p.getCurrent() === page.value">
+                        <span (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value">{{ page.label }}</span>
+                      <div *ngIf="p.getCurrent() === page.value">
+                        <span> <u>{{ page.label }}</u> </span>
+                      </div>
+                  </div>
+                  <div class="pagination-next" [class.disabled]="p.isLastPage()">
+                    <span *ngIf="!p.isLastPage()" (click)="p.next()"> > </span>
+                  </div>
+              </div>
+          
+            </pagination-template>
+          </div>
+
+        <table class ="stocks-table">
+            <tr>
+                <th style="width: 4vw; background-color: rgba(255, 166, 0, 0.861);">
+                    <button (click) = "reorderStockId()"  *ngIf = "this.stockIdDir" class="arrow">StockId <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
+                    <button (click) = "reorderStockId()"  *ngIf = "!this.stockIdDir" class="arrow">StockId <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
+                </th>
+                <th style="width: 6vw; background-color: rgba(255, 166, 0, 0.861);">
+                    <button (click) = "reorderNumShares()"  *ngIf = "this.numSharesDir" class="arrow"># of Shares <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
+                    <button (click) = "reorderNumShares()"  *ngIf = "!this.numSharesDir" class="arrow"># of Shares <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
+                  </th>
+                <th style="background-color: rgba(255, 166, 0, 0.861); color: black;">Symbol</th>
+                <th style ="background-color: rgba(255, 166, 0, 0.861); color: black;">Company Name</th>
+                <th style="background-color: rgba(255, 166, 0, 0.861); color: black;">Country</th>
+                <th style="width: 5vw; background-color: rgba(255, 166, 0, 0.861);">
+                  <button (click) = "reorderIpoYear()" *ngIf = "this.ipoYearDir" class="arrow">IPO Year <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
+                  <button (click) = "reorderIpoYear()" *ngIf = "!this.ipoYearDir" class="arrow">IPO Year <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
+                </th>
+                <th style="background-color: rgba(255, 166, 0, 0.861); color: black;">Sell</th>
+            </tr>
+            <tr *ngFor="let invest of investments | filter: term | paginate: config">
+                <th>{{invest.stockId}}</th>
+                <th>{{invest.numShares}}</th>
+                <th>{{invest.stock.symbol}}</th>
+                <th>{{invest.stock.name}}</th>
+                <th>{{invest.stock.country}}</th>
+                <th>{{invest.stock.ipoYear}}</th>
+                <th><button mat-raised-button (click) = "sellStock(invest)"><mat-icon> attach_money</mat-icon></button></th>
+            </tr>
+        </table>
+
+
+        <div style="text-align:center">
+          <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event">
+        
+           
+            <div class="custom-pagination">
+              <div class="pagination-previous" [class.disabled]="p.isFirstPage()">
+                <span *ngIf="!p.isFirstPage()" (click)="p.previous()"> < </span> 
+                </div> 
+                <div class="page-number" *ngFor="let page of p.pages" [class.current]="p.getCurrent() === page.value">
+                      <span (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value">{{ page.label }}</span>
+                    <div *ngIf="p.getCurrent() === page.value">
+                      <span>{{ page.label }}</span>
+                    </div>
+                </div>
+                <div class="pagination-next" [class.disabled]="p.isLastPage()">
+                  <span *ngIf="!p.isLastPage()" (click)="p.next()"> > </span>
+                </div>
+            </div>
+        
+          </pagination-template>
+        </div>
+    </div>
+</body>
+
