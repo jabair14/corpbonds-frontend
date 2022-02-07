@@ -70,9 +70,12 @@ import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { TokenComponent } from './usersFolder/token/token.component';
+
 import { MutualFundsTableComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-table/mutual-funds-table.component';
 import { MutualFundsSidenavComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-sidenav/mutual-funds-sidenav.component';
+
 import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog.component';
+import { MutualFundsDialogComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-dialog/mutual-funds-dialog.component';
 
 
 @NgModule({
@@ -113,9 +116,13 @@ import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog
     AccountsComponent,
     RegisterComponent,
     TokenComponent,
+
     MutualFundsTableComponent,
     MutualFundsSidenavComponent,
+
     VerifyDialogComponent,
+      MutualFundsDialogComponent,
+
   ],
   imports: [
     BrowserModule,
