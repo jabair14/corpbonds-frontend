@@ -37,26 +37,27 @@ export class UserComponent implements OnInit {
     private fundService: FundService,
     private router: Router,
     ) { }
+    ngOnInit(): void {}
+//   ngOnInit(): void {
+//     this.userService.postAccount().subscribe(payload => {
 
-  ngOnInit(): void {
-    this.userService.postAccount().subscribe(payload => {
-
-        this.route.params.subscribe(params=>{
-            const myid = +params['id'];
-        this.user = payload.body.data
-        // console.log("userData", payload.body.data)
-        // console.log("purchase userId", this.createPurchase.userId)
-      })
-      const myid = this.user.uniqueID;
-      this.name = payload.body.name.split(' ')[0].toLowerCase();
-        this.balance = payload.body.data.Account_Balance.toFixed(2);
-        this.name = this.name.charAt(0).toUpperCase() + this.name.slice(1);
-      console.log("userid", myid)
-      this.purchaseService.getPurchasesByUser(myid).subscribe(payload=>{
-        this.purchases = payload;
-        console.log("purchase", payload)
-      })
+//         this.route.params.subscribe(params=>{
+//             const myid = +params['id'];
+//         this.user = payload.body.data
+//         // console.log("userData", payload.body.data)
+//         // console.log("purchase userId", this.createPurchase.userId)
+//       })
+//       const myid = this.user.uniqueID;
+//       this.name = payload.body.name.split(' ')[0].toLowerCase();
+//         this.balance = payload.body.data.Account_Balance.toFixed(2);
+//         this.name = this.name.charAt(0).toUpperCase() + this.name.slice(1);
+//       console.log("userid", myid)
+//       this.purchaseService.getPurchasesByUser(myid).subscribe(payload=>{
+//         this.purchases = payload;
+//         console.log("purchase", payload)
+//       })
     
-    })
-}
+//     })
+// }
+  
 }

@@ -45,4 +45,9 @@ export class UserService {
     let _;
     return this.http.post(`${this.urlStr}registration`, token);
   }
+
+  whoAmI(): Observable<any> {
+    let _ = {};
+    return this.http.post(`${this.urlStr}whoAmI`, _, this.httpOptions);
+  }
 }
