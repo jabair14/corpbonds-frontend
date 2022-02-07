@@ -45,16 +45,42 @@
        </div>
     </div>
     <div class="rightcontainer">
-        <table *ngIf="reviewsTable">
+        <h1 *ngIf="noReviews">No reviews yet. Leave one below!</h1>
+        <h1 *ngIf="yesReviews">Expereience with this consultant? Leave a review below!</h1>\
+        <div *ngIf='loggedinCheck' class="textandsubmit">
+            <textarea [(ngModel)]= 'text' type='text' class="textbox"></textarea>
+            <div class="ratingSubmit">
+                <a *ngFor="let item of starList; let i=index " (click)="setStar(i)">  
+                    <i class="fa" [ngClass]="{'fa-star-o':item,'fa-star':!item}"></i>   
+                </a> <br>
+                <button (click)="postReview()">Submit Review</button>
+            </div>
+        </div>
+        <div *ngIf='loggedoutCheck'>
+            <h2>If you would like to leave a review, please log in!</h2>
+            <button routerLink= "/login" >
+                Login
+            </button>
+        </div>
+        <table *ngIf="reviewsTable" >
+            <th>
+                Ratings
+            </th>
+            <th>
+                Reviews
+            </th>
             <tr *ngFor="let review of reviews">
-                <td>
-                    {{review.rating}} stars
+                <td class="stars">
+                    <ng-container *ngFor="let review of reviews.constructor(review.rating)">
+                        <i class="fa fa-star">
+
+                        </i>
+                    </ng-container>
                 </td>
                 <td>
                     {{review.text}}
                 </td>
             </tr>
         </table>
-        <h1 *ngIf="noReviews"> No reviews yet. Login in to leave one!</h1>
     </div>
 </div>

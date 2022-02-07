@@ -30,6 +30,7 @@ export class ConsultantComponent implements OnInit {
   }
 
   reviews: any[]=[]
+  users: any[] = []
   five: number = 0
   four: number = 0
   three: number = 0
@@ -42,10 +43,18 @@ export class ConsultantComponent implements OnInit {
   twopercent: number = 0
   onepercent: number = 0
 
-  reviewsTable = false;
-  noReviews = true;
+  reviewsTable = true;
+  noReviews = false;
+  yesReviews = false;
+  loggedinCheck = false;
+  loggedoutCheck = false
 
   currentUserId = ''
+  consultantId:number = 0;
+
+  text = '';
+  starList: boolean[] = [true,true,true,true,true];
+  rating: number = 0; 
 
   constructor(
     private route: ActivatedRoute, 
@@ -59,6 +68,7 @@ export class ConsultantComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const myid = +params['id'];
+      this.consultantId = myid
       console.log('my id is', myid)
       this.locationService.getConsultant(myid).subscribe(payload => {
         console.log("this is payload on consultant", payload)
@@ -67,14 +77,27 @@ export class ConsultantComponent implements OnInit {
           // this.reviews = payload
           let consultantReviews = payload.filter((review: { consultantId: any; }) => review.consultantId == this.consultant.id)
           this.reviews = consultantReviews
+          this.userService.postAccount().subscribe(payload => this.currentUserId = payload.body.data.uniqueID)
+          
+          console.log('reviews are', consultantReviews)
           if (this.reviews.length > 0) {
             this.reviewsTable = true
             this.noReviews = false
+            this.yesReviews = true
+            console.log('this is reviews length', this.reviews.length)
           } else {
-            this.noReviews = true
             this.reviewsTable = false
+            this.noReviews = true
+            this.yesReviews = false
           }
-          console.log('reviews are', consultantReviews)
+
+          if (this.currentUserId == ''){
+            this.loggedinCheck = false
+            this.loggedoutCheck = true
+          } else {
+            this.loggedinCheck = true
+            this.loggedoutCheck = false
+          }
 
           let fives = this.reviews.filter(review => review.rating == 5)
           this.five = fives.length
@@ -142,15 +165,64 @@ export class ConsultantComponent implements OnInit {
           `;
           this.createStyle(style1)
 
-          this.userService.postAccount().subscribe(payload => this.currentUserId = payload.body.data.uniqueID)
+          console.log('the current user id is', this.currentUserId, 'this is the reviews length', this.reviews.length)
+
+
         })
       })
     })
-
+    
   }
   createStyle(style: string): void {
     const styleElement = document.createElement('style');
     styleElement.appendChild(document.createTextNode(style));
     this.el.nativeElement.appendChild(styleElement);
+  }
+
+  setStar(data:any){
+    this.rating=data+1;                               
+    for(var i=0;i<=4;i++){  
+      if(i<=data){  
+        this.starList[i]=false;  
+      }  
+      else{  
+        this.starList[i]=true;  
+      }  
+    }  
+  }  
+
+  postReview(){
+    let user = {
+      id: this.currentUserId
+    }
+    let review = {
+      rating: this.rating,
+      userId: this.currentUserId,
+      consultantId: this.consultantId,
+      text: this.text
+    }
+    this.reviewsService.getUsers().subscribe(payload => {
+      this.users = payload
+      console.log('users array is', this.users)
+      const doesUserExist = this.users.find(user => user.id == this.currentUserId)
+      if (doesUserExist == undefined) {
+        this.reviewsService.addUser(user).subscribe(payload => {
+          console.log(payload)
+        })
+        this.reviewsService.addReview(review).subscribe(payload => {
+          if(payload){
+            console.log(payload)
+            window.location.reload()
+          }
+        })
+      } else {
+        this.reviewsService.addReview(review).subscribe(payload => {
+          if(payload){
+            console.log(payload)
+            window.location.reload()
+          }
+        })
+      }
+    })
   }
 }
