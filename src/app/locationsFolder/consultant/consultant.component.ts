@@ -77,7 +77,17 @@ export class ConsultantComponent implements OnInit {
           // this.reviews = payload
           let consultantReviews = payload.filter((review: { consultantId: any; }) => review.consultantId == this.consultant.id)
           this.reviews = consultantReviews
-          this.userService.postAccount().subscribe(payload => this.currentUserId = payload.body.data.uniqueID)
+          this.userService.whoAmI().subscribe(payload => {
+            this.currentUserId = payload.body.userID
+            if (this.currentUserId == ''){
+              this.loggedinCheck = false
+              this.loggedoutCheck = true
+            } else {
+              this.loggedinCheck = true
+              this.loggedoutCheck = false
+            }
+          }
+            )
           
           console.log('reviews are', consultantReviews)
           if (this.reviews.length > 0) {
@@ -91,13 +101,7 @@ export class ConsultantComponent implements OnInit {
             this.yesReviews = false
           }
 
-          if (this.currentUserId == ''){
-            this.loggedinCheck = false
-            this.loggedoutCheck = true
-          } else {
-            this.loggedinCheck = true
-            this.loggedoutCheck = false
-          }
+          
 
           let fives = this.reviews.filter(review => review.rating == 5)
           this.five = fives.length
