@@ -28,7 +28,7 @@ import { LearnComponent } from './learn/learn.component';
 
 
 //Mutual Funds Routes
-import { MutualFundsComponent } from './mutual_funds_content/mutual-funds/mutual-funds.component';
+import { MutualFundsComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds/mutual-funds.component';
 
 //User-Service Routes
 import { LoginComponent } from './usersFolder/login/login.component';
