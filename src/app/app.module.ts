@@ -79,23 +79,17 @@ import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { TokenComponent } from './usersFolder/token/token.component';
-<<<<<<< HEAD
 
-=======
 import { ConsultantComponent } from './locationsFolder/consultant/consultant.component';
->>>>>>> c56b14239c9494c6dcb0052cc5c95b2091c51bb3
 import { MutualFundsTableComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-table/mutual-funds-table.component';
 import { MutualFundsSidenavComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-sidenav/mutual-funds-sidenav.component';
 
 import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog.component';
-<<<<<<< HEAD
 import { MutualFundsDialogComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-dialog/mutual-funds-dialog.component';
-=======
 import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.component';
 
 
 
->>>>>>> c56b14239c9494c6dcb0052cc5c95b2091c51bb3
 
 
 @NgModule({
@@ -139,21 +133,15 @@ import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.componen
     AccountsComponent,
     RegisterComponent,
     TokenComponent,
-<<<<<<< HEAD
 
-=======
     ConsultantComponent,
->>>>>>> c56b14239c9494c6dcb0052cc5c95b2091c51bb3
     MutualFundsTableComponent,
     MutualFundsSidenavComponent,
 
     VerifyDialogComponent,
-<<<<<<< HEAD
-      MutualFundsDialogComponent,
+    MutualFundsDialogComponent,
 
-=======
     SellModalComponent,
->>>>>>> c56b14239c9494c6dcb0052cc5c95b2091c51bb3
   ],
   imports: [
     BrowserModule,
