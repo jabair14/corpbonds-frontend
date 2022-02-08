@@ -101,10 +101,15 @@ export class AccountsComponent implements OnInit {
     });
   }
 
-  logOut() {
-    this.user.postLogOut().subscribe((data) => {
-      console.log('logged out!', data);
+  async logOut() {
+    try {
+      this.user.postLogOut().subscribe((data) => {
+        console.log('logged out!', data);
+        this.router.navigate(['/login']);
+      });
+    } catch (e) {
+      console.log(e);
       this.router.navigate(['/login']);
-    });
+    }
   }
 }

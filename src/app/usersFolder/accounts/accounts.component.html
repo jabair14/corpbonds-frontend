@@ -52,7 +52,7 @@
 <div *ngIf="accountDis" class="wrapper">
   <div class="welcome__card">
     <h2>Hello, {{ this.name }}</h2>
-    <button (click)="logOut()" class="btn">Log Out</button>
+    <a (click)="logOut()" class="btn" href="/login">Log Out</a>
   </div>
   <div class="Account">
     <ul class="links">
