@@ -49,4 +49,13 @@ export class UserService {
     let _ = {};
     return this.http.post(`${this.urlStr}whoAmI`, _, this.httpOptions);
   }
+
+  postVerCode(obj: any): Observable<any> {
+    return this.http.post(`${this.urlStr}verify`, obj, this.httpOptions);
+  }
+
+  postLogOut(): Observable<any> {
+    let _;
+    return this.http.post(`${this.urlStr}logout`, _, this.httpOptions);
+  }
 }
