@@ -24,7 +24,6 @@ import { StockInvestmentsComponent } from './stockFolder/stock-investments/stock
 import { CreatePurchasesComponent } from './purchasesPlace/createpurchases/createpurchases.component';
 import { PurchaseComponent } from './purchasesPlace/purchase/purchase.component';
 import { PurchasesComponent } from './purchasesPlace/purchases/purchases.component';
-
 import { LearnComponent } from './learn/learn.component';
 
 
@@ -37,6 +36,7 @@ import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { Token } from '@angular/compiler';
 import { TokenComponent } from './usersFolder/token/token.component';
+
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},

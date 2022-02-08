@@ -16,6 +16,13 @@
 
     </div>
 
+    <!-- <div id="button_div">
+      <p>
+       <a routerLink="/funds/create">
+          <button type = "button" id = "wrapper" class="shadow" value="Shadow">Create</button></a>
+        </p>
+      </div> -->
+      <button style="color: black; background-color: orange" routerLink ='/profile'>Profile</button> 
     
         <div style="text-align:center">
             <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event">
