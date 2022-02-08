@@ -49,7 +49,24 @@
   </div>
 </div>
 
-<div *ngIf="!redir" class="wrapper">
-  <div class="welcome__card">Hello, {{ this.name }}</div>
-  <div class="Account">Your Balance Today : {{ this.balance }}</div>
+<div *ngIf="accountDis" class="wrapper">
+  <div class="welcome__card">
+    <h2 @rightFade>Hello, {{ this.name }}</h2>
+    <a (click)="logOut()" class="butn" href="/login">Log Out</a>
+  </div>
+  <div class="Account">
+    <ul class="links">
+      <li>
+        <a href="#" class="servicelink">Your Insights</a>
+        <a href="#" class="servicelink unselected">Portfolio</a>
+        <a href="#" class="servicelink unselected">I'm a service link</a>
+        <a routerLink="/account/settings" class="servicelink unselected"
+          >Account Settings</a
+        >
+      </li>
+    </ul>
+    <div class="balance" @bottomFade>
+      <div class="money">Your Balance Today: ${{ this.balance }}</div>
+    </div>
+  </div>
 </div>

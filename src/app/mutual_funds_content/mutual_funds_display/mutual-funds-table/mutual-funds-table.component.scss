@@ -1,34 +1,33 @@
 @import "/src/app/mutual_funds_content/mutual_funds_display/mutual-funds/mutual-funds.component.scss";
 
-.sticky {
+.sticky-paginator {
     position: sticky;
     top: 0%;
     background-color: white;
-    // border-top-left-radius: 10px;
-    // border-top-right-radius: 10px;
 }
 
-.sticky-two {
+// .sticky-two-divider {
+//     position: sticky;
+//     top: 5.5em;
+// }
+
+.sticky-three-header-row {
     position: sticky;
     top: 5.5em;
-}
-
-.sticky-three {
-    position: sticky;
-    top: 5.6em;
 }
 
 table {
     width: 100%;
 }
 
+.table-header {
+    background-color: $lorange;
+    border-top: black;
+}
+
 .table-border {
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-}
-
-.table-components {
-    padding: 10px;
 }
 
 .mat-row .mat-cell {
