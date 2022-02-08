@@ -38,9 +38,8 @@ import { LocationsComponent } from './locationsFolder/locations/locations.compon
 //Stocks imports
 import { StocksComponent } from './stockFolder/stocks/stocks.component';
 import { StockInvestModalComponent } from './stockFolder/stock-invest-modal/stock-invest-modal.component';
-import { MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { StockInvestmentsComponent } from './stockFolder/stock-investments/stock-investments.component';
-
 
 //Location Imports
 import { LocationComponent } from './locationsFolder/location/location.component';
@@ -72,7 +71,6 @@ import { PurchasesComponent } from './purchasesPlace/purchases/purchases.compone
 import { CreatePurchasesComponent } from './purchasesPlace/createpurchases/createpurchases.component';
 import { PurchaseComponent } from './purchasesPlace/purchase/purchase.component';
 
-
 // Mutual Funds Imports
 import { MutualFundsComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds/mutual-funds.component';
 import { StylePaginatorDirective } from './style-paginator.directive';
@@ -88,10 +86,7 @@ import { MutualFundsSidenavComponent } from './mutual_funds_content/mutual_funds
 import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog.component';
 import { MutualFundsDialogComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-dialog/mutual-funds-dialog.component';
 import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.component';
-
-
-
-
+import { AccountSettingsComponent } from './usersFolder/account-settings/account-settings.component';
 
 @NgModule({
   declarations: [
@@ -143,6 +138,7 @@ import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.componen
     MutualFundsDialogComponent,
 
     SellModalComponent,
+    AccountSettingsComponent,
   ],
   imports: [
     BrowserModule,
