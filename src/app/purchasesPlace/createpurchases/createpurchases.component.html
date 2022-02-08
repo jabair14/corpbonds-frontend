@@ -43,8 +43,7 @@
         <input [(ngModel)] ="createPurchase.amount" id ="inputText" type = "number" value = "" placeholder="e.g. (255)"/>
          <label>Fund ID: </label>
         <input [(ngModel)] ="createPurchase.fundId" id ="inputText" type = "number" value = {{fund.id}}  disabled/>
-        <label>User ID: </label>
-         <input [(ngModel)] ="createPurchase.userId" id ="inputText" type = "string" [value] = "user.uniqueID" disabled/>
+         <input [(ngModel)] ="createPurchase.userId"  type = "string" [value] = "user.uniqueID" hidden/>
          
         <div id="button_div">
     <button (click) = "createPurchases(createPurchase)" id = "wrapper" class="shadow" value="Shadow"id = "wrapper" class="shadow" value="Shadow">Buy</button> 
