@@ -71,7 +71,6 @@ PlotlyModule.plotlyjs = PlotlyJS;
 import { PurchasesComponent } from './purchasesPlace/purchases/purchases.component';
 import { CreatePurchasesComponent } from './purchasesPlace/createpurchases/createpurchases.component';
 import { PurchaseComponent } from './purchasesPlace/purchase/purchase.component';
-import { UserComponent } from './purchasesPlace/userProfile/user.component';
 
 
 // Mutual Funds Imports
@@ -125,7 +124,6 @@ import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.componen
     PurchasesComponent,
     CreatePurchasesComponent,
     PurchaseComponent,
-    UserComponent,
 
     MutualFundsComponent,
     StylePaginatorDirective,
