@@ -20,5 +20,9 @@ import { Observable } from 'rxjs';
     getUserInvestments(id: string): Observable<any> {
         return this.http.get(`https://corp-bonds-new-db.herokuapp.com/investments/byuser/${id}`)
     }
+
+    deleteInvestment(id: number): Observable<any> {
+        return this.http.delete(`https://corp-bonds-new-db.herokuapp.com/investments/${id}`, {responseType: 'text'})
+    }
   }
   

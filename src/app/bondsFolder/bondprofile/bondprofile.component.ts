@@ -6,6 +6,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BondService } from '../bond.service';
 import { Bond } from '../bond/bond.model';
 
+
+
 @Component({
   selector: 'app-bondprofile',
   templateUrl: './bondprofile.component.html',
@@ -31,41 +33,44 @@ export class BondprofileComponent implements OnInit {
 
   user: any = {}
 
+  name: string = '';
+  balance: string = '';
+
   userInvestments: any = []
 
-  // userInvestments: UserInvestment[] = []
+  total: number = 0;
 
-  // bonds:Bond[] = []
+  panelOpenState = false;
+
 
   ngOnInit(): void {
     this.userService.postAccount().subscribe(payload => {
-      if(payload) {
-        // payload = this.user
-        this.user = payload.body.data
-        this.investment.userId = this.user.uniqueID
-        
-        // this.investmentService.getUserInvestments(this.investment.userId).subscribe(payload => {
-        //   console.log("this is the user investments", payload)
-        // })
-      } else {
-        alert ("user not found, please login")
-        this.router.navigateByUrl("/login")
+      this.user = payload.body.data 
+
+      const myid = this.user.uniqueID;
+      this.name = payload.body.name.split(' ')[0].toLowerCase();
+      this.balance = payload.body.data.Account_Balance.toFixed(2);
+      this.name = this.name.charAt(0).toUpperCase() + this.name.slice(1);
+      console.log("userid", myid)
+      this.investmentService.getUserInvestments(myid).subscribe(payload => {
+        this.userInvestments = payload;
+        console.log("investments", payload)
+        // this.total = this.userInvestments.amount * 1000
+      })
+      
+    })
+  }
+
+  onDeleteInvestment(id: number) {
+    this.investmentService.deleteInvestment(id).subscribe(
+      data => {
+        if (data) {
+          console.log('delete loan data', data)
+          this.router.navigateByUrl("/bondprofile")
+        }
+        this.ngOnInit();
       }
-      // this.bondInvestment.bondId = this.bond.id
-      // this.bondInvestment.investmentId = this.investment.id
-      // console.log("user data?", payload.body.data)
-      // console.log("investment userid", this.investment.userId)
-    })
-  }
+    )
 
-  findUserInvestments(id: string) {
-    console.log(this.investment.userId)
-    this.investmentService.getUserInvestments(this.investment.userId!).subscribe(payload => {
-      console.log("user investments payload", payload)
-      // payload = this.userInvestments
-      // this.userInvestments = this.userInvestments.push(payload)
-      // console.log(this.userInvestments)
-    })
   }
-
 }

@@ -1,0 +1,43 @@
+@import "/src/styles.scss";
+
+
+.investments{
+    border: 1px solid black;
+    margin: 5px;
+    padding: 10px;
+    
+    // border-radius: 10px;
+}
+
+.bond {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+
+.investment-id {
+    background-color: $lorange;
+}
+
+.expansion {
+    z-index: 1;
+    // height: 300px;
+}
+
+.delete-btn {
+    background-color: $navyb;
+    color: white;
+    margin-top: 10px;
+}
+
+.listing-child {
+    height: 175px;
+    width: 400px;
+}
+
+.listing {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}

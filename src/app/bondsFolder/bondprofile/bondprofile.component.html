@@ -1,7 +1,32 @@
 <p>bondprofile works!</p>
-<button (click)="findUserInvestments(user.uniqueId)"> Investments </button>
+<!-- <button (click)="findUserInvestments(user.uniqueId)"> Investments </button> -->
 <!-- <div> -->
-<div *ngFor="let userInvestments">
-    <!-- <p>{{item.id}}</p> -->
-
+<div class="main">
+    <div class="listing">
+        <mat-list class="investments" *ngFor="let investment of userInvestments">
+            <div class="listing-child">
+                <mat-list-item class="investment-id">{{investment.id}}</mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item class="bond" *ngFor="let bond of investment.bonds">
+                    <mat-accordion class="accordion">
+                        <mat-expansion-panel class="expansion">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    {{bond.issuerName}}
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <mat-list-item> Purchase Price: {{bond.faceValue}}</mat-list-item>
+                            <mat-list-item> Rate: {{(bond.interestRate/100) | percent: '1.2'}}</mat-list-item>
+                            <mat-list-item>Amount Purchased: {{investment.amount}}</mat-list-item>
+                            <mat-list-item>Total Purchase Price: {{investment.amount * 1000 | currency}}</mat-list-item>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <button mat-raised-button class="delete-btn" (click)="onDeleteInvestment(investment.id)"> Delete </button>
+                </mat-list-item>
+            </div>
+        </mat-list>
+    </div>
 </div>
