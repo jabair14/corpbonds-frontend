@@ -1,60 +1,52 @@
-import { LiveAnnouncer } from '@angular/cdk/a11y';
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator, PageEvent } from '@angular/material/paginator';
-import { MatSort, Sort } from '@angular/material/sort';
-import { MatSidenav } from '@angular/material/sidenav';
-import { MatTableDataSource } from '@angular/material/table';
+import { Component, Injectable, OnInit, ViewChild } from '@angular/core';
 import { MutualFundsService } from '../mutual-funds.service';
 import { MutualFunds } from './mutual-funds.model';
+import { MutualFundsTableComponent } from '../mutual-funds-table/mutual-funds-table.component';
+import { MutualFundsDialogComponent } from '../mutual-funds-dialog/mutual-funds-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+
+@Injectable({
+  providedIn: 'root',
+})
 
 @Component({
   selector: 'app-mutual-funds',
   templateUrl: './mutual-funds.component.html',
   styleUrls: ['./mutual-funds.component.scss']
 })
+
 export class MutualFundsComponent implements OnInit {
 
   constructor(private mutualFundsService: MutualFundsService,
-              // private liveAnnouncer: LiveAnnouncer
-  ) { }
+              private dialog: MatDialog,) { }
 
-  @ViewChild(MatSidenav) sidenav!: MatSidenav;
-
-  overview: boolean = true;
-  performance: boolean = false;
-  price: boolean = false;
-
-  searchKey: string = '';
+  @ViewChild(MutualFundsTableComponent) mutualFundsTableComponent!: MutualFundsTableComponent;
 
   mutualFunds: MutualFunds[] = []
-  // dataSource: any =  new MatTableDataSource<MutualFunds>(this.mutualFunds)
 
-  // @ViewChild(MatPaginator) paginator!: MatPaginator;
-  // @ViewChild(MatSort) sort!: MatSort;
+  displayedColumnsOverview: string[] = [
+    'name', //'ticker',
+    'assetClass', 'risk', 'expenseRatio',
+  ]
 
-  // displayedColumnsOverview: string[] = [
-  //   'name', //'ticker',
-  //   'assetClass', 'risk', 'expenseRatio',
-  // ]
+  displayedColumnsPerformance: string[] = [
+    'name', //'ticker',
+    'secYield', 'ytd', 'oneYr', 'threeYr', 'fiveYr', 'tenYr', 'sinceInception',
+  ]
 
-  // displayedColumnsPerformance: string[] = [
-  //   'name', //'ticker',
-  //   'secYield', 'ytd', 'oneYr', 'threeYr', 'fiveYr', 'tenYr', 'sinceInception',
-  // ]
+  displayedColumnsPrice: string[] = [
+    'name', //'ticker',
+    'initialInvestment', 'price', 'changePrice' // 'changePricePercent'
+  ]
 
-  // displayedColumnsPrice: string[] = [
-  //   'name', //'ticker',
-  //   'initialInvestment', 'price', 'changePrice' // 'changePricePercent'
-  // ]
+  displayedColumnsAll: string[] = [
+    'name', //'ticker',
+    'assetClass', 'risk', 'expenseRatio',
+    'secYield', 'ytd', 'oneYr', 'threeYr', 'fiveYr', 'tenYr', 'sinceInception',
+    'initialInvestment', 'price', 'changePrice' // 'changePricePercent'
+  ]
 
-  // displayedColumnsAll: string[] = [
-  //   'name', //'ticker',
-  //   'assetClass', 'risk', 'expenseRatio',
-  //   'secYield', 'ytd', 'oneYr', 'threeYr', 'fiveYr', 'tenYr', 'sinceInception',
-  //   'initialInvestment', 'price', 'changePrice' // 'changePricePercent'
-  // ]
-
-  // displayedColumns: string[] = []
+  displayedColumns: string[] = []
 
   tempMutualFund: any = {
     ticker: "", name: "",
@@ -64,9 +56,7 @@ export class MutualFundsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.getData();
-    }, 1000)
+    this.getData();
   }
 
   getData() {
@@ -82,55 +72,17 @@ export class MutualFundsComponent implements OnInit {
     })
   }
 
-  // tableData() {
-  //   this.dataSource = new MatTableDataSource(this.mutualFunds);
-  //   this.dataSource.paginator = this.paginator;
-  //   this.dataSource.sort = this.sort;
-  //   this.displayedColumns = this.displayedColumnsOverview;
-  // }
-
-  clearChangeTable() {
-    this.overview = false;
-    this.performance = false;
-    this.price = false;
+  applyFilterTable(filterValue: string) {
+    this.mutualFundsTableComponent.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  changeTable(value: string) {
-    switch(value) {
-      case 'overview':
-        this.clearChangeTable();
-        this.overview = true;
-        // this.displayedColumns = this.displayedColumnsOverview;
-        break;
-      case 'performance':
-        this.clearChangeTable();
-        this.performance = true;
-        // this.displayedColumns = this.displayedColumnsPerformance;
-        break;
-      case 'price':
-        this.clearChangeTable();
-        this.price = true;
-        // this.displayedColumns = this.displayedColumnsPrice;
-        break
-    }
+  scrollToTop() {
+    let element = document.getElementById("tableTop")!;
+    element.scrollIntoView({behavior: 'smooth'});
   }
 
-  // announceSortChange(sortState: Sort) {
-  //   if (sortState.direction) {
-  //     this.liveAnnouncer.announce(`Sorted ${sortState.direction} ending`);
-  //   }
-  //   else {
-  //     this.liveAnnouncer.announce(`Sorting cleared`);
-  //   }
-  // }
-
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
+  openMutualFundsDialog() {
+    this.dialog.open(MutualFundsDialogComponent);
   }
-
-  // applyFilter(event: Event) {
-  //   const filterValue = (event.target as HTMLInputElement).value;
-  //   this.dataSource.filter = filterValue.trim().toLowerCase();
-  // }
 
 }
