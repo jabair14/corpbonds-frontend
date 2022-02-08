@@ -34,6 +34,7 @@ import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { Token } from '@angular/compiler';
 import { TokenComponent } from './usersFolder/token/token.component';
+import { EtfInvestmentsComponent } from './etfFolder/etf-investments/etf-investments.component';
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
@@ -50,6 +51,7 @@ const routes: Routes = [
   {path: "stocks", component: StocksComponent},
   {path: "retcalc", component: RetcalcComponent},
   {path: "etfs", component: EtfComponent},
+  {path: "etfs/investments", component: EtfInvestmentsComponent},
   {path: "locations", component: LocationsComponent, pathMatch: "full"},
   {path: "locations/:id", component: LocationComponent},
   {path: "retcalc", component: RetcalcComponent},
