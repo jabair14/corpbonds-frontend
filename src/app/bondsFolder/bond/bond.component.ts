@@ -81,6 +81,7 @@ export class BondComponent implements OnInit {
        this.bondInvestment.investmentId = this.investment.id
        this.bondInvestment.bondId = this.bond.id
        this.showConfirm = true
+       this.router.navigateByUrl("/bondprofile")
        console.log("bondInvestmend Investmnet ID", this.bondInvestment.investmentId)
        console.log("bond Investment bond ID ", this.bondInvestment.bondId)
       

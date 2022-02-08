@@ -5,6 +5,7 @@
     border: 1px solid black;
     margin: 5px;
     padding: 10px;
+    box-shadow: 10px $lgrey ;
     
     // border-radius: 10px;
 }
@@ -17,6 +18,7 @@
 
 .investment-id {
     background-color: $lorange;
+    font-family: $pfont;
 }
 
 .expansion {
@@ -28,11 +30,13 @@
     background-color: $navyb;
     color: white;
     margin-top: 10px;
+    font-family:$logo--font ;
 }
 
 .listing-child {
     height: 175px;
     width: 400px;
+    
 }
 
 .listing {
@@ -40,4 +44,15 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+h1 {
+    font-family: $hfont;
+    font-size: 40px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.mat-list-item {
+    font-family: $pfont;
 }

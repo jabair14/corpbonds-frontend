@@ -1,7 +1,8 @@
-<p>bondprofile works!</p>
+
 <!-- <button (click)="findUserInvestments(user.uniqueId)"> Investments </button> -->
 <!-- <div> -->
 <div class="main">
+    <h1 class="title"> Welcome to your Bonds profile, {{this.name}}</h1>
     <div class="listing">
         <mat-list class="investments" *ngFor="let investment of userInvestments">
             <div class="listing-child">
@@ -24,7 +25,7 @@
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
-                    <button mat-raised-button class="delete-btn" (click)="onDeleteInvestment(investment.id)"> Delete </button>
+                    <button mat-raised-button class="delete-btn" (click)="onDeleteInvestment(investment.id)"> Sell </button>
                 </mat-list-item>
             </div>
         </mat-list>
