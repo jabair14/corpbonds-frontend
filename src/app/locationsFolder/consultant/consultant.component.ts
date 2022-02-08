@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef  } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { ReviewsService } from '../reviews.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LocationService } from '../location.service';
@@ -77,18 +77,11 @@ export class ConsultantComponent implements OnInit {
           // this.reviews = payload
           let consultantReviews = payload.filter((review: { consultantId: any; }) => review.consultantId == this.consultant.id)
           this.reviews = consultantReviews
-          this.userService.whoAmI().subscribe(payload => {
-            this.currentUserId = payload.body.userID
-            if (this.currentUserId == ''){
-              this.loggedinCheck = false
-              this.loggedoutCheck = true
-            } else {
-              this.loggedinCheck = true
-              this.loggedoutCheck = false
-            }
-          }
-            )
-          
+          this.userService.whoAmI().subscribe(payload => {this.currentUserId = payload.body.userID
+            this.loginChecker()
+          })
+
+
           console.log('reviews are', consultantReviews)
           if (this.reviews.length > 0) {
             this.reviewsTable = true
@@ -100,7 +93,7 @@ export class ConsultantComponent implements OnInit {
             this.noReviews = true
             this.yesReviews = false
           }
-
+          
           
 
           let fives = this.reviews.filter(review => review.rating == 5)
@@ -175,8 +168,10 @@ export class ConsultantComponent implements OnInit {
         })
       })
     })
-    
   }
+
+
+
   createStyle(style: string): void {
     const styleElement = document.createElement('style');
     styleElement.appendChild(document.createTextNode(style));
@@ -195,6 +190,16 @@ export class ConsultantComponent implements OnInit {
     }  
   }  
 
+  loginChecker(){
+    if (this.currentUserId == ''){
+      this.loggedinCheck = false
+      this.loggedoutCheck = true
+    } else {
+      this.loggedinCheck = true
+      this.loggedoutCheck = false
+    }
+  }
+  
   postReview(){
     let user = {
       id: this.currentUserId
@@ -205,6 +210,10 @@ export class ConsultantComponent implements OnInit {
       consultantId: this.consultantId,
       text: this.text
     }
+    let thisUsersReview = this.reviews.map(review => review.userId == this.currentUserId)
+    if (thisUsersReview.length > 0){
+      alert('You have already left a review for this consultant')
+    }else {
     this.reviewsService.getUsers().subscribe(payload => {
       this.users = payload
       console.log('users array is', this.users)
@@ -225,8 +234,10 @@ export class ConsultantComponent implements OnInit {
             console.log(payload)
             window.location.reload()
           }
-        })
+        }) 
       }
     })
   }
+  } 
 }
+

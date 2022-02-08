@@ -5,7 +5,7 @@
         <div class="averagerating">
         <h1>{{consultant.name}}</h1>
         </div>
-        <h4>{{consultant.email}}</h4>
+        <h4><a href="mailto:{{consultant.email}}">{{consultant.email}}</a></h4>
        <div class="averagerating">
             <div class="bar">
                 <div class="rating five">
@@ -46,14 +46,14 @@
     </div>
     <div class="rightcontainer">
         <h1 *ngIf="noReviews">No reviews yet. Leave one below!</h1>
-        <h1 *ngIf="yesReviews">Expereience with this consultant? Leave a review below!</h1>\
+        <h1 *ngIf="yesReviews">Experience with this consultant? Leave a review below!</h1>\
         <div *ngIf='loggedinCheck' class="textandsubmit">
             <textarea [(ngModel)]= 'text' type='text' class="textbox"></textarea>
             <div class="ratingSubmit">
                 <a *ngFor="let item of starList; let i=index " (click)="setStar(i)">  
                     <i class="fa" [ngClass]="{'fa-star-o':item,'fa-star':!item}"></i>   
                 </a> <br>
-                <button (click)="postReview()">Submit Review</button>
+                <button class='submit'(click)="postReview()">Submit Review</button>
             </div>
         </div>
         <div *ngIf='loggedoutCheck'>
@@ -73,7 +73,6 @@
                 <td class="stars">
                     <ng-container *ngFor="let review of reviews.constructor(review.rating)">
                         <i class="fa fa-star">
-
                         </i>
                     </ng-container>
                 </td>
