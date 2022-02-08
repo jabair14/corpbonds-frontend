@@ -1,5 +1,5 @@
-<div class="table-components">
-    <div class="sticky">
+<div>
+    <div class="sticky-paginator">
         <mat-paginator  #paginator
                         style-paginator 
                         [pageSizeOptions]="[10, 25, 50, 100]"
@@ -8,7 +8,7 @@
         </mat-paginator>
     </div>
     
-    <mat-divider class="divider-recolored sticky-two"></mat-divider>
+    <!-- <mat-divider class="divider-recolored sticky-two-divider"></mat-divider> -->
     
     <table  mat-table [dataSource]="dataSource"
             matSort (matSortChange)="announceSortChange($event)"
@@ -146,7 +146,7 @@
             </td>
         </ng-container>
     
-        <tr mat-header-row class="table-header sticky-three" *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-header-row class="table-header sticky-three-header-row" *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     
     </table>

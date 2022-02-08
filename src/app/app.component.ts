@@ -16,5 +16,10 @@ export class AppComponent {
 
   ngOnInit(): void {
   }
+
+  scrollToTop() {
+    let element = document.getElementById("top")!;
+    element.scrollIntoView({behavior: 'smooth'});
+  }
 }
 

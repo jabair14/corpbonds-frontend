@@ -7,30 +7,33 @@ mat-divider {
     background-color: rgba(255, 255, 255, 0.5);
 }
 
+.container {
+    background-color: transparent;
+    overflow: initial;
+    padding-top: 6%;
+}
+
 .sidenav {
-    margin: 15px;
-    width: 230px;
+    margin: 5px;
+    width: 225px;
     border-right: none;
-    // background: #0053b3;
-    color: white;
+    color: $color--dark;
     border-radius: 10px;
     padding: 15px;
-    text-align: center;
+    text-align: left;
     height: 500px;
-    // position: sticky;
+    position: sticky;
+    top: 55px;
 }
 
 .content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container {
-    // height: 300px;
-    // height: calc(100vh - 65px);
-    // background-color: red;
-    padding-top: 15px;
+    overflow: initial;
+    position: relative;
+    // margin-top: -505px;
+    margin-top: -559px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
 }
 
 .divider-recolored {
@@ -42,51 +45,52 @@ th.mat-sort-header-sorted {
     color: black;
 }
 
-.mat-drawer:not(.mat-drawer-side) {
-    position: fixed;
+.whatIsMutualFundButton {
+  margin: 5px;
+  background-color: $lorange;
 }
 
-.mat-drawer-backdrop {
-    position: fixed !important;
+.whatIsMutualFundButton:hover {
+  background-color: whitesmoke;
 }
 
-// .sticky {
-//     position: sticky;
-//     top: 0%;
-//     background-color: white;
-// }
-
-// .sticky-two {
-//     position: sticky;
-//     top: 5.5em;
-// }
-
-// .sticky-three {
-//     position: sticky;
-//     top: 5.6em;
-// }
-
-// .left-align-elements {
-//     left: 1em;    
-//     position: absolute;  
-//     margin: 0;
-// }
-
-// .right-align-elements { 
-//     right: 1em;    
-//     position: absolute;  
-//     margin: 0;
-// }
-
-.red {
-    color: red;
+.mutualFundsHeader {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: inherit;
+  width: auto;
+  justify-content: center;
+  padding-top: 4%;
 }
 
-.black {
-    color: black;
+.leftHeader {
+  width: 550px;
+  margin: 10px;
 }
 
-mat-sidenav-container, mat-sidenav-content {
-    overflow: initial
+.leftHeader h1,
+p {
+  padding-left: 50px;
+  padding-right: 50px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
-  
+
+.leftHeader button {
+  margin-left: 70px;
+}
+
+.rightHeader {
+  background-color: white;
+  border-radius: 5px;
+  width: 300px;
+  margin: 10px;
+}
+
+.mutualFundsImage {
+  max-width: 90%;
+  max-height: 100%;
+  justify-content: center;
+  margin: 5%;
+  flex-wrap: inherit;
+}

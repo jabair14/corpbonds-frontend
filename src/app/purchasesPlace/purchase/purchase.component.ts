@@ -17,7 +17,6 @@ export class PurchaseComponent implements OnInit {
 
   funds: Fund[] =[];
 
-
   purchase:Purchase = {
     id: 0,
     amount: 0,
@@ -46,6 +45,18 @@ export class PurchaseComponent implements OnInit {
       })
     })
   }
+
+
+  sellFund(id: number){
+    if(confirm("Are you sure you want to sell this Fund?") == true){
+    this.purchaseService.deletePurchases(id).subscribe(data =>{
+      this.router.navigateByUrl(`/profile`)
+      })
+    }
+    else{
+      
+    }
+    }
 
     edit():void {
       this.router.navigateByUrl(`/purchases/${this.purchase.id}/edit`);

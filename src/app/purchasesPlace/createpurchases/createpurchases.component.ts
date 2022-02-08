@@ -46,18 +46,25 @@ export class CreatePurchasesComponent implements OnInit {
 
       this.user = payload.body.data
       this.createPurchase.userId = this.user.uniqueID
-      console.log("userData", payload.body.data)
-      console.log("purchase userId", this.createPurchase.userId)
+      // console.log("userData", payload.body.data)
+      // console.log("purchase userId", this.createPurchase.userId)
     })
   }
 
 
   createPurchases(createPurchase: any){
     createPurchase.fundId = this.fund.id;
+    createPurchase.userId = this.user.uniqueID;
+    // console.log('this is the user Id', this.user.uniqueID)
+    // console.log('this is the fund Id', this.fund.id)
+    // console.log('this is the amount ', this.createPurchase.amount)
     if(confirm("Please Accept Invest") == true){
     this.purchaseService.createPurchase(createPurchase).subscribe(data => {
+      console.log("this is getting created",data )
+      console.log("this purchast is being made", data)
+
       if (data){
-        this.router.navigateByUrl("/purchases");
+        this.router.navigateByUrl("/profile");
       }
       console.log("Purchase is Created ", data);
       this.ngOnInit();
