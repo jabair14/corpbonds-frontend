@@ -1,7 +1,7 @@
 @import "/src/styles.scss";
 .locations-div {
   width: 100vw;
-  height: 100vh;
+  height: 85vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -29,14 +29,15 @@
 
 .toph1 {
     text-align: center;
+    font-family: $tfont;
+    font-size: x-large;
 }
 
 a {
   color: $rorange;
   text-decoration: none;
-  font-size: larger;
-  font-family: "Trebuchet MS", "Lucida Sans Unicod$dorangee", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-size: large;
+  font-family: $hfont;
 }
 
 a:hover {
@@ -47,10 +48,7 @@ td {
     padding-bottom: 10px;
 }
 
-h1 {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
-                    'Lucida Sans', Arial, sans-serif
-}
+
 
 google-chart {
     cursor: pointer;

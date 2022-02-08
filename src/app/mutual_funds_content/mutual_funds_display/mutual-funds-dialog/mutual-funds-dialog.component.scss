@@ -1,0 +1,31 @@
+@import "/src/styles.scss";
+
+* {
+    font-family: 'Trebuchet MS', 
+                'Lucida Sans Unicode', 
+                'Lucida Grande', 
+                'Lucida Sans', 
+                'Arial', 
+                'sans-serif'
+}
+
+.dialogBoxSize {
+    width: 500px;
+}
+
+h1 {
+    color: $dorange;
+}
+
+mat-dialog-actions {
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.closeButton {
+    background-color: $lorange;
+}
+
+.closeButton:hover {
+    background-color: whitesmoke;
+}
