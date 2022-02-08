@@ -12,17 +12,30 @@ export class CarouselComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
   onPreviousClick() {
-    const previous = this.currentSlide - 1;
-    this.currentSlide = previous < 0 ? this.slides.length - 1 : previous;
-    console.log("previous clicked, new current slide is: ", this.currentSlide);
+    if (this.slides == 's1'){
+      this.slides = 's3';
+    }
+    else if (this.slides == 's2') {
+      this.slides = 's1';
+    }
+    else if (this.slides == 's3') {
+      this.slides = 's2';
+    }
   }
 
   onNextClick() {
-    const next = this.currentSlide + 1;
-    this.currentSlide = next === this.slides.length ? 0 : next;
-    console.log("next clicked, new current slide is: ", this.currentSlide);
+    if (this.slides == 's1'){
+      this.slides = 's2';
+    }
+    else if (this.slides == 's2') {
+      this.slides = 's3';
+    }
+    else if (this.slides == 's3') {
+      this.slides = 's1';
+    }
   }
 }

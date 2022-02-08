@@ -6,118 +6,14 @@
   flex-wrap: inherit;
 }
 
-.orange {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: inherit;
-  background-image: linear-gradient(to right, $dorange, $lorange);
-  height: 475px;
-  width: auto;
-  justify-content: center;
-  border-bottom: 2px solid black;
-}
-
-.left {
-  height: 300px;
-  width: 550px;
-  margin-top: 5%;
-  padding-left: 100px;
-}
-
-.left h1,
-p {
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 20px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-}
-
-.left button {
-  margin-left: 70px;
-}
-
-.right {
-  background-color: white;
-  border-radius: 5px;
-  height: 300px;
-  width: 550px;
-  margin: 5%;
-}
-
-.coverlogo {
-  max-width: 100%;
-  max-height: 100%;
-  justify-content: center;
-  margin: 20%;
-  flex-wrap: inherit;
-}
-
 .schedule {
   text-align: center;
   text-decoration: underline;
-  border-bottom: 2px solid black;
+  // border-bottom: 2px solid black;
 }
 
 .schedule p {
   padding-bottom: 15px;
-}
-
-.bonds {
-  background-color: beige;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: inherit;
-  height: 475px;
-  width: auto;
-  justify-content: center;
-  border-bottom: 2px solid black;
-}
-
-.bonds-left {
-  height: 300px;
-  width: 550px;
-  margin-top: 5%;
-}
-
-.bonds-right {
-  height: 300px;
-  width: 550px;
-  padding-top: 10px;
-}
-
-.bonds-left-img {
-  max-height: 100%;
-  max-width: 100%;
-}
-
-.bonds li {
-  list-style-type: square;
-  padding-top: 10px;
-}
-
-.bonds-list li {
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 20px;
-  font-size: 25px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-}
-
-.bonds-title {
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 20px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-}
-
-.bond-btn {
-  background-color: black;
-  color: white;
-  margin-left: 200px;
-  margin-top: 10px;
 }
 
 .mutual-funds-btn {
@@ -141,21 +37,15 @@ p {
   margin-top: 10px;
 }
 
-.retire-btn {
-  background-color: $rorange;
-  margin-left: 180px;
-  margin-top: 10px;
-}
-
 .mutual-funds {
   display: flex;
   flex-direction: row;
   flex-wrap: inherit;
-  background-color: $rorange;
+  background-color: white;
   height: 425px;
   width: auto;
   justify-content: center;
-  border-bottom: 2px solid black;
+  // border-bottom: 2px solid black;
 }
 
 .far-left,
@@ -164,8 +54,7 @@ p {
 .far-right {
   h1 {
     padding-left: 30px;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
+    font-family: $hfont;
   }
   height: 300px;
   width: 550px;
@@ -178,63 +67,6 @@ p {
   max-width: 100%;
 }
 
-.retirement {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: inherit;
-  background-color: rgba(0, 0, 0, 0.861);
-  height: 500px;
-  width: auto;
-  justify-content: center;
-  border-bottom: 2px solid black;
-}
-
-.retire-left {
-  height: 400px;
-  width: 550px;
-  margin-top: 5%;
-}
-
-.retire-right {
-  h1 {
-    padding-left: 30px;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
-  }
-  p {
-    font-size: 20px;
-  }
-  color: white;
-  height: 300px;
-  width: 550px;
-  margin-top: 5%;
-}
-
-.retirement-img {
-  max-height: 100%;
-  max-width: 100%;
-}
-
-.retire-right {
-  h1 {
-    padding-left: 30px;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
-  }
-  p {
-    font-size: 20px;
-  }
-  color: white;
-  height: 300px;
-  width: 550px;
-  margin-top: 5%;
-}
-
-.retirement-img {
-  max-height: 100%;
-  max-width: 100%;
-}
-
 .socialicon {
   height: 50px;
   background: url(https://img.icons8.com/ios/50/000000/twitter--v2.png);
@@ -243,8 +75,22 @@ p {
 // carousel
 .carousel {
   display: block;
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
   // padding: 5vw;
   background-color: white;
+  overflow: hidden;
+}
+
+.slogan {
+  height: 40vh;
+  margin-top: 15rem;
+  margin-left: 4rem;
+  margin-bottom: 2rem;
+}
+
+.slogan h2 {
+  font-family: $hfont;
+  font-size: 4rem;
+  margin-left: 2rem;
 }

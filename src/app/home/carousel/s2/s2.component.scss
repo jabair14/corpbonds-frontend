@@ -1,0 +1,52 @@
+@import "/src/styles.scss";
+
+.bonds {
+  background-color: beige;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: inherit;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}
+
+.bonds-left {
+  height: 300px;
+  width: 550px;
+  // margin-top: 5%;
+}
+
+.bonds-right {
+  height: 300px;
+  width: 550px;
+  // padding-top: 10px;
+  // margin-top: 1rem;
+}
+
+.bonds-left-img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.bond-btn {
+  background-color: $rorange;
+  color: white;
+  margin: 2rem;
+  margin-left: 6rem;
+}
+
+h1 {
+  font-family: $tfont;
+  font-size: 4.5rem;
+  text-decoration: $rorange 0.5rem dashed underline;
+  color: $color--dark;
+}
+
+li {
+  font-family: $pfont;
+  font-size: 2rem;
+  list-style-type: square;
+  padding: 1rem;
+  margin-left: 2rem;
+}
