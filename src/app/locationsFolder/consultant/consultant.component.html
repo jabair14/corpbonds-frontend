@@ -5,7 +5,7 @@
         <div class="averagerating">
         <h1>{{consultant.name}}</h1>
         </div>
-        <h4>{{consultant.email}}</h4>
+        <h4><a href="mailto:{{consultant.email}}">{{consultant.email}}</a></h4>
        <div class="averagerating">
             <div class="bar">
                 <div class="rating five">
@@ -73,7 +73,6 @@
                 <td class="stars">
                     <ng-container *ngFor="let review of reviews.constructor(review.rating)">
                         <i class="fa fa-star">
-
                         </i>
                     </ng-container>
                 </td>
