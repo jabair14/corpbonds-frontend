@@ -1,3 +1,5 @@
+@import "/src/styles.scss";
+
 .picture {
     height: 300px;
 }
@@ -5,8 +7,7 @@
 h1 {
     text-align: center;
     font-size:x-large;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+    font-family: $tfont;
 }
 
 .main {
@@ -29,17 +30,22 @@ h1 {
 }
 .rightcontainer {
     flex: 3;
-    border-left: 1px solid rgba(255, 94, 0, 0.82);
+    border-left: 1px solid #03017c;
     display: inline;
-    padding-left: 10px;
+    padding-left: 30px;
 }
 .leftcontainer {
     flex: 1;
-    border-right: 1px solid rgba(255, 94, 0, 0.82);
+    border-right: 1px solid #03017c;
+    color: #515151;
 }
 
 .averagerating {
     width: 300px;
+}
+
+h1 {
+    margin: 0;
 }
 
 .bar {
@@ -54,40 +60,39 @@ h1 {
     padding-bottom: 10px;
     padding-right: 5px;
     color: black;
+    font-family: $pfont;
 }
 
 .five {
-    background-color: rgba(255, 94, 0, 0.82);
+    background-color: $rorange;
 }
 
 .four {
-    background-color: rgba(255, 94, 0, 0.82);
+    background-color: $rorange;
 }
 
 .three {
-    background-color: rgba(255, 94, 0, 0.82);
+    background-color: $rorange;
 }
 
 .two {
-    background-color: rgba(255, 94, 0, 0.82);
+    background-color: $rorange;
 }
 
 .one {
-    background-color: rgba(255, 94, 0, 0.82);
+    background-color: $rorange;
 }
 
 p {
     margin: 0;
     padding-left: 10px;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+    font-family: $pfont;
 }
 
 table {
     text-align: left;
     width: 100%;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+    font-family: $pfont;
     font-size: medium;
     border-collapse: collapse;
 }
@@ -95,13 +100,16 @@ table {
 .textbox {
     width: 70%;
     height: 100px;
-    margin-right: 10px;
+    margin-right: 20px;
     margin-bottom: 20px;
 }
 
 .fa {
     font-size: x-large;
+    color: $rorange;
+    padding-bottom: 10px;
 }
+
 
 .ratingSubmit {
     width: 10%;
@@ -118,14 +126,15 @@ table {
 th {
     font-size: 20px;
     padding-bottom: 20px;
+    font-family: $hfont;
 }
 
 tr {
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #515151;
 }
 
 td {
-    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .stars {
@@ -134,7 +143,29 @@ td {
 
 
 a {
-  color: black;
+  color: #515151;
   font-size: 15px;
   text-decoration: none;
+  font-family: $hfont;
+}
+
+h4{
+    height: 20px;
+    margin: 0;
+}
+
+button {
+    background-color: $dblue;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+  }
+
+button:hover {
+    cursor: pointer;
+    background-color: $dorange;
 }
