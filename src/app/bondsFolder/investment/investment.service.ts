@@ -18,7 +18,7 @@ import { Observable } from 'rxjs';
     }
 
     getUserInvestments(id: string): Observable<any> {
-        return this.http.get(`https://corp-bonds-new-db.herokuapp.com/investments/${id}`)
+        return this.http.get(`https://corp-bonds-new-db.herokuapp.com/investments/byuser/${id}`)
     }
   }
   

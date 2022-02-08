@@ -31,15 +31,22 @@ export class BondprofileComponent implements OnInit {
 
   user: any = {}
 
+  userInvestments: any = []
+
+  // userInvestments: UserInvestment[] = []
+
+  // bonds:Bond[] = []
+
   ngOnInit(): void {
     this.userService.postAccount().subscribe(payload => {
       if(payload) {
         // payload = this.user
         this.user = payload.body.data
         this.investment.userId = this.user.uniqueID
-        this.investmentService.getUserInvestments(this.user.uniqueId).subscribe(payload => {
-          console.log("this is the user investments", payload)
-        })
+        
+        // this.investmentService.getUserInvestments(this.investment.userId).subscribe(payload => {
+        //   console.log("this is the user investments", payload)
+        // })
       } else {
         alert ("user not found, please login")
         this.router.navigateByUrl("/login")
@@ -48,6 +55,16 @@ export class BondprofileComponent implements OnInit {
       // this.bondInvestment.investmentId = this.investment.id
       // console.log("user data?", payload.body.data)
       // console.log("investment userid", this.investment.userId)
+    })
+  }
+
+  findUserInvestments(id: string) {
+    console.log(this.investment.userId)
+    this.investmentService.getUserInvestments(this.investment.userId!).subscribe(payload => {
+      console.log("user investments payload", payload)
+      // payload = this.userInvestments
+      // this.userInvestments = this.userInvestments.push(payload)
+      // console.log(this.userInvestments)
     })
   }
 
