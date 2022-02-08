@@ -38,9 +38,8 @@ import { LocationsComponent } from './locationsFolder/locations/locations.compon
 //Stocks imports
 import { StocksComponent } from './stockFolder/stocks/stocks.component';
 import { StockInvestModalComponent } from './stockFolder/stock-invest-modal/stock-invest-modal.component';
-import { MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { StockInvestmentsComponent } from './stockFolder/stock-investments/stock-investments.component';
-
 
 //Location Imports
 import { LocationComponent } from './locationsFolder/location/location.component';
@@ -84,10 +83,7 @@ import { MutualFundsTableComponent } from './mutual_funds_content/mutual_funds_d
 import { MutualFundsSidenavComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-sidenav/mutual-funds-sidenav.component';
 import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog.component';
 import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.component';
-
-
-
-
+import { AccountSettingsComponent } from './usersFolder/account-settings/account-settings.component';
 
 @NgModule({
   declarations: [
@@ -135,6 +131,7 @@ import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.componen
     MutualFundsSidenavComponent,
     VerifyDialogComponent,
     SellModalComponent,
+    AccountSettingsComponent,
   ],
   imports: [
     BrowserModule,

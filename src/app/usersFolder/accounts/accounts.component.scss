@@ -170,10 +170,11 @@ select {
 }
 
 .welcome__card {
-  background-image: linear-gradient(to right, $dorange, $lorange);
-  height: 18rem;
+  background-image: linear-gradient(to right, $gdorange1, $gdorange2);
+  height: 22rem;
   width: 100%;
   display: flex;
+  flex-direction: row;
   align-items: flex-end;
   justify-content: start;
 
@@ -181,7 +182,7 @@ select {
     color: $color--nav;
     font-family: $logo--font;
     font-size: 6rem;
-    margin-left: 2rem;
+    margin-left: 3rem;
     margin-bottom: 3rem;
     -webkit-text-stroke: 1px rgba(0, 0, 0, 0.267);
   }
@@ -194,17 +195,17 @@ select {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: start;
+  justify-content: flex-end;
 }
 
 ul {
   margin: 0;
   padding: 0;
   width: 100vw;
-  background-image: linear-gradient(to right, $dorange, $lorange);
+  background-image: linear-gradient(to right, $gdorange1, $gdorange2);
   display: flex;
   height: 3.3rem;
-  border-bottom: 0.1rem solid $dorange;
+  border-bottom: 0.1rem solid $gdorange1;
 }
 
 li {
@@ -223,10 +224,11 @@ li {
   &:not(:last-child) {
     border-right: 1px solid rgba(0, 0, 0, 0.226);
   }
+}
 
-  &:not(:first-child) {
-    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.226);
-  }
+.unselected {
+  background-color: rgb(214, 214, 214);
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.226);
 }
 
 .balance {
@@ -236,7 +238,38 @@ li {
   margin-top: 4rem;
 }
 
-.btn {
-  // align-items: flex-end;
-  justify-self: flex-end;
+.butn {
+  text-decoration: none;
+  font-family: $logo--font;
+  font-size: 2rem;
+  padding: 0.6rem 1.4rem;
+  background-color: $color--dark;
+  color: white;
+  align-self: flex-start;
+  justify-self: space-between;
+  border: 1px $color--dark solid;
+  border-radius: 1.12rem;
+  margin-left: auto;
+  margin-right: -1;
+  margin-right: 4rem;
+  margin-top: 2rem;
+
+  &:hover {
+    background-color: azure;
+    color: $color--dark;
+    transform: translateY(-2px);
+    size: 1.2;
+    transition: all 0.25s;
+  }
+
+  &:active {
+    transform: translateY(0.5px);
+    background-color: $color--dark;
+    color: $color--light;
+    size: 1;
+  }
+}
+
+.money {
+  margin-left: 3rem;
 }

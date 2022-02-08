@@ -23,6 +23,11 @@ import { VerifyDialogComponent } from '../verify-dialog/verify-dialog.component'
       state('*', style({ opacity: 1, transform: 'translateY(0)' })),
       transition(':enter', [animate(500), style({ opacity: 1 })]),
     ]),
+    trigger('rightFade', [
+      state('void', style({ opacity: 0, transform: 'translateX(3rem)' })),
+      state('*', style({ opacity: 1, transform: 'translateX(0)' })),
+      transition(':enter', [animate(500), style({ opacity: 1 })]),
+    ]),
   ],
 })
 export class AccountsComponent implements OnInit {
