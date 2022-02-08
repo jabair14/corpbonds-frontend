@@ -641,6 +641,9 @@ table {
     background-color: #ffffffbd;
     flex-grow: 3!important;
     max-width: 320px!important;
+    border-collapse: collapse;
+    border-spacing: 0;
+    overflow-x: auto;
     text-align: left;
     font-family: FortBold,MYingHeiHK-Medium,Arial,sans-serif;
     font-size: 16px;

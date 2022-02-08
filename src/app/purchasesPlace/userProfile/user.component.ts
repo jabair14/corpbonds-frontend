@@ -45,12 +45,10 @@ export class UserComponent implements OnInit {
 //   ngOnInit(): void {
 //     this.userService.postAccount().subscribe(payload => {
 
-//         this.route.params.subscribe(params=>{
-//             const myid = +params['id'];
+
 //         this.user = payload.body.data
 //         // console.log("userData", payload.body.data)
 //         // console.log("purchase userId", this.createPurchase.userId)
-//       })
 //       const myid = this.user.uniqueID;
 //       this.name = payload.body.name.split(' ')[0].toLowerCase();
 //         this.balance = payload.body.data.Account_Balance.toFixed(2);
