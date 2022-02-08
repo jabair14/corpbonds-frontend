@@ -45,18 +45,22 @@ export class BondprofileComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.postAccount().subscribe(payload => {
-      this.user = payload.body.data 
-
-      const myid = this.user.uniqueID;
-      this.name = payload.body.name.split(' ')[0].toLowerCase();
-      this.balance = payload.body.data.Account_Balance.toFixed(2);
-      this.name = this.name.charAt(0).toUpperCase() + this.name.slice(1);
-      console.log("userid", myid)
-      this.investmentService.getUserInvestments(myid).subscribe(payload => {
-        this.userInvestments = payload;
-        console.log("investments", payload)
-        // this.total = this.userInvestments.amount * 1000
-      })
+      if (payload.body.message !== 'login') {
+        console.log(payload.body.message)
+        this.user = payload.body.data 
+        const myid = this.user.uniqueID;
+        this.name = payload.body.name.split(' ')[0].toLowerCase();
+        this.balance = payload.body.data.Account_Balance.toFixed(2);
+        this.name = this.name.charAt(0).toUpperCase() + this.name.slice(1);
+        console.log("userid", myid)
+        this.investmentService.getUserInvestments(myid).subscribe(payload => {
+          this.userInvestments = payload;
+          console.log("investments", payload)
+        })
+        
+      } else {
+        this.router.navigateByUrl("/login")
+      }
       
     })
   }

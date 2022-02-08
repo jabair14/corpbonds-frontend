@@ -39,8 +39,7 @@ hr {
 }
 
 p {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: $pfont;
   font-size: 15px;
   font-weight: bold;
   padding-left: 30px;
@@ -48,14 +47,14 @@ p {
 }
 
 h1 {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  padding-left: 40px;
+  font-family: $hfont;
+  font-size: 40px;
+  margin-left: 20px;
+  margin-top: 20px;
 }
 
 h3 {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: $hfont;
   color: $rorange;
   padding-left: 10px;
 }

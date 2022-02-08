@@ -64,8 +64,6 @@ export class BondComponent implements OnInit {
       // payload = this.user
       this.user = payload.body.data
       this.investment.userId = this.user.uniqueID
-      // this.bondInvestment.bondId = this.bond.id
-      // this.bondInvestment.investmentId = this.investment.id
       console.log("user data?", payload.body.data)
       console.log("investment userid", this.investment.userId)
     })
@@ -75,15 +73,20 @@ export class BondComponent implements OnInit {
 
   onCreateInvestment(investment: any) {
      this.investmentService.postInvestment(investment).subscribe(payload => {
-       console.log("this is the createInvestment payload=", payload)
-       this.investment = payload
-       this.total = this.investment.amount * 1000
-       this.bondInvestment.investmentId = this.investment.id
-       this.bondInvestment.bondId = this.bond.id
-       this.showConfirm = true
-       this.router.navigateByUrl("/bondprofile")
-       console.log("bondInvestmend Investmnet ID", this.bondInvestment.investmentId)
-       console.log("bond Investment bond ID ", this.bondInvestment.bondId)
+       if (this.investment.userId == this.user.uniqueID) {
+         console.log("this is the createInvestment payload=", payload)
+         this.investment = payload
+         this.total = this.investment.amount * 1000
+         this.bondInvestment.investmentId = this.investment.id
+         this.bondInvestment.bondId = this.bond.id
+         this.showConfirm = true
+         console.log("bondInvestmend Investmnet ID", this.bondInvestment.investmentId)
+         console.log("bond Investment bond ID ", this.bondInvestment.bondId)
+         
+       } else {
+         this.router.navigateByUrl("/login")
+         alert ('You must be logged In!')
+       }
       
       
   
@@ -103,22 +106,14 @@ export class BondComponent implements OnInit {
         this.bondInvestment = payload
         console.log("bondInvestment payload", payload)
         this.router.navigateByUrl("/bondprofile")
+        
       } else {
         alert ("Investment unsuccessful")
       }
-      })
-
+    })
+    
   }
 
   
-  // postToJoin(){
-  //   this.onCreateInvestment(this.investment)
-   
-  // }
-
-  // onCreateBondInvestment(bondInvestment: any) {
-  //   this.bondInvestmentService.postBondInvestment(bondInvestment).subscribe(payload => {
-  //     console.log("bondInvestment paylod =", payload)
-  //   })
-  // }
+ 
 }
