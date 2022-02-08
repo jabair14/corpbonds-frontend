@@ -157,3 +157,119 @@ select {
     background-color: #000;
   }
 }
+
+////////////////////////////////////////////////// ACCOUNT PAGE
+
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.welcome__card {
+  background-image: linear-gradient(to right, $gdorange1, $gdorange2);
+  height: 22rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: start;
+
+  & h2 {
+    color: $color--nav;
+    font-family: $logo--font;
+    font-size: 6rem;
+    margin-left: 3rem;
+    margin-bottom: 3rem;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.267);
+  }
+}
+
+.account {
+  // background-color: $color--nav;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  background-image: linear-gradient(to right, $gdorange1, $gdorange2);
+  display: flex;
+  height: 3.3rem;
+  border-bottom: 0.1rem solid $gdorange1;
+}
+
+li {
+  list-style: none;
+}
+
+.servicelink {
+  text-decoration: none;
+  font-size: 2rem;
+  font-family: $text--font;
+  background-color: white;
+  padding: 1rem 2rem;
+  &:first-child {
+    border-bottom: 0.1rem solid white;
+  }
+  &:not(:last-child) {
+    border-right: 1px solid rgba(0, 0, 0, 0.226);
+  }
+}
+
+.unselected {
+  background-color: rgb(214, 214, 214);
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.226);
+}
+
+.balance {
+  width: 100vw;
+  font-family: $logo--font;
+  font-size: 2.5rem;
+  margin-top: 4rem;
+}
+
+.butn {
+  text-decoration: none;
+  font-family: $logo--font;
+  font-size: 2rem;
+  padding: 0.6rem 1.4rem;
+  background-color: $color--dark;
+  color: white;
+  align-self: flex-start;
+  justify-self: space-between;
+  border: 1px $color--dark solid;
+  border-radius: 1.12rem;
+  margin-left: auto;
+  margin-right: -1;
+  margin-right: 4rem;
+  margin-top: 2rem;
+
+  &:hover {
+    background-color: azure;
+    color: $color--dark;
+    transform: translateY(-2px);
+    size: 1.2;
+    transition: all 0.25s;
+  }
+
+  &:active {
+    transform: translateY(0.5px);
+    background-color: $color--dark;
+    color: $color--light;
+    size: 1;
+  }
+}
+
+.money {
+  margin-left: 3rem;
+}

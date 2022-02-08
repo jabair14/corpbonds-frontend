@@ -23,6 +23,11 @@ import { VerifyDialogComponent } from '../verify-dialog/verify-dialog.component'
       state('*', style({ opacity: 1, transform: 'translateY(0)' })),
       transition(':enter', [animate(500), style({ opacity: 1 })]),
     ]),
+    trigger('rightFade', [
+      state('void', style({ opacity: 0, transform: 'translateX(3rem)' })),
+      state('*', style({ opacity: 1, transform: 'translateX(0)' })),
+      transition(':enter', [animate(500), style({ opacity: 1 })]),
+    ]),
   ],
 })
 export class AccountsComponent implements OnInit {
@@ -30,16 +35,22 @@ export class AccountsComponent implements OnInit {
 
   dialcodes: any = [];
 
+  ///////////////////////////////Account redirection
   redir: boolean = false;
+  accountDis: boolean = false;
 
+  /////////////////////////////////Account Object for creation
   enableMFA: boolean = false;
   code: any;
   num: string = '';
   accountObj: any = {};
-
   name: string = '';
-
   balance: string = '';
+  ver = {
+    verificationCode: '',
+  };
+
+  /////////////////////////////////////////constructor
 
   constructor(
     private user: UserService,
@@ -48,6 +59,7 @@ export class AccountsComponent implements OnInit {
     public dialog: MatDialog
   ) {}
 
+  ////////////////////////////////////////////////Init function
   ngOnInit(): void {
     this.dialcodes = dialcodes;
     this.user.postAccount().subscribe((data) => {
@@ -58,9 +70,9 @@ export class AccountsComponent implements OnInit {
         this.redir = true;
       } else if (data.body.message === 'MFArequired') {
         this.openDialog();
-        // this.router.navigate(['/verify']);
-      } else {
+      } else if (data.body.message === 'success') {
         this.redir = false;
+        this.accountDis = true;
         console.log(data.body);
         this.name = data.body.name.split(' ')[0].toLowerCase();
         this.balance = data.body.data.Account_Balance.toFixed(2);
@@ -69,18 +81,40 @@ export class AccountsComponent implements OnInit {
     });
   }
 
+  //////////////////////////////Functions
+
   postMe() {
-    // this.accountObj.MFA = this.enableMFA;
-    this.accountObj.MFA = false;
+    this.accountObj.MFA = this.enableMFA;
     this.accountObj.phone = `${this.code}${this.num}`;
     console.log(this.accountObj, this.enableMFA, this.code, this.num);
     this.user.postMakeAcct(this.accountObj).subscribe((data) => {
-      console.log('Im workin here', data);
       this.ngOnInit();
     });
   }
 
   openDialog() {
-    this.dialog.open(VerifyDialogComponent);
+    let dialogRef = this.dialog.open(VerifyDialogComponent, {
+      panelClass: 'textVerBox',
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('Im closed');
+      this.user.postVerCode(result).subscribe((data) => {
+        console.log(data);
+        if (data.body.valid) this.ngOnInit();
+        else if (!data.body.valid) this.openDialog();
+      });
+    });
+  }
+
+  async logOut() {
+    try {
+      this.user.postLogOut().subscribe((data) => {
+        console.log('logged out!', data);
+        this.router.navigate(['/login']);
+      });
+    } catch (e) {
+      console.log(e);
+      this.router.navigate(['/login']);
+    }
   }
 }
