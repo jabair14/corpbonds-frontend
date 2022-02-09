@@ -93,7 +93,7 @@ export class LocationsComponent implements OnInit {
     dataTable: this.countrys_data,
     options: {
       // regions: 'all',
-      colorAxis: {colors: ['#ffb890','#ff7b2e']},
+      colorAxis: {colors: ['#da935b','#c85502']},
       backgroundColor: '#00000',
       datalessRegionColor: '#00000',
       defaultColor: '#00000',

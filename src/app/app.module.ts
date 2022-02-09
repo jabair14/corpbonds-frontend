@@ -29,7 +29,6 @@ import { BondComponent } from './bondsFolder/bond/bond.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { MatDialogModule } from '@angular/material/dialog';
 
 import { LocationsComponent } from './locationsFolder/locations/locations.component';
 // import { NgxPaginationModule } from 'ngx-pagination';
@@ -38,8 +37,8 @@ import { LocationsComponent } from './locationsFolder/locations/locations.compon
 //Stocks imports
 import { StocksComponent } from './stockFolder/stocks/stocks.component';
 import { StockInvestModalComponent } from './stockFolder/stock-invest-modal/stock-invest-modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
 import { StockInvestmentsComponent } from './stockFolder/stock-investments/stock-investments.component';
-
 
 //Location Imports
 import { LocationComponent } from './locationsFolder/location/location.component';
@@ -83,15 +82,15 @@ import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { TokenComponent } from './usersFolder/token/token.component';
+
 import { ConsultantComponent } from './locationsFolder/consultant/consultant.component';
 import { MutualFundsTableComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-table/mutual-funds-table.component';
 import { MutualFundsSidenavComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-sidenav/mutual-funds-sidenav.component';
+
 import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog.component';
+import { MutualFundsDialogComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-dialog/mutual-funds-dialog.component';
 import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.component';
-
-
-
-
+import { AccountSettingsComponent } from './usersFolder/account-settings/account-settings.component';
 
 @NgModule({
   declarations: [
@@ -136,11 +135,16 @@ import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.componen
     AccountsComponent,
     RegisterComponent,
     TokenComponent,
+
     ConsultantComponent,
     MutualFundsTableComponent,
     MutualFundsSidenavComponent,
+
     VerifyDialogComponent,
+    MutualFundsDialogComponent,
+
     SellModalComponent,
+    AccountSettingsComponent,
   ],
   imports: [
     BrowserModule,
