@@ -17,18 +17,18 @@ export class EtfService {
   // add/post holding to database
   addHolding(data: any): Observable<any> {
     console.log('this is to be sent to the service', data);
-    return this.http.post('http://localhost:5280/holdings/', data);
+    return this.http.post('https://etf-microservice.herokuapp.com/holdings/', data);
   }
 
   // get all holdings in databse related to current user
   getAllHoldings(userId: any): Observable<any> {
     console.log("BACK END SENDING THIS USER ID", userId)
-    return this.http.get('http://localhost:5280/holdings/'+ userId);
+    return this.http.get('https://etf-microservice.herokuapp.com/holdings/'+ userId);
   }
 
   // delete holding selected by current user
   deleteHolding(holdingId: any): Observable<any>{
     console.log("SENDING THIS ID FOR DELETION////", holdingId)
-    return this.http.delete('http://localhost:5280/holdings/'+ holdingId)
+    return this.http.delete('https://etf-microservice.herokuapp.com/holdings/'+ holdingId)
   }
 }

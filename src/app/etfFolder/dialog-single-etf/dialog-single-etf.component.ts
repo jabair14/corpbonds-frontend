@@ -26,9 +26,9 @@ export class DialogSingleEtfComponent implements OnInit {
   ngOnInit(): void {
     this.receivedRow = this.data;
     console.log('received single ETF:', this.receivedRow);
-    this.userService.postAccount().subscribe(payload => {
+    this.userService.whoAmI().subscribe(payload => {
       console.log("user information:", payload)
-      this.userInformation = payload.body.data;
+      this.userInformation = payload.body;
       console.log(this.userInformation)
     })
   }
@@ -37,7 +37,7 @@ export class DialogSingleEtfComponent implements OnInit {
     console.log("clicked buying option")
     console.log(this.userInformation)
     // check to see if user is logged in
-    if(this.userInformation === undefined){
+    if(this.userInformation.status === 'fail'){
       alert("Please log in to access the buying portal")
     } else {
       this.dialog.open(BuyDialogComponent, {data: this.receivedRow})

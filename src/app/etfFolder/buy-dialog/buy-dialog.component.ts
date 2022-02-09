@@ -31,9 +31,9 @@ export class BuyDialogComponent implements OnInit {
     console.log('BUYING DIALOG OPEN', this.data);
     this.receivedEtfData = this.data;
     this.newHoldingData.ETFId = this.data.id;
-    this.userService.postAccount().subscribe((payload) => {
+    this.userService.whoAmI().subscribe((payload) => {
       console.log('user info passed along:', payload);
-      this.newHoldingData.userId = payload.body.data.uniqueID;
+      this.newHoldingData.userId = payload.body.userID;
     });
   }
 

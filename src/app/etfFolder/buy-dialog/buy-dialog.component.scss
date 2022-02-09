@@ -1,8 +1,16 @@
 main {
-    width: 400px;
+  width: 400px;
 }
 
 mat-dialog-actions {
-    justify-content: flex-end;
-    align-items: flex-end;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+button:hover {
+  background-color: #da935b;
+}
+
+.buy-btn:hover {
+  background-color: rgb(6, 218, 6);
 }

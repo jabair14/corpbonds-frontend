@@ -20,9 +20,9 @@ export class EtfInvestmentsComponent implements OnInit {
   tableConfig: string[] = ['fund_symbol', 'fund_long_name', 'price', 'amount', 'actions'];
 
   ngOnInit(): void {
-    this.userService.postAccount().subscribe((payload) => {
+    this.userService.whoAmI().subscribe((payload) => {
       // console.log('USER PAYLOAD', payload);
-      let IncomingUserId = payload.body.data.uniqueID;
+      let IncomingUserId = payload.body.userID;
       this.getUserInvestments(IncomingUserId);
     });
   }
