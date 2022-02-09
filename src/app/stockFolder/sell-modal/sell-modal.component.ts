@@ -9,6 +9,8 @@ import { Investment } from '../stock-invest-modal/investment.model';
   styleUrls: ['./sell-modal.component.scss']
 })
 export class SellModalComponent implements OnInit {
+  totalAmount:Number = 0
+
 
   constructor(
     private stockService: StocksService,
@@ -17,10 +19,15 @@ export class SellModalComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    console.log("data", this.data.investment.stockId)
+    this.stockService.getStock(this.data.investment.stockId).subscribe(payload => {
+      this.totalAmount = Math.round(payload.dynamicInfo.lastSale * Number(this.data.investment.numShares) * 100)  / 100
+    })
+    
   }
 
   cancel(): void {
-    this.dialogRef.close()
+    this.dialogRef.close({ data: false })
   }
 
   sellInvestment(): void {
@@ -28,7 +35,7 @@ export class SellModalComponent implements OnInit {
     this.stockService.deleteInvestment(this.data.investment.id).subscribe(payload => {
       console.log(payload)
     })
-    this.cancel()
+    this.dialogRef.close({data: true})
   }
 
 }

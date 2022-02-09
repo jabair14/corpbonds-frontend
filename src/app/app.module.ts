@@ -84,6 +84,7 @@ import { MutualFundsTableComponent } from './mutual_funds_content/mutual_funds_d
 import { MutualFundsSidenavComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-sidenav/mutual-funds-sidenav.component';
 import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog.component';
 import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.component';
+import { StockInvestmentsTableComponent } from './tables/stock-investments-table/stock-investments-table.component';
 
 
 
@@ -135,6 +136,7 @@ import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.componen
     MutualFundsSidenavComponent,
     VerifyDialogComponent,
     SellModalComponent,
+    StockInvestmentsTableComponent,
   ],
   imports: [
     BrowserModule,
