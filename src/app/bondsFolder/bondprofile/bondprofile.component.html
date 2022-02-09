@@ -16,8 +16,9 @@
                                     {{bond.issuerName}}
                                 </mat-panel-title>
                             </mat-expansion-panel-header>
-                            <mat-list-item> Purchase Price: {{bond.faceValue}}</mat-list-item>
-                            <mat-list-item> Rate: {{(bond.interestRate/100) | percent: '1.2'}}</mat-list-item>
+                            <mat-list-item>Symbol: <a routerLink="/bonds/{{bond.id}}">{{bond.bondSymbol}}</a></mat-list-item>
+                            <mat-list-item>Purchase Price: {{bond.faceValue | currency }}</mat-list-item>
+                            <mat-list-item>Rate: {{(bond.interestRate/100) | percent: '1.2'}}</mat-list-item>
                             <mat-list-item>Amount Purchased: {{investment.amount}}</mat-list-item>
                             <mat-list-item>Total Purchase Price: {{investment.amount * 1000 | currency}}</mat-list-item>
                         </mat-expansion-panel>
