@@ -1,26 +1,38 @@
-.etf-investment-container{
-    background-color: gray;
-    min-height: max-content;
-    height: 100%;
-    width: 1400px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: 80px;
-    transform: translate(-50%, -50%);
-    align-content: center;
-    text-align: center;
+.etf-investment-container {
+  background-color: gray;
+  min-height: max-content;
+  height: 100%;
+  width: 1400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 80px;
+  transform: translate(-50%, -50%);
+  align-content: center;
+  text-align: center;
 }
 
 .investment-table {
-    text-align: center;
-    position: relative;
-    left: 50%;
-    top: 20%;
-    margin-top: 170px;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  top: 20%;
+  margin-top: 170px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+th.mat-header-cell,
+td.mat-cell {
+  justify-content: center !important;
+  vertical-align: middle !important;
+  text-align: center !important;
+}
+
+.mat-cell {
+  text-align: center;
+  justify-content: center;
 }
