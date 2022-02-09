@@ -26,7 +26,7 @@ body {
 // }
 
 th {
-  background-color: rgba(255, 166, 0, 0.861);
+  background-color: #da935b;
 }
 
 th.mat-header-cell,
@@ -91,7 +91,7 @@ td:last-child {
 
 .etf-button {
   margin: 5px;
-  background-color: rgba(255, 166, 0, 0.861);
+  background-color: #da935b;
 }
 
 .etf-button:hover {
@@ -100,5 +100,9 @@ td:last-child {
 
 .launch:hover {
   color: whitesmoke;
-  background-color: rgba(255, 166, 0, 0.861);
+  background-color: #da935b;
+}
+
+.space-div {
+  margin-top: 50px;
 }

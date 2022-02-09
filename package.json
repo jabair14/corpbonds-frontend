@@ -41,9 +41,10 @@
     "ng2-search-filter": "^0.5.1",
     "ngx-cookie-service": "^13.1.2",
     "ngx-pagination": "^5.1.1",
-    "nvm": "^0.0.4",
-    "plotly.js-dist-min": "^2.8.3",
     "nodemon": "^2.0.15",
+    "nvm": "^0.0.4",
+    "plotly": "^1.0.6",
+    "plotly.js-dist-min": "^2.9.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.1",
     "zone.js": "~0.11.4"

@@ -20,9 +20,15 @@ export class EtfService {
     return this.http.post('http://localhost:5280/holdings/', data);
   }
 
-  // get all holdings in databse
+  // get all holdings in databse related to current user
   getAllHoldings(userId: any): Observable<any> {
     console.log("BACK END SENDING THIS USER ID", userId)
     return this.http.get('http://localhost:5280/holdings/'+ userId);
+  }
+
+  // delete holding selected by current user
+  deleteHolding(holdingId: any): Observable<any>{
+    console.log("SENDING THIS ID FOR DELETION////", holdingId)
+    return this.http.delete('http://localhost:5280/holdings/'+ holdingId)
   }
 }

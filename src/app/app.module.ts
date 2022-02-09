@@ -163,7 +163,9 @@ import { AccountSettingsComponent } from './usersFolder/account-settings/account
     AngularMaterialModule,
     FormsModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule,
+    PlotlyModule,
   ],
   entryComponents: [
     DialogEtfComponent,

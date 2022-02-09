@@ -36,4 +36,12 @@ export class EtfInvestmentsComponent implements OnInit {
       console.log(this.userInvestments);
     });
   }
+
+  deleteInvestment(holdingId: any){
+    console.log("DELETING THIS HOLDING:",holdingId);
+    this.etfService.deleteHolding(holdingId).subscribe(payload => {
+      console.log("SUCCESS IN DELETING HOLDING", payload)
+      this.ngOnInit();
+    })
+  }
 }
