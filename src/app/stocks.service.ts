@@ -5,13 +5,13 @@ import { Investment } from './stockFolder/stock-invest-modal/investment.model';
 import { Integer } from 'aws-sdk/clients/eventbridge';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StocksService {
   //url: string = "https://stocks-microservice-app.herokuapp.com";
   url: string = "http://localhost:3000";
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getStocks(): Observable<any> {
     return this.http.get(`${this.url}/stocks`)
@@ -25,14 +25,14 @@ export class StocksService {
     return this.http.post(`${this.url}/invest`, investment)
   }
 
-  
   getInvestments(userId: String): Observable<any> {
-    return this.http.get(`${this.url}/invest/${userId}`)
+    return this.http.get(`${this.url}/invest/${userId}`);
   }
 
   deleteInvestment(investmentId: Integer) {
-    console.log(`${this.url}/invest/${investmentId}`)
-    return this.http.delete(`${this.url}/invest/${investmentId}`, {responseType:"text"})
+    console.log(`${this.url}/invest/${investmentId}`);
+    return this.http.delete(`${this.url}/invest/${investmentId}`, {
+      responseType: 'text',
+    });
   }
-  
 }

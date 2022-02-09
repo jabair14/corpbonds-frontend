@@ -1,5 +1,14 @@
-<h2 mat-dialog-title>Enter your Verification Code</h2>
-<mat-dialog-content>
-  Your Verification Code was sent to your Phone</mat-dialog-content
->
-<mat-dialog-actions> </mat-dialog-actions>
+<div class="mat-wrapper">
+  <h2 mat-dialog-title class="mat-wrapper title">
+    Check Your Phone For the Code
+  </h2>
+  <mat-form-field appearance="fill" class="form">
+    <mat-dialog-content>
+      Your Verification Code was sent to your Phone</mat-dialog-content
+    >
+    <input matInput [(ngModel)]="ver.verificationCode" class="input" />
+  </mat-form-field>
+  <mat-dialog-actions class="btn--box">
+    <button mat-button [mat-dialog-close]="ver" class="btn">That's it!</button>
+  </mat-dialog-actions>
+</div>

@@ -24,9 +24,7 @@ import { StockInvestmentsComponent } from './stockFolder/stock-investments/stock
 import { CreatePurchasesComponent } from './purchasesPlace/createpurchases/createpurchases.component';
 import { PurchaseComponent } from './purchasesPlace/purchase/purchase.component';
 import { PurchasesComponent } from './purchasesPlace/purchases/purchases.component';
-
 import { LearnComponent } from './learn/learn.component';
-
 
 //Mutual Funds Routes
 import { MutualFundsComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds/mutual-funds.component';
@@ -37,42 +35,45 @@ import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { Token } from '@angular/compiler';
 import { TokenComponent } from './usersFolder/token/token.component';
+import { AccountSettingsComponent } from './usersFolder/account-settings/account-settings.component';
+
 
 const routes: Routes = [
-  {path: "home", component: HomeComponent},
-  {path: "bonds", component: BondsComponent},
-  {path: "funds", component: FundsComponent},
-  {path: "funds/create", component: CreateFundsComponent},
-  {path: "funds/:id", component: FundComponent},
-  {path: "funds/:id/edit", component: EditFundsComponent},
-  {path: "funds/:id/create", component: CreatePurchasesComponent},
-  {path: "purchases", component: PurchasesComponent},
-  {path: "purchases/:id", component: PurchaseComponent},
-  {path: "bonds/:id", component: BondComponent},
-  {path: "", component: HomeComponent, pathMatch: "full"},
-  {path: "stocks", component: StocksComponent},
-  {path: "retcalc", component: RetcalcComponent},
-  {path: "etfs", component: EtfComponent},
-  {path: "locations", component: LocationsComponent, pathMatch: "full"},
-  {path: "locations/:id", component: LocationComponent},
-  {path: "retcalc", component: RetcalcComponent},
-  {path: "socialmedias", component: SocialmediaComponent},
-  {path: "stockInvestments", component: StockInvestmentsComponent},
-  {path: "", component: HomeComponent, pathMatch: "full"},
-  {path: "", component: HomeComponent, pathMatch: "full"},
-  
+  { path: 'home', component: HomeComponent },
+  { path: 'bonds', component: BondsComponent },
+  { path: 'funds', component: FundsComponent },
+  { path: 'funds/create', component: CreateFundsComponent },
+  { path: 'funds/:id', component: FundComponent },
+  { path: 'funds/:id/edit', component: EditFundsComponent },
+  { path: 'funds/:id/create', component: CreatePurchasesComponent },
+  { path: 'purchases', component: PurchasesComponent },
+  { path: 'purchases/:id', component: PurchaseComponent },
+  { path: 'bonds/:id', component: BondComponent },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: 'stocks', component: StocksComponent },
+  { path: 'retcalc', component: RetcalcComponent },
+  { path: 'etfs', component: EtfComponent },
+  { path: 'locations', component: LocationsComponent, pathMatch: 'full' },
+  { path: 'locations/:id', component: LocationComponent },
+  { path: 'retcalc', component: RetcalcComponent },
+  { path: 'socialmedias', component: SocialmediaComponent },
+  { path: 'stockInvestments', component: StockInvestmentsComponent },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+
   // Mutual Funds Routes
-  { path: "mutual_funds", component: MutualFundsComponent},
-  { path: "mutual_funds/:id", component: MutualFundsComponent},
-  { path: 'learn', component: LearnComponent},
+  { path: 'mutual_funds', component: MutualFundsComponent },
+  { path: 'mutual_funds/:id', component: MutualFundsComponent },
+
+  //User-Service Routes
+  { path: 'learn', component: LearnComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registration/:token', component: TokenComponent },
+
   { path: 'account', component: AccountsComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'consultants/:id', component: ConsultantComponent}
-
-//User-Service Routes
-
+  { path: 'consultants/:id', component: ConsultantComponent },
+  { path: 'account/settings', component: AccountSettingsComponent },
 ];
 
 @NgModule({
