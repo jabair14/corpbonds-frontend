@@ -52,6 +52,7 @@ import { EtfComponent } from './etfFolder/etf.component';
 import { DialogEtfComponent } from './etfFolder/dialog-etf/dialog-etf.component';
 import { DialogSingleEtfComponent } from './etfFolder/dialog-single-etf/dialog-single-etf.component';
 import { BuyDialogComponent } from './etfFolder/buy-dialog/buy-dialog.component';
+import { EtfInvestmentsComponent } from './etfFolder/etf-investments/etf-investments.component';
 
 //Closed-End Funds Imports
 import { EditFundsComponent } from './fundsPlace/editfunds/editfunds.component';
@@ -105,6 +106,7 @@ import { AccountSettingsComponent } from './usersFolder/account-settings/account
     RetcalcComponent,
     DialogSingleEtfComponent,
     BuyDialogComponent,
+    EtfInvestmentsComponent,
 
     StocksComponent,
     LocationsComponent,

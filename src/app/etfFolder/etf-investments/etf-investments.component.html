@@ -1,0 +1,40 @@
+<main class="etf-investment-container">
+
+   
+  <div class="investment-table">
+    <table mat-table [dataSource]="userInvestments" class="mat-elevation-z8">
+      <ng-container matColumnDef="fund_symbol">
+        <th mat-header-cell *matHeaderCellDef>Ticker</th>
+        <td matt-cell *matCellDef="let element">
+          {{ element.ETF.fund_symbol }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="fund_long_name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td matt-cell *matCellDef="let element">
+          {{ element.ETF.fund_long_name }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef>Price</th>
+        <td matt-cell *matCellDef="let element">
+          {{ element.ETF.price | currency}}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef>Purchased Amount</th>
+        <td matt-cell *matCellDef="let element">
+          {{ element.numPurchased}}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th matt-header-cell *matHeaderCellDef>Actions</th>
+        <td matt-cell *matCellDef="let row">
+          <button mat-raised-button color="warn">SELL</button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="tableConfig"></tr>
+      <tr mat-row *matRowDef="let row; columns: tableConfig"></tr>
+    </table>
+  </div>
+</main>
