@@ -4,7 +4,9 @@
     </div>
     <div class="stocks-div">
         <button (click) = "resetFilters()" class="resetBtn">Reset</button>
+        <img src="../../assets/stockImage2.png" alt="" class = "stockImg2">
         <input class= "stock-searchbar" placeholder="Search for Stock" type="text" [(ngModel)] ="term">
+        <img src="../../assets/stockPicture.png" alt="" class = "stockImg">
         <button class="investmentBtn" routerLink="/stockInvestments" *ngIf = signedIn>Investments</button>
         <!--
         <table mat-table [dataSource]="data">
@@ -15,7 +17,7 @@
         </table>
         -->
 
-        <div style="text-align:center">
+        <div style="text-align:center" class="space">
             <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event">
           
              
@@ -39,41 +41,39 @@
 
         <table class ="stocks-table">
             <tr>
-                <th style="width: 2vw; background-color: rgb(255, 166, 0);">
-                  <button (click) = "reorderId()"  *ngIf = "this.idDir" class="arrow">id <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
-                  <button (click) = "reorderId()"  *ngIf = "!this.idDir" class="arrow">id <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
+                <th style="width: 4vw; background-color: #da935b">
+                  <button (click) = "reorderId()"  *ngIf = "this.idDir" class="arrow">Symbol <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
+                  <button (click) = "reorderId()"  *ngIf = "!this.idDir" class="arrow">Symbol <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
                 </th>
-                <th style="background-color: rgb(255, 166, 0); color: black;">Symbol </th>
-                <th style ="background-color: rgb(255, 166, 0); color: black;">Company Name</th>
-                <th style="background-color: rgb(255, 166, 0); color: black;">Country</th>
-                <th style="width: 5vw; background-color: rgb(255, 166, 0);">
+                <th style ="background-color: #da935b; color: black;">Company Name</th>
+                <th style="background-color: #da935b; color: black;">Country</th>
+                <th style="width: 5vw; background-color: #da935b;">
                   <button (click) = "reorderIpoYear()" *ngIf = "this.ipoYearDir" class="arrow">IPO Year <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
                   <button (click) = "reorderIpoYear()" *ngIf = "!this.ipoYearDir" class="arrow">IPO Year <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
                 </th>
-                <th style="width: 5vw; background-color: rgb(255, 166, 0);">
+                <th style="width: 5vw; background-color: #da935b;">
                   <button (click) = "reorderlastSale()" *ngIf = "this.lastSaleDir" class="arrow">Last Sale <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
                   <button (click) = "reorderlastSale()" *ngIf = "!this.lastSaleDir" class="arrow">Last Sale <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
                 </th>
-                <th style="width: 6vw; background-color: rgb(255, 166, 0);">
+                <th style="width: 6vw; background-color: #da935b;">
                   <button (click) = "reordernetChange()" *ngIf = "this.netChangeDir" class="arrow">Net Change <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
                   <button (click) = "reordernetChange()" *ngIf = "!this.netChangeDir" class="arrow">Net Change <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
                 </th>
-                <th style="width: 6vw; background-color: rgb(255, 166, 0);">
+                <th style="width: 6vw; background-color: #da935b;">
                   <button (click) = "reorderpercentChange()" *ngIf = "this.percentChangeDir" class="arrow">Percent Change <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
                   <button (click) = "reorderpercentChange()" *ngIf = "!this.percentChangeDir" class="arrow">Percent Change <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
                 </th>
-                <th style="width: 6vw; background-color: rgb(255, 166, 0);">
+                <th style="width: 6vw; background-color: #da935b;">
                   <button (click) = "reordermarketCap()" *ngIf = "this.marketCapDir" class="arrow">Market Cap <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
                   <button (click) = "reordermarketCap()" *ngIf = "!this.marketCapDir" class="arrow">Market Cap <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
                 </th>
-                <th style="width: 5vw; background-color: rgb(255, 166, 0);">
+                <th style="width: 5vw; background-color: #da935b;">
                   <button (click) = "reordervolume()" *ngIf = "this.volumeDir" class="arrow">Volume <mat-icon class="iconSize">keyboard_arrow_down</mat-icon></button>
                   <button (click) = "reordervolume()" *ngIf = "!this.volumeDir" class="arrow">Volume <mat-icon class="iconSize">keyboard_arrow_up</mat-icon></button>
                 </th>
-                <th style="background-color: rgb(255, 166, 0); color: black;"> Invest </th>
+                <th style="background-color: #da935b; color: black;"> Invest </th>
             </tr>
             <tr (click) = "toggleModal()" *ngFor="let stock of stocks | filter: term | paginate: config">
-                <th>{{stock.id}}</th>
                 <th>{{stock.symbol}}</th>
                 <th>{{stock.name}}</th>
                 <th>{{stock.country}}</th>
@@ -83,13 +83,13 @@
                 <th *ngIf="stock.dynamicInfo">{{stock.dynamicInfo.percentChange}}</th>
                 <th *ngIf="stock.dynamicInfo">{{stock.dynamicInfo.marketCap}}</th>
                 <th *ngIf="stock.dynamicInfo">{{stock.dynamicInfo.volume}}</th>
-                <th><button mat-raised-button (click)="openDialog(stock)" class='addBtn'><mat-icon >add</mat-icon></button></th>
+                <th><button (click)="openDialog(stock)" class='addBtn'><mat-icon >add</mat-icon></button></th>
 
             </tr>
         </table>
 
 
-        <div style="text-align:center">
+        <div style="text-align:center" class="space">
           <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event">
         
            

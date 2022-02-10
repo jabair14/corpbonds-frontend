@@ -51,6 +51,12 @@
 
 <div *ngIf="accountDis" class="wrapper">
   <div class="welcome__card">
+    <img
+      src="{{ this.profPic }}"
+      alt="user--icon"
+      class="userIcon"
+      @rightFade
+    />
     <h2 @rightFade>Hello, {{ this.name }}</h2>
     <a (click)="logOut()" class="butn" href="/login">Log Out</a>
   </div>
@@ -67,6 +73,10 @@
     </ul>
     <div class="balance" @bottomFade>
       <div class="money">Your Balance Today: ${{ this.balance }}</div>
+      <div class="muttables">
+        <app-mutual-funds-table></app-mutual-funds-table>
+        <app-stock-investments></app-stock-investments>
+      </div>
     </div>
   </div>
 </div>

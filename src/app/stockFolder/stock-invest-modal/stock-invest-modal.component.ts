@@ -16,6 +16,7 @@ export class StockInvestModalComponent implements OnInit {
   buyBought:Boolean = true //are you in the buying or bought stage
   signedIn:Boolean = false
   currentUser: String = ""
+  totalAmount: Number = 0
   
   constructor(
     private router: Router,
@@ -57,6 +58,11 @@ export class StockInvestModalComponent implements OnInit {
     }
     this.stockService.makeInvestment(investment).subscribe(payload => {
       console.log(payload)
+    })
+    this.stockService.getStock(stock.id).subscribe(payload => {
+      this.totalAmount = Math.round(payload.dynamicInfo.lastSale * Number(this.purchaseAmount) * 100) / 100
+      //Math.round(num * 100) / 100
+      console.log("this is the total", this.totalAmount)
     })
     this.buyBought = false
   }
