@@ -50,6 +50,7 @@ export class AccountsComponent implements OnInit {
     verificationCode: '',
   };
 
+  profPic: string = '';
   /////////////////////////////////////////constructor
 
   constructor(
@@ -77,6 +78,8 @@ export class AccountsComponent implements OnInit {
         this.name = data.body.name.split(' ')[0].toLowerCase();
         this.balance = data.body.data.Account_Balance.toFixed(2);
         this.name = this.name.charAt(0).toUpperCase() + this.name.slice(1);
+        this.profPic = `./../../../assets/userIcons/${data.body.data.settings.icon}.png`;
+        console.log(this.profPic);
       }
     });
   }
