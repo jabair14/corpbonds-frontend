@@ -38,6 +38,7 @@ import { TokenComponent } from './usersFolder/token/token.component';
 import { InvestmentComponent } from './bondsFolder/investment/investment.component';
 import { BondprofileComponent } from './bondsFolder/bondprofile/bondprofile.component';
 import { AccountSettingsComponent } from './usersFolder/account-settings/account-settings.component';
+import { WhoweareComponent } from './whoweare/whoweare.component';
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
@@ -62,6 +63,7 @@ const routes: Routes = [
   {path: "socialmedias", component: SocialmediaComponent},
   {path: "stockInvestments", component: StockInvestmentsComponent},
   {path: "", component: HomeComponent, pathMatch: "full"},
+  {path: "whoweare", component: WhoweareComponent, pathMatch: "full"},
   
   // Mutual Funds Routes
   { path: 'mutual_funds', component: MutualFundsComponent },

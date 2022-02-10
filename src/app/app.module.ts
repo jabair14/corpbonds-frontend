@@ -88,6 +88,7 @@ import { ConsultantComponent } from './locationsFolder/consultant/consultant.com
 import { MutualFundsDialogComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-dialog/mutual-funds-dialog.component';
 import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.component';
 import { AccountSettingsComponent } from './usersFolder/account-settings/account-settings.component';
+import { WhoweareComponent } from './whoweare/whoweare.component';
 
 @NgModule({
   declarations: [
@@ -144,6 +145,7 @@ import { AccountSettingsComponent } from './usersFolder/account-settings/account
 
     SellModalComponent,
     AccountSettingsComponent,
+    WhoweareComponent,
   ],
   imports: [
     BrowserModule,

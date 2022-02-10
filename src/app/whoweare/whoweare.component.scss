@@ -1,0 +1,27 @@
+@import "/src/styles.scss";
+
+.main {
+    background-color: $lorange;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.example-card {
+    max-width: 400px;
+    max-height: 550px;
+    margin: 20px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+.linkedin {
+    max-height: 32px;
+    // max-width: 40px;
+}

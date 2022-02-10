@@ -45,7 +45,8 @@ export class BondprofileComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.postAccount().subscribe(payload => {
-      if (payload.body.message !== 'login') {
+      console.log(payload.body)
+      if (payload.body.message == 'success') {
         console.log(payload.body.message)
         this.user = payload.body.data 
         const myid = this.user.uniqueID;
@@ -59,6 +60,7 @@ export class BondprofileComponent implements OnInit {
         })
         
       } else {
+        alert ("Must be logged in!")
         this.router.navigateByUrl("/login")
       }
       
