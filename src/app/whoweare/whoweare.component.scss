@@ -1,7 +1,17 @@
 @import "/src/styles.scss";
 
-.body {
-    border: 1px solid transparent;
+// .body {
+//     border: 1px solid transparent;
+//     background-color: $lorange;
+//     height: 100vh;
+//     width: 100vw;
+// }
+
+.container {
+    // background-color: $lorange;
+    // height: 100vh;
+    width: 100vw;
+    margin: 0, auto;
 }
 
 .main {
@@ -12,7 +22,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0;
+    margin: 0, auto;
     // margin: 0;
     padding-bottom: 50px;
     // border: 1px solid red
@@ -71,4 +81,9 @@
 
 p {
     font-size: 10px;
+}
+
+h1 {
+    padding-left: 50px;
+    // background-color: $lorange;
 }

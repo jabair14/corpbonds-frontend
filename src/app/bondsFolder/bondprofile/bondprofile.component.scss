@@ -1,5 +1,14 @@
 @import "/src/styles.scss";
 
+html, body {
+    // padding: 0;
+    margin: auto;
+    height: 100%;
+  }
+
+.main {
+    padding-bottom: 10rem;
+}
 
 .investments{
     border: 1px solid black;
