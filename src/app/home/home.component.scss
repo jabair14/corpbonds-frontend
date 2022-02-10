@@ -94,10 +94,6 @@ h2 {
   margin-bottom: 0;
 }
 
-.bottom {
-  background-color: $navyb;
-}
-
 h3 {
   font-family: $pfont;
   font-size: 1.5rem;
@@ -115,7 +111,8 @@ h3 {
   flex-direction: column;
 }
 
-.mappy {
+.mappy,
+.bottom {
   display: flex;
   width: 100%;
 }
@@ -152,13 +149,15 @@ h3 {
 }
 
 .lw,
-.whow {
+.whow,
+.wb {
   width: 50%;
   margin-top: 6%;
 }
 
 .lp,
-.whop {
+.whop,
+.pb {
   width: 50%;
 }
 
@@ -169,7 +168,8 @@ h3 {
 }
 
 .learn a,
-.whowe a {
+.whowe a,
+.bottom a {
   font-family: $pfont;
   font-size: 2rem;
   color: $dblue;
@@ -177,7 +177,8 @@ h3 {
 }
 
 .learn p,
-.whowe p {
+.whowe p,
+.bottom p {
   margin: 4rem;
 }
 
@@ -195,4 +196,19 @@ h3 {
 
 .whowe h2 {
   color: $navyb;
+}
+
+.bottom {
+  margin-bottom: 9rem;
+}
+
+.pb img {
+  width: 40%;
+  margin-top: 5rem;
+}
+
+.pb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
