@@ -87,6 +87,8 @@ import { BondprofileComponent } from './bondsFolder/bondprofile/bondprofile.comp
 import { ConsultantComponent } from './locationsFolder/consultant/consultant.component';
 import { MutualFundsDialogComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-dialog/mutual-funds-dialog.component';
 import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.component';
+import { StockInvestmentsTableComponent } from './tables/stock-investments-table/stock-investments-table.component';
+
 import { AccountSettingsComponent } from './usersFolder/account-settings/account-settings.component';
 import { WhoweareComponent } from './whoweare/whoweare.component';
 
@@ -144,6 +146,7 @@ import { WhoweareComponent } from './whoweare/whoweare.component';
     MutualFundsDialogComponent,
 
     SellModalComponent,
+    StockInvestmentsTableComponent,
     AccountSettingsComponent,
     WhoweareComponent,
   ],
