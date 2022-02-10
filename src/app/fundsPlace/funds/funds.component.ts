@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Fund } from '../fund/fund.model';
 import { FundService } from '../fund.service';
-
+import { UserService } from 'src/app/user.service';
+import { MatDialog } from '@angular/material/dialog';
+import { PurchaseComponent } from 'src/app/purchasesPlace/purchase/purchase.component';
 @Component({
   selector: 'app-funds',
   templateUrl: './funds.component.html',
@@ -15,6 +17,8 @@ export class FundsComponent implements OnInit {
   public autoHide: boolean = false;
   public responsive: boolean = true;
   public changeText: boolean;
+  signedIn: boolean = false;
+
 
   public labels: any = {
       previousLabel: '<--',
@@ -27,7 +31,9 @@ export class FundsComponent implements OnInit {
 
   constructor(private router: Router, 
     private fundService: FundService, 
-    private route: ActivatedRoute) { this.changeText = false; }
+    private route: ActivatedRoute,
+    private userService: UserService,
+    public dialog: MatDialog,) { this.changeText = false; }
 
 
   config: any;
@@ -62,18 +68,20 @@ fund:Fund = {
     console.log(e);
   }
 
-  ngOnInit(): void {
-    
-    
-      this.route.params.subscribe(params=>{
-      const myid = +params['id'];
-      this.sortChanged;
-      this.fundService.getFunds().subscribe(payload=>{
-        console.log(payload);
+  async ngOnInit(): Promise<void> {
+      await this.fundService.getFunds().subscribe(payload=>{
+        this.userService.whoAmI().subscribe(payload => {
+          if(payload.body.userID){
+            this.signedIn = true;
+          }
+          else {
+            this.signedIn = false;
+
+          }
+        })
         this.funds = payload;
-        
         this.config ={
-          id: '1',
+          id: 'custom',
           itemsPerPage: 25,
           currentPage: 1,
           totalItems: this.funds.length,
@@ -81,8 +89,8 @@ fund:Fund = {
         };
         
     })
-  })
-}
+  }
+
 
   deleteFunds(id: number){
     if(confirm("Are you sure you want to delete this item?") == true){
