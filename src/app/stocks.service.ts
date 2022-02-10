@@ -8,8 +8,8 @@ import { Integer } from 'aws-sdk/clients/eventbridge';
   providedIn: 'root',
 })
 export class StocksService {
-  //url: string = "https://stocks-microservice-app.herokuapp.com";
-  url: string = "http://localhost:3000";
+  url: string = "https://stocks-microservice-app.herokuapp.com";
+  //url: string = "http://localhost:3000";
 
   constructor(private http: HttpClient) {}
 
