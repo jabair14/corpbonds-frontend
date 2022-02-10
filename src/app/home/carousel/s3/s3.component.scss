@@ -1,0 +1,50 @@
+@import "/src/styles.scss";
+
+.retirement {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: inherit;
+  background-color: $lgrey;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.retire-left {
+  height: 400px;
+  width: 550px;
+  //   margin-top: 5%;
+}
+
+.retire-right {
+  h1 {
+    font-family: $tfont;
+    font-size: 4.5rem;
+    text-decoration: $rorange 0.5rem dashed underline;
+    color: black;
+  }
+
+  p {
+    font-family: $pfont;
+    font-size: 2rem;
+    color: white;
+  }
+  height: 300px;
+  width: 550px;
+  //   margin-top: 5%;
+}
+
+.retirement-img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.retirement-img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.retire-btn {
+  background-color: $rorange;
+}
