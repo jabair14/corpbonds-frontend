@@ -11,8 +11,14 @@
           height="10px"
         />
       </button>
-      <button mat-menu-item routerLink="/learn">Learn</button>
-      <button mat-menu-item>Support</button>
+      <button mat-menu-item [matMenuTriggerFor]="learn" xPosition="after">
+        Learn
+        <img
+          src="https://img.icons8.com/ios/48/000000/sort-down.png"
+          height="10px"
+        />
+      </button>
+      <button mat-menu-item routerLink="/locations">Locations</button>
       <button mat-menu-item>Who we are</button>
       <button mat-menu-item routerLink="/login">Login</button>
       <button mat-menu-item routerLink="/home">Home</button>
@@ -22,7 +28,10 @@
         <button mat-menu-item routerLink="/mutual_funds">Mutual Funds</button>
         <button mat-menu-item routerLink="/stocks">Stocks</button>
         <button mat-menu-item routerLink="/funds">Closed End Funds</button>
-        <button mat-menu-item routerLink="/locations">Locations</button>
+      </mat-menu>
+      <mat-menu #learn="matMenu">
+        <button mat-menu-item routerLink="/learn">Investing 101</button>
+        <button mat-menu-item routerLink="/retcalc">Retirement Account Calculator</button>
       </mat-menu>
     </div>
     <router-outlet></router-outlet>
