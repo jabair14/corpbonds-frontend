@@ -2,15 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { StocksService } from 'src/app/stocks.service';
 import { UserService } from 'src/app/user.service';
-import { Investment } from '../stock-invest-modal/investment.model';
-import { SellModalComponent } from '../sell-modal/sell-modal.component';
+import { Investment } from 'src/app/stockFolder/stock-invest-modal/investment.model'; 
+import { SellModalComponent } from 'src/app/stockFolder/sell-modal/sell-modal.component'; 
 
 @Component({
-  selector: 'app-stock-investments',
-  templateUrl: './stock-investments.component.html',
-  styleUrls: ['./stock-investments.component.scss']
+  selector: 'app-stock-investments-table',
+  templateUrl: './stock-investments-table.component.html',
+  styleUrls: ['./stock-investments-table.component.scss']
 })
-export class StockInvestmentsComponent implements OnInit {
+export class StockInvestmentsTableComponent implements OnInit {
   config: any
   signedIn: boolean = false;
   term: string = ""
