@@ -85,6 +85,10 @@ import { MutualFundsSidenavComponent } from './mutual_funds_content/mutual_funds
 import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog.component';
 import { BondprofileComponent } from './bondsFolder/bondprofile/bondprofile.component';
 import { ConsultantComponent } from './locationsFolder/consultant/consultant.component';
+import { S1Component } from './home/carousel/s1/s1.component';
+import { S2Component } from './home/carousel/s2/s2.component';
+import { S3Component } from './home/carousel/s3/s3.component';
+
 import { MutualFundsDialogComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-dialog/mutual-funds-dialog.component';
 import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.component';
 import { StockInvestmentsTableComponent } from './tables/stock-investments-table/stock-investments-table.component';
@@ -143,6 +147,9 @@ import { WhoweareComponent } from './whoweare/whoweare.component';
 
     VerifyDialogComponent,
     BondprofileComponent,
+    S1Component,
+    S2Component,
+    S3Component,
     MutualFundsDialogComponent,
 
     SellModalComponent,
