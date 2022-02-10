@@ -1,140 +1,146 @@
-<div class="main">
-    <div class="bonds-info" >
-        <h1> Bonds </h1>
-        <button mat-raised-button class="bond-profile-btn" routerLink="/bondprofile"> 
-            Bond Profile
-        </button>
-        <p> 
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro molestiae sit velit ut modi eius nobis soluta beatae similique repellendus 
-            explicabo earum aliquid, minima quis quasi nihil, quae qui doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis cupiditate aspernatur, delectus earum eligendi doloremque illum tempore facilis officiis non aut. 
-            Porro aspernatur quam voluptas sunt maiores consequatur excepturi tempore? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae autem aspernatur consectetur, explicabo cumque ex dicta repellat expedita aperiam repellendus 
-            quod dolore, illum atque! Neque odit ratione nam voluptatem perferendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum mollitia obcaecati eligendi ex modi et fuga omnis labore temporibus nihil illo error deleniti eaque 
-            sit, libero hic dignissimos vitae. Accusantium.
-        </p>
-    </div>
-    
-    
-    
-    <div class="bonds-div" >
-        <div class="table-controls" >
-            <div class="searchbar-div">
-                <input type="text" class="searchbar" placeholder="search.." [(ngModel)]="term" >
+<body>
+    <div class="main">
+        <div class="bonds-info" >
+            <h1> Bonds </h1>
+            <button mat-raised-button class="bond-profile-btn" routerLink="/bondprofile"> 
+                Bond Profile
+            </button>
+            <p> 
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro molestiae sit velit ut modi eius nobis soluta beatae similique repellendus 
+                explicabo earum aliquid, minima quis quasi nihil, quae qui doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis cupiditate aspernatur, delectus earum eligendi doloremque illum tempore facilis officiis non aut. 
+                Porro aspernatur quam voluptas sunt maiores consequatur excepturi tempore? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae autem aspernatur consectetur, explicabo cumque ex dicta repellat expedita aperiam repellendus 
+                quod dolore, illum atque! Neque odit ratione nam voluptatem perferendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum mollitia obcaecati eligendi ex modi et fuga omnis labore temporibus nihil illo error deleniti eaque 
+                sit, libero hic dignissimos vitae. Accusantium.
+            </p>
+        </div>
+        
+        
+        
+        <div class="bonds-div" >
+            <div class="table-controls" >
+                <div class="searchbar-div">
+                    <input type="text" class="searchbar" placeholder="search.." [(ngModel)]="term" >
+                </div>
+                <div class="page-div">
+                    <!-- <p>Use the seach bar to discover a variety of corporate bonds.</p> -->
+                    <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+                </div>
             </div>
-            <div class="page-div">
-                <!-- <p>Use the seach bar to discover a variety of corporate bonds.</p> -->
-                <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+            <!-- <app-my-loader></app-my-loader> -->
+            <div class="table-div">
+                <table class="bonds-table" id="fixed_headers" >
+                    <thead>
+                        <tr>
+                            <!-- <th >
+                                ID
+                            </th> -->
+                            <th >
+                                Symbol
+                            </th>
+                            <th >
+                                Name
+                            </th>
+                            <th> 
+                                Interest Rate 
+                                <br>
+                                <mat-icon class="icon" (click)="clickSort()" (click)="show" >
+                                    {{show == false ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon>
+                                </th>
+                                <th 
+                                scope="col" 
+                                [appSort]="bonds" 
+                                data-order='desc' 
+                                data-name='maturityDate'
+                                >
+                                Maturity Date
+                                <br>
+                                <mat-icon class="icon">sort</mat-icon>
+                            </th>
+                            <th >
+                                Face Value
+                            </th>
+                            <th >
+                                Underlying
+                            </th>
+                            <th >
+                                Alternate Symbol
+                            </th>
+                            <th >
+                                Suffix
+                            </th>
+                            <th >
+                                Issue Type
+                            </th>
+                            <th >
+                                Bypass Clearance
+                            </th>
+                            <th >
+                                Currency Code
+                            </th>
+                            <th >
+                                Flat
+                            </th>
+                            <th >
+                                Bankrupt?
+                            </th>
+                            <th >
+                                Exchange
+                            </th>
+                        </tr>
+                    </thead>
+                    
+                    <tr  *ngFor="let bond of bonds | filter: term | paginate: config ">
+                        <!-- <th>
+                             {{bond.id}}
+                        </th> -->
+                        <td>
+                            <a [routerLink]="['/bonds', bond.id]"> {{bond.bondSymbol}}</a>
+                        </td>
+                        <td>
+                            {{bond.issuerName}}
+                        </td>
+                        <td>
+                            {{(bond.interestRate/100) | percent: '1.2'}} 
+                        </td>
+                        <td>
+                            {{bond.maturityDate | date : 'mediumDate'}}
+                        </td>
+                        <td>
+                            {{bond.faceValue | currency}}
+                        </td>
+                        <td>
+                            {{bond.underlying}}
+                        </td>
+                        <td>
+                            {{bond.altSymbol}}
+                        </td>
+                        <td>
+                            {{bond.suffix}}
+                        </td>
+                        <td>
+                            {{bond.issueType}}
+                        </td>
+                        <td>
+                            {{bond.bypassClearance}}
+                        </td>
+                        <td>
+                            {{bond.currencyCode}}
+                        </td>
+                        <td>
+                            {{bond.flat}}
+                        </td>
+                        <td>
+                            {{bond.bankrupt}}
+                        </td>
+                        <td>
+                            {{bond.exchange}}
+                        </td>
+                        
+                    </tr>
+                </table>
+                
             </div>
         </div>
-        <app-my-loader></app-my-loader>
-        <table class="bonds-table" id="fixed_headers" >
-            <thead>
-                <tr>
-                    <!-- <th >
-                        ID
-                    </th> -->
-                    <th >
-                        Symbol
-                    </th>
-                    <th >
-                        Name
-                    </th>
-                    <th> 
-                        Interest Rate 
-                        <br>
-                        <mat-icon class="icon" (click)="clickSort()" (click)="show" >
-                            {{show == false ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon>
-                        </th>
-                        <th 
-                        scope="col" 
-                        [appSort]="bonds" 
-                        data-order='desc' 
-                        data-name='maturityDate'
-                        >
-                        Maturity Date
-                        <br>
-                        <mat-icon class="icon">sort</mat-icon>
-                    </th>
-                    <th >
-                        Face Value
-                    </th>
-                    <th >
-                        Underlying
-                    </th>
-                    <th >
-                        Alternate Symbol
-                    </th>
-                    <th >
-                        Suffix
-                    </th>
-                    <th >
-                        Issue Type
-                    </th>
-                    <th >
-                        Bypass Clearance
-                    </th>
-                    <th >
-                        Currency Code
-                    </th>
-                    <th >
-                        Flat
-                    </th>
-                    <th >
-                        Bankrupt?
-                    </th>
-                    <th >
-                        Exchange
-                    </th>
-                </tr>
-            </thead>
-            
-            <tr  *ngFor="let bond of bonds | filter: term | paginate: config ">
-                <!-- <th>
-                     {{bond.id}}
-                </th> -->
-                <td>
-                    <a [routerLink]="['/bonds', bond.id]"> {{bond.bondSymbol}}</a>
-                </td>
-                <td>
-                    {{bond.issuerName}}
-                </td>
-                <td>
-                    {{(bond.interestRate/100) | percent: '1.2'}} 
-                </td>
-                <td>
-                    {{bond.maturityDate | date : 'mediumDate'}}
-                </td>
-                <td>
-                    {{bond.faceValue | currency}}
-                </td>
-                <td>
-                    {{bond.underlying}}
-                </td>
-                <td>
-                    {{bond.altSymbol}}
-                </td>
-                <td>
-                    {{bond.suffix}}
-                </td>
-                <td>
-                    {{bond.issueType}}
-                </td>
-                <td>
-                    {{bond.bypassClearance}}
-                </td>
-                <td>
-                    {{bond.currencyCode}}
-                </td>
-                <td>
-                    {{bond.flat}}
-                </td>
-                <td>
-                    {{bond.bankrupt}}
-                </td>
-                <td>
-                    {{bond.exchange}}
-                </td>
-                
-            </tr>
-        </table>
     </div>
-</div>
+    
+</body>

@@ -1,13 +1,35 @@
 @import "/src/styles.scss";
 
+
+html, body {
+  // padding: 0;
+  margin: auto;
+  height: 100%;
+}
+.main{
+  min-height: 100vh;
+  min-width: 100vw;
+  // padding: 2.5rem;
+  
+  // padding-bottom: 20px ;
+}
+
+// .footer-distributed {
+//   position: fixed;
+//   bottom: 0px;
+// }
 .bonds-table {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   // border: 0.1px;
-  max-width: 100%;
+  max-width: 100vw;
+  max-height: 100vh;
   border-radius: 10px;
   margin: auto;
   box-shadow: 5px 5px 5px #999;
+  overflow: hidden;
+  
+  // padding-bottom: 100px;
   th {
     position: sticky;
     top: 0;
@@ -59,7 +81,7 @@
     flex-wrap: inherit;
     padding: 20px;
     width: 90vw;
-    height: 50vh;
+    max-height: 80%;
     margin: auto;
   
 }
@@ -86,14 +108,7 @@ p {
   // flex-direction: column;
 }
 
-// .searchbar-div {
-//   // margin: auto;
-//   // position: relative;
-//   // margin-bottom: -2.5em;
-//   // margin-left: auto;
-//   // margin-right: auto;
-//   // margin-right: 5em;
-// }
+
 .searchbar {
   padding: 5px;
   border-radius: 2px;
@@ -124,3 +139,8 @@ app-my-loader{
   text-align: center;
   font-family: $logo--font;
 }
+
+// .table-div {
+//   max-height: 75vh;
+//   padding-bottom: 100px;
+// }
