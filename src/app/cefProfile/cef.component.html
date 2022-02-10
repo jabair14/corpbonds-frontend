@@ -1,0 +1,17 @@
+ <body>
+     
+ 
+ <div class="purchase">
+                    <h5>Purchases</h5>
+                </div>
+    
+    
+              <div class="grid-container" id="gridContainer">
+                <div *ngFor="let purchase of purchases">
+    
+                    <a [routerLink]="['/purchases', purchase.id]"> ID- {{purchase.id}} <br> Amount- {{purchase.amount}}
+                        <br>Fund ID- {{purchase.fundId}}
+                        </a>
+    </div>
+    
+    </div>        </body>

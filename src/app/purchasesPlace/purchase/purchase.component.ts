@@ -50,7 +50,7 @@ export class PurchaseComponent implements OnInit {
   sellFund(id: number){
     if(confirm("Are you sure you want to sell this Fund?") == true){
     this.purchaseService.deletePurchases(id).subscribe(data =>{
-      this.router.navigateByUrl(`/profile`)
+      this.router.navigateByUrl(`/cefProfile`)
       })
     }
     else{

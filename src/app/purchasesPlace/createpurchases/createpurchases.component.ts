@@ -34,22 +34,27 @@ export class CreatePurchasesComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params=>{
-      const myid = +params['id'];
-      this.fundService.getFund(myid).subscribe(payload=>{
-        console.log("This Fund", payload);
-        this.fund = payload;
-
-      })
-    })
     this.userService.postAccount().subscribe(payload => {
+      if (payload.body.message == 'success'){
 
       this.user = payload.body.data
       this.createPurchase.userId = this.user.uniqueID
       // console.log("userData", payload.body.data)
       // console.log("purchase userId", this.createPurchase.userId)
+    this.route.params.subscribe(params=>{
+      const myid = +params['id'];
+      this.fundService.getFund(myid).subscribe(payload=>{
+        console.log("This Fund", payload);
+        this.fund = payload;
+      })
+      })
+    }
+     else{
+        alert("Must be logged in!")
+        this.router.navigateByUrl("/login");
+      }
     })
-  }
+}
 
 
   createPurchases(createPurchase: any){

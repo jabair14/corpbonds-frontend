@@ -17,7 +17,6 @@ export class FundsComponent implements OnInit {
   public autoHide: boolean = false;
   public responsive: boolean = true;
   public changeText: boolean;
-  signedIn: boolean = false;
 
 
   public labels: any = {
@@ -68,28 +67,19 @@ fund:Fund = {
     console.log(e);
   }
 
-  async ngOnInit(): Promise<void> {
-      await this.fundService.getFunds().subscribe(payload=>{
-        this.userService.whoAmI().subscribe(payload => {
-          if(payload.body.userID){
-            this.signedIn = true;
-          }
-          else {
-            this.signedIn = false;
-
-          }
-        })
-        this.funds = payload;
+  ngOnInit(): void {
+      this.fundService.getFunds().subscribe(payload=>{
+        console.log(payload);
+        this.funds = payload;   
         this.config ={
-          id: 'custom',
+          id: '1',
           itemsPerPage: 25,
           currentPage: 1,
-          totalItems: this.funds.length,
-          
+          totalItems: this.funds.length,         
         };
         
     })
-  }
+}
 
 
   deleteFunds(id: number){
