@@ -111,3 +111,63 @@ li {
 .money {
   margin-left: 3rem;
 }
+
+.iconWrapper {
+  width: 40rem;
+  height: 40rem;
+  padding: 3rem 2rem;
+  padding-left: 4rem;
+  margin-left: 10rem;
+  border: 1px solid $lgrey;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.icons--box {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.iconImage {
+  flex: 0 0 25%;
+}
+
+.iconImg {
+  border-radius: 50%;
+  height: 8rem;
+  padding: 1rem 1rem;
+  &:focus,
+  &:active {
+    background-color: rgb(133, 200, 133);
+  }
+}
+
+.activeIcon {
+  background-color: rgb(133, 200, 133);
+}
+
+.icon--btn {
+  font-size: 2rem;
+  padding: 0.7rem 1.4rem;
+  background-color: $color--dark;
+  color: white;
+  border: 1px $color--dark solid;
+  align-self: flex-end;
+  margin-right: 3rem;
+  border-radius: 1rem;
+  &:hover {
+    background-color: white;
+    color: $color--dark;
+    size: 1.1;
+  }
+  &:active {
+    transform: translateY(2px);
+    transition: all 0.2s;
+  }
+}

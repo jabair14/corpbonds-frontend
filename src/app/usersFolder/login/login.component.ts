@@ -46,12 +46,12 @@ export class LoginComponent implements OnInit {
   }
 
   async cookieCheck() {
-    //   try {
-    //     this.userService.whoAmI().subscribe((data) => {
-    //       if (data.body.status === 'ok') this.router.navigate(['/account']);
-    //     });
-    //   } catch (err) {
-    //     console.log(err);
-    //   }
+    try {
+      this.userService.whoAmI().subscribe((data) => {
+        if (data.body.status === 'ok') this.router.navigate(['/account']);
+      });
+    } catch (err) {
+      console.log(err);
+    }
   }
 }

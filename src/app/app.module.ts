@@ -89,6 +89,8 @@ import { MutualFundsSidenavComponent } from './mutual_funds_content/mutual_funds
 import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog.component';
 import { MutualFundsDialogComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-dialog/mutual-funds-dialog.component';
 import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.component';
+import { StockInvestmentsTableComponent } from './tables/stock-investments-table/stock-investments-table.component';
+
 import { AccountSettingsComponent } from './usersFolder/account-settings/account-settings.component';
 
 @NgModule({
@@ -142,6 +144,7 @@ import { AccountSettingsComponent } from './usersFolder/account-settings/account
     MutualFundsDialogComponent,
 
     SellModalComponent,
+    StockInvestmentsTableComponent,
     AccountSettingsComponent,
   ],
   imports: [

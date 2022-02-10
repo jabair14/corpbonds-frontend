@@ -8,6 +8,8 @@ import {
   trigger,
 } from '@angular/animations';
 import { UserService } from 'src/app/user.service';
+import { iconsArray } from './../../../assets/data/icons';
+import { dialcodes } from 'src/assets/data/dialcodes';
 
 @Component({
   selector: 'app-account-settings',
@@ -27,9 +29,32 @@ import { UserService } from 'src/app/user.service';
   ],
 })
 export class AccountSettingsComponent implements OnInit {
-  constructor(private user: UserService, private router: Router) {}
+  dialcodes: any = [];
+  code: any;
+  num: string = '';
 
-  ngOnInit(): void {}
+  chooseIcon: boolean = false;
+  icons: any[] = [];
+  iconVal: number = 0;
+  MFA: boolean = true;
+
+  constructor(private user: UserService, private router: Router) {
+    this.icons = iconsArray;
+  }
+
+  ngOnInit(): void {
+    this.dialcodes = dialcodes;
+    this.user.postAccount().subscribe((data) => {
+      if (data.body.message === 'login') {
+        this.router.navigate(['/login']);
+      } else if (data.body.message === 'success') {
+        this.iconVal = data.body.data.settings.icon;
+        this.MFA = data.body.data.settings.MFA;
+      } else {
+        this.router.navigate(['/account']);
+      }
+    });
+  }
 
   async logOut() {
     try {
@@ -41,5 +66,16 @@ export class AccountSettingsComponent implements OnInit {
       console.log(e);
       this.router.navigate(['/login']);
     }
+  }
+
+  iconSet(x: number) {
+    this.iconVal = x;
+    console.log(this.iconVal);
+  }
+
+  iconPost() {
+    this.user.postIcon({ icon: this.iconVal }).subscribe((data) => {
+      this.chooseIcon = false;
+    });
   }
 }
