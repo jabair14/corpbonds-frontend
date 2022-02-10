@@ -69,7 +69,7 @@ export class CreatePurchasesComponent implements OnInit {
       console.log("this purchast is being made", data)
 
       if (data){
-        this.router.navigateByUrl("/account");
+        this.router.navigateByUrl("/cefProfile");
       }
       console.log("Purchase is Created ", data);
       this.ngOnInit();
