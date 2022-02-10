@@ -1,7 +1,11 @@
 @import "/src/styles.scss";
 
 .bonds {
-  background-color: beige;
+  // background-color: beige;
+  background-image: url("../../../../assets/beige.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: row;
   flex-wrap: inherit;
@@ -20,6 +24,7 @@
 .bonds-right {
   height: 300px;
   width: 550px;
+  margin-left: 18rem;
   // padding-top: 10px;
   // margin-top: 1rem;
 }

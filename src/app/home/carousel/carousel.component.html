@@ -8,13 +8,13 @@
     </ng-container> -->
 
     <div>
-        <div class="comp" [ngSwitch]="slides">
-            <button class="control prev" (click)="onPreviousClick()">
+        <div class="comp" [ngSwitch]="slides" >
+            <button class="control prev" (click)="onPreviousClick()" >
                 <mat-icon>keyboard_arrow_left</mat-icon>
               </button>
-            <app-s1 *ngSwitchCase="'s1'"></app-s1>
-            <app-s2 *ngSwitchCase="'s2'"></app-s2>
-            <app-s3 *ngSwitchCase="'s3'"></app-s3>
+            <app-s1 *ngSwitchCase="'s1'" [@carouselAnimation]></app-s1>
+            <app-s2 *ngSwitchCase="'s2'" [@carouselAnimation]></app-s2>
+            <app-s3 *ngSwitchCase="'s3'" [@carouselAnimation]></app-s3>
 
               <button class="control next" (click)="onNextClick()">
                 <mat-icon>keyboard_arrow_right</mat-icon>

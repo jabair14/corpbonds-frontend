@@ -1,6 +1,6 @@
 <div class="container">
     <div class="carousel">
-        <app-carousel *ngFor="let slide of slides" [slides]="slide"></app-carousel>
+        <app-carousel *ngFor="let slide of slides" [slides]="slide" ></app-carousel>
     </div>
 
     <!-- <div class="schedule">
@@ -8,8 +8,16 @@
     </div> -->
 
     <div class="slogan">
-        <h2>We've Got Your Back!</h2>
-        <h2>For All Your Investment Needs.</h2>
+        <div class="words">
+            <h2>We've Got Your Back!</h2>
+            <h2>For All Your Investment Needs.</h2>
+        </div>
+        <div class="sm">
+            <div class="social">
+                <h3>Connect with us!</h3>
+                <app-socialmedia></app-socialmedia>
+            </div>
+        </div>
     </div>
 
     <div class="mutual-funds">
@@ -51,8 +59,38 @@
 
     </div>
 
-    <div class="bottom">
-        
+    <div class="learn">
+        <div class="lw">
+            <h2>Don't Know Where to Start?</h2>
+            <p>Before diving into investing, you should probably know the basics. Luckily, we can help with that! Click the link below to learn more about investing, and how to get started.</p>
+            <a routerLink="/learn">Learn more!</a>
+        </div>
+        <div class="lp">
+            <img src="../../assets/money.jfif" alt="">
+        </div>
     </div>
+
+    <div class="mappy">
+        <div class="mapm">
+            <img src="../../assets/mappy.png" alt="orange-map">
+        </div>
+        <div class="mapw">
+            <h2>Looking for Advice?</h2>
+            <h2>Our Consultants span the Globe!</h2>
+            <a routerLink="/locations">Search for Consultants Near You!</a>
+        </div>
+    </div>
+
+    <div class="whowe">
+        <div class="whow">
+            <h2>Want to Know More About Kite Mutual?</h2>
+            <p>Check out our About Us page to find out exactly who we are and how we operate! </p>
+            <a routerLink="/whoweare">Meet Our Team!</a>
+        </div>
+        <div class="whop">
+            <img src="../../assets/lady.jpg" alt="">
+        </div>
+    </div>
+
     
 </div>
