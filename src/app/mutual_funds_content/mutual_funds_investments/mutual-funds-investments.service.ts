@@ -8,8 +8,8 @@ import { MutualFundInvestments } from './mutual-funds-investments/mutual-funds-i
 })
 
 export class MutualFundsInvestmentsService {
-  // link = "https://mutual-funds-investments.herokuapp.com/";
-  link = "http://localhost:4000/";
+  link = "https://mutual-funds-investments.herokuapp.com/";
+  // link = "http://localhost:4000/";
 
   constructor(private http: HttpClient) { }
   
