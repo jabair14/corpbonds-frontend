@@ -102,13 +102,10 @@ import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.componen
 import { StockInvestmentsTableComponent } from './tables/stock-investments-table/stock-investments-table.component';
 
 import { AccountSettingsComponent } from './usersFolder/account-settings/account-settings.component';
-<<<<<<< HEAD
 import { MutualFundsInvestmentsComponent } from './mutual_funds_content/mutual_funds_investments/mutual-funds-investments/mutual-funds-investments.component';
 import { MutualFundsBuySellDialogComponent } from './mutual_funds_content/mutual_funds_investments/mutual-funds-buy-sell-dialog/mutual-funds-buy-sell-dialog.component';
 import { MutualFundsBuyDialogComponent } from './mutual_funds_content/mutual_funds_investments/mutual-funds-buy-dialog/mutual-funds-buy-dialog.component';
-=======
 import { WhoweareComponent } from './whoweare/whoweare.component';
->>>>>>> 9e50c7085ff90f092cdd039a3f443bc53f1838cd
 
 @NgModule({
   declarations: [
@@ -173,13 +170,10 @@ import { WhoweareComponent } from './whoweare/whoweare.component';
     SellModalComponent,
     StockInvestmentsTableComponent,
     AccountSettingsComponent,
-<<<<<<< HEAD
     MutualFundsInvestmentsComponent,
     MutualFundsBuySellDialogComponent,
     MutualFundsBuyDialogComponent,
-=======
     WhoweareComponent,
->>>>>>> 9e50c7085ff90f092cdd039a3f443bc53f1838cd
   ],
   imports: [
     BrowserModule,
