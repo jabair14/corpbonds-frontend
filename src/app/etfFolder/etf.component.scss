@@ -52,9 +52,22 @@ td:last-child {
 .etf-info-div {
   display: flex;
   flex-direction: row;
+  margin: auto;
+  margin-top: 100px;
+  width: 60%;
   padding: 10px;
-  max-width: 700px;
-  margin: 5px auto;
+}
+
+.title-div {
+  border-bottom: dotted #da935b;
+  width: 500px;
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 50px;
+  align-content: center;
+  text-align: center;
 }
 
 .etf-img {
