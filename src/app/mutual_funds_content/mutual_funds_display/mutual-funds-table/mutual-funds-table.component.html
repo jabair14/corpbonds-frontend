@@ -8,8 +8,6 @@
         </mat-paginator>
     </div>
     
-    <!-- <mat-divider class="divider-recolored sticky-two-divider"></mat-divider> -->
-    
     <table  mat-table [dataSource]="dataSource"
             matSort (matSortChange)="announceSortChange($event)"
             class="mat-elevation-z8">
@@ -51,7 +49,7 @@
                 mat-sort-header sortActionDescription="Sort by expenseRatio"> 
                 Expense Ratio 
             </th>
-            <td mat-cell *matCellDef="let element"> {{element.expenseRatio}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.expenseRatio}} % </td>
         </ng-container>
     
         <!-- SEC Yield Column -->
@@ -60,7 +58,7 @@
                 mat-sort-header sortActionDescription="Sort by secYield"> 
                 SEC Yield 
             </th>
-            <td mat-cell *matCellDef="let element"> {{element.secYield}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.secYield}} % </td>
         </ng-container>
     
         <!-- YTD Column -->
@@ -69,7 +67,7 @@
                 mat-sort-header sortActionDescription="Sort by ytd"> 
                 YTD 
             </th>
-            <td mat-cell *matCellDef="let element"> {{element.ytd}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.ytd}} % </td>
         </ng-container>
     
         <!-- oneYr Column -->
@@ -78,7 +76,7 @@
                 mat-sort-header sortActionDescription="Sort by oneYr"> 
                 1-yr 
             </th>
-            <td mat-cell *matCellDef="let element"> {{element.oneYr}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.oneYr}} % </td>
         </ng-container>
     
         <!-- threeYr Column -->
@@ -87,7 +85,7 @@
                 mat-sort-header sortActionDescription="Sort by threeYr"> 
                 3-yr 
             </th>
-            <td mat-cell *matCellDef="let element"> {{element.threeYr}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.threeYr}} % </td>
         </ng-container>
     
         <!-- fiveYr Column -->
@@ -96,7 +94,7 @@
                 mat-sort-header sortActionDescription="Sort by fiveYr"> 
                 5-yr 
             </th>
-            <td mat-cell *matCellDef="let element"> {{element.fiveYr}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.fiveYr}} % </td>
         </ng-container>
     
         <!-- tenYr Column -->
@@ -105,7 +103,7 @@
                 mat-sort-header sortActionDescription="Sort by tenYr"> 
                 10-yr 
             </th>
-            <td mat-cell *matCellDef="let element"> {{element.tenYr}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.tenYr}} % </td>
         </ng-container>
     
         <!-- sinceInception Column -->
@@ -114,7 +112,7 @@
                 mat-sort-header sortActionDescription="Sort by sinceInception"> 
                 Since Inception 
             </th>
-            <td mat-cell *matCellDef="let element"> {{element.sinceInception}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.sinceInception}} % </td>
         </ng-container>
     
         <!-- initialInvestment Column -->
@@ -123,7 +121,7 @@
                 mat-sort-header sortActionDescription="Sort by initialInvestment"> 
                 Initial Investment 
             </th>
-            <td mat-cell *matCellDef="let element"> {{element.initialInvestment}} </td>
+            <td mat-cell *matCellDef="let element">$ {{element.initialInvestment}} </td>
         </ng-container>
     
         <!-- price Column -->
@@ -132,7 +130,7 @@
                 mat-sort-header sortActionDescription="Sort by price"> 
                 Price 
             </th>
-            <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+            <td mat-cell *matCellDef="let element">$ {{element.price}} </td>
         </ng-container>
     
         <!-- changePrice Column -->
@@ -141,19 +139,19 @@
                 mat-sort-header sortActionDescription="Sort by changePrice"> 
                 Change Price 
             </th>
-            <td mat-cell *matCellDef="let element"> {{element.changePrice}} 
-                <br> <div class="pricePercent">( {{element.changePricePercent}} )</div>
+            <td mat-cell *matCellDef="let element">$ {{element.changePrice}} 
+                <br> <div class="pricePercent">( {{element.changePricePercent}} % )</div>
             </td>
         </ng-container>
 
         <!-- Buy Column -->
         <ng-container matColumnDef="buy">
             <th mat-header-cell *matHeaderCellDef> 
-                Buy 
+                Purchase 
             </th>
             <td mat-cell *matCellDef="let element">
-                <button mat-raised-button class="whatIsMutualFundButton" (click)="openBuyDialog(element.id)">
-                    Buy
+                <button class="buttonUnder" (click)="openBuyDialog(element.id)">
+                    <mat-icon>add</mat-icon>
                 </button>
             </td>
         </ng-container>

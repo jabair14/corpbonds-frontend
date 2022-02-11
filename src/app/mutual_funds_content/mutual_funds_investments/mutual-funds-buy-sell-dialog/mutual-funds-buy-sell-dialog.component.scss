@@ -1,46 +1,36 @@
 @import "/src/styles.scss";
 
-* {
-    font-family: 'Trebuchet MS', 
-                'Lucida Sans Unicode', 
-                'Lucida Grande', 
-                'Lucida Sans', 
-                'Arial', 
-                'sans-serif'
-}
-
-.dialogBoxSize {
+.dialogBox {
     width: auto;
-    height: auto;
+    height: 580px;
+    font: $pfont
 }
 
 h1 {
     color: $dorange;
+    font: $hfont;
 }
 
-mat-dialog-actions {
-    justify-content: flex-end;
-    align-items: flex-end;
+mat-dialog-content {
+    font: $pfont;
+    font-size: 1.5rem;
+}
+
+table {
+    font: $pfont;
+    font-size: 1.4rem;
 }
 
 .closeButton {
     background-color: $lorange;
+    font: $hfont;
+
+    &:hover {
+        background-color: whitesmoke;
+    }
 }
 
-.closeButton:hover {
-    background-color: whitesmoke;
-}
-
-.tabFit {
-    width: 100%;
-    height: 100%;
-}
-
-mat-tab {
-    height: 100%;
-}
-
-mat-dialog-content {
-    width: 50%;
-    height: 40%;
+::ng-deep.mat-tab-body-content {
+    height: 30vh !important;
+    overflow: hidden !important;
 }

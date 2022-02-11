@@ -43,12 +43,6 @@ export class MutualFundsInvestmentsComponent implements OnInit {
   loggedIn: boolean = false;
   invested: boolean = false;
 
-  tempInvestmentModel: any = {
-    ticker: "", name: "",
-    id: 0, folioNumber: 0, shares: 0,
-    purchaseDate: "", totalInvested: "", userId: 0, mutualFundId: 0
-  }
-
   tempInvestment: any = {
     id: 0, folioNumber: 0, shares: 0,
     purchaseDate: "", totalInvested: "", userId: 0, mutualFundId: 0
@@ -70,29 +64,32 @@ export class MutualFundsInvestmentsComponent implements OnInit {
   ]
 
   ngOnInit(): void {
+    this.getUserId();
+    console.log('logged in? ', this.loggedIn);
+
     setTimeout(()=> {
       this.getInvestmentsTableData();
     }, 1000);
   }
 
   getUserId() {
-    // try {
-    //   this.userService.whoAmI().subscribe(payload => {
-    //     if (payload.body.status === 'ok') {
-    //       this.loggedIn = true;
-    //       this.userId = payload.body.userID;
-    //     }
-    //     if (payload.body.status === 'fail') {
-    //       this.loggedIn = false;
-    //       this.userId = "-1";
-    //     }
-    //   })
-    // } catch (error) {
-    //   console.log('getUserId - Mutual Funds Error:', error);
-    // }
+    try {
+      this.userService.whoAmI().subscribe(payload => {
+        if (payload.body.status === 'ok') {
+          this.loggedIn = true;
+          this.userId = payload.body.userID;
+        }
+        if (payload.body.status === 'fail') {
+          this.loggedIn = false;
+          this.userId = "-1";
+        }
+      })
+    } catch (error) {
+      console.log('getUserId - Mutual Funds Error:', error);
+    }
 
-    this.loggedIn = true;
-    this.userId = "testId";
+    // this.loggedIn = true;
+    // this.userId = "testId";
 
   }
 
@@ -107,8 +104,6 @@ export class MutualFundsInvestmentsComponent implements OnInit {
   }
 
   getInvestmentData() {
-    this.getUserId();
-
     if(this.loggedIn) {
       this.mutualFundsInvestmentsService.getInvestmentsByUser(this.userId).subscribe(data => {
         this.setInvestmentData(data);
@@ -118,21 +113,26 @@ export class MutualFundsInvestmentsComponent implements OnInit {
 
   setInvestmentData(data: any) {
     data.forEach((ele: any) => {
+      
+      var tempInvestmentModel = {
+        ticker: "", name: "",
+        id: 0, folioNumber: 0, shares: 0,
+        purchaseDate: "", totalInvested: "", userId: 0, mutualFundId: 0
+      }
 
       this.mutualFundsService.getSingleMutualFund(ele.mutualFundId).subscribe((payload: any) => {
-        this.tempInvestmentModel.name = payload.name;
-        this.tempInvestmentModel.ticker = payload.ticker;
+        tempInvestmentModel.name = payload.name;
+        tempInvestmentModel.ticker = payload.ticker;
+        tempInvestmentModel.id = ele.id;
+        tempInvestmentModel.folioNumber = ele.folioNumber;
+        tempInvestmentModel.shares = ele.shares;
+        tempInvestmentModel.purchaseDate = ele.purchaseDate;
+        tempInvestmentModel.totalInvested = ele.totalInvested;
+        tempInvestmentModel.userId = ele.userId;
+        tempInvestmentModel.mutualFundId = ele.mutualFundId;
       })
 
-      this.tempInvestmentModel.id = ele.id;
-      this.tempInvestmentModel.folioNumber = ele.folioNumber;
-      this.tempInvestmentModel.shares = ele.shares;
-      this.tempInvestmentModel.purchaseDate = ele.purchaseDate;
-      this.tempInvestmentModel.totalInvested = ele.totalInvested;
-      this.tempInvestmentModel.userId = ele.userId;
-      this.tempInvestmentModel.mutualFundId = ele.mutualFundId;
-
-      this.investments.push(this.tempInvestmentModel);
+      this.investments.push(tempInvestmentModel);
     })
   }
 
@@ -177,7 +177,7 @@ export class MutualFundsInvestmentsComponent implements OnInit {
 
     if(this.loggedIn) {
       this.mutualFundsInvestmentsService.addInvestment(investment).subscribe(data => {
-        alert("Investment successfully added!");
+        alert("Congratulations on your investment!");
       })
     }
   }
@@ -186,7 +186,7 @@ export class MutualFundsInvestmentsComponent implements OnInit {
     this.getUserId();
     if(this.loggedIn) {
       this.mutualFundsInvestmentsService.editInvestment(investment).subscribe(data => {
-        alert("Investment successfully edited!");
+        alert("Investment successfully updated!");
       })
     }
   }
@@ -195,7 +195,7 @@ export class MutualFundsInvestmentsComponent implements OnInit {
     this.getUserId();
     if(this.loggedIn) {
       this.mutualFundsInvestmentsService.deleteInvestment(investmentId).subscribe(data => {
-        alert("Investment successfully deleted!");
+        alert("Investment successfully sold!");
       })
     }
   }
@@ -260,6 +260,14 @@ export class MutualFundsInvestmentsComponent implements OnInit {
                tempInvestment: this.tempInvestment}
       });
     }, 1000);
+  }
+
+  changeBalance(obj: any) {
+    console.log('Investments - changeBalance obj: ', obj)
+    
+    this.userService.postBalance(obj).subscribe(payload => {
+      console.log(payload);
+    });
   }
 
 }

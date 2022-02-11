@@ -7,6 +7,15 @@ mat-divider {
     background-color: rgba(255, 255, 255, 0.5);
 }
 
+p {
+  font-size: 1.4rem;
+  font: $pfont;
+}
+
+h1 {
+  font: $tfont
+}
+
 .container {
     background-color: transparent;
     overflow: initial;
@@ -21,7 +30,7 @@ mat-divider {
     border-radius: 10px;
     padding: 15px;
     text-align: left;
-    height: 500px;
+    height: 370px;
     position: sticky;
     top: 55px;
 }
@@ -30,7 +39,7 @@ mat-divider {
     overflow: initial;
     position: relative;
     // margin-top: -505px;
-    margin-top: -559px;
+    margin-top: -429px;
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 15px;
@@ -69,7 +78,9 @@ th.mat-sort-header-sorted {
     background-image: linear-gradient(to bottom, $lorange, #da925b73, white);
     z-index: -100;
     position: absolute;
-    top: 2%;
+    top: 0;
+    left: 0;
+    right: 0;
   }
 }
 
@@ -82,12 +93,11 @@ th.mat-sort-header-sorted {
 p {
   padding-left: 50px;
   padding-right: 50px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
 }
 
 .leftHeader button {
   margin-left: 70px;
+  font: $hfont;
 }
 
 .rightHeader {
@@ -103,4 +113,8 @@ p {
   justify-content: center;
   margin: 5%;
   flex-wrap: inherit;
+}
+
+.space {
+  margin-bottom: 120px;
 }

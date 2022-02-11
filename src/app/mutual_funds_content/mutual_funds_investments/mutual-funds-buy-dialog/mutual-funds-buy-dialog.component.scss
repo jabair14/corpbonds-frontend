@@ -1,32 +1,26 @@
 @import "/src/styles.scss";
 
-* {
-    font-family: 'Trebuchet MS', 
-                'Lucida Sans Unicode', 
-                'Lucida Grande', 
-                'Lucida Sans', 
-                'Arial', 
-                'sans-serif'
-}
-
-.dialogBoxSize {
+.dialogBox {
     width: auto;
     height: auto;
+    font: $pfont;
 }
 
 h1 {
     color: $dorange;
+    font: $hfont;
 }
 
-mat-dialog-actions {
-    justify-content: flex-end;
-    align-items: flex-end;
+mat-dialog-content {
+    font: $pfont;
+    font-size: 1.5rem;
 }
 
 .closeButton {
     background-color: $lorange;
-}
+    font: $hfont;
 
-.closeButton:hover {
-    background-color: whitesmoke;
+    &:hover {
+        background-color: whitesmoke;
+    }
 }

@@ -6,14 +6,34 @@
     background-color: white;
 }
 
-// .sticky-two-divider {
-//     position: sticky;
-//     top: 5.5em;
-// }
-
 .sticky-three-header-row {
     position: sticky;
     top: 5.5em;
+}
+
+.buttonUnder {
+    z-index: 1;
+    // background-color: rgb(70, 70, 70);
+    background-color: white;
+    color: $dorange;
+    border: 1px solid $dorange;
+    border-radius: 5px;
+    padding: .2rem .4rem;
+
+    &:hover {
+        background-color: $dorange;
+        color: white;
+        cursor: pointer;
+        transform: translateY(-2px);
+        transition: all .2s;
+    }
+
+    &:active {
+        transform: translateY(2px);
+        transition: all .1s;
+        background-color: white;
+        color: $dorange;
+    }
 }
 
 table {

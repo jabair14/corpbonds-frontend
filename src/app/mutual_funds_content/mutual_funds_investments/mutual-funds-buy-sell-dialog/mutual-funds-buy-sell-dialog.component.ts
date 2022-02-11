@@ -18,27 +18,26 @@ export class MutualFundsBuySellDialogComponent implements OnInit {
   assetsAmountToSell: number = 1;
   assetsAllSell: boolean = false;
 
-  // totalCost: any;
-  // totalReturned: any;
-  // totalReturnedAll: any;
-
   totalCost: number = this.assetsAmountToBuy * this.data.tempMutualFund.price;
   totalReturned: number = -1 * (this.assetsAmountToSell * this.data.tempMutualFund.price);
   totalReturnedAll: number = -1 * (this.data.tempMutualFund.initialInvestment + (this.data.tempInvestment.shares * this.data.tempMutualFund.price));
 
   tempInvestment: any;
+  obj: any = {};
+  change: number = 0;
 
   ngOnInit(): void {
     this.tempInvestment = this.data.tempInvestment;
-    // this.totalCost = this.assetsAmountToBuy * this.data.tempMutualFund.price;
-    // this.totalReturned = -1 * (this.assetsAmountToSell * this.data.tempMutualFund.price);
-    // this.totalReturnedAll = -1 * (this.data.tempMutualFund.initialInvestment + (this.data.tempInvestment.shares * this.data.tempMutualFund.price));
   }
 
   buyInvestment() {
     var tempShares = this.tempInvestment.shares + this.assetsAmountToBuy;
     this.totalCost = parseFloat((<HTMLInputElement>document.getElementById("purchaseInputId")).value);
     var tempTotal = this.tempInvestment.totalInvested + this.totalCost;
+
+    this.change = -1 * this.totalCost;
+    this.obj['change'] = this.change;
+    this.changeBalance(this.obj);
 
     this.tempInvestment.shares = tempShares;
     this.tempInvestment.totalInvested = tempTotal;
@@ -55,6 +54,10 @@ export class MutualFundsBuySellDialogComponent implements OnInit {
       this.totalReturned = parseFloat((<HTMLInputElement>document.getElementById("sellInputId")).value);
     }
     
+    this.change = -1 * this.totalReturned;
+    this.obj['change'] = this.change;
+    this.changeBalance(this.obj);
+
     var tempTotal = this.tempInvestment.totalInvested + this.totalReturned;
 
     if(tempShares == 0) {
@@ -78,6 +81,11 @@ export class MutualFundsBuySellDialogComponent implements OnInit {
 
   sellAllInvestment() {
     this.totalReturnedAll = parseFloat((<HTMLInputElement>document.getElementById("sellAllInputId")).value);
+
+    this.change = -1 * this.totalReturnedAll;
+    this.obj['change'] = this.change;
+    this.changeBalance(this.obj);
+
     this.deleteInvestment();
   }
 
@@ -89,6 +97,10 @@ export class MutualFundsBuySellDialogComponent implements OnInit {
   deleteInvestment() {
     this.mutualFundsInvestmentsComponent.deleteInvestment(this.tempInvestment.id);
     this.dialogRef.close("Congratulations on your delete!");
+  }
+
+  changeBalance(obj: any) {
+    this.mutualFundsInvestmentsComponent.changeBalance(obj);
   }
 
 }

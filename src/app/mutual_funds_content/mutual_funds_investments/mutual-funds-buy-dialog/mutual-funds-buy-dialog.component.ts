@@ -26,6 +26,9 @@ export class MutualFundsBuyDialogComponent implements OnInit {
     purchaseDate: "", totalInvested:"", userId: 0, mutualFundId: 0
   }
 
+  obj: any = {};
+  change: number = 0;
+
   ngOnInit(): void {
     this.tempFolio = Math.floor(Math.random() * (1000000 - 1 + 1)) + 1;
   }
@@ -33,6 +36,11 @@ export class MutualFundsBuyDialogComponent implements OnInit {
   addInvestment() {
     this.totalPayment = parseFloat((<HTMLInputElement>document.getElementById("purchaseInputId")).value);
     this.setInvestment();
+
+    this.change = -1 * this.totalPayment;
+    this.obj['change'] = this.change;
+    this.changeBalance(this.obj);
+
     this.mutualFundsInvestmentsComponent.addInvestment(this.tempInvestment);
     this.dialogRef.close("Congratulations on your investment!");
   }
@@ -44,6 +52,10 @@ export class MutualFundsBuyDialogComponent implements OnInit {
     this.tempInvestment.totalInvested = this.totalPayment;
     this.tempInvestment.userId = this.data.userId;
     this.tempInvestment.mutualFundId = this.data.tempMutualFund.id;
+  }
+
+  changeBalance(obj: any) {
+    this.mutualFundsInvestmentsComponent.changeBalance(obj);
   }
 
 }
