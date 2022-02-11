@@ -1,13 +1,12 @@
 @import "/src/styles.scss";
 
-html, body {
-    // padding: 0;
-    margin: auto;
-    height: 100%;
-  }
+.container {
+    height: 100vh;
+}
 
 .main {
     padding-bottom: 10rem;
+    // height: auto;
 }
 
 .investments{
@@ -15,8 +14,7 @@ html, body {
     margin: 5px;
     padding: 10px;
     box-shadow: 10px $lgrey ;
-    
-    // border-radius: 10px;
+    // height: auto;
 }
 
 .bond {

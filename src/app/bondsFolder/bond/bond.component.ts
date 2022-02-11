@@ -67,6 +67,7 @@ export class BondComponent implements OnInit {
       console.log("user data?", payload.body.data)
       console.log("investment userid", this.investment.userId)
     })
+    
   }
 
   
@@ -80,8 +81,11 @@ export class BondComponent implements OnInit {
          this.bondInvestment.investmentId = this.investment.id
          this.bondInvestment.bondId = this.bond.id
          this.showConfirm = true
-         console.log("bondInvestmend Investmnet ID", this.bondInvestment.investmentId)
-         console.log("bond Investment bond ID ", this.bondInvestment.bondId)
+        //  console.log("bondInvestmend Investmnet ID", this.bondInvestment.investmentId)
+        //  console.log("bond Investment bond ID ", this.bondInvestment.bondId)
+         this.userService.postBalance({change: -this.total}).subscribe(payload => {
+           console.log("this is the postBalance payload", payload)
+         })
          
        } else {
          this.router.navigateByUrl("/login")

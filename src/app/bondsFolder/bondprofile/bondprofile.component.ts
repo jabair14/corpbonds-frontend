@@ -68,10 +68,18 @@ export class BondprofileComponent implements OnInit {
   }
 
   onDeleteInvestment(id: number) {
+    this.investmentService.getInvestment(id).subscribe(payload => {
+      this.total = payload.amount * 1000;
+      console.log("this is the total", this.total)
+      this.userService.postBalance({change: +this.total}).subscribe(payload => {
+        console.log("payload for userService add funds", payload)
+      })
+    })
     this.investmentService.deleteInvestment(id).subscribe(
       data => {
         if (data) {
           console.log('delete loan data', data)
+          
           this.router.navigateByUrl("/bondprofile")
         }
         this.ngOnInit();
