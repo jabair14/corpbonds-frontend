@@ -77,8 +77,6 @@ export class CreatePurchasesComponent implements OnInit {
       console.log("this is balance", this.balance, "this is the amount", this.createPurchase.amount)
     this.purchaseService.createPurchase(createPurchase).subscribe(data => {
 
-      this.userService.postBalance({change: })
-
       this.userService.postBalance({change: -createPurchase.amount}).subscribe(data=>{
         console.log("this is the data", data)
 
