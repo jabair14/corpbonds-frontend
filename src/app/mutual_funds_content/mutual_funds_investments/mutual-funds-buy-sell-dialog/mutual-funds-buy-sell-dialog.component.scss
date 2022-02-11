@@ -1,7 +1,9 @@
 @import "/src/styles.scss";
 
 .dialogBox {
-    width: 500px;
+    width: auto;
+    height: 580px;
+    font: $pfont
 }
 
 h1 {
@@ -14,11 +16,21 @@ mat-dialog-content {
     font-size: 1.5rem;
 }
 
+table {
+    font: $pfont;
+    font-size: 1.4rem;
+}
+
 .closeButton {
     background-color: $lorange;
-    font: $tfont;
+    font: $hfont;
 
     &:hover {
         background-color: whitesmoke;
     }
+}
+
+::ng-deep.mat-tab-body-content {
+    height: 30vh !important;
+    overflow: hidden !important;
 }

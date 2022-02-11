@@ -3,13 +3,11 @@
 .sticky-paginator {
     position: sticky;
     top: 0%;
-    z-index: 2;
     background-color: white;
 }
 
 .sticky-three-header-row {
     position: sticky;
-    z-index: 2;
     top: 5.5em;
 }
 
@@ -60,13 +58,4 @@ table {
 .mat-row:hover .mat-cell {
     border-color: currentColor;
     background-color: rgb(235, 235, 253);
-}
-
-// .mat-column-changePrice {
-//     text-align: right;
-//     justify-content: flex-end;
-// }
-
-.pricePercent {
-    color: rgb(92, 92, 92)
 }

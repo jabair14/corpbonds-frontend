@@ -18,7 +18,8 @@ import { MatDialog } from '@angular/material/dialog';
 export class MutualFundsComponent implements OnInit {
 
   constructor(private mutualFundsService: MutualFundsService,
-              private dialog: MatDialog,) { }
+              private dialog: MatDialog) 
+  { }
 
   @ViewChild(MutualFundsTableComponent) mutualFundsTableComponent!: MutualFundsTableComponent;
 
@@ -26,33 +27,37 @@ export class MutualFundsComponent implements OnInit {
 
   displayedColumnsOverview: string[] = [
     'name', //'ticker',
-    'assetClass', 'risk', 'expenseRatio',
+    'assetClass', 'risk', 'expenseRatio', 'buy'
   ]
 
   displayedColumnsPerformance: string[] = [
     'name', //'ticker',
-    'secYield', 'ytd', 'oneYr', 'threeYr', 'fiveYr', 'tenYr', 'sinceInception',
+    'secYield', 'ytd', 'oneYr', 'threeYr', 'fiveYr', 'tenYr', 'sinceInception', 'buy'
   ]
 
   displayedColumnsPrice: string[] = [
     'name', //'ticker',
-    'initialInvestment', 'price', 'changePrice' // 'changePricePercent'
+    'initialInvestment', 'price', 'changePrice', 'buy' // 'changePricePercent'
   ]
 
   displayedColumnsAll: string[] = [
     'name', //'ticker',
     'assetClass', 'risk', 'expenseRatio',
     'secYield', 'ytd', 'oneYr', 'threeYr', 'fiveYr', 'tenYr', 'sinceInception',
-    'initialInvestment', 'price', 'changePrice' // 'changePricePercent'
+    'initialInvestment', 'price', 'changePrice', 'buy' // 'changePricePercent'
   ]
 
   displayedColumns: string[] = []
+
+  // (click)="openBuyDialog({{element.id}})"
 
   tempMutualFund: any = {
     ticker: "", name: "",
     assetClass: "", risk: "", expenseRatio: 0,
     secYield: 0, ytd: 0, oneYr: 0, threeYr: 0, fiveYr: 0, tenYr: 0, sinceInception: 0,
-    initialInvestment: 0, price: 0, changePrice: 0, chanePricePercent: 0
+    initialInvestment: 0, price: 0, changePrice: 0, chanePricePercent: 0,
+    inceptionDate: "", shortName: "", subsequentInvestment: 0, fundFamily: "",
+    totalNetAssets: 0, investmentType: "", sizeType: "", investmentStrategy: ""
   }
 
   ngOnInit(): void {
@@ -65,7 +70,7 @@ export class MutualFundsComponent implements OnInit {
     })
   }
 
-  getSingleData(mutualFundId: any) {
+  getSingleData(mutualFundId: number) {
     this.mutualFundsService.getSingleMutualFund(mutualFundId).subscribe(data => {
       this.getData();
       this.tempMutualFund = data;
