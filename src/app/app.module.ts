@@ -81,7 +81,7 @@ import { PurchaseComponent } from './purchasesPlace/purchase/purchase.component'
 
 // Mutual Funds Imports
 import { MutualFundsComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds/mutual-funds.component';
-import { StylePaginatorDirective } from './style-paginator.directive';
+import { StylePaginatorDirective } from './directive/style-paginator.directive';
 import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
@@ -102,6 +102,9 @@ import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.componen
 import { StockInvestmentsTableComponent } from './tables/stock-investments-table/stock-investments-table.component';
 
 import { AccountSettingsComponent } from './usersFolder/account-settings/account-settings.component';
+import { MutualFundsInvestmentsComponent } from './mutual_funds_content/mutual_funds_investments/mutual-funds-investments/mutual-funds-investments.component';
+import { MutualFundsBuySellDialogComponent } from './mutual_funds_content/mutual_funds_investments/mutual-funds-buy-sell-dialog/mutual-funds-buy-sell-dialog.component';
+import { MutualFundsBuyDialogComponent } from './mutual_funds_content/mutual_funds_investments/mutual-funds-buy-dialog/mutual-funds-buy-dialog.component';
 import { WhoweareComponent } from './whoweare/whoweare.component';
 
 @NgModule({
@@ -167,6 +170,9 @@ import { WhoweareComponent } from './whoweare/whoweare.component';
     SellModalComponent,
     StockInvestmentsTableComponent,
     AccountSettingsComponent,
+    MutualFundsInvestmentsComponent,
+    MutualFundsBuySellDialogComponent,
+    MutualFundsBuyDialogComponent,
     WhoweareComponent,
   ],
   imports: [
