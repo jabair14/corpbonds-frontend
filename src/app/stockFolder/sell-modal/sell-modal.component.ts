@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { StocksService } from 'src/app/stocks.service';
+import { UserService } from 'src/app/user.service';
 import { Investment } from '../stock-invest-modal/investment.model';
 
 @Component({
@@ -13,6 +14,7 @@ export class SellModalComponent implements OnInit {
 
 
   constructor(
+    private userService: UserService,
     private stockService: StocksService,
     public dialogRef: MatDialogRef<SellModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
@@ -34,6 +36,9 @@ export class SellModalComponent implements OnInit {
     console.log("start sellInvestment", this.data.investment.id)
     this.stockService.deleteInvestment(this.data.investment.id).subscribe(payload => {
       console.log(payload)
+      this.userService.postBalance({change:Number(this.totalAmount)}).subscribe(payload => {
+        console.log(payload)
+      })
     })
     this.dialogRef.close({data: true})
   }

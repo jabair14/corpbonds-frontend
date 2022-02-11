@@ -1,0 +1,65 @@
+@import "/src/styles.scss";
+
+.container {
+    height: 100vh;
+}
+
+.main {
+    padding-bottom: 10rem;
+    // height: auto;
+}
+
+.investments{
+    border: 1px solid black;
+    margin: 5px;
+    padding: 10px;
+    box-shadow: 10px $lgrey ;
+    // height: auto;
+}
+
+.bond {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+
+.investment-id {
+    background-color: $lorange;
+    font-family: $pfont;
+}
+
+.expansion {
+    z-index: 1;
+    // height: 300px;
+}
+
+.delete-btn {
+    background-color: $navyb;
+    color: white;
+    margin-top: 10px;
+    font-family:$logo--font ;
+}
+
+.listing-child {
+    height: 175px;
+    width: 400px;
+    
+}
+
+.listing {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+h1 {
+    font-family: $hfont;
+    font-size: 40px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.mat-list-item {
+    font-family: $pfont;
+}

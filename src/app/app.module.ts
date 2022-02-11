@@ -86,11 +86,13 @@ import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { TokenComponent } from './usersFolder/token/token.component';
-
-import { ConsultantComponent } from './locationsFolder/consultant/consultant.component';
+import { InvestmentComponent } from './bondsFolder/investment/investment.component';
+import { BondInvestmentComponent } from './bondsFolder/bond-investment/bond-investment.component';
 import { MutualFundsTableComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-table/mutual-funds-table.component';
 import { MutualFundsSidenavComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-sidenav/mutual-funds-sidenav.component';
 import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog.component';
+import { BondprofileComponent } from './bondsFolder/bondprofile/bondprofile.component';
+import { ConsultantComponent } from './locationsFolder/consultant/consultant.component';
 import { S1Component } from './home/carousel/s1/s1.component';
 import { S2Component } from './home/carousel/s2/s2.component';
 import { S3Component } from './home/carousel/s3/s3.component';
@@ -100,6 +102,7 @@ import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.componen
 import { StockInvestmentsTableComponent } from './tables/stock-investments-table/stock-investments-table.component';
 
 import { AccountSettingsComponent } from './usersFolder/account-settings/account-settings.component';
+import { WhoweareComponent } from './whoweare/whoweare.component';
 
 @NgModule({
   declarations: [
@@ -146,12 +149,16 @@ import { AccountSettingsComponent } from './usersFolder/account-settings/account
     AccountsComponent,
     RegisterComponent,
     TokenComponent,
+    InvestmentComponent,
+    BondInvestmentComponent,
+
 
     ConsultantComponent,
     MutualFundsTableComponent,
     MutualFundsSidenavComponent,
 
     VerifyDialogComponent,
+    BondprofileComponent,
     S1Component,
     S2Component,
     S3Component,
@@ -160,6 +167,7 @@ import { AccountSettingsComponent } from './usersFolder/account-settings/account
     SellModalComponent,
     StockInvestmentsTableComponent,
     AccountSettingsComponent,
+    WhoweareComponent,
   ],
   imports: [
     BrowserModule,
