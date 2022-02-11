@@ -4,7 +4,6 @@ import { Fund } from '../fund/fund.model';
 import { FundService } from '../fund.service';
 import { UserService } from 'src/app/user.service';
 import { MatDialog } from '@angular/material/dialog';
-import { PurchaseComponent } from 'src/app/purchasesPlace/purchase/purchase.component';
 @Component({
   selector: 'app-funds',
   templateUrl: './funds.component.html',

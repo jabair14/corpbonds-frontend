@@ -13,6 +13,23 @@ import { UserService } from 'src/app/user.service';
 })
 export class CefComponent implements OnInit {
 
+  public maxSize: number = 5;
+  public directionLinks: boolean = true;
+  public autoHide: boolean = false;
+  public responsive: boolean = true;
+
+
+  public labels: any = {
+      previousLabel: '<--',
+      nextLabel: '-->',
+      screenReaderPaginationLabel: 'Pagination',
+      screenReaderPageLabel: 'page',
+      screenReaderCurrentLabel: `You're on page`
+  };
+
+  config: any;
+  collection = {};
+  term: string = '';
 
   purchases: Purchase[] =[];
 
@@ -46,6 +63,12 @@ export class CefComponent implements OnInit {
     this.userService.postAccount().subscribe(payload => {
 
         if (payload.body.message == 'success'){
+          this.config ={
+            id: '1',
+            itemsPerPage: 20,
+            currentPage: 1,
+            totalItems: this.purchases.length,         
+          };
 
         this.user = payload.body.data
         // console.log("userData", payload.body.data)
@@ -65,5 +88,8 @@ export class CefComponent implements OnInit {
         this.router.navigateByUrl("/login");
     }
     })
+}
+onPageChanged(event: any){
+  this.config.currentPage = event;
 }
 }
