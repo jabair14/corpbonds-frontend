@@ -41,6 +41,7 @@ import { EtfInvestmentsComponent } from './etfFolder/etf-investments/etf-investm
 import { InvestmentComponent } from './bondsFolder/investment/investment.component';
 import { BondprofileComponent } from './bondsFolder/bondprofile/bondprofile.component';
 import { WhoweareComponent } from './whoweare/whoweare.component';
+import { ServiceTableComponent } from './etfFolder/service-table/service-table.component';
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
@@ -107,6 +108,9 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'consultants/:id', component: ConsultantComponent },
   { path: 'account/settings', component: AccountSettingsComponent },
+
+  // testing route for account table
+  {path: 'yada', component: ServiceTableComponent},
 ];
 
 @NgModule({

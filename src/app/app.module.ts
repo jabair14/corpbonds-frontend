@@ -53,6 +53,7 @@ import { DialogEtfComponent } from './etfFolder/dialog-etf/dialog-etf.component'
 import { DialogSingleEtfComponent } from './etfFolder/dialog-single-etf/dialog-single-etf.component';
 import { BuyDialogComponent } from './etfFolder/buy-dialog/buy-dialog.component';
 import { EtfInvestmentsComponent } from './etfFolder/etf-investments/etf-investments.component';
+import { ServiceTableComponent } from './etfFolder/service-table/service-table.component';
 
 //Closed-End Funds Imports
 import { EditFundsComponent } from './fundsPlace/editfunds/editfunds.component';
@@ -121,6 +122,7 @@ import { WhoweareComponent } from './whoweare/whoweare.component';
     DialogSingleEtfComponent,
     BuyDialogComponent,
     EtfInvestmentsComponent,
+    ServiceTableComponent,
 
     StocksComponent,
     LocationsComponent,

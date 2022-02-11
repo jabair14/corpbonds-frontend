@@ -2,20 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { EtfService } from '../etf.service';
 import { UserService } from 'src/app/user.service';
-import { InvestmentModel } from './investment.model';
+import { InvestmentModel } from '../etf-investments/investment.model';
 
 @Component({
-  selector: 'app-etf-investments',
-  templateUrl: './etf-investments.component.html',
-  styleUrls: ['./etf-investments.component.scss'],
+  selector: 'app-service-table',
+  templateUrl: './service-table.component.html',
+  styleUrls: ['./service-table.component.scss'],
 })
-export class EtfInvestmentsComponent implements OnInit {
+export class ServiceTableComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private etfService: EtfService,
     private userService: UserService
   ) {}
 
+  hasInvestments: boolean = false;
   userInvestments: InvestmentModel[] = [];
   tableConfig: string[] = [
     'fund_symbol',
@@ -24,7 +25,6 @@ export class EtfInvestmentsComponent implements OnInit {
     'amount',
     'actions',
   ];
-  hasInvestments: boolean = false;
 
   ngOnInit(): void {
     this.userService.whoAmI().subscribe((payload) => {

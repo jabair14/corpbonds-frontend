@@ -25,7 +25,7 @@ export class EtfComponent implements OnInit {
     public dialog: MatDialog,
     private liveAnnouncer: LiveAnnouncer,
     private userService: UserService,
-    private router: Router,
+    private router: Router
   ) {}
 
   etfData: ETF[] = [];
@@ -40,7 +40,7 @@ export class EtfComponent implements OnInit {
     'fund_symbol',
     'fund_long_name',
     'fund_family',
-    "price",
+    'price',
     'total_net_assets',
     'fund_yield',
     'fund_annual_report_net_expense_ratio',
@@ -57,7 +57,6 @@ export class EtfComponent implements OnInit {
   // get ETF data from database
   getData(): void {
     this.etfService.getETFs().subscribe((payload) => {
-      console.log('this is the table payload:', payload);
       this.dataSource = payload;
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
@@ -89,7 +88,6 @@ export class EtfComponent implements OnInit {
 
   // opens a selected ETF expanded information dialog
   openSingleETF(data: any) {
-    console.log('this is the incoming id:', data);
     this.dialog.open(DialogSingleEtfComponent, { data: data });
   }
 
@@ -109,12 +107,10 @@ export class EtfComponent implements OnInit {
   // check to see if user is logged in before routing to investment portal
   openInvestments(): void {
     this.userService.whoAmI().subscribe((payload) => {
-      console.log("WHO AM I INFO", payload.body)
-      if(payload.body.userID){
-        this.router.navigate(['etfs/investments'])
+      if (payload.body.userID) {
+        this.router.navigate(['etfs/investments']);
       } else {
-        console.log("log in first before moving on")
       }
-    })
+    });
   }
 }
