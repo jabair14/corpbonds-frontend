@@ -12,7 +12,8 @@
 </body>
 
 <body class = "center" *ngIf = "!buyBought && signedIn">
-    <h1 mat-dialog-title>You Purchased {{purchaseAmount}} shares of {{data.stock.name}}</h1>
+    <h1 mat-dialog-title>Congratulations!</h1>
+    <h2> You Purchased {{purchaseAmount}} shares of {{data.stock.name}} for a total of ${{totalAmount}}</h2>
     <h2>Thank you for your purchase you may look at Investments to see your stock investments.</h2>
 
     <div mat-dialog-action>
@@ -24,7 +25,7 @@
     <h1 mat-dialog-title>You need to Sign In or Register</h1>
     
     <div mat-dialog-action>
-        <button mat-button (click) = "cancel()">Back to Stocks</button>
         <button mat-button (click) = "goToLogin()">Sign In or Register</button>
+        <button mat-button (click) = "cancel()">Back to Stocks</button>
     </div>
 </body>

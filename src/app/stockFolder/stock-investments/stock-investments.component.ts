@@ -14,11 +14,12 @@ export class StockInvestmentsComponent implements OnInit {
   config: any
   signedIn: boolean = false;
   term: string = ""
-  stockIdDir: boolean = true //true is a -> z, low -> high,   false is opposite 
+  stockIdDir: boolean = false //true is a -> z, low -> high,   false is opposite 
   numSharesDir: boolean = true
   ipoYearDir: boolean = true
   showDir: boolean = false
   currentUser: String = ""
+  highNumOfInvest:boolean = false;
   investments:Investment[] = []
   constructor(
     public dialog: MatDialog,
@@ -28,7 +29,6 @@ export class StockInvestmentsComponent implements OnInit {
   ngOnInit(): void {
     this.userService.whoAmI().subscribe(payload => {
       if(payload.body.userID) {
-        console.log("hi")
         this.signedIn = true;
         this.stockService.getInvestments(payload.body.userID).subscribe(payload => {
           this.investments = payload
@@ -38,6 +38,9 @@ export class StockInvestmentsComponent implements OnInit {
             itemsPerPage: 10,
             currentPage: 1,
             totalItems: this.investments.length
+          }
+          if (this.investments.length > 10) {
+            this.highNumOfInvest = true
           }
         })
       } else {
@@ -54,8 +57,11 @@ export class StockInvestmentsComponent implements OnInit {
         data: {investment: investment}
       });
       dialogRef.afterClosed().subscribe(result => {
-        console.log(`Dialog Result: ${result}`);
-        this.ngOnInit()
+        console.log(`Dialog Result: ${result.data}`);
+        if(result.data) {
+          this.ngOnInit()
+        }
+        
       })
 
   }

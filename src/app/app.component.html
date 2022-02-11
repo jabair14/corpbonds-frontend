@@ -11,8 +11,14 @@
           height="10px"
         />
       </button>
-      <button mat-menu-item routerLink="/learn">Learn</button>
-      <button mat-menu-item>Support</button>
+      <button mat-menu-item [matMenuTriggerFor]="learn" xPosition="after">
+        Learn
+        <img
+          src="https://img.icons8.com/ios/48/000000/sort-down.png"
+          height="10px"
+        />
+      </button>
+      <button mat-menu-item routerLink="/locations">Locations</button>
       <button mat-menu-item>Who we are</button>
       <button mat-menu-item routerLink="/login">Login</button>
       <button mat-menu-item routerLink="/home">Home</button>
@@ -22,10 +28,79 @@
         <button mat-menu-item routerLink="/mutual_funds">Mutual Funds</button>
         <button mat-menu-item routerLink="/stocks">Stocks</button>
         <button mat-menu-item routerLink="/funds">Closed End Funds</button>
-        <button mat-menu-item routerLink="/locations">Locations</button>
+      </mat-menu>
+      <mat-menu #learn="matMenu">
+        <button mat-menu-item routerLink="/learn">Investing 101</button>
+        <button mat-menu-item routerLink="/retcalc">Retirement Account Calculator</button>
       </mat-menu>
     </div>
     <router-outlet></router-outlet>
   </header>
 </div>
 <app-my-loader></app-my-loader>
+
+
+ <!-- Site footer -->
+ <footer class="footer-distributed">
+ 
+       <div class="footer-left">
+ 
+         <h3>Kite<span>Mutual</span></h3>
+ 
+         <p class="footer-links">
+           <a routerLink="/home" class="link-1">Home</a>
+           
+           <a routerLink="/bonds">Bonds</a>
+         
+           <a routerLink="/etfs">ETF's</a>
+         
+           <a routerLink="/mutual_funds">Mutual Funds</a>
+           
+           <a routerLink="/stocks">Stocks</a>
+           
+           <a routerLink="/funds">Closed End Funds</a>
+
+           <a routerLink="/locations">Locations</a>
+         </p>
+ 
+         <p class="footer-company-name">Kite Mutual © 2022</p>
+       </div>
+ 
+       <div class="footer-center">
+ 
+         <div>
+           <i class="fa fa-map-marker"></i>
+           <p><span>123 Internet Street</span> The World Wide Web, Online</p>
+         </div>
+ 
+         <div>
+           <i class="fa fa-phone"></i>
+           <p>+1.123.456.7890</p>
+         </div>
+ 
+         <div>
+           <i class="fa fa-envelope"></i>
+           <p><a href="mailto:support@company.com">kitemutual@gmail.com</a></p>
+         </div>
+ 
+       </div>
+ 
+       <div class="footer-right">
+ 
+         <p class="footer-company-about">
+           <span>About the company</span>
+           Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+         </p>
+ 
+         <div class="footer-icons">
+          
+           <a href="{{socialmedias[3]}}"><i class="fa fa-facebook"></i></a>
+           <a href="{{socialmedias[1]}}"><i class="fa fa-twitter"></i></a>
+           <a href="{{socialmedias[2]}}"><i class="fa fa-reddit"></i></a>
+           <a href="{{socialmedias[4]}}"><i class="fa fa-instagram"></i></a>
+ 
+         </div>
+ 
+       </div>
+ 
+     </footer>

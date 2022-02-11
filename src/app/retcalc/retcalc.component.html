@@ -49,7 +49,7 @@
                 <p>Click <a (click)="toggleGraph()">here</a> to see how your account sizes up!</p>
             </div>
         <div class="grph-div" *ngIf="shown">
-                <h2>In-Dept Results</h2>
+                <h2>In-Depth Results</h2>
                 <p>This is a comparison between the predicted value of your account and how much you will roughly need in reirement. </p>
                 <p>Your account is predicted to be at {{ diff.toFixed(2) }}% of where it should be!</p>
                 <plotly-plot [data]="graph.data" [layout]="graph.layout"></plotly-plot>

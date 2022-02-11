@@ -211,8 +211,10 @@ export class ConsultantComponent implements OnInit {
       text: this.text
     }
     let thisUsersReview = this.reviews.map(review => review.userId == this.currentUserId)
-    if (thisUsersReview.length > 0){
+    let containsReview = thisUsersReview.find(value => value == true)
+    if (containsReview == true){
       alert('You have already left a review for this consultant')
+      console.log('this users revies for this consultant', containsReview)
     }else {
     this.reviewsService.getUsers().subscribe(payload => {
       this.users = payload

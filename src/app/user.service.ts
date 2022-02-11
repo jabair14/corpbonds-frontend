@@ -58,4 +58,16 @@ export class UserService {
     let _;
     return this.http.post(`${this.urlStr}logout`, _, this.httpOptions);
   }
+
+  postIcon(obj: any): Observable<any> {
+    return this.http.post(`${this.urlStr}iconic`, obj, this.httpOptions);
+  }
+  
+  postSettings(obj: any): Observable<any> {
+    return this.http.post(`${this.urlStr}settings`, obj, this.httpOptions);
+  }
+
+  postBalance(obj: { change: number }): Observable<any> {
+    return this.http.post(`${this.urlStr}balance`, obj, this.httpOptions);
+  }
 }

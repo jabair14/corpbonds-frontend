@@ -8,16 +8,21 @@ import { Integer } from 'aws-sdk/clients/eventbridge';
   providedIn: 'root',
 })
 export class StocksService {
-  url: string = 'https://stocks-microservice-app.herokuapp.com';
+  url: string = "https://stocks-microservice-app.herokuapp.com";
+  //url: string = "http://localhost:3000";
 
   constructor(private http: HttpClient) {}
 
   getStocks(): Observable<any> {
-    return this.http.get(`${this.url}/stocks`);
+    return this.http.get(`${this.url}/stocks`)
   }
 
-  makeInvestment(investment: Investment): Observable<any> {
-    return this.http.post(`${this.url}/invest`, investment);
+  getStock(stockId: Integer): Observable<any> {
+    return this.http.get(`${this.url}/stocks/${stockId}`)
+  }
+  
+  makeInvestment(investment:Investment): Observable<any> {
+    return this.http.post(`${this.url}/invest`, investment)
   }
 
   getInvestments(userId: String): Observable<any> {
