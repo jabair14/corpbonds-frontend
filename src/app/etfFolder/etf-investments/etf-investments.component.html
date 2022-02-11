@@ -1,12 +1,11 @@
 <main class="etf-investment-container">
   <div class="investment-top-div">
-    <h1>Your Investments</h1>
-    <hr />
+    <h1 class="investment-window-title">Your Investments</h1>
     <p>Listed below are your current ETF investments with Kite Mutual.</p>
     <button class="back-btn" mat-raised-button routerLink="/etfs">BACK</button>
   </div>
 
-  <div class="investment-window">
+  <div class="investment-window" *ngIf="this.hasInvestments">
     <div>
       <img
         class="investment-img"
@@ -69,4 +68,9 @@
       </table>
     </div>
   </div>
+
+  <div class="no-investment-div" *ngIf="!this.hasInvestments">
+    <h1>No investments to show. Start by making your first purchase</h1>
+  </div>
+
 </main>

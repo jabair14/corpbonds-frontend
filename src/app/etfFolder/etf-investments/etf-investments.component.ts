@@ -18,6 +18,7 @@ export class EtfInvestmentsComponent implements OnInit {
 
   userInvestments: InvestmentModel[] = [];
   tableConfig: string[] = ['fund_symbol', 'fund_long_name', 'price', 'amount', 'actions'];
+  hasInvestments: boolean = false;
 
   ngOnInit(): void {
     this.userService.whoAmI().subscribe((payload) => {
@@ -31,9 +32,14 @@ export class EtfInvestmentsComponent implements OnInit {
     console.log('INCOMING ID //////', userId);
     this.etfService.getAllHoldings(userId).subscribe((payload) => {
       console.log('INVESTMENTS THAT USER MADE:', payload);
-      this.userInvestments = payload;
-      this.userInvestments = payload;
-      console.log("INVESTMENT STUFF", this.userInvestments);
+      if(payload.length === 0){
+        this.hasInvestments = false;
+      } else {
+        this.userInvestments = payload;
+        console.log("INVESTMENT STUFF", this.userInvestments);
+        this.hasInvestments = true;
+      }
+   
     });
   }
 
