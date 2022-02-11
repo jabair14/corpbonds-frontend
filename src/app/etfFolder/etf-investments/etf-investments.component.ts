@@ -33,7 +33,7 @@ export class EtfInvestmentsComponent implements OnInit {
       console.log('INVESTMENTS THAT USER MADE:', payload);
       this.userInvestments = payload;
       this.userInvestments = payload;
-      console.log(this.userInvestments);
+      console.log("INVESTMENT STUFF", this.userInvestments);
     });
   }
 
