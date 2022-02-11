@@ -33,12 +33,13 @@ import { MutualFundsComponent } from './mutual_funds_content/mutual_funds_displa
 //User-Service Routes
 import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
+import { AccountSettingsComponent } from './usersFolder/account-settings/account-settings.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { Token } from '@angular/compiler';
 import { TokenComponent } from './usersFolder/token/token.component';
+import { EtfInvestmentsComponent } from './etfFolder/etf-investments/etf-investments.component';
 import { InvestmentComponent } from './bondsFolder/investment/investment.component';
 import { BondprofileComponent } from './bondsFolder/bondprofile/bondprofile.component';
-import { AccountSettingsComponent } from './usersFolder/account-settings/account-settings.component';
 import { WhoweareComponent } from './whoweare/whoweare.component';
 
 const routes: Routes = [
@@ -58,10 +59,13 @@ const routes: Routes = [
   {path: "stocks", component: StocksComponent},
   {path: "retcalc", component: RetcalcComponent},
   {path: "etfs", component: EtfComponent},
+  {path: "etfs/investments", component: EtfInvestmentsComponent},
   {path: "locations", component: LocationsComponent, pathMatch: "full"},
   {path: "locations/:id", component: LocationComponent},
   {path: "retcalc", component: RetcalcComponent},
   {path: "socialmedias", component: SocialmediaComponent},
+  {path: "", component: HomeComponent, pathMatch: "full"},
+  
   {path: "stockInvestments", component: StockInvestmentsComponent},
   {path: "", component: HomeComponent, pathMatch: "full"},
   {path: "whoweare", component: WhoweareComponent, pathMatch: "full"},

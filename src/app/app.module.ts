@@ -10,6 +10,7 @@ import { LoaderService } from './services/loader.service'; //loading screen
 import { LoaderInterceptor } from './interceptors/loader-interceptor.service';
 import { MyLoaderComponent } from './loader/my-loader.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms'
 
 ///////// COOKIE IMPORT
 import { CookieService } from 'ngx-cookie-service';
@@ -28,8 +29,6 @@ import { BondComponent } from './bondsFolder/bond/bond.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { DialogEtfComponent } from './etfFolder/dialog-etf/dialog-etf.component';
-import { DialogSingleEtfComponent } from './etfFolder/dialog-single-etf/dialog-single-etf.component';
 
 import { LocationsComponent } from './locationsFolder/locations/locations.component';
 // import { NgxPaginationModule } from 'ngx-pagination';
@@ -47,7 +46,13 @@ import { LocationComponent } from './locationsFolder/location/location.component
 import { RetcalcComponent } from './retcalc/retcalc.component';
 import { AngularMaterialModule } from './angular-material.module';
 import { FormsModule } from '@angular/forms';
+
+// ETF Imports
 import { EtfComponent } from './etfFolder/etf.component';
+import { DialogEtfComponent } from './etfFolder/dialog-etf/dialog-etf.component';
+import { DialogSingleEtfComponent } from './etfFolder/dialog-single-etf/dialog-single-etf.component';
+import { BuyDialogComponent } from './etfFolder/buy-dialog/buy-dialog.component';
+import { EtfInvestmentsComponent } from './etfFolder/etf-investments/etf-investments.component';
 
 //Closed-End Funds Imports
 import { EditFundsComponent } from './fundsPlace/editfunds/editfunds.component';
@@ -111,6 +116,9 @@ import { WhoweareComponent } from './whoweare/whoweare.component';
     LocationComponent,
     RetcalcComponent,
     DialogSingleEtfComponent,
+    BuyDialogComponent,
+    EtfInvestmentsComponent,
+
     StocksComponent,
     LocationsComponent,
     LocationComponent,
@@ -176,6 +184,7 @@ import { WhoweareComponent } from './whoweare/whoweare.component';
     AngularMaterialModule,
     FormsModule,
     MatDialogModule,
+    ReactiveFormsModule,
     CommonModule,
     PlotlyModule,
   ],
