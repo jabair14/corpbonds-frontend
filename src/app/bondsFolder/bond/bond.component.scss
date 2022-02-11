@@ -14,30 +14,23 @@
   // background-color: red;
   display: flex;
   flex-direction: row;
-  width: 50%;
-  height: 100vh;
-  margin-left: auto;
-  margin-right: auto;
+  border-bottom: 1px solid black;
+  padding-bottom: 0%;
 }
 
 .bond-info-left {
-  padding-top: 20px;
+  padding-top: 40px;
   height: 400px;
   width: 400px;
   background-color: white;
   margin-right: auto;
-  border-bottom: 1px solid black;
 }
 
 .bond-info-right {
-  padding-top: 20px;
+  padding-top: 40px;
   height: 400px;
   width: 400px;
-  // background-color: black;
-  padding-right: 10px;
-
   margin-left: auto;
-  border-bottom: 1px solid black;
 }
 
 hr {
@@ -46,8 +39,7 @@ hr {
 }
 
 p {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: $pfont;
   font-size: 15px;
   font-weight: bold;
   padding-left: 30px;
@@ -55,14 +47,14 @@ p {
 }
 
 h1 {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  padding-left: 40px;
+  font-family: $hfont;
+  font-size: 40px;
+  margin-left: 20px;
+  margin-top: 20px;
 }
 
 h3 {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: $hfont;
   color: $rorange;
   padding-left: 10px;
 }
@@ -78,11 +70,51 @@ h3 {
   margin-left: auto;
   margin-right: auto;
   color: black;
-  background-color: $rorange;
+  background-color: $lorange;
   display: inline-block;
 }
 
 .back-btn {
   margin-top: 10px;
   float: right;
+}
+
+.bond-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.investment {
+  margin-left: auto;
+  height: 350px;
+  margin-right: auto;
+  padding-top: 20px;
+  // margin-bottom: 0;
+  // padding-bottom: 0px;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+.form-field{
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  label {
+    padding: 0px, 0px, 10px, 10px;
+  }
+}
+
+.submit {
+  width: 100%;
+  background-color: $lorange;
+  
+}
+
+.confirm{
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }

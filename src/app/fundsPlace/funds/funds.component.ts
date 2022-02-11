@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Fund } from '../fund/fund.model';
 import { FundService } from '../fund.service';
-
+import { UserService } from 'src/app/user.service';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-funds',
   templateUrl: './funds.component.html',
@@ -16,6 +17,7 @@ export class FundsComponent implements OnInit {
   public responsive: boolean = true;
   public changeText: boolean;
 
+
   public labels: any = {
       previousLabel: '<--',
       nextLabel: '-->',
@@ -27,7 +29,9 @@ export class FundsComponent implements OnInit {
 
   constructor(private router: Router, 
     private fundService: FundService, 
-    private route: ActivatedRoute) { this.changeText = false; }
+    private route: ActivatedRoute,
+    private userService: UserService,
+    public dialog: MatDialog,) { this.changeText = false; }
 
 
   config: any;
@@ -63,26 +67,19 @@ fund:Fund = {
   }
 
   ngOnInit(): void {
-    
-    
-      this.route.params.subscribe(params=>{
-      const myid = +params['id'];
-      this.sortChanged;
       this.fundService.getFunds().subscribe(payload=>{
         console.log(payload);
-        this.funds = payload;
-        
+        this.funds = payload;   
         this.config ={
           id: '1',
           itemsPerPage: 25,
           currentPage: 1,
-          totalItems: this.funds.length,
-          
+          totalItems: this.funds.length,         
         };
         
     })
-  })
 }
+
 
   deleteFunds(id: number){
     if(confirm("Are you sure you want to delete this item?") == true){
