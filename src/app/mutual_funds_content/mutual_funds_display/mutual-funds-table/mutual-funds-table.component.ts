@@ -2,9 +2,10 @@ import { Component, Injectable, Input, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, Sort } from '@angular/material/sort';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { MutualFundsComponent } from '../mutual-funds/mutual-funds.component';
 import { MutualFunds } from '../mutual-funds/mutual-funds.model';
-import { LiveAnnouncer } from '@angular/cdk/a11y';
+import { MutualFundsInvestmentsComponent } from '../../mutual_funds_investments/mutual-funds-investments/mutual-funds-investments.component';
 
 @Injectable({
   providedIn: 'root',
@@ -19,7 +20,9 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 export class MutualFundsTableComponent implements OnInit {
 
   constructor(private mutualFundsComponent: MutualFundsComponent,
-              private liveAnnouncer: LiveAnnouncer) { }
+              private liveAnnouncer: LiveAnnouncer,
+              private mutualFundsInvestmentsComponent: MutualFundsInvestmentsComponent) 
+  { }
 
   dataSource: any =  new MatTableDataSource<MutualFunds>(this.mutualFundsComponent.mutualFunds);
   
@@ -63,6 +66,10 @@ export class MutualFundsTableComponent implements OnInit {
         this.mutualFundsComponent.displayedColumns = this.mutualFundsComponent.displayedColumnsPrice;
         break
     }
+  }
+
+  openBuyDialog(mutualFundId: number) {
+    this.mutualFundsInvestmentsComponent.openBuyDialog(mutualFundId);
   }
 
 }

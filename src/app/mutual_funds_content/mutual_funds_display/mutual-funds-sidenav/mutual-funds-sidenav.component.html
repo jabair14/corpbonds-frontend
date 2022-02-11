@@ -1,20 +1,16 @@
 <span class="navHeader">Filters</span>
 
-<br><br><br>
+<br><br>
 
 <mat-form-field class="search-form-field">
     <input matInput placeholder="Search Table" (keyup)="applyFilter($event)" #search>
     <mat-icon matSuffix>search</mat-icon>
 </mat-form-field>
 
-<br>
-
 <mat-divider></mat-divider>
 
-<br>
-
 <button mat-button 
-        class="menu=button"
+        class="menu-button"
         [ngClass]="{'orange' : overview, 'black' : !overview}" 
         (click)="changeTable('overview')">
         <mat-icon>sort</mat-icon>
@@ -24,7 +20,7 @@
 <br>
 
 <button mat-button 
-        class="menu=button"
+        class="menu-button"
         [ngClass]="{'orange' : performance, 'black' : !performance}" 
         (click)="changeTable('performance')">
         <mat-icon>sort</mat-icon>
@@ -34,7 +30,7 @@
 <br>
 
 <button mat-button 
-        class="menu=button"
+        class="menu-button"
         [ngClass]="{'orange' : price, 'black' : !price}" 
         (click)="changeTable('price')">
         <mat-icon>sort</mat-icon>
@@ -45,10 +41,8 @@
 
 <mat-divider></mat-divider>
 
-<br>
-
 <button mat-button 
-        class="menu=button"
+        class="menu-button"
         (click)="scrollToTableTop()">
         <mat-icon>vertical_align_top</mat-icon>
         <span> Top of Table</span>
@@ -57,7 +51,7 @@
 <br>
 
 <button mat-button 
-        class="menu=button"
+        class="menu-button"
         (click)="scrollToPageTop()">
         <mat-icon>vertical_align_top</mat-icon>
         <span> Top of Page</span>

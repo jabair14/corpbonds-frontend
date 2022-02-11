@@ -76,8 +76,10 @@ export class CreatePurchasesComponent implements OnInit {
     if(confirm(`Please Accept Invest for this Amount $${this.createPurchase.amount}` ) == true){
       console.log("this is balance", this.balance, "this is the amount", this.createPurchase.amount)
     this.purchaseService.createPurchase(createPurchase).subscribe(data => {
+
       this.userService.postBalance({change: -createPurchase.amount}).subscribe(data=>{
         console.log("this is the data", data)
+
       console.log("this is getting created",data )
       console.log("this purchast is being made", data)
     

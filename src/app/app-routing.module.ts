@@ -38,13 +38,44 @@ import { MutualFundsComponent } from './mutual_funds_content/mutual_funds_displa
 //User-Service Routes
 import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
+import { AccountSettingsComponent } from './usersFolder/account-settings/account-settings.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { Token } from '@angular/compiler';
 import { TokenComponent } from './usersFolder/token/token.component';
-import { AccountSettingsComponent } from './usersFolder/account-settings/account-settings.component';
-
+import { EtfInvestmentsComponent } from './etfFolder/etf-investments/etf-investments.component';
+import { InvestmentComponent } from './bondsFolder/investment/investment.component';
+import { BondprofileComponent } from './bondsFolder/bondprofile/bondprofile.component';
+import { WhoweareComponent } from './whoweare/whoweare.component';
+import { ServiceTableComponent } from './etfFolder/service-table/service-table.component';
 
 const routes: Routes = [
+  {path: "home", component: HomeComponent},
+  {path: "bonds", component: BondsComponent},
+  {path: "funds", component: FundsComponent},
+  {path: "funds/create", component: CreateFundsComponent},
+  {path: "funds/:id", component: FundComponent},
+  {path: "funds/:id/edit", component: EditFundsComponent},
+  {path: "funds/:id/create", component: CreatePurchasesComponent},
+  {path: "purchases", component: PurchasesComponent},
+  {path: "purchases/:id", component: PurchaseComponent},
+  {path: "bonds/:id", component: BondComponent},
+  {path: "bondprofile", component: BondprofileComponent},
+  {path: "investments/:id", component: InvestmentComponent},
+  {path: "", component: HomeComponent, pathMatch: "full"},
+  {path: "stocks", component: StocksComponent},
+  {path: "retcalc", component: RetcalcComponent},
+  {path: "etfs", component: EtfComponent},
+  {path: "etfs/investments", component: EtfInvestmentsComponent},
+  {path: "locations", component: LocationsComponent, pathMatch: "full"},
+  {path: "locations/:id", component: LocationComponent},
+  {path: "retcalc", component: RetcalcComponent},
+  {path: "socialmedias", component: SocialmediaComponent},
+  {path: "", component: HomeComponent, pathMatch: "full"},
+  
+  {path: "stockInvestments", component: StockInvestmentsComponent},
+  {path: "", component: HomeComponent, pathMatch: "full"},
+  {path: "whoweare", component: WhoweareComponent, pathMatch: "full"},
+  
   { path: 'home', component: HomeComponent },
   { path: 'bonds', component: BondsComponent },
   { path: 'funds', component: FundsComponent },
@@ -83,6 +114,9 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'consultants/:id', component: ConsultantComponent },
   { path: 'account/settings', component: AccountSettingsComponent },
+
+  // testing route for account table
+  {path: 'yada', component: ServiceTableComponent},
 ];
 
 @NgModule({

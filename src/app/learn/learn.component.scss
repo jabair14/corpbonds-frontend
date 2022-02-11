@@ -1,59 +1,61 @@
 @import "/src/styles.scss";
 
-.main {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  background-color: white;
-  height: auto;
+.main{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: white;
+    width: 100vw;
+    height: auto;
 }
 
-.title {
-  background-color: $rorange;
-  height: 425px;
-  width: 100vw;
-  border-bottom: 1px solid black;
-  h1 {
-    margin-left: 30px;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
-    font-weight: lighter;
-    margin-top: 10px;
-    margin-bottom: 12px;
-  }
+.title{
+    background-color: $rorange;
+    height: 425px;
+    width: 100vw;
+    border-bottom: 1px solid black;
+    h1 {
+        margin-left: 30px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+                        "Lucida Sans", Arial, sans-serif;
+        font-weight: lighter;
+        margin-top: 10px;
+        margin-bottom: 12px;
+    }
 }
 
-.subtitle {
-  display: flex;
-  flex-direction: row;
-  // background-color: red;
-  justify-content: center;
-  margin: auto;
-  height: max-content;
-  border-top: 1px solid black;
+.subtitle{
+    display: flex;
+    flex-direction: row;
+    // background-color: red;
+    justify-content: center;
+    margin: auto;
+    height: max-content;
+    border-top: 1px solid black;
 }
 
-.left {
-  // background: white;
-  height: 300px;
-  width: 550px;
-  align-items: center;
-  h2 {
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
-    margin: 2px;
-    padding: 0%;
-    font-size: 30px;
-  }
-  h4 {
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
-    font-weight: lighter;
-  }
-  h2,
-  h4 {
-    padding-left: 180px;
-  }
+.left{
+    // background: white;
+    height: 300px;
+    width: 550px;
+    align-items: center;
+    h2{
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+                        "Lucida Sans", Arial, sans-serif;
+        margin: 2px;
+        padding: 0%;
+        font-size: 30px;
+        
+    }
+    h4{
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+                        "Lucida Sans", Arial, sans-serif;
+        font-weight: lighter;
+    }
+    h2, h4{
+        padding-left: 180px ;
+    }
+    
 }
 
 .left-text {

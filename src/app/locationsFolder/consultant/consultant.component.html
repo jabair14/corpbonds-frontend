@@ -45,14 +45,14 @@
        </div>
     </div>
     <div class="rightcontainer">
-        <h1 *ngIf="noReviews">No reviews yet. Leave one below!</h1>
-        <h1 *ngIf="yesReviews">Experience with this consultant? Leave a review below!</h1>\
+        <h1 class="leavereview" *ngIf="noReviews">No reviews yet. Leave one below!</h1>
+        <h1 class="leavereview" *ngIf="yesReviews">Experience with this consultant? Leave a review below!</h1>
         <div *ngIf='loggedinCheck' class="textandsubmit">
-            <textarea [(ngModel)]= 'text' type='text' class="textbox"></textarea>
+            <textarea [(ngModel)]= 'text' type='text' class="textbox"></textarea><br>
             <div class="ratingSubmit">
                 <a *ngFor="let item of starList; let i=index " (click)="setStar(i)">  
                     <i class="fa" [ngClass]="{'fa-star-o':item,'fa-star':!item}"></i>   
-                </a> <br>
+                </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button class='submit'(click)="postReview()">Submit Review</button>
             </div>
         </div>
@@ -72,7 +72,7 @@
             <tr *ngFor="let review of reviews">
                 <td class="stars">
                     <ng-container *ngFor="let review of reviews.constructor(review.rating)">
-                        <i class="fa fa-star">
+                        <i class="fa fa-star tablestar">
                         </i>
                     </ng-container>
                 </td>

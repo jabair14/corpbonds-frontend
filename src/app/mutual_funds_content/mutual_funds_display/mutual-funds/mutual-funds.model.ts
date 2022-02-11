@@ -1,4 +1,5 @@
 export interface MutualFunds {
+    id?: number,
     ticker?: string,
     name?: string,
     assetClass?: string,
@@ -14,5 +15,13 @@ export interface MutualFunds {
     initialInvestment?: number,
     price?: number,
     changePrice?: number,
-    changePricePercent?: number
+    changePricePercent?: number,
+    inceptionDate?: string,
+    shortName?: string,
+    subsequentInvestment?: number,
+    fundFamily?: string,
+    totalNetAssets?: number,
+    investmentType?: string,
+    sizeType?: string,
+    investmentStrategy?: string
 }
