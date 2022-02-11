@@ -4,9 +4,9 @@
     </div>
     <div class="stocks-div">
         <button (click) = "resetFilters()" class="resetBtn">Reset</button>
-        <img src="../../assets/investImg1.png" alt="" class = "investImg1">
+        <img src="../../assets/investImg1.svg" alt="" class = "investImg1">
         <input class= "stock-searchbar" placeholder="Search your Investments" type="text" [(ngModel)] ="term">
-        <img src="../../assets/investImg2.png" alt="" class = "investImg2">
+        <img src="../../assets/stockImg2.svg" alt="" class = "investImg2">
         <button class="investmentBtn" routerLink="/stocks">Stocks</button>
         <!--
         <table mat-table [dataSource]="data">
@@ -17,7 +17,7 @@
         </table>
         -->
 
-        <div class="align" style="text-align:center" *ngIf="highNumOfInvest">
+        <div class="align space" style="text-align:center" *ngIf="highNumOfInvest">
             <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event">
 
               

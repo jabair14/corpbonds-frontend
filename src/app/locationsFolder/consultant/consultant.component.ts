@@ -210,36 +210,42 @@ export class ConsultantComponent implements OnInit {
       consultantId: this.consultantId,
       text: this.text
     }
-    let thisUsersReview = this.reviews.map(review => review.userId == this.currentUserId)
-    let containsReview = thisUsersReview.find(value => value == true)
-    if (containsReview == true){
-      alert('You have already left a review for this consultant')
-      console.log('this users revies for this consultant', containsReview)
-    }else {
-    this.reviewsService.getUsers().subscribe(payload => {
-      this.users = payload
-      console.log('users array is', this.users)
-      const doesUserExist = this.users.find(user => user.id == this.currentUserId)
-      if (doesUserExist == undefined) {
-        this.reviewsService.addUser(user).subscribe(payload => {
-          console.log(payload)
-        })
-        this.reviewsService.addReview(review).subscribe(payload => {
-          if(payload){
-            console.log(payload)
-            window.location.reload()
-          }
-        })
-      } else {
-        this.reviewsService.addReview(review).subscribe(payload => {
-          if(payload){
-            console.log(payload)
-            window.location.reload()
-          }
-        }) 
+    this.userService.whoAmI().subscribe(payload => {
+      if (payload.body.status === 'fail'){
+        return alert('Please log in before leaving a review')
       }
+      let thisUsersReview = this.reviews.map(review => review.userId == this.currentUserId)
+      let containsReview = thisUsersReview.find(value => value == true)
+      if (containsReview == true){
+        alert('You have already left a review for this consultant')
+        console.log('this users revies for this consultant', containsReview)
+      }else {
+      this.reviewsService.getUsers().subscribe(payload => {
+        this.users = payload
+        console.log('users array is', this.users)
+        const doesUserExist = this.users.find(user => user.id == this.currentUserId)
+        if (doesUserExist == undefined) {
+          this.reviewsService.addUser(user).subscribe(payload => {
+            console.log(payload)
+          })
+          this.reviewsService.addReview(review).subscribe(payload => {
+            if(payload){
+              console.log(payload)
+              window.location.reload()
+            }
+          })
+        } else {
+          this.reviewsService.addReview(review).subscribe(payload => {
+            if(payload){
+              console.log(payload)
+              window.location.reload()
+            }
+          }) 
+        }
+      })
+    }
     })
-  }
+      
   } 
 }
 
