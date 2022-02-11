@@ -5,6 +5,7 @@ import { Purchase } from './purchase.model';
 import { Fund } from 'src/app/fundsPlace/fund/fund.model';
 import { FundService } from 'src/app/fundsPlace/fund.service';
 import { FundComponent } from 'src/app/fundsPlace/fund/fund.component';
+import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-purchase',
@@ -17,6 +18,7 @@ export class PurchaseComponent implements OnInit {
 
   funds: Fund[] =[];
 
+  
   purchase:Purchase = {
     id: 0,
     amount: 0,
@@ -24,9 +26,14 @@ export class PurchaseComponent implements OnInit {
     userId: '',
   };
 
+  
+  name: string = '';
+  balance: number = 0;
+
   constructor(private route:ActivatedRoute, 
     private purchaseService: PurchaseService,
     private fundService: FundService,
+    private userService: UserService,
     private router: Router,
     ) { }
 
@@ -48,11 +55,14 @@ export class PurchaseComponent implements OnInit {
 
 
   sellFund(id: number){
-    if(confirm("Are you sure you want to sell this Fund?") == true){
+    if(confirm(`Are you sure you want to sell this Fund for Amount of  $${this.purchase.amount}?`) == true){
     this.purchaseService.deletePurchases(id).subscribe(data =>{
-      this.router.navigateByUrl(`/profile`)
+      this.userService.postBalance({change: this.purchase.amount}).subscribe(data=>{
+        console.log("this is the data", data)
+      this.router.navigateByUrl(`/account`)
       })
-    }
+    })
+  }
     else{
       
     }
