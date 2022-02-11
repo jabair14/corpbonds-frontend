@@ -40,6 +40,7 @@ import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatDialogModule } from '@angular/material/dialog';
 
+
 const materialModules = [
   CdkTreeModule,
   MatAutocompleteModule,

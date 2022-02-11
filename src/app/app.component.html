@@ -11,6 +11,9 @@
           height="10px"
         />
       </button>
+      <!-- <button mat-menu-item routerLink="/learn">Learn</button> -->
+      <button mat-menu-item>Support</button>
+      <button mat-menu-item routerLink="/whoweare">Who we are</button>
       <button mat-menu-item [matMenuTriggerFor]="learn" xPosition="after">
         Learn
         <img
@@ -19,7 +22,7 @@
         />
       </button>
       <button mat-menu-item routerLink="/locations">Locations</button>
-      <button mat-menu-item>Who we are</button>
+      <!-- <button mat-menu-item>Who we are</button> -->
       <button mat-menu-item routerLink="/login">Login</button>
       <button mat-menu-item routerLink="/home">Home</button>
       <mat-menu #products="matMenu">

@@ -1,0 +1,35 @@
+<main>
+  <h2 mat-dialog-title>Confirm Amount</h2>
+  <hr />
+  <div mat-card-content>
+    <div>
+      <!-- <h3>Enter amount you'd like to purchase:</h3> -->
+      <h3>Current price: {{receivedEtfData.price | currency}}</h3>
+    </div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Amount</mat-label>
+      <input
+        type="number"
+        min="1"
+        max="100"
+        matInput
+        [formControl]="numberInputFormControl"
+      />
+      <mat-error
+        *ngIf="
+          numberInputFormControl.hasError('amount') &&
+          !numberInputFormControl.hasError('required')
+        "
+      >
+        Please enter a valid numbered amount
+      </mat-error>
+      <mat-error *ngIf="numberInputFormControl.hasError('required')">
+        Amount <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <mat-dialog-actions>
+    <button mat-raised-button class="buy-btn" (click)="makePurchase()" routerLink="/etfs/investments" mat-dialog-close>BUY</button>
+    <button mat-raised-button mat-dialog-close>CLOSE</button>
+  </mat-dialog-actions>
+</main>
