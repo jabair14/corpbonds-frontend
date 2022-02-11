@@ -64,6 +64,8 @@ import { SocialmediaComponent } from './socialmedia/socialmedia.component';
 import { LearnComponent } from './learn/learn.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+import { CefComponent } from './cefProfile/cef.component';
+
 
 import * as PlotlyJS from 'plotly.js-dist-min';
 import { PlotlyModule } from 'angular-plotly.js';
@@ -75,6 +77,7 @@ PlotlyModule.plotlyjs = PlotlyJS;
 import { PurchasesComponent } from './purchasesPlace/purchases/purchases.component';
 import { CreatePurchasesComponent } from './purchasesPlace/createpurchases/createpurchases.component';
 import { PurchaseComponent } from './purchasesPlace/purchase/purchase.component';
+
 
 // Mutual Funds Imports
 import { MutualFundsComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds/mutual-funds.component';
@@ -132,6 +135,7 @@ import { AccountSettingsComponent } from './usersFolder/account-settings/account
     PurchasesComponent,
     CreatePurchasesComponent,
     PurchaseComponent,
+    CefComponent,
 
     MutualFundsComponent,
     StylePaginatorDirective,

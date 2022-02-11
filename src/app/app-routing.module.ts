@@ -19,6 +19,7 @@ import { FundsComponent } from './fundsPlace/funds/funds.component';
 import { CreateFundsComponent } from './fundsPlace/createfunds/createfunds.component';
 import { EditFundsComponent } from './fundsPlace/editfunds/editfunds.component';
 import { StockInvestmentsComponent } from './stockFolder/stock-investments/stock-investments.component';
+import { CefComponent } from './cefProfile/cef.component'; 
 
 // CEF Purchases
 import { CreatePurchasesComponent } from './purchasesPlace/createpurchases/createpurchases.component';

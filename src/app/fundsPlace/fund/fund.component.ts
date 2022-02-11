@@ -44,14 +44,6 @@ export class FundComponent implements OnInit {
         this.fund = payload;
       })
     })
-
-    this.userService.postAccount().subscribe(payload => {
-
-      this.user = payload.body.data
-      this.purchases.userId = this.user.uniqueID
-      console.log("userData", payload.body.data)
-      console.log("purchase userId", this.purchases.userId)
-    })
   }
 
     edit():void {
