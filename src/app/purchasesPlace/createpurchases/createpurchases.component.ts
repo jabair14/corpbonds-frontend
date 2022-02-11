@@ -27,6 +27,11 @@ export class CreatePurchasesComponent implements OnInit {
     userId: '',
 
   }
+
+  name: string = '';
+  balance: number = 0;
+  newBalance: number = 0;
+
   constructor(private router: Router,
     private fundService: FundService, 
     private purchaseService: PurchaseService, 
@@ -37,8 +42,11 @@ export class CreatePurchasesComponent implements OnInit {
     this.userService.postAccount().subscribe(payload => {
       if (payload.body.message == 'success'){
 
+        this.balance = payload.body.data.Account_Balance.toFixed(2);
+        console.log("this is the balance1", this.balance)
       this.user = payload.body.data
       this.createPurchase.userId = this.user.uniqueID
+      this.newBalance= this.balance - this.createPurchase.amount
       // console.log("userData", payload.body.data)
       // console.log("purchase userId", this.createPurchase.userId)
     this.route.params.subscribe(params=>{
@@ -63,11 +71,17 @@ export class CreatePurchasesComponent implements OnInit {
     // console.log('this is the user Id', this.user.uniqueID)
     // console.log('this is the fund Id', this.fund.id)
     // console.log('this is the amount ', this.createPurchase.amount)
-    if(confirm("Please Accept Invest") == true){
+    if(this.balance < this.createPurchase.amount){
+      alert("Not Enough Balance");
+    }
+    else{
+    if(confirm(`Please Accept Invest for this Amount ${this.createPurchase.amount}` ) == true){
+      console.log("this is balance", this.balance, "this is the amount", this.createPurchase.amount)
     this.purchaseService.createPurchase(createPurchase).subscribe(data => {
+      console.log("this is the balance2", this.newBalance)
       console.log("this is getting created",data )
       console.log("this purchast is being made", data)
-
+    
       if (data){
         this.router.navigateByUrl("/cefProfile");
       }
@@ -75,9 +89,10 @@ export class CreatePurchasesComponent implements OnInit {
       this.ngOnInit();
     })
   }
+
   else{
       
+  }}
   }
-  }
-
+ 
 }

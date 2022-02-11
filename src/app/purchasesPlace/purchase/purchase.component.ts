@@ -17,6 +17,7 @@ export class PurchaseComponent implements OnInit {
 
   funds: Fund[] =[];
 
+  
   purchase:Purchase = {
     id: 0,
     amount: 0,
