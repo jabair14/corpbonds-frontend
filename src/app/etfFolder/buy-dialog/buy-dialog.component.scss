@@ -1,0 +1,24 @@
+main {
+  width: 400px;
+}
+
+mat-dialog-actions {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+h2 {
+  color: #da935b;
+}
+
+button:hover {
+  background-color: #da935b;
+}
+
+.buy-btn:hover {
+  background-color: rgb(6, 218, 6);
+}
+
+.underline {
+  border-bottom: dotted #da935b;
+}

@@ -1,0 +1,150 @@
+@import "../../../styles.scss";
+
+.etf-investment-container {
+  min-height: max-content;
+  height: auto;
+
+  margin-top: 2rem;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  &::before{
+    content: "";
+    width: 100%;
+    height: 45vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, $dorange, white);
+    z-index: -10;
+  }
+}
+
+.investment-img {
+  width: 400px;
+  margin-left: 20rem;
+}
+
+.investment-window {
+  display: flex;
+  flex-direction: row;
+  margin-top: 6rem;
+  margin-bottom: 10rem;
+  // position: absolute;
+}
+
+.investment-table {
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  width: 100%;
+}
+
+.investment-top-div {
+  width: 400px;
+  align-self: center;
+  color: $color--dark;
+  // -webkit-text-stroke: .6px black;
+  font-family: $tfont;
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.301);
+  // border-bottom: dotted white;
+  width: 500px;
+  // align-self: center;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  // position: absolute;
+  // left: 50%;
+  // top: 10%;
+  // transform: translate(-50%, -50%);
+  // align-content: center;
+  // text-align: center;
+}
+
+.investment-window-title {
+  border-bottom: dotted #da935b;
+}
+
+th {
+  background-color: #da935b;
+  color: black;
+}
+
+th.mat-header-cell,
+td.mat-cell {
+  justify-content: center !important;
+  vertical-align: middle !important;
+  text-align: center !important;
+}
+
+td {
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+td:first-child {
+  padding-left: 0;
+}
+
+td:last-child {
+  padding-right: 0;
+}
+
+.mat-cell {
+  text-align: center;
+  justify-content: center;
+}
+
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  // cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: black;
+}
+
+button {
+  margin: 5px;
+  background-color: #051c55;
+  color: white;
+}
+
+button:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.back-btn {
+  background-color: #da935b;
+  color: black;
+}
+
+.back-btn:hover {
+  color: black;
+}
+
+.hide {
+  display: none;
+}
+
+.no-investment-div {
+  // border-bottom: dotted #da935b;
+  width: 500px;
+  align-self: center;
+  // position: absolute;
+  // left: 50%;
+  // top: 50%;
+  // transform: translate(-50%, -50%);
+  // align-content: center;
+  // text-align: center;
+  
+}
+
+p {
+  font-size: 1.4rem;
+}

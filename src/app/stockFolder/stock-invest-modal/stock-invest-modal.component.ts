@@ -61,10 +61,12 @@ export class StockInvestModalComponent implements OnInit {
     })
     this.stockService.getStock(stock.id).subscribe(payload => {
       this.totalAmount = Math.round(payload.dynamicInfo.lastSale * Number(this.purchaseAmount) * 100) / 100
-      //Math.round(num * 100) / 100
-      console.log("this is the total", this.totalAmount)
+      this.userService.postBalance({change:Number(this.totalAmount) * -1}).subscribe(payload => {
+        console.log(payload)
+      })
+      this.buyBought = false
     })
-    this.buyBought = false
+    
   }
 
 }

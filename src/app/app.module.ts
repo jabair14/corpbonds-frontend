@@ -10,6 +10,7 @@ import { LoaderService } from './services/loader.service'; //loading screen
 import { LoaderInterceptor } from './interceptors/loader-interceptor.service';
 import { MyLoaderComponent } from './loader/my-loader.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms'
 
 ///////// COOKIE IMPORT
 import { CookieService } from 'ngx-cookie-service';
@@ -28,8 +29,6 @@ import { BondComponent } from './bondsFolder/bond/bond.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { DialogEtfComponent } from './etfFolder/dialog-etf/dialog-etf.component';
-import { DialogSingleEtfComponent } from './etfFolder/dialog-single-etf/dialog-single-etf.component';
 
 import { LocationsComponent } from './locationsFolder/locations/locations.component';
 // import { NgxPaginationModule } from 'ngx-pagination';
@@ -47,7 +46,13 @@ import { LocationComponent } from './locationsFolder/location/location.component
 import { RetcalcComponent } from './retcalc/retcalc.component';
 import { AngularMaterialModule } from './angular-material.module';
 import { FormsModule } from '@angular/forms';
+
+// ETF Imports
 import { EtfComponent } from './etfFolder/etf.component';
+import { DialogEtfComponent } from './etfFolder/dialog-etf/dialog-etf.component';
+import { DialogSingleEtfComponent } from './etfFolder/dialog-single-etf/dialog-single-etf.component';
+import { BuyDialogComponent } from './etfFolder/buy-dialog/buy-dialog.component';
+import { EtfInvestmentsComponent } from './etfFolder/etf-investments/etf-investments.component';
 
 //Closed-End Funds Imports
 import { EditFundsComponent } from './fundsPlace/editfunds/editfunds.component';
@@ -59,6 +64,8 @@ import { SocialmediaComponent } from './socialmedia/socialmedia.component';
 import { LearnComponent } from './learn/learn.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+import { CefComponent } from './cefProfile/cef.component';
+
 
 import * as PlotlyJS from 'plotly.js-dist-min';
 import { PlotlyModule } from 'angular-plotly.js';
@@ -71,6 +78,7 @@ import { PurchasesComponent } from './purchasesPlace/purchases/purchases.compone
 import { CreatePurchasesComponent } from './purchasesPlace/createpurchases/createpurchases.component';
 import { PurchaseComponent } from './purchasesPlace/purchase/purchase.component';
 
+
 // Mutual Funds Imports
 import { MutualFundsComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds/mutual-funds.component';
 import { StylePaginatorDirective } from './directive/style-paginator.directive';
@@ -78,11 +86,13 @@ import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
 import { TokenComponent } from './usersFolder/token/token.component';
-
-import { ConsultantComponent } from './locationsFolder/consultant/consultant.component';
+import { InvestmentComponent } from './bondsFolder/investment/investment.component';
+import { BondInvestmentComponent } from './bondsFolder/bond-investment/bond-investment.component';
 import { MutualFundsTableComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-table/mutual-funds-table.component';
 import { MutualFundsSidenavComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-sidenav/mutual-funds-sidenav.component';
 import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog.component';
+import { BondprofileComponent } from './bondsFolder/bondprofile/bondprofile.component';
+import { ConsultantComponent } from './locationsFolder/consultant/consultant.component';
 import { S1Component } from './home/carousel/s1/s1.component';
 import { S2Component } from './home/carousel/s2/s2.component';
 import { S3Component } from './home/carousel/s3/s3.component';
@@ -92,9 +102,13 @@ import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.componen
 import { StockInvestmentsTableComponent } from './tables/stock-investments-table/stock-investments-table.component';
 
 import { AccountSettingsComponent } from './usersFolder/account-settings/account-settings.component';
+<<<<<<< HEAD
 import { MutualFundsInvestmentsComponent } from './mutual_funds_content/mutual_funds_investments/mutual-funds-investments/mutual-funds-investments.component';
 import { MutualFundsBuySellDialogComponent } from './mutual_funds_content/mutual_funds_investments/mutual-funds-buy-sell-dialog/mutual-funds-buy-sell-dialog.component';
 import { MutualFundsBuyDialogComponent } from './mutual_funds_content/mutual_funds_investments/mutual-funds-buy-dialog/mutual-funds-buy-dialog.component';
+=======
+import { WhoweareComponent } from './whoweare/whoweare.component';
+>>>>>>> 9e50c7085ff90f092cdd039a3f443bc53f1838cd
 
 @NgModule({
   declarations: [
@@ -108,6 +122,9 @@ import { MutualFundsBuyDialogComponent } from './mutual_funds_content/mutual_fun
     LocationComponent,
     RetcalcComponent,
     DialogSingleEtfComponent,
+    BuyDialogComponent,
+    EtfInvestmentsComponent,
+
     StocksComponent,
     LocationsComponent,
     LocationComponent,
@@ -127,6 +144,7 @@ import { MutualFundsBuyDialogComponent } from './mutual_funds_content/mutual_fun
     PurchasesComponent,
     CreatePurchasesComponent,
     PurchaseComponent,
+    CefComponent,
 
     MutualFundsComponent,
     StylePaginatorDirective,
@@ -137,12 +155,16 @@ import { MutualFundsBuyDialogComponent } from './mutual_funds_content/mutual_fun
     AccountsComponent,
     RegisterComponent,
     TokenComponent,
+    InvestmentComponent,
+    BondInvestmentComponent,
+
 
     ConsultantComponent,
     MutualFundsTableComponent,
     MutualFundsSidenavComponent,
 
     VerifyDialogComponent,
+    BondprofileComponent,
     S1Component,
     S2Component,
     S3Component,
@@ -151,9 +173,13 @@ import { MutualFundsBuyDialogComponent } from './mutual_funds_content/mutual_fun
     SellModalComponent,
     StockInvestmentsTableComponent,
     AccountSettingsComponent,
+<<<<<<< HEAD
     MutualFundsInvestmentsComponent,
     MutualFundsBuySellDialogComponent,
     MutualFundsBuyDialogComponent,
+=======
+    WhoweareComponent,
+>>>>>>> 9e50c7085ff90f092cdd039a3f443bc53f1838cd
   ],
   imports: [
     BrowserModule,
@@ -170,6 +196,7 @@ import { MutualFundsBuyDialogComponent } from './mutual_funds_content/mutual_fun
     AngularMaterialModule,
     FormsModule,
     MatDialogModule,
+    ReactiveFormsModule,
     CommonModule,
     PlotlyModule,
   ],
