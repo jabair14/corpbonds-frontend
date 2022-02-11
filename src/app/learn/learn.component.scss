@@ -1,180 +1,171 @@
 @import "/src/styles.scss";
 
-.main{
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    background-color: white;
-    width: 100vw;
-    height: 100vh;
+.main {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: white;
+  height: auto;
 }
 
-.title{
-    background-color: $rorange;
-    height: 425px;
-    width: 100vw;
-    border-bottom: 1px solid black;
-    h1 {
-        margin-left: 30px;
-        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-                        "Lucida Sans", Arial, sans-serif;
-        font-weight: lighter;
-        margin-top: 10px;
-        margin-bottom: 12px;
-    }
+.title {
+  background-color: $rorange;
+  height: 425px;
+  width: 100vw;
+  border-bottom: 1px solid black;
+  h1 {
+    margin-left: 30px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    font-weight: lighter;
+    margin-top: 10px;
+    margin-bottom: 12px;
+  }
 }
 
-.subtitle{
-    display: flex;
-    flex-direction: row;
-    // background-color: red;
-    justify-content: center;
-    margin: auto;
-    height: max-content;
-    border-top: 1px solid black;
+.subtitle {
+  display: flex;
+  flex-direction: row;
+  // background-color: red;
+  justify-content: center;
+  margin: auto;
+  height: max-content;
+  border-top: 1px solid black;
 }
 
-.left{
-    // background: white;
-    height: 300px;
-    width: 550px;
-    align-items: center;
-    h2{
-        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-                        "Lucida Sans", Arial, sans-serif;
-        margin: 2px;
-        padding: 0%;
-        font-size: 30px;
-        
-    }
-    h4{
-        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-                        "Lucida Sans", Arial, sans-serif;
-        font-weight: lighter;
-    }
-    h2, h4{
-        padding-left: 180px ;
-    }
-    
+.left {
+  // background: white;
+  height: 300px;
+  width: 550px;
+  align-items: center;
+  h2 {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    margin: 2px;
+    padding: 0%;
+    font-size: 30px;
+  }
+  h4 {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    font-weight: lighter;
+  }
+  h2,
+  h4 {
+    padding-left: 180px;
+  }
 }
 
 .left-text {
-    padding: 50px;
+  padding: 50px;
 }
 
-.right{
-    // background: blue;
-    height: 300px;
-    width: 550px;
-    
+.right {
+  // background: blue;
+  height: 300px;
+  width: 550px;
 }
 
 .right img {
-    height: 297px;
-    padding-bottom: 40px;
+  height: 297px;
+  padding-bottom: 40px;
 }
 
 .secondblock {
-    margin-top: 30px;
-    // background: red;
-    width: 100vw;
-    justify-content: center;
+  margin-top: 30px;
+  // background: red;
+  width: 100vw;
+  justify-content: center;
 }
 
 .secondblock-content {
-    background: white;
-    margin: auto;
-    text-align: center;
-    // border-bottom: 1px solid black;
-     h2 {
-        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-                        "Lucida Sans", Arial, sans-serif;
-        font-weight: bolder;
-        font-size: 50px;
-    }
+  background: white;
+  margin: auto;
+  text-align: center;
+  // border-bottom: 1px solid black;
+  h2 {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 50px;
+  }
 
-    h4{
-        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-        "Lucida Sans", Arial, sans-serif; 
-        font-weight: lighter;
-        font-size: 20px;
-        margin: 2px;
-    }
-   
+  h4 {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 20px;
+    margin: 2px;
+  }
 }
 
-.card-block { 
-    display: flex;
-    flex-direction: row;
-    margin-top: 70px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 80px;
-    // margin: auto;
-    // padding: 10px;
-
+.card-block {
+  display: flex;
+  flex-direction: row;
+  margin-top: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 80px;
+  // margin: auto;
+  // padding: 10px;
 }
 
 .card-images {
-    height: 300px;
-    
+  height: 300px;
 }
 
 .example-card {
-    max-width: 300px;
-    margin: 20px;
-    // :hover{
-    //     margin: 20px;
-    // }
+  max-width: 300px;
+  margin: 20px;
+  // :hover{
+  //     margin: 20px;
+  // }
+}
 
-    
-  }
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
 button {
-    position: absolute;
-    right: 0;
-    bottom: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 .more-learn {
-    // border-top: 1px solid black;
-    text-align: center;
-    h1 {
-        padding-top: 20px;
-        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-                        "Lucida Sans", Arial, sans-serif;
-        font-weight: lighter;
-        font-size: 30px;
-    }
+  // border-top: 1px solid black;
+  text-align: center;
+  h1 {
+    padding-top: 20px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 30px;
+  }
 }
 
 .list {
-    display: inline-block;
-    // border: 1px solid black;
-    margin-top: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 100px;
-    width: 550px;
+  display: inline-block;
+  // border: 1px solid black;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+  width: 550px;
 }
 
-.list-item{
-    display: flex;
-    justify-content: space-between;
-    :hover{
-        padding: 10px;
-    }
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  :hover {
+    padding: 10px;
+  }
 }
 
-.arrow-right{
-    padding-top: 10px;
-    :hover{
-        padding: -20px;
-        overflow: hidden;
-    }
+.arrow-right {
+  padding-top: 10px;
+  :hover {
+    padding: -20px;
+    overflow: hidden;
+  }
 }
-

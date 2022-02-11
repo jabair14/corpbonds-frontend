@@ -1,5 +1,7 @@
+@import "/src/styles.scss";
+
 body, html {
-    background-color: rgba(255, 94, 0, 0.82);
+    background-color: white;
     margin: 0;
     padding: 0;
 }
@@ -9,7 +11,7 @@ body, html {
 }
 
 .stocks-table{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: $pfont;
     font-size: 13px;
     border: 3px solid black;
     border-collapse: collapse;
@@ -22,15 +24,21 @@ body, html {
     padding: 8px;
 }
 
-.stocks-table tr:nth-child(even){background-color: #f2f2f2;}
+.stocks-table tr:nth-child(even){background-color: rgb(206, 206, 206);}
 
-.stocks-table tr:hover {background-color: rgba(255, 166, 0, 0.247);}
+.stocks-table tr:hover {background-color: $lgrey;}
 
 .stocks-table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
     color: black;
+  }
+
+  .header {
+    background-color: #da935b;
+    color: black;
+    font-family: $pfont;
   }
 
 
@@ -52,33 +60,27 @@ body, html {
   }
 
   h1, p {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
-    'Lucida Sans', Arial, sans-serif
+    font-family: $tfont;
   }
 
   .title {
-    margin: 0px;
-    padding: 10px;
-    border: black solid;
-    width: 15vw;
-    background-color: rgba(255, 166, 0, 0.861);
-    color: black;
-    text-align: center;
-    font-size: 50px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px 0px black;
+    font-size: 4rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-decoration: $dblue dashed underline 0.2rem;
+    font-family: $tfont;
   }
 
   .stock-searchbar {
       margin: 10px;
       width: 20vw;
       color: black;
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
-      'Lucida Sans', Arial, sans-serif;
-      font-size: 30px;
-      background-color: rgba(255, 166, 0, 0.861);
+      font-family: $hfont;
+      font-size: 2rem;
+      background-color: $lorange;
       border-radius: 5px;
       padding-left: 10px;
+      padding-top: 3px;
   }
 
   ::placeholder {
@@ -87,42 +89,52 @@ body, html {
 
   .investmentBtn {
       position: absolute;
-      right: 6vw;
+      left: 5vw;
       margin: 10px;
       color: black;
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
-      'Lucida Sans', Arial, sans-serif;
-      font-size: 30px;
-      background-color: rgba(255, 166, 0, 0.861);
+      font-family: $hfont;
+      font-size: 2rem;
+      background-color: $lorange;
       border-radius: 5px;
+      padding-top: 3px;
+  }
+
+  .investmentBtn:hover {
+    cursor: pointer;
+    color: white;
   }
 
   .resetBtn {
     position: absolute;
-      left: 5vw;
+      right: 6vw;
       margin: 10px;
       color: black;
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
-      'Lucida Sans', Arial, sans-serif;
-      font-size: 30px;
-      background-color: rgba(255, 166, 0, 0.861);
+      font-family: $hfont;
+      font-size: 2rem;
+      background-color: $lorange;
       border-radius: 5px;
+      padding-top: 3px;
+  }
+
+  .resetBtn:hover {
+    cursor: pointer;
+    color: white;
   }
 
   .arrow {
       font-size: 14px;
       font-weight: bold;
       color: black;
-      background-color: rgba(255, 166, 0, 0.861);
+      background-color: $lorange;
       padding: 0;
       margin: 0;
       border: none;
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
-      'Lucida Sans', Arial, sans-serif;
+      font-family: $hfont;
   }
   .arrow:hover {
-      color: white;
-  }
+    color: white;
+    cursor: pointer;
+}
 
   
   .custom-pagination .page-number {
@@ -152,11 +164,30 @@ body, html {
 
   .addBtn {
     background-color: transparent;
-    color: rgba(255, 166, 0, 0.861);
+    color: $lorange;
     font-size: 25px;
     border: none;
   }
+  
 
   .addBtn:hover {
-    color: black
+    color: white
+  }
+
+  .stockImg {
+    position: absolute;
+    max-height: 19.5vh;
+    right: 20vw;
+    top: 10vh;
+  }
+  .stockImg2 {
+    position: absolute;
+    max-height: 19.5vh;
+    left: 20vw;
+    top: 10vh;
+  }
+
+  .space {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
