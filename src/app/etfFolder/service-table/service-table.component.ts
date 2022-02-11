@@ -43,4 +43,10 @@ export class ServiceTableComponent implements OnInit {
       }
     });
   }
+
+  deleteInvestment(holdingId: any) {
+    this.etfService.deleteHolding(holdingId).subscribe((payload) => {
+      this.ngOnInit();
+    });
+  }
 }
