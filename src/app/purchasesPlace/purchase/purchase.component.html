@@ -4,7 +4,7 @@
 
     <!-- bonds -->
     <title> Purchases</title>
-    <hr>
+
     <div class ="fundsedit">
 
         <!-- main bond -->
@@ -26,7 +26,7 @@
                     <!-- <button mat-raised-button class="invest-btn" (click) = "edit()">
                      Edit Purchase
                      </button> -->
-                     <button mat-raised-button class="back-btn" style="color: rgb(5, 4, 1); background-color: rgb(255, 115, 22);" (click) = "sellFund(purchase.id)">
+                     <button mat-raised-button class="back-btn" style="color: rgb(5, 4, 1); background-color: rgb(255, 115, 22);" (click) = "sellFund(purchase.id, createSell)">
                         Sell
                     </button>
                      <button mat-raised-button class="back-btn" style="color: orange; background-color: black; float: left;" routerLink="/cefProfile">
@@ -34,6 +34,19 @@
                      </button>
                     
             </div>
+
+
+
+            <div *ngFor="let sell of sells">
+               <input [(ngModel)] ="createSell.amount"  type = "string" [value] = "purchase.amount" hidden/>
+               <input [(ngModel)] ="createSell.fundId"  type = "string" [value] = "purchase.fundId" hidden/>
+               <input [(ngModel)] ="createSell.userId"  type = "string" [value] = "purchase.userId" hidden/>
+               <input [(ngModel)] ="createSell.previousBalance"  type = "string" value = {{this.balance}} hidden/>
+            </div>
+
+
+
+
             <img src='/assets/plain-arrow.png' class="investImg">
            
            <div *ngFor="let fund of funds"  id ="text">
@@ -41,7 +54,7 @@
 
                 <div class= "fundInfo">
             <p>Fund Purchased:</p>
-            <title> Fund ID: {{fund.id}} </title>
+            <h5> Fund ID: {{fund.id}} </h5>
             <hr>
             <!-- ID: <input [(ngModel)] ="fund.id" id ="inputText" type = "text" value = "" placeholder="e.g. (John Smith)"/> -->
             <label>Symbol: </label>
