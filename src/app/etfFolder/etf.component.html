@@ -8,7 +8,9 @@
   </head>
   <body>
     <main class="etf-container">
-      <h3>This will be the ETF page</h3>
+      <div class="title-div">
+        <h1>ETF Page</h1>
+      </div>
 
       <div class="etf-info-div">
         <div>
@@ -24,7 +26,13 @@
           <button mat-raised-button class="etf-button" (click)="openDialog()">
             What is an ETF
           </button>
-          <button mat-raised-button class="etf-button" (click)="openInvestments()">Your Investments</button>
+          <button
+            mat-raised-button
+            class="etf-button"
+            (click)="openInvestments()"
+          >
+            Your Investments
+          </button>
         </div>
         <img src="../../assets/undraw_investment_xv-9-d.svg" class="etf-img" />
       </div>
@@ -88,22 +96,22 @@
         </ng-container>
 
         <ng-container matColumnDef="fund_long_name">
-          <th mat-header-cell *matHeaderCellDef >
-            Fund Long Name
-          </th>
+          <th mat-header-cell *matHeaderCellDef>Fund Long Name</th>
           <td mat-cell *matCellDef="let element">
             {{ element.fund_long_name }}
           </td>
         </ng-container>
 
         <ng-container matColumnDef="fund_family">
-          <th mat-header-cell *matHeaderCellDef >Fund Family</th>
+          <th mat-header-cell *matHeaderCellDef>Fund Family</th>
           <td mat-cell *matCellDef="let element">{{ element.fund_family }}</td>
         </ng-container>
 
         <ng-container matColumnDef="price">
-          <th mat-header-cell *matHeaderCellDef >Price</th>
-          <td mat-cell *matCellDef="let element">{{ element.price | currency }}</td>
+          <th mat-header-cell *matHeaderCellDef>Price</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.price | currency }}
+          </td>
         </ng-container>
 
         <ng-container matColumnDef="total_net_assets">

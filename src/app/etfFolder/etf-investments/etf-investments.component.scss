@@ -37,13 +37,17 @@
 }
 
 .investment-top-div {
-  width: 500px;
+  width: 400px;
   position: absolute;
   left: 50%;
   top: 10%;
   transform: translate(-50%, -50%);
   align-content: center;
   text-align: center;
+}
+
+.investment-window-title {
+  border-bottom: dotted #da935b;
 }
 
 th {
@@ -108,4 +112,16 @@ button:hover {
 
 .hide {
   display: none;
+}
+
+.no-investment-div {
+  // border-bottom: dotted #da935b;
+  width: 500px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  align-content: center;
+  text-align: center;
+  
 }

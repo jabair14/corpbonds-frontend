@@ -3,13 +3,15 @@
   <hr />
   <div mat-card-content>
     <div>
-      <h3>Enter amount you'd like to purchase:</h3>
+      <!-- <h3>Enter amount you'd like to purchase:</h3> -->
       <h3>Current price: {{receivedEtfData.price | currency}}</h3>
     </div>
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Amount</mat-label>
       <input
         type="number"
+        min="1"
+        max="100"
         matInput
         [formControl]="numberInputFormControl"
       />
