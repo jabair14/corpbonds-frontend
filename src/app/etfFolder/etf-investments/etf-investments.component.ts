@@ -22,7 +22,7 @@ export class EtfInvestmentsComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.whoAmI().subscribe((payload) => {
-      // console.log('USER PAYLOAD', payload);
+      console.log('USER PAYLOAD', payload);
       let IncomingUserId = payload.body.userID;
       this.getUserInvestments(IncomingUserId);
     });
