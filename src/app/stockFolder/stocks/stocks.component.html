@@ -4,9 +4,9 @@
     </div>
     <div class="stocks-div">
         <button (click) = "resetFilters()" class="resetBtn">Reset</button>
-        <img src="../../assets/stockImage2.png" alt="" class = "stockImg2">
+        <img src="../../assets/stockImg1.svg" alt="" class = "stockImg2">
         <input class= "stock-searchbar" placeholder="Search for Stock" type="text" [(ngModel)] ="term">
-        <img src="../../assets/stockPicture.png" alt="" class = "stockImg">
+        <img src="../../assets/investImg2.svg" alt="" class = "stockImg">
         <button class="investmentBtn" routerLink="/stockInvestments" *ngIf = signedIn>Investments</button>
         <!--
         <table mat-table [dataSource]="data">
