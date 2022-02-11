@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-// import { MutualFunds } from './mutual-funds/mutual-funds.model';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class MutualFundsService {
   link = "https://mutual-funds-service.herokuapp.com/";
   // link = "http://localhost:4000/";

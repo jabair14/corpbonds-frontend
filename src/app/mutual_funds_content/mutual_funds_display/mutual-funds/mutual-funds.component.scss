@@ -61,6 +61,16 @@ th.mat-sort-header-sorted {
   width: auto;
   justify-content: center;
   padding-top: 4%;
+  
+  &::before{
+    content: '';
+    width: 100%;
+    height: 40%;
+    background-image: linear-gradient(to bottom, $lorange, #da925b73, white);
+    z-index: -100;
+    position: absolute;
+    top: 2%;
+  }
 }
 
 .leftHeader {
@@ -81,7 +91,7 @@ p {
 }
 
 .rightHeader {
-  background-color: white;
+  background-color: transparent;
   border-radius: 5px;
   width: 300px;
   margin: 10px;

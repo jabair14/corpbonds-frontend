@@ -1,0 +1,51 @@
+<div class="dialogBoxSize">
+    <h1>Mutual Fund Investment</h1>
+
+    <hr>
+
+    <mat-dialog-content>
+        <table>
+            <tr>
+                <td>Ticker:</td>
+                <td>  {{data.tempMutualFund.ticker}}</td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td>  {{data.tempMutualFund.name}}</td>
+            </tr>
+            <tr>
+                <td>Initial Investment:</td>
+                <td>  {{data.tempMutualFund.initialInvestment}}</td>
+            </tr>
+            <tr>
+                <td>Price Per Asset:</td>
+                <td>  {{data.tempMutualFund.price}}</td>
+            </tr>
+        </table>
+
+        <br>
+
+        <mat-form-field class="">
+            <input matInput placeholder="Number of desired Assets" 
+                   type="number" value="1" min="1" max="100" [(ngModel)]="assetsAmount">
+        </mat-form-field>
+
+        <br>
+        
+        <mat-form-field class="">
+            <mat-label>Total Investment Cost:</mat-label>
+            <input matInput placeholder="Total Investment Cost" id="purchaseInputId"
+                   type="number" value="{{ data.tempMutualFund.initialInvestment + (assetsAmount * data.tempMutualFund.price) }}" 
+                   [readonly]="true" [(ngModel)]="totalPayment">
+        </mat-form-field>
+
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+
+        <button class="closeButton" mat-raised-button (click)="addInvestment()" >Purchase</button>
+        <button class="closeButton" mat-raised-button mat-dialog-close>Close</button>
+
+    </mat-dialog-actions>
+</div>
+

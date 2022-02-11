@@ -1,0 +1,168 @@
+<div class="dialogBoxSize">
+    <h1>Mutual Fund Investment</h1>
+
+    <hr><br>
+
+    <table>
+        <tr>
+            <td>Ticker:</td>
+            <td>  {{data.tempMutualFund.ticker}}</td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td>  {{data.tempMutualFund.name}}</td>
+        </tr>
+        <tr>
+            <td>Initial Investment:</td>
+            <td>  {{data.tempMutualFund.initialInvestment}}</td>
+        </tr>
+        <tr>
+            <td>Price Per Asset:</td>
+            <td>  {{data.tempMutualFund.price}}</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <mat-divider></mat-divider>
+
+    <h3>Your Investment Information:</h3>
+
+    <br>
+
+    <table>
+        <tr>
+            <td>Folio Number:</td>
+            <td>  {{tempInvestment.folioNumber}}</td>
+        </tr>
+        <tr>
+            <td>Purchase Date:</td>
+            <td>  {{tempInvestment.purchaseDate}}</td>
+        </tr>
+        <tr>
+            <td>Number of Assets:</td>
+            <td>  {{tempInvestment.shares}}</td>
+        </tr>
+        <tr>
+            <td>Total Invested:</td>
+            <td>  {{tempInvestment.totalInvested}}</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <mat-divider></mat-divider>
+
+    <mat-tab-group>
+    
+        <mat-tab label="Purchase">
+            <div class="">
+                <h3>Purchase Investment</h3>
+            
+                <!-- <hr> -->
+            
+                <mat-dialog-content>
+            
+                    <mat-form-field class="">
+                        <input matInput placeholder="Number of assets to purchase" 
+                               type="number" value="1" min="1" max="100" [(ngModel)]="assetsAmountToBuy">
+                    </mat-form-field>
+            
+                    <br>
+                    
+                    <mat-form-field class="">
+                        <mat-label>Total Cost:</mat-label>
+                        <input matInput placeholder="Total Cost" id="purchaseInputId" 
+                               type="number" value="{{ (assetsAmountToBuy * data.tempMutualFund.price) }}" 
+                               [readonly]="true" [(ngModel)]="totalCost">
+                    </mat-form-field>
+            
+                </mat-dialog-content>
+            
+                <mat-dialog-actions>
+            
+                    <button class="closeButton" mat-raised-button (click)="buyInvestment()" >Purchase</button>
+                    <button class="closeButton" mat-raised-button mat-dialog-close>Close</button>
+            
+                </mat-dialog-actions>
+            </div>        
+        </mat-tab>
+    
+        <mat-tab label="Sell">
+            <div class="">
+                <h3>Sell Investment</h3>
+            
+                <!-- <hr> -->
+            
+                <mat-dialog-content>
+            
+                    <mat-form-field class="">
+                        <input matInput placeholder="Number of assets to sell"
+                               type="number" value="1" min="1" max="{{ tempInvestment.shares }}" [(ngModel)]="assetsAmountToSell">
+                    </mat-form-field>
+            
+                    <br>
+
+                    <mat-form-field class="">
+                        <mat-label>Total Returned:</mat-label>
+
+                        <div *ngIf="!assetsAll()">
+                            <input matInput placeholder="Total Returned" id="sellInputIdAll" 
+                                   type="number" value="{{ -1 * (data.tempMutualFund.initialInvestment + (data.tempInvestment.shares * data.tempMutualFund.price)) }}" 
+                                   [readonly]="true" [(ngModel)]="totalReturnedAll">
+                        </div>
+
+                        <div *ngIf="assetsAll()">
+                            <input matInput placeholder="Total Returned" id="sellInputId" 
+                                   type="number" value="{{ -1 * (assetsAmountToSell * data.tempMutualFund.price) }}" 
+                                   [readonly]="true" [(ngModel)]="totalReturned">
+                        </div>
+
+                    </mat-form-field>
+            
+                </mat-dialog-content>
+            
+                <mat-dialog-actions>
+            
+                    <button class="closeButton" mat-raised-button (click)="sellInvestment()" >Sell</button>
+                    <button class="closeButton" mat-raised-button mat-dialog-close>Close</button>
+            
+                </mat-dialog-actions>
+            </div>        
+        </mat-tab>
+    
+        <mat-tab label="Sell All">
+            <div class="">
+                <h3>Sell All Investment</h3>
+            
+                <!-- <hr> -->
+            
+                <mat-dialog-content>
+            
+                    <mat-form-field class="">
+                        <input matInput placeholder="Number of assets to be sold" 
+                               type="number" value="{{ this.tempInvestment.shares }}" [readonly]="true">
+                    </mat-form-field>
+            
+                    <br>
+                    
+                    <mat-form-field class="">
+                        <mat-label>Total Returned:</mat-label>
+                        <input matInput placeholder="Total Returned" id="sellAllInputId" 
+                               type="number" value="{{ -1 * (data.tempMutualFund.initialInvestment + (data.tempInvestment.shares * data.tempMutualFund.price)) }}" 
+                               [readonly]="true" [(ngModel)]="totalReturnedAll">
+                    </mat-form-field>
+            
+                </mat-dialog-content>
+            
+                <mat-dialog-actions>
+            
+                    <button class="closeButton" mat-raised-button (click)="sellAllInvestment()" >Sell All</button>
+                    <button class="closeButton" mat-raised-button mat-dialog-close>Close</button>
+            
+                </mat-dialog-actions>
+            </div>        
+        </mat-tab>
+    
+    </mat-tab-group>
+</div>

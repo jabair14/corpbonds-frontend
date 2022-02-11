@@ -1,0 +1,91 @@
+<div>
+
+    <mat-form-field class="search-form-field">
+        <input matInput placeholder="Search Table" (keyup)="applyFilter($event)" #search>
+        <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+
+    <div class="sticky-paginator">
+        <mat-paginator  #paginator
+                        style-paginator 
+                        [pageSizeOptions]="[10, 25, 50, 100]"
+                        showFirstLastButtons
+                        aria-label="Select page of Mutual Funds">
+        </mat-paginator>
+    </div>
+    
+    <!-- <mat-divider class="divider-recolored sticky-two-divider"></mat-divider> -->
+    
+    <table  mat-table [dataSource]="dataSource"
+            matSort (matSortChange)="announceSortChange($event)"
+            class="mat-elevation-z8">
+            
+        <!-- Ticker Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef
+                mat-sort-header sortActionDescription="Sort by name"> 
+                Ticker | Fund Name
+            </th>
+            <td mat-cell *matCellDef="let element"> 
+                {{element.ticker}}
+                <mat-divider></mat-divider> 
+                {{element.name}}
+            </td>
+        </ng-container>
+    
+        <!-- Folio Number Column -->
+        <ng-container matColumnDef="folioNumber">
+            <th mat-header-cell *matHeaderCellDef
+                mat-sort-header sortActionDescription="Sort by folioNumber"> 
+                Folio Number
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.folioNumber}} </td>
+        </ng-container>
+    
+        <!-- Shares Column -->
+        <ng-container matColumnDef="shares">
+            <th mat-header-cell *matHeaderCellDef
+                mat-sort-header sortActionDescription="Sort by shares"> 
+                Shares 
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.shares}} </td>
+        </ng-container>
+
+        <!-- Purchase Date Column -->
+        <ng-container matColumnDef="purchaseDate">
+            <th mat-header-cell *matHeaderCellDef
+                mat-sort-header sortActionDescription="Sort by purchaseDate"> 
+                Purchase Date 
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.purchaseDate}} </td>
+        </ng-container>
+
+        <!-- Total Invested Column -->
+        <ng-container matColumnDef="totalInvested">
+            <th mat-header-cell *matHeaderCellDef
+                mat-sort-header sortActionDescription="Sort by totalInvested"> 
+                Total Invested 
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.totalInvested}} </td>
+        </ng-container>
+
+
+        <!-- Buy Sell Column --> 
+        <ng-container matColumnDef="buySell">
+            <th mat-header-cell *matHeaderCellDef> 
+                Buy / Sell
+            </th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-raised-button class="whatIsMutualFundButton" (click)="openBuySellDialog(element.id, element.mutualFundId)">
+                    Buy / Sell
+                </button>
+            </td>
+        </ng-container>
+    
+        <tr mat-header-row class="table-header sticky-three-header-row" *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+    </table>
+</div>
+
+<!-- (click)="openBuySellDialog({{element.id}})" -->

@@ -70,15 +70,10 @@ PlotlyModule.plotlyjs = PlotlyJS;
 import { PurchasesComponent } from './purchasesPlace/purchases/purchases.component';
 import { CreatePurchasesComponent } from './purchasesPlace/createpurchases/createpurchases.component';
 import { PurchaseComponent } from './purchasesPlace/purchase/purchase.component';
-<<<<<<< HEAD
-// import { UserComponent } from './purchasesPlace/userProfile/user.component';
-
-=======
->>>>>>> c9c146e358abbc5591678b9b08ca326757a3dad8
 
 // Mutual Funds Imports
 import { MutualFundsComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds/mutual-funds.component';
-import { StylePaginatorDirective } from './style-paginator.directive';
+import { StylePaginatorDirective } from './directive/style-paginator.directive';
 import { LoginComponent } from './usersFolder/login/login.component';
 import { AccountsComponent } from './usersFolder/accounts/accounts.component';
 import { RegisterComponent } from './usersFolder/register/register.component';
@@ -92,6 +87,9 @@ import { VerifyDialogComponent } from './usersFolder/verify-dialog/verify-dialog
 import { MutualFundsDialogComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds-dialog/mutual-funds-dialog.component';
 import { SellModalComponent } from './stockFolder/sell-modal/sell-modal.component';
 import { AccountSettingsComponent } from './usersFolder/account-settings/account-settings.component';
+import { MutualFundsInvestmentsComponent } from './mutual_funds_content/mutual_funds_investments/mutual-funds-investments/mutual-funds-investments.component';
+import { MutualFundsBuySellDialogComponent } from './mutual_funds_content/mutual_funds_investments/mutual-funds-buy-sell-dialog/mutual-funds-buy-sell-dialog.component';
+import { MutualFundsBuyDialogComponent } from './mutual_funds_content/mutual_funds_investments/mutual-funds-buy-dialog/mutual-funds-buy-dialog.component';
 
 @NgModule({
   declarations: [
@@ -124,10 +122,6 @@ import { AccountSettingsComponent } from './usersFolder/account-settings/account
     PurchasesComponent,
     CreatePurchasesComponent,
     PurchaseComponent,
-<<<<<<< HEAD
-    // UserComponent,
-=======
->>>>>>> c9c146e358abbc5591678b9b08ca326757a3dad8
 
     MutualFundsComponent,
     StylePaginatorDirective,
@@ -148,6 +142,9 @@ import { AccountSettingsComponent } from './usersFolder/account-settings/account
 
     SellModalComponent,
     AccountSettingsComponent,
+    MutualFundsInvestmentsComponent,
+    MutualFundsBuySellDialogComponent,
+    MutualFundsBuyDialogComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,46 @@
+@import "/src/styles.scss";
+
+* {
+    font-family: 'Trebuchet MS', 
+                'Lucida Sans Unicode', 
+                'Lucida Grande', 
+                'Lucida Sans', 
+                'Arial', 
+                'sans-serif'
+}
+
+.dialogBoxSize {
+    width: auto;
+    height: auto;
+}
+
+h1 {
+    color: $dorange;
+}
+
+mat-dialog-actions {
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.closeButton {
+    background-color: $lorange;
+}
+
+.closeButton:hover {
+    background-color: whitesmoke;
+}
+
+.tabFit {
+    width: 100%;
+    height: 100%;
+}
+
+mat-tab {
+    height: 100%;
+}
+
+mat-dialog-content {
+    width: 50%;
+    height: 40%;
+}
