@@ -1,0 +1,61 @@
+
+
+<div class="investment-table" *ngIf="this.hasInvestments">
+    <table mat-table [dataSource]="userInvestments" class="mat-elevation-z8">
+      <ng-container matColumnDef="fund_symbol">
+        <th mat-header-cell *matHeaderCellDef>Ticker</th>
+        <td matt-cell *matCellDef="let element">
+          <b>{{ element.ETF.fund_symbol }}</b>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="fund_long_name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td matt-cell *matCellDef="let element">
+          {{ element.ETF.fund_long_name }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef>Price</th>
+        <td matt-cell *matCellDef="let element">
+          {{ element.ETF.price | currency }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef>Purchased Amount</th>
+        <td matt-cell *matCellDef="let element">
+          {{ element.numPurchased }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th matt-header-cell *matHeaderCellDef>Actions</th>
+        <td matt-cell *matCellDef="let element">
+          <button mat-raised-button (click)="deleteInvestment(element.id)">
+            SELL
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="loading">
+        <th mat-footer-cell *matFooterCellDef colspan="12">
+          No investments to show. Start by making your first purchase
+        </th>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="tableConfig"></tr>
+      <tr mat-row *matRowDef="let row; columns: tableConfig"></tr>
+      <tr
+        mat-footer-row
+        *matFooterRowDef="['loading']"
+        [ngClass]="{ hide: userInvestments.length != 0 }"
+
+      ></tr>
+    </table>
+  </div>
+
+  <div class="no-investment-div" *ngIf="!this.hasInvestments">
+    <h1>No investments to show. Start by making your first purchase</h1>
+  </div>

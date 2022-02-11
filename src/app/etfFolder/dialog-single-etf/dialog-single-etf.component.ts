@@ -16,7 +16,7 @@ export class DialogSingleEtfComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     private route: ActivatedRoute,
     private userService: UserService,
-    public dialog: MatDialog,
+    public dialog: MatDialog
   ) {}
 
   // hold user & single etf data
@@ -25,22 +25,17 @@ export class DialogSingleEtfComponent implements OnInit {
 
   ngOnInit(): void {
     this.receivedRow = this.data;
-    console.log('received single ETF:', this.receivedRow);
-    this.userService.whoAmI().subscribe(payload => {
-      console.log("user information:", payload)
+    this.userService.whoAmI().subscribe((payload) => {
       this.userInformation = payload.body;
-      console.log(this.userInformation)
-    })
+    });
   }
 
   buyETF(): void {
-    console.log("clicked buying option")
-    console.log(this.userInformation)
     // check to see if user is logged in
-    if(this.userInformation.status === 'fail'){
-      alert("Please log in to access the buying portal")
+    if (this.userInformation.status === 'fail') {
+      alert('Please log in to access the buying portal');
     } else {
-      this.dialog.open(BuyDialogComponent, {data: this.receivedRow})
+      this.dialog.open(BuyDialogComponent, { data: this.receivedRow });
     }
   }
 }
