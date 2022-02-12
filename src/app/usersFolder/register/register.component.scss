@@ -125,6 +125,7 @@ label {
     transform: translateY(-2px);
     size: 1.2;
     transition: all 0.25s;
+    cursor: pointer;
   }
 
   &:active {
@@ -132,6 +133,7 @@ label {
     background-color: $color--dark;
     color: $color--light;
     size: 1;
+    cursor: pointer;
   }
 }
 
