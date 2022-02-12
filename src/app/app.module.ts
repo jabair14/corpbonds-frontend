@@ -79,6 +79,10 @@ import { PurchasesComponent } from './purchasesPlace/purchases/purchases.compone
 import { CreatePurchasesComponent } from './purchasesPlace/createpurchases/createpurchases.component';
 import { PurchaseComponent } from './purchasesPlace/purchase/purchase.component';
 
+//CEF Sells
+import { CefSellComponent } from './cefSellProfile/cefSell/cefSell.component';
+import { CefCreateSellsComponent } from './cefSellProfile/cefCreateSells/cefCreateSells.component';
+
 
 // Mutual Funds Imports
 import { MutualFundsComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds/mutual-funds.component';
@@ -144,6 +148,8 @@ import { WhoweareComponent } from './whoweare/whoweare.component';
     CreatePurchasesComponent,
     PurchaseComponent,
     CefComponent,
+    CefSellComponent,
+    CefCreateSellsComponent,
 
     MutualFundsComponent,
     StylePaginatorDirective,

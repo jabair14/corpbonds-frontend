@@ -1,12 +1,19 @@
-body{
+@import "../../../styles.scss";
 
-    background: linear-gradient(to right, rgb(189, 186, 186), rgb(168, 165, 165));
-
+body::before{
+    content: "";
+    width: 100vw;
+    height: 45vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, $dorange, white);
+    z-index: -10;
 }
 .main-bond{
     // background-color: blue;
-    background: linear-gradient(to right, rgb(189, 186, 186), rgb(168, 165, 165));
-    position: absolute;
+
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100vw;
@@ -16,13 +23,16 @@ body{
     // flex-wrap: inherit;
 }
 title{
-    background-image: linear-gradient(to right, rgba(255, 94, 0, 0.82) , rgba(255, 191, 0, 0.943));
-    color: rgb(27, 3, 3);
+
+    color: $color--dark;
+    font-family: $tfont;
     align-items: center;
-    font-size: 72px;
+    font-size: 3.5rem;
+    margin-top: 4rem;
     flex-direction: column;
     display: flex;
     resize: both;
+    margin-bottom: 1rem;
     
   }
 .bond-info {
@@ -91,7 +101,7 @@ h3 {
 .image-one {
     max-height: 100%;
     max-width: 100%;
-    padding-top: 70px;
+    margin-bottom: 2rem;
     
 }
 
@@ -100,10 +110,24 @@ h3 {
     margin-left: auto;
     margin-right: auto;
     color: black;
-    background-color: orange;
+    background-color: $lorange;
     display: inline-block;
 }
 
+.invest-btn:hover{
+    background-color: white;
+    color: $color--dark;
+    transform: translateY(-2px);
+    transition: all 0.3s;
+    transform: scale(1.05);
+}
+
+.invest-btn:active{
+    background-color: $color--dark;
+    color: white;
+    transform: translateY(2px);
+    transition: all 0.2s;
+}
 .back-btn {
     margin-top: 10px;
     float: right;
@@ -111,7 +135,11 @@ h3 {
 
 .invest-delete{
 
-    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    margin-top: 3rem;
     margin-bottom: 5px;
   
   
@@ -146,16 +174,31 @@ h3 {
    }
 
    .investImg{
-    position: absolute;
+    position: relative;
     cursor: pointer;
-    left: 15%;
-    height: 250px;
-    width: 250px;
+    padding: 0.5rem 1rem;
+    background-color: $color--dark;
+    color: white;
+    border: 1px solid $color--dark;
+    border-radius: 5px;
+    font-size: 2.5rem;
+    align-self: center;
   }
   
   
   .investImg:hover{
-    filter: drop-shadow(16px 16px 20px red) invert(75%);
+    
+    background-color: white;
+    color: $color--dark;
+    transform: translateY(-2px);
+    transition: all 0.3s;
+    transform: scale(1.05);
+
   }
 
-  
+.investImg:active{
+    background-color: $color--dark;
+    color: white;
+    transform: translateY(2px);
+    transition: all 0.2s;
+}

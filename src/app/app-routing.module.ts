@@ -27,6 +27,11 @@ import { PurchaseComponent } from './purchasesPlace/purchase/purchase.component'
 import { PurchasesComponent } from './purchasesPlace/purchases/purchases.component';
 import { LearnComponent } from './learn/learn.component';
 
+//CEF Sells
+import { CefSellComponent } from './cefSellProfile/cefSell/cefSell.component';
+import { CefCreateSellsComponent } from './cefSellProfile/cefCreateSells/cefCreateSells.component';
+
+
 //Mutual Funds Routes
 import { MutualFundsComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds/mutual-funds.component';
 
@@ -81,6 +86,7 @@ const routes: Routes = [
   { path: 'funds/:id/create', component: CreatePurchasesComponent },
   { path: 'purchases', component: PurchasesComponent },
   { path: 'purchases/:id', component: PurchaseComponent },
+  { path: 'sells/:id', component: CefSellComponent },
  
   { path: 'bonds/:id', component: BondComponent },
   { path: '', component: HomeComponent, pathMatch: 'full' },
