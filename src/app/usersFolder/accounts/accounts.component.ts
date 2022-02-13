@@ -118,6 +118,7 @@ export class AccountsComponent implements OnInit {
   postBal() {
     this.user.postBalance({ change: parseInt(this.add) }).subscribe((data) => {
       console.log('balance added', this.add);
+      this.ngOnInit();
     });
   }
 

@@ -62,12 +62,24 @@ export class UserService {
   postIcon(obj: any): Observable<any> {
     return this.http.post(`${this.urlStr}iconic`, obj, this.httpOptions);
   }
-  
+
   postSettings(obj: any): Observable<any> {
     return this.http.post(`${this.urlStr}settings`, obj, this.httpOptions);
   }
 
   postBalance(obj: { change: number }): Observable<any> {
     return this.http.post(`${this.urlStr}balance`, obj, this.httpOptions);
+  }
+
+  postPass(obj: { email: string }): Observable<any> {
+    return this.http.post(`${this.urlStr}resetPass`, obj, this.httpOptions);
+  }
+
+  postPassToken(obj: {
+    token: string;
+    password: string;
+    confirm_password: string;
+  }): Observable<any> {
+    return this.http.post(`${this.urlStr}resetPassword`, obj, this.httpOptions);
   }
 }

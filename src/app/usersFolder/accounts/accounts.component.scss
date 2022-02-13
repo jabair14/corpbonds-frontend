@@ -260,12 +260,15 @@ li {
 
 .balance {
   width: 100vw;
-  height: auto;
+  min-height: 45vw;
+  max-height: auto;
+  position: absolute;
   font-family: $logo--font;
   font-size: 2.5rem;
   padding-top: 4rem;
   display: flex;
   flex-direction: column;
+  margin-bottom: 5rem;
   // background-color: white;
   overflow: hidden;
   &::before {
@@ -276,6 +279,17 @@ li {
     background-image: linear-gradient(to bottom, $dorange, #c854026e, white);
     transform: translateY(-4rem);
     z-index: -10;
+    animation: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 30rem;
+    background-image: white;
+    transform: translateY(-4rem);
+    z-index: -11;
     animation: none;
   }
 }
@@ -315,20 +329,77 @@ li {
   }
 }
 
-.money {
+.money,
+.portf {
   margin: 0 4rem;
+  // position: relative;
+  border-left: 1px solid $color--dark;
+  border-right: 1px solid $color--dark;
 }
 
 .money {
   font-size: 4rem;
   font-family: $tfont;
   color: $color--nav;
-  background-color: $rorange;
+  // background-color: $rorange;
+  background-color: $color--dark;
   border-top: 1px solid $color--dark;
-  border-left: 1px solid $color--dark;
-  border-right: 1px solid $color--dark;
+  border-bottom: 1px solid $color--dark;
+  margin-bottom: 3rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
   padding: 2rem 3rem;
   -webkit-text-stroke: 0.1px $dgrey;
+}
+
+.portf {
+  min-height: auto;
+  max-height: 50rem;
+  overflow: hidden;
+}
+
+.portf1 {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $color--dark;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  &:last-child {
+    padding-bottom: 2rem;
+    margin-bottom: 5rem;
+  }
+  // overflow: hidden;
+}
+
+.portHeader {
+  justify-self: flex-end;
+  align-self: center;
+  padding: 2rem 2rem;
+  width: 100%;
+  height: 10%;
+  color: white;
+  font-family: $tfont;
+  background-color: $color--dark;
+  margin-bottom: 1rem;
+}
+
+.bondHeader {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 3.5rem;
+  padding-right: 15rem;
+  z-index: 2;
+  // position: absolute;
+  // overflow: hidden;
+}
+
+.etfHeader {
+  margin-bottom: 0;
 }
 
 .userIcon {
@@ -354,11 +425,57 @@ app-mutual-funds-table {
   width: 100%;
 }
 
+.money .btn {
+  margin: 0 2rem;
+  position: relative;
+  background-color: $lgrey;
+  border: 1px solid $lgrey;
+  color: $color--dark;
+}
 .money a {
   padding: 1rem 2rem;
   font-size: 2rem;
 
-  position: absolute;
-  margin: auto;
+  // position: absolute;
+  // margin: auto;
   margin-left: 2rem;
+}
+
+.balanceinp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 0.5rem;
+  font-size: 2rem;
+  width: 8rem;
+  height: 3rem;
+  // margin-bottom: 2rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+.balanceinp a {
+  // margin-bottom: -2rem;
+  margin-top: 2rem;
+  top: 0.5rem;
+}
+
+.balinp {
+  width: 25rem;
+  height: 4.32rem;
+  font-size: 2rem;
+  margin-right: 2rem;
+  border-radius: 5px;
+  // margin-bottom: 2rem;
+}
+
+.cef {
+  transform: translateY(-15rem);
+  z-index: 1;
+}
+
+.etf {
+  width: 100%;
+  margin: 0;
 }

@@ -19,7 +19,7 @@ import { FundsComponent } from './fundsPlace/funds/funds.component';
 import { CreateFundsComponent } from './fundsPlace/createfunds/createfunds.component';
 import { EditFundsComponent } from './fundsPlace/editfunds/editfunds.component';
 import { StockInvestmentsComponent } from './stockFolder/stock-investments/stock-investments.component';
-import { CefComponent } from './cefProfile/cef.component'; 
+import { CefComponent } from './cefProfile/cef.component';
 
 // CEF Purchases
 import { CreatePurchasesComponent } from './purchasesPlace/createpurchases/createpurchases.component';
@@ -30,7 +30,6 @@ import { LearnComponent } from './learn/learn.component';
 //CEF Sells
 import { CefSellComponent } from './cefSellProfile/cefSell/cefSell.component';
 import { CefCreateSellsComponent } from './cefSellProfile/cefCreateSells/cefCreateSells.component';
-
 
 //Mutual Funds Routes
 import { MutualFundsComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds/mutual-funds.component';
@@ -47,35 +46,37 @@ import { InvestmentComponent } from './bondsFolder/investment/investment.compone
 import { BondprofileComponent } from './bondsFolder/bondprofile/bondprofile.component';
 import { WhoweareComponent } from './whoweare/whoweare.component';
 import { ServiceTableComponent } from './etfFolder/service-table/service-table.component';
+import { ResetPassComponent } from './usersFolder/reset-pass/reset-pass.component';
+import { PassTokenComponent } from './usersFolder/pass-token/pass-token.component';
 
 const routes: Routes = [
-  {path: "home", component: HomeComponent},
-  {path: "bonds", component: BondsComponent},
-  {path: "funds", component: FundsComponent},
-  {path: "funds/create", component: CreateFundsComponent},
-  {path: "funds/:id", component: FundComponent},
-  {path: "funds/:id/edit", component: EditFundsComponent},
-  {path: "funds/:id/create", component: CreatePurchasesComponent},
-  {path: "purchases", component: PurchasesComponent},
-  {path: "purchases/:id", component: PurchaseComponent},
-  {path: "bonds/:id", component: BondComponent},
-  {path: "bondprofile", component: BondprofileComponent},
-  {path: "investments/:id", component: InvestmentComponent},
-  {path: "", component: HomeComponent, pathMatch: "full"},
-  {path: "stocks", component: StocksComponent},
-  {path: "retcalc", component: RetcalcComponent},
-  {path: "etfs", component: EtfComponent},
-  {path: "etfs/investments", component: EtfInvestmentsComponent},
-  {path: "locations", component: LocationsComponent, pathMatch: "full"},
-  {path: "locations/:id", component: LocationComponent},
-  {path: "retcalc", component: RetcalcComponent},
-  {path: "socialmedias", component: SocialmediaComponent},
-  {path: "", component: HomeComponent, pathMatch: "full"},
-  
-  {path: "stockInvestments", component: StockInvestmentsComponent},
-  {path: "", component: HomeComponent, pathMatch: "full"},
-  {path: "whoweare", component: WhoweareComponent, pathMatch: "full"},
-  
+  { path: 'home', component: HomeComponent },
+  { path: 'bonds', component: BondsComponent },
+  { path: 'funds', component: FundsComponent },
+  { path: 'funds/create', component: CreateFundsComponent },
+  { path: 'funds/:id', component: FundComponent },
+  { path: 'funds/:id/edit', component: EditFundsComponent },
+  { path: 'funds/:id/create', component: CreatePurchasesComponent },
+  { path: 'purchases', component: PurchasesComponent },
+  { path: 'purchases/:id', component: PurchaseComponent },
+  { path: 'bonds/:id', component: BondComponent },
+  { path: 'bondprofile', component: BondprofileComponent },
+  { path: 'investments/:id', component: InvestmentComponent },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: 'stocks', component: StocksComponent },
+  { path: 'retcalc', component: RetcalcComponent },
+  { path: 'etfs', component: EtfComponent },
+  { path: 'etfs/investments', component: EtfInvestmentsComponent },
+  { path: 'locations', component: LocationsComponent, pathMatch: 'full' },
+  { path: 'locations/:id', component: LocationComponent },
+  { path: 'retcalc', component: RetcalcComponent },
+  { path: 'socialmedias', component: SocialmediaComponent },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+
+  { path: 'stockInvestments', component: StockInvestmentsComponent },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: 'whoweare', component: WhoweareComponent, pathMatch: 'full' },
+
   { path: 'home', component: HomeComponent },
   { path: 'bonds', component: BondsComponent },
   { path: 'funds', component: FundsComponent },
@@ -87,7 +88,7 @@ const routes: Routes = [
   { path: 'purchases', component: PurchasesComponent },
   { path: 'purchases/:id', component: PurchaseComponent },
   { path: 'sells/:id', component: CefSellComponent },
- 
+
   { path: 'bonds/:id', component: BondComponent },
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'stocks', component: StocksComponent },
@@ -109,6 +110,8 @@ const routes: Routes = [
   { path: 'learn', component: LearnComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registration/:token', component: TokenComponent },
+  { path: 'resetPass', component: ResetPassComponent },
+  { path: 'resetPass/:token', component: PassTokenComponent },
 
   { path: 'account', component: AccountsComponent },
   { path: 'register', component: RegisterComponent },
@@ -116,7 +119,7 @@ const routes: Routes = [
   { path: 'account/settings', component: AccountSettingsComponent },
 
   // testing route for account table
-  {path: 'yada', component: ServiceTableComponent},
+  { path: 'yada', component: ServiceTableComponent },
 ];
 
 @NgModule({
