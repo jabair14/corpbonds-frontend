@@ -55,7 +55,7 @@
             <div class="form-field">
                 <label for=""> Value </label>
                 <br>
-                <input type="text" placeholder="{{bond.faceValue}}" [value]="bond.faceValue">
+                <input type="text" placeholder="{{bond.faceValue | currency}}" [value]="bond.faceValue" disabled>
             </div>
         
             <!-- <div class="form-field">
