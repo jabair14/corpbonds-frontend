@@ -101,6 +101,7 @@ label {
     transform: translateY(-2px);
     size: 1.2;
     transition: all 0.25s;
+    cursor: pointer;
   }
 
   &:active {
@@ -108,6 +109,7 @@ label {
     background-color: $color--dark;
     color: $color--light;
     size: 1;
+    cursor: pointer;
   }
 }
 
@@ -156,4 +158,324 @@ select {
   &::after {
     background-color: #000;
   }
+}
+
+////////////////////////////////////////////////// ACCOUNT PAGE
+
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.welcome__card {
+  // background-image: linear-gradient(to right, $gdorange1, $gdorange2);
+
+  height: 22rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: start;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30.5rem;
+    width: 102%;
+    z-index: -50;
+    background-image: url("./../../../assets/acctbg2.jpg");
+    background-size: cover;
+    filter: grayscale(20%) blur(0.6px);
+  }
+
+  & h2 {
+    color: $color--nav;
+    font-family: $logo--font;
+    font-size: 6rem;
+    margin-left: 1.4rem;
+    margin-bottom: 3rem;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+  }
+}
+
+.account {
+  // background-color: $color--nav;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  // background-image: linear-gradient(to right, $gdorange1, $gdorange2);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  // background-image: linear-gradient(to right, $gdorange1, $gdorange2);
+  display: flex;
+  height: 3.3rem;
+  // border-bottom: 0.1rem solid $gdorange1;
+}
+
+li {
+  list-style: none;
+}
+
+.servicelink {
+  text-decoration: none;
+  font-size: 2rem;
+  font-family: $text--font;
+  background-color: white;
+  padding: 1rem 2rem;
+  // &:first-child {
+  //   border-bottom: 0.1rem solid white;
+  // }
+  &:not(:last-child) {
+    border-right: 1px solid rgba(0, 0, 0, 0.226);
+  }
+}
+
+.activeService {
+  background-color: $dorange;
+  border-bottom: 0.1rem solid $dorange;
+  color: white;
+}
+
+.unselected {
+  margin-bottom: 3rem;
+  background-color: rgb(214, 214, 214);
+  z-index: -1;
+
+  color: $dorange;
+}
+
+.balance {
+  width: 100vw;
+  min-height: 45vw;
+  max-height: auto;
+  position: absolute;
+  font-family: $logo--font;
+  font-size: 2.5rem;
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
+  // background-color: white;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 30rem;
+    background-image: linear-gradient(to bottom, $dorange, #c854026e, white);
+    transform: translateY(-4rem);
+    z-index: -10;
+    animation: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 30rem;
+    background-image: white;
+    transform: translateY(-4rem);
+    z-index: -11;
+    animation: none;
+  }
+}
+
+.butn {
+  text-decoration: none;
+  font-family: $logo--font;
+  font-size: 2rem;
+  padding: 0.6rem 1.4rem;
+  background-color: $color--dark;
+  color: white;
+  align-self: flex-start;
+  justify-self: space-between;
+  border: 1px $color--dark solid;
+  border-radius: 1.12rem;
+  margin-left: auto;
+  margin-right: -1;
+  margin-right: 4rem;
+  margin-top: 2rem;
+  box-shadow: 0px 1px 20px rgba(255, 255, 255, 0.26);
+
+  &:hover {
+    background-color: azure;
+    color: $color--dark;
+    transform: translateY(-2px);
+    size: 1.2;
+    transition: all 0.25s;
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: translateY(0.5px);
+    background-color: $color--dark;
+    color: $color--light;
+    size: 1;
+    cursor: pointer;
+  }
+}
+
+.money,
+.portf {
+  margin: 0 4rem;
+  // position: relative;
+  border-left: 1px solid $color--dark;
+  border-right: 1px solid $color--dark;
+}
+
+.money {
+  font-size: 4rem;
+  font-family: $tfont;
+  color: $color--nav;
+  // background-color: $rorange;
+  background-color: $color--dark;
+  border-top: 1px solid $color--dark;
+  border-bottom: 1px solid $color--dark;
+  margin-bottom: 3rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 3rem;
+  -webkit-text-stroke: 0.1px $dgrey;
+}
+
+.portf {
+  min-height: auto;
+  max-height: 50rem;
+  overflow: hidden;
+}
+
+.portf1 {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $color--dark;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  &:last-child {
+    padding-bottom: 2rem;
+    margin-bottom: 5rem;
+  }
+  // overflow: hidden;
+}
+
+.portHeader {
+  justify-self: flex-end;
+  align-self: center;
+  padding: 2rem 2rem;
+  width: 100%;
+  height: 10%;
+  color: white;
+  font-family: $tfont;
+  background-color: $color--dark;
+  margin-bottom: 1rem;
+}
+
+.bondHeader {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 3.5rem;
+  padding-right: 15rem;
+  z-index: 2;
+  // position: absolute;
+  // overflow: hidden;
+}
+
+.etfHeader {
+  margin-bottom: 0;
+}
+
+.userIcon {
+  height: 12rem;
+  width: 12rem;
+  margin-bottom: 2rem;
+  margin-left: 4rem;
+  margin-right: 10px;
+  border-radius: 60%;
+  border: 0.5rem $color--dark solid;
+  border-collapse: collapse;
+  padding: 0 0.725px 0.25px 0;
+  background-color: $color--dark;
+  // border-top: 0.6rem $color--dark solid;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.301);
+}
+
+.muttables {
+  width: 90rem;
+}
+
+app-mutual-funds-table {
+  width: 100%;
+}
+
+.money .btn {
+  margin: 0 2rem;
+  position: relative;
+  background-color: $lgrey;
+  border: 1px solid $lgrey;
+  color: $color--dark;
+}
+.money a {
+  padding: 1rem 2rem;
+  font-size: 2rem;
+
+  // position: absolute;
+  // margin: auto;
+  margin-left: 2rem;
+}
+
+.balanceinp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 0.5rem;
+  font-size: 2rem;
+  width: 8rem;
+  height: 3rem;
+  // margin-bottom: 2rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+.balanceinp a {
+  // margin-bottom: -2rem;
+  margin-top: 2rem;
+  top: 0.5rem;
+}
+
+.balinp {
+  width: 25rem;
+  height: 4.32rem;
+  font-size: 2rem;
+  margin-right: 2rem;
+  border-radius: 5px;
+  // margin-bottom: 2rem;
+}
+
+.cef {
+  transform: translateY(-15rem);
+  z-index: 1;
+}
+
+.etf {
+  width: 100%;
+  margin: 0;
 }

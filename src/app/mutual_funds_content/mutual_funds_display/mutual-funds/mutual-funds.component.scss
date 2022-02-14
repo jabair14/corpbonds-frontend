@@ -1,0 +1,120 @@
+@import "/src/styles.scss";
+
+mat-divider {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    width: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+p {
+  font-size: 1.4rem;
+  font: $pfont;
+}
+
+h1 {
+  font: $tfont
+}
+
+.container {
+    background-color: transparent;
+    overflow: initial;
+    padding-top: 6%;
+}
+
+.sidenav {
+    margin: 5px;
+    width: 225px;
+    border-right: none;
+    color: $color--dark;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: left;
+    height: 370px;
+    position: sticky;
+    top: 55px;
+}
+
+.content {
+    overflow: initial;
+    position: relative;
+    // margin-top: -505px;
+    margin-top: -429px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+
+.divider-recolored {
+    width: 100%;
+    background-color: rgb(173, 173, 173);
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+}
+
+.whatIsMutualFundButton {
+  margin: 5px;
+  background-color: $lorange;
+}
+
+.whatIsMutualFundButton:hover {
+  background-color: whitesmoke;
+}
+
+.mutualFundsHeader {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: inherit;
+  width: auto;
+  justify-content: center;
+  padding-top: 4%;
+  
+  &::before{
+    content: '';
+    width: 100%;
+    height: 40%;
+    background-image: linear-gradient(to bottom, $lorange, #da925b73, white);
+    z-index: -100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+.leftHeader {
+  width: 550px;
+  margin: 10px;
+}
+
+.leftHeader h1,
+p {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.leftHeader button {
+  margin-left: 70px;
+  font: $hfont;
+}
+
+.rightHeader {
+  background-color: transparent;
+  border-radius: 5px;
+  width: 300px;
+  margin: 10px;
+}
+
+.mutualFundsImage {
+  max-width: 90%;
+  max-height: 100%;
+  justify-content: center;
+  margin: 5%;
+  flex-wrap: inherit;
+}
+
+.space {
+  margin-bottom: 120px;
+}

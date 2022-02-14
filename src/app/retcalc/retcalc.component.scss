@@ -1,12 +1,9 @@
-
 @import "/src/styles.scss";
-
 
 .inp {
   margin: 0.5rem;
   display: flex;
   flex-direction: column;
-  //   align-items: center;
   justify-content: center;
   width: auto;
 }
@@ -16,50 +13,164 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 20px;
+  margin: 3rem;
+  text-align: center;
+  height: 50vh;
 }
 
 .results-div {
-  margin: 20px;
+  margin: 3rem;
   display: flex;
   flex-direction: column;
-  pointer-events: none;
   text-align: center;
   width: auto;
-  max-width: 30%;
+  border-top: 0.1rem $lgrey dashed;
+  padding-top: 2rem;
 }
 
 .r-div {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
 }
 
-h2 {
-  margin: 1rem;
+form {
+  display: flex;
+  margin: 2rem;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-decoration: $dblue dashed underline 0.2rem;
+  font-family: $tfont;
 }
 
 p {
-  font-size: 0.8rem;
+  font-size: 1.8rem;
+  font-family: $pfont;
   padding: 0;
   width: auto;
   text-align: center;
-  margin-bottom: 1rem;
+  padding: 0 20rem;
+  margin: 1.5rem;
+}
+
+span {
+  font-family: $pfont;
+  font-size: 1.8rem;
+  font-weight: normal;
+  width: auto;
+  margin: 1.5rem;
 }
 
 h4 {
   text-align: center;
   font-weight: normal;
-}
-
-span {
+  font-family: $hfont;
   font-size: 2rem;
 }
 
-mat-card {
-  border-radius: 0;
-  border: rgb(212, 212, 212) solid 0.01rem;
+h5 {
+  font-size: 2.8rem;
+  font-weight: normal;
+  font-family: $hfont;
+  margin: 1rem;
+  color: $navyb;
 }
 
 .calc-btn {
   background-color: $rorange;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.5rem;
+  font-family: $tfont;
+}
+
+h3 {
+  font-size: 2rem;
+  font-family: $hfont;
+}
+
+h2 {
+  margin: 1rem;
+  font-size: 2.5rem;
+  text-decoration: $rorange dashed underline 0.2rem;
+  font-family: $hfont;
+}
+
+mat-label,
+input {
+  font-size: 1.7rem;
+  padding: 1rem;
+  color: black;
+  font-family: $pfont;
+}
+
+::ng-deep
+  .mat-form-field-appearance-outline.mat-focused
+  .mat-form-field-outline-thick {
+  color: $rorange !important;
+}
+
+.results-div a {
+  color: $dorange;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.grph-div p {
+  margin: 1rem;
+}
+
+.w-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 0.1rem $lgrey dashed;
+  padding-top: 1rem;
+  margin: 3rem;
+  height: 50vh;
+}
+
+plotly-plot {
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+// .mean-p {
+//   padding: 0 20rem;
+// }
+
+.b-div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-top: 0.1rem $lgrey dashed;
+  border-bottom: 0.1rem $lgrey dashed;
+  padding: 4rem;
+  margin: 3rem 0;
+  background-color: $navyb;
+  height: 30vh;
+}
+
+.adv-btn,
+.lrn-btn {
+  color: white;
+  background-color: $rorange;
+  font-family: $pfont;
+}
+
+.b1,
+.b2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }

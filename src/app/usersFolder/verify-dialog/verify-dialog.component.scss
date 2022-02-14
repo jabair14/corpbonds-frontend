@@ -1,0 +1,50 @@
+@import "../../../styles.scss";
+// .textVerBox {
+//   height: 100vh;
+//   width: 100vw;
+//   background-color: turquoise;
+// }
+
+// .mat-wrapper {
+//   height: 20rem;
+//   width: 50rem;
+//   background-color: transparent;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-start;
+//   // position: absolute;
+// }
+
+.title {
+  font-size: 3rem;
+  margin-top: 2rem;
+  font-family: $tfont;
+  color: $navyb;
+}
+
+.form {
+  margin-top: -15rem;
+  width: 100%;
+}
+
+.input {
+  // margin: -8rem;
+  width: 80%;
+  font-size: 2rem;
+}
+
+.btn {
+  background-color: $navyb;
+  color: $color--nav;
+  border: 1px solid $navyb;
+
+  &:hover {
+    color: $navyb;
+    background-color: $color--nav;
+  }
+}
+
+.btn--box {
+  margin-left: 40rem;
+  justify-self: flex-end;
+}

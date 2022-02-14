@@ -1,0 +1,72 @@
+@import "/src/app/mutual_funds_content/mutual_funds_display/mutual-funds/mutual-funds.component.scss";
+
+.sticky-paginator {
+    position: sticky;
+    top: 0%;
+    z-index: 2;
+    background-color: white;
+}
+
+.sticky-three-header-row {
+    position: sticky;
+    z-index: 2;
+    top: 5.5em;
+}
+
+.buttonUnder {
+    z-index: 1;
+    // background-color: rgb(70, 70, 70);
+    background-color: white;
+    color: $dorange;
+    border: 1px solid $dorange;
+    border-radius: 5px;
+    padding: .2rem .4rem;
+
+    &:hover {
+        background-color: $dorange;
+        color: white;
+        cursor: pointer;
+        transform: translateY(-2px);
+        transition: all .2s;
+    }
+
+    &:active {
+        transform: translateY(2px);
+        transition: all .1s;
+        background-color: white;
+        color: $dorange;
+    }
+}
+
+table {
+    width: 100%;
+}
+
+.table-header {
+    background-color: $lorange;
+    border-top: black;
+}
+
+.table-border {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+}
+  
+.mat-row:hover .mat-cell {
+    border-color: currentColor;
+    background-color: rgb(235, 235, 253);
+}
+
+// .mat-column-changePrice {
+//     text-align: right;
+//     justify-content: flex-end;
+// }
+
+.pricePercent {
+    color: rgb(92, 92, 92)
+}

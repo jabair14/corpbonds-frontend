@@ -1,0 +1,184 @@
+@import "/src/styles.scss";
+
+.picture {
+    height: 300px;
+}
+
+h1 {
+    text-align: center;
+    font-size:x-large;
+    font-family: $tfont;
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.leavereview {
+    padding-bottom: 2rem;
+}
+
+.rightcontainer, .leftcontainer {
+    height: 100vh;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    flex-wrap:wrap;
+}
+.rightcontainer {
+    flex: 3;
+    border-left: 1px solid #03017c;
+    display: inline;
+    padding-left: 30px;
+}
+.leftcontainer {
+    flex: 1;
+    border-right: 1px solid #03017c;
+    color: #515151;
+}
+
+.averagerating {
+    width: 300px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.bar {
+    width: 100%;
+    background-color: #ddd;
+    margin-bottom: 15px;
+}
+
+.rating {
+    // text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 5px;
+    color: black;
+    font-family: $pfont;
+}
+
+.five {
+    background-color: $rorange;
+}
+
+.four {
+    background-color: $rorange;
+}
+
+.three {
+    background-color: $rorange;
+}
+
+.two {
+    background-color: $rorange;
+}
+
+.one {
+    background-color: $rorange;
+}
+
+p {
+    margin: 0;
+    padding-left: 10px;
+    font-family: $pfont;
+}
+
+table {
+    text-align: left;
+    width: 100%;
+    font-family: $pfont;
+    font-size: medium;
+    border-collapse: collapse;
+}
+
+.textbox {
+    width: 70%;
+    height: 100px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.fa {
+    font-size: x-large;
+    color: $rorange;
+}
+
+.tablestar {
+    padding-bottom: 10px;
+}
+
+.ratingSubmit {
+    width: 30%;
+    margin: 0;
+    justify-content: center;
+    text-align: center;
+    padding-top: 30px;
+    // display:inline-block;
+}
+.textandsubmit {
+    display:flex;
+    justify-content: center;
+    flex-direction:column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+}
+
+th {
+    font-size: 20px;
+    padding-bottom: 20px;
+    font-family: $hfont;
+}
+
+tr {
+    border-bottom: 1px solid #515151;
+}
+
+td {
+    padding-top: 10px;
+}
+
+.stars {
+    width: 15%;
+}
+
+
+a {
+  color: #515151;
+  font-size: 15px;
+  text-decoration: none;
+  font-family: $hfont;
+}
+
+h4{
+    height: 20px;
+    margin: 0;
+}
+
+button {
+    background-color: $dblue;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+
+button:hover {
+    cursor: pointer;
+    background-color: $dorange;
+}

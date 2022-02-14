@@ -1,0 +1,87 @@
+<body>
+    
+
+
+    <!-- bonds -->
+    <title> Purchases</title>
+
+    <div class ="fundsedit">
+
+        <!-- main bond -->
+        <div class="bond-info">
+            <!-- bond info  -->
+
+                <img class="image-one"src="./assets/undraw_our_solution_re_8yk6.svg" alt="image">
+                <div class="bond-info-left">
+                    <h3> Purchase History </h3>
+                    <hr>
+                    <p> Id - {{purchase.id}}</p>
+                    <hr>
+                    <p> Amount - {{purchase.amount}}</p>
+                    <hr>
+                    <p> Fund ID - {{purchase.fundId }}</p>
+                    <!-- <hr>
+                    <p> User ID - {{purchase.userId}} </p> -->
+
+                    <!-- <button mat-raised-button class="invest-btn" (click) = "edit()">
+                     Edit Purchase
+                     </button> -->
+                     <button mat-raised-button class="back-btn" style="color: rgb(5, 4, 1); background-color: rgb(255, 115, 22);" (click) = "sellFund(purchase.id, createSell)">
+                        Sell
+                    </button>
+                     <button mat-raised-button class="back-btn" style="color: orange; background-color: black; float: left;" routerLink="/cefProfile">
+                         Go Back
+                     </button>
+                    
+            </div>
+
+
+
+            <div *ngFor="let sell of sells">
+               <input [(ngModel)] ="createSell.amount"  type = "string" [value] = "purchase.amount" hidden/>
+               <input [(ngModel)] ="createSell.fundId"  type = "string" [value] = "purchase.fundId" hidden/>
+               <input [(ngModel)] ="createSell.userId"  type = "string" [value] = "purchase.userId" hidden/>
+               <input [(ngModel)] ="createSell.previousBalance"  type = "string" value = {{this.balance}} hidden/>
+            </div>
+
+
+
+
+            <img src='/assets/plain-arrow.png' class="investImg">
+           
+           <div *ngFor="let fund of funds"  id ="text">
+               <div *ngIf ="(purchase.fundId == fund.id)" >
+
+                <div class= "fundInfo">
+            <p>Fund Purchased:</p>
+            <h5> Fund ID: {{fund.id}} </h5>
+            <hr>
+            <!-- ID: <input [(ngModel)] ="fund.id" id ="inputText" type = "text" value = "" placeholder="e.g. (John Smith)"/> -->
+            <label>Symbol: </label>
+            <input [(ngModel)] ="fund.symbol" id ="inputText" disabled/>
+             <label>Name: </label>
+            <input [(ngModel)] ="fund.name" id ="inputText" disabled/>
+            <label>Inception Date: </label>
+            <input [(ngModel)] ="fund.inceptionDate" id ="inputText" disabled/>
+            <label>Category One: </label>
+            <input [(ngModel)] ="fund.categoryOne" id ="inputText" disabled/>
+            <label>Category Two: </label>
+            <input [(ngModel)] ="fund.categoryTwo" id ="inputText" disabled/>
+            <label>Category Three: </label>
+            <input [(ngModel)] ="fund.categoryThree" id ="inputText" disabled/>
+            <label>Market Cap: </label>
+            <input [(ngModel)] ="fund.marketCap" id ="inputText" disabled/>
+            <label>Current Dividend Yield: </label>
+            <input [(ngModel)] ="fund.currentDividendYield" id ="inputText" disabled/>
+            <label>Historical Average Dividend Yield: </label>
+            <input [(ngModel)] ="fund.historicalAverageDividendYield" id ="inputText" disabled/>
+            <label>Leverage Factor: </label>
+            <input [(ngModel)] ="fund.everageFactor" id ="inputText" disabled/>
+            <label>Average Volume: </label>
+            <input [(ngModel)] ="fund.averageVolume" id ="inputText" disabled/>
+        </div>
+        </div>
+        </div> 
+    </div>
+    </div>
+    </body>

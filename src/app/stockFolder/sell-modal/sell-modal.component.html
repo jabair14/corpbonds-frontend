@@ -1,0 +1,8 @@
+<body class = "center">
+    <h1 mat-dialog-title>Are you sure you would like to sell {{data.investment.numShares}} shares of {{data.investment.stock.name}} for ${{totalAmount}} </h1>
+    
+    <div mat-dialog-action>
+        <button mat-button (click) = "cancel()">Cancel</button>
+        <button mat-button (click) = "sellInvestment()">Sell</button>
+    </div>
+</body>

@@ -1,0 +1,35 @@
+@import "/src/app/mutual_funds_content/mutual_funds_display/mutual-funds/mutual-funds.component.scss";
+
+.navHeader {
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-left: 14px;
+    font: $hfont;
+}
+
+.search-form-field {
+    font-size: 1.5rem;
+    width: 75%;
+    margin-left: 19px;
+    margin-bottom: -15px;
+    font: $hfont;
+}
+
+.orange {
+    color: $dorange;
+}
+
+.black {
+    color: black;
+}
+
+.menu-button {
+    font: $hfont;
+}
+
+mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+}

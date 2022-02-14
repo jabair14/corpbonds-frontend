@@ -1,25 +1,31 @@
 
-<title>Investment Funds</title>
-<hr>
+
+
 <header> <h1 id="title">Closed-End Funds</h1>
 
   <h2 id= "sub-title" > Explore Kite Mutuals' closed-end funds
   </h2>
 </header>
-<hr>
+
 
 <body>
 
 <div class="imagee">
   <img src='/assets/searchIcon.png' class ="imgg">
   <input type="text"  id="myInput" placeholder="Search for funds.." [(ngModel)]="term">
-  <div id="button_div1">
-    <p>
-     <a routerLink="/funds/create">
-        <button type = "button" id = "wrapper2" class="shadow" value="Shadow">Create Fund</button></a>
-      </p>
+
     </div>
 
+    <!-- 
+      <p>
+       <a routerLink="/funds/create">
+          <button type = "button" id = "wrapper" class="shadow" value="Shadow">Create</button></a>
+        </p>
+      -->
+      <div>
+      <button class= "profileButton"  routerLink ='/cefProfile'>CEF Profile</button>  
+      
+    </div>
     
         <div style="text-align:center">
             <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event">
@@ -49,7 +55,7 @@
           
             </pagination-template>
             </div>
-    </div>
+
   
 
 
@@ -388,10 +394,20 @@
               {{fund.action}}
           </td> -->
           <td>
-          <div id="button_div">
-              <button (click) = "deleteFunds(fund.id)" id = "wrapper" class="shadow" value="Shadow">delete</button>
+          <div class= ".ie-container">
+            <div class= "invest-delete">
+              <img src='/assets/purchase.png' class="investImg"  [routerLink]="['/funds/', fund.id, 'create']">
+            <div>
+              Start Invest
+            </div>
+          </div>
+          <!-- <div class= "invest-delete">
+            <img src='/assets/delete.png' class="deleteImg"  (click) = "deleteFunds(fund.id)">
+          <div>
+            Delete
               </div>
-              
+              </div> -->
+            </div>
           </td>
           
       </tr>

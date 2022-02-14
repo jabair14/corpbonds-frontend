@@ -1,0 +1,36 @@
+@import "/src/styles.scss";
+
+.dialogBox {
+    width: auto;
+    height: 580px;
+    font: $pfont
+}
+
+h1 {
+    color: $dorange;
+    font: $hfont;
+}
+
+mat-dialog-content {
+    font: $pfont;
+    font-size: 1.5rem;
+}
+
+table {
+    font: $pfont;
+    font-size: 1.4rem;
+}
+
+.closeButton {
+    background-color: $lorange;
+    font: $hfont;
+
+    &:hover {
+        background-color: whitesmoke;
+    }
+}
+
+::ng-deep.mat-tab-body-content {
+    height: 30vh !important;
+    overflow: hidden !important;
+}

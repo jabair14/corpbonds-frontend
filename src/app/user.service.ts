@@ -16,7 +16,7 @@ export class UserService {
     observe: 'response' as 'response',
   };
   // urlStr: string = 'http://kmutlog.herokuapp.com/';
-  urlStr: string = 'http://localhost:8500/';
+  urlStr: string = 'http://www.kitemutual.online/loginapi/';
 
   constructor(private http: HttpClient, private cookie: CookieService) {}
 
@@ -48,5 +48,38 @@ export class UserService {
   whoAmI(): Observable<any> {
     let _ = {};
     return this.http.post(`${this.urlStr}whoAmI`, _, this.httpOptions);
+  }
+
+  postVerCode(obj: any): Observable<any> {
+    return this.http.post(`${this.urlStr}verify`, obj, this.httpOptions);
+  }
+
+  postLogOut(): Observable<any> {
+    let _;
+    return this.http.post(`${this.urlStr}logout`, _, this.httpOptions);
+  }
+
+  postIcon(obj: any): Observable<any> {
+    return this.http.post(`${this.urlStr}iconic`, obj, this.httpOptions);
+  }
+
+  postSettings(obj: any): Observable<any> {
+    return this.http.post(`${this.urlStr}settings`, obj, this.httpOptions);
+  }
+
+  postBalance(obj: { change: number }): Observable<any> {
+    return this.http.post(`${this.urlStr}balance`, obj, this.httpOptions);
+  }
+
+  postPass(obj: { email: string }): Observable<any> {
+    return this.http.post(`${this.urlStr}resetPass`, obj, this.httpOptions);
+  }
+
+  postPassToken(obj: {
+    token: string;
+    password: string;
+    confirm_password: string;
+  }): Observable<any> {
+    return this.http.post(`${this.urlStr}resetPassword`, obj, this.httpOptions);
   }
 }

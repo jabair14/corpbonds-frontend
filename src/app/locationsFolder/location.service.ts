@@ -17,4 +17,12 @@ export class LocationService {
   getLocation(id: number): Observable<any> {
     return this.http.get(`https://locationsandconsultants.herokuapp.com/locations/${id}`)
   }
+
+  getConsultants(): Observable<any> {
+    return this.http.get("https://locationsandconsultants.herokuapp.com/consultants")
+  }
+
+  getConsultant(id: number): Observable<any> {
+    return this.http.get(`https://locationsandconsultants.herokuapp.com/consultants/${id}`)
+  }
 }

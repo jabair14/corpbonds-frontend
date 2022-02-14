@@ -1,0 +1,201 @@
+@import "/src/styles.scss";
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.pageContainer {
+    &::before {
+      content:"";
+      width: 100%;
+      height: 45vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -10;
+      background-image: linear-gradient(to bottom, $dorange, white);
+    }
+}
+
+.stocks-table{
+    font-family: $pfont;
+    font-size: 13px;
+    border: 3px solid black;
+    border-collapse: collapse;
+    width: 90%;
+    th { position: sticky; top: 0; z-index: 1; }
+  }
+
+  .stocks-table td, .stocks-table th {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.stocks-table tr:nth-child(even){background-color: rgb(206, 206, 206);}
+
+.stocks-table tr:hover {background-color: $lgrey;}
+
+.stocks-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    color: black;
+  }
+
+  .header {
+    background-color: #da935b;
+    color: black;
+    font-family: $pfont;
+  }
+
+
+  .stocks-div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: inherit;
+    align-items: center;
+  }
+
+  .stock-header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: inherit;
+    align-items: center;
+    margin-bottom: 10px;
+    box-shadow: 5xp;
+    padding-top: 10px
+  }
+
+  h1, p {
+    font-family: $tfont;
+  }
+
+  .title {
+    font-size: 4rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-decoration: $dblue dashed underline 0.2rem;
+    font-family: $tfont;
+  }
+
+  .stock-searchbar {
+      margin: 10px;
+      width: 20vw;
+      color: black;
+      font-family: $hfont;
+      font-size: 2rem;
+      background-color: white;
+      border-radius: 5px;
+      padding-left: 10px;
+      padding-top: 3px;
+  }
+
+  ::placeholder {
+      color: black;
+  }
+
+  .investmentBtn {
+      position: absolute;
+      left: 5vw;
+      margin: 10px;
+      color: black;
+      font-family: $hfont;
+      font-size: 2rem;
+      background-color: white;
+      border-radius: 5px;
+      padding-top: 3px;
+  }
+
+  .investmentBtn:hover {
+    cursor: pointer;
+    color: $dorange;
+  }
+
+  .resetBtn {
+    position: absolute;
+      right: 6vw;
+      margin: 10px;
+      color: black;
+      font-family: $hfont;
+      font-size: 2rem;
+      background-color: white;
+      border-radius: 5px;
+      padding-top: 3px;
+  }
+
+  .resetBtn:hover {
+    cursor: pointer;
+    color: $dorange;
+  }
+
+  .arrow {
+      font-size: 14px;
+      font-weight: bold;
+      color: black;
+      background-color: $lorange;
+      padding: 0;
+      margin: 0;
+      border: none;
+      font-family: $hfont;
+  }
+  .arrow:hover {
+    color: white;
+    cursor: pointer;
+}
+
+  
+  .custom-pagination .page-number {
+      display: inline-block;
+      position: relative;
+  }
+
+  .page-number span{
+    display: block;
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .pagination-previous,.pagination-next{
+    display: inline-block;
+    
+    font-weight: bold;
+  }
+
+  .iconSize{
+    font-size: 20px;
+    position: absolute;
+    bottom: 15px;
+  }
+
+  .addBtn {
+    background-color: transparent;
+    color: $lorange;
+    font-size: 25px;
+    border: none;
+  }
+  
+
+  .addBtn:hover {
+    color: white
+  }
+
+  .stockImg {
+    position: absolute;
+    max-height: 19.5vh;
+    right: 20vw;
+    top: 10vh;
+  }
+  .stockImg2 {
+    position: absolute;
+    max-height: 19.5vh;
+    left: 20vw;
+    top: 10vh;
+  }
+
+  .space {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }

@@ -1,52 +1,79 @@
 <div class="r-div">
     <div class="calc-div">
-        <mat-card>
-            <h2>Retirement Account Value Calculator</h2>
-            <p>Input your information to see how your retirement account looks</p>
-            <form class="form">
-                <mat-form-field class="inp yi" appearance="outline" color="warn">
-                    <mat-label>Yearly Income $</mat-label>
-                    <input matInput [(ngModel)]="newcalc.yrlyIncome" name="yrlyIncome">
-                </mat-form-field>
-                <mat-form-field class="inp ca" appearance="outline" color="warn">
-                    <mat-label>Current Age</mat-label>
-                    <input matInput [(ngModel)]="newcalc.currAge" name="currAge">
-                </mat-form-field>
-                <mat-form-field class="inp ra" appearance="outline" color="warn">
-                    <mat-label>Retirement Age</mat-label>
-                    <input matInput [(ngModel)]="newcalc.retAge" name="retAge">
-                </mat-form-field>
-                <mat-form-field class="inp mc" appearance="outline" color="warn">
-                    <mat-label>Monthly 401k Contribution $</mat-label>
-                    <input matInput [(ngModel)]="newcalc.monthlyCont" name="monthlyCont">
-                </mat-form-field>
-                <mat-form-field class="inp rr" appearance="outline" color="warn">
-                    <mat-label>Rate of Return %</mat-label>
-                    <input matInput [(ngModel)]="newcalc.rateReturn" name="rateReturn">
-                </mat-form-field>
-                <mat-form-field class="inp sb" appearance="outline" color="warn">
-                    <mat-label>Current Savings Balance $</mat-label>
-                    <input matInput [(ngModel)]="newcalc.savBalance" name="savBalance">
-                </mat-form-field>
-                <button mat-stroked-button class="calc-btn"><a (click)="addCalc(newcalc)">calculate</a></button>
-            </form>
-        </mat-card>
+            <h1>Retirement Account Value Calculator</h1>
+            <p>Want to know what your retirement account might look like by the time you retire? <br> Input your information below to see how your retirement account looks!</p>
+            <div class="c-div">
+
+                <form class="form">
+                    <mat-form-field class="inp yi" appearance="outline" color="warn">
+                        <mat-label>Yearly Income $</mat-label>
+                        <input matInput [(ngModel)]="newcalc.yrlyIncome" name="yrlyIncome">
+                    </mat-form-field>
+                    <mat-form-field class="inp ca" appearance="outline" color="warn">
+                        <mat-label>Current Age</mat-label>
+                        <input matInput [(ngModel)]="newcalc.currAge" name="currAge">
+                    </mat-form-field>
+                    <mat-form-field class="inp ra" appearance="outline" color="warn">
+                        <mat-label>Retirement Age</mat-label>
+                        <input matInput [(ngModel)]="newcalc.retAge" name="retAge">
+                    </mat-form-field>
+                    <mat-form-field class="inp mc" appearance="outline" color="warn">
+                        <mat-label>Monthly 401k Contribution $</mat-label>
+                        <input matInput [(ngModel)]="newcalc.monthlyCont" name="monthlyCont">
+                    </mat-form-field>
+                    <mat-form-field class="inp rr" appearance="outline" color="warn">
+                        <mat-label>Rate of Return %</mat-label>
+                        <input matInput [(ngModel)]="newcalc.rateReturn" name="rateReturn">
+                    </mat-form-field>
+                    <mat-form-field class="inp sb" appearance="outline" color="warn">
+                        <mat-label>Current Savings Balance $</mat-label>
+                        <input matInput [(ngModel)]="newcalc.savBalance" name="savBalance">
+                    </mat-form-field>
+                </form>
+            </div>
+            <!-- <button mat-stroked-button class="calc-btn" (click)="showRes()">Calculate</button> -->
+            <button mat-stroked-button class="calc-btn" (click)="addCalc(newcalc); showRes()">Calculate</button>
+
     
     </div>
     
     <div class="results-div">
-        <mat-card>
             <h2>Calculation Results</h2>
             <h4>Your 401k Account's Value in {{newcalc.retAge-newcalc.currAge}} years will be:</h4>
-            <span>${{ ravC }}</span>
+            <h5>${{ ravC }}</h5>
             <br>
             <h3>What does this mean?</h3>
-            <p>This is a rough estimation of what your retirement account will look like by the time you retire. Of course there are other important factors to be considered, including Employer 401k matches, but this is a good starting point for determining where your account is headed. </p>
-            <h3>What should my account look like?</h3>
-            <p></p>
-        </mat-card>
-    
+            <p class="mean-p">This is a rough estimation of what your retirement account will look like by the time you retire, taking into account how much you're saving monthly and how much you make yearly pre-tax. Of course there are other important factors to be considered, including Employer 401k matches, but this is a good starting point for determining where your account is headed. </p>
+            <div class="link-div" *ngIf="show == true">
+                <h3>What should my account look like?</h3>
+                <p>Click <a (click)="toggleGraph()">here</a> to see how your account sizes up!</p>
+            </div>
+        <div class="grph-div" *ngIf="shown">
+                <h2>In-Depth Results</h2>
+                <p>This is a comparison between the predicted value of your account and how much you will roughly need in reirement. </p>
+                <p>Your account is predicted to be at {{ diff.toFixed(2) }}% of where it should be!</p>
+                <plotly-plot [data]="graph.data" [layout]="graph.layout"></plotly-plot>
+        </div>
     </div>
 
 
+</div>
+
+<div class="w-div">
+        <h2>Where do these numbers come from?</h2>
+        <p>Your predicted value takes into account your income, monthly contributions, and current savings balance in order to predict where your account will be by the time you reach your preferred retirement age. The rate of return is default set to 5%, but can be changed. The rate of return on investment fluctuates, but it's best to set it lower than it is currently. This calculator also takes into account a 1% raise from year to year based on your income.</p>
+        <p>As for the needed account value, the calculator utilizes the "80% rule". This means that it calculates how much you will need for retirement as 80% of your current annual salary. It assumes that you need roughly 80% of your current annual salary per each year of retirement. There are actually many ways to figure out how much you need for retirement, but this rule is a good rough estimate to get started.</p>
+</div>
+
+<div class="b-div">
+    <div class="b1">
+        <h2>Looking for help?</h2>
+        <span>Kite Mutual offers advice for creating a retirement plan that gets you to your goal!</span>
+        <button  mat-stroked-button  class="adv-btn">See Advice</button>
+    </div>
+    <div class="b2">
+        <h2>Want to add to your account?</h2>
+        <span>Kite Mutual offers many different investment opportunities!</span>
+        <button  mat-stroked-button  class="lrn-btn">Learn More</button>
+    </div>
 </div>

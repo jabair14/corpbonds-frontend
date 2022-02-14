@@ -4,7 +4,7 @@
 
     <!-- bonds -->
     <title> {{fund.name}}</title>
-    <hr>
+
     <div class="main-bond">
         <!-- main bond -->
         <div class="bond-info">
@@ -44,6 +44,17 @@
                      <button mat-raised-button class="back-btn" routerLink="/funds">
                          Go Back
                      </button>
+                     <div class= "invest-delete">
+
+                        <a (click)="purchase()" class="investImg">
+                            Purchase Funds
+
+
+                        </a>
+                      <div>
+                        Start Invest
+                      </div>
+                     </div>
                  </div>
              </div>
             </div>

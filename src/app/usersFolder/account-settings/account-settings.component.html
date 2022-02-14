@@ -1,0 +1,78 @@
+<div class="wrapper">
+  <div class="welcome__card">
+    <h2 @rightFade>Settings</h2>
+    <a (click)="logOut()" class="butn" href="/login">Log Out</a>
+  </div>
+  <div class="Account">
+    <ul class="links">
+      <li>
+        <a href="/account" class="servicelink unselected">Your Insights</a>
+        <a routerLink="/account/settings" class="servicelink activeService"
+          >Account Settings</a
+        >
+      </li>
+    </ul>
+    <div class="balance">
+      <div class="boxy">
+        <div class="icon--switch">
+          <label for="userIcon">Select User Icon</label>
+          <a (click)="chooseIcon = !chooseIcon" class="icon--btn selectbtn"
+            >change icon
+          </a>
+        </div>
+        <div class="iconWrapper" *ngIf="chooseIcon">
+          <div class="icons--box">
+            <div class="iconImage" *ngFor="let icon of icons; let i = index">
+              <img
+                (click)="iconSet(i + 1)"
+                [ngClass]="iconVal === i + 1 ? 'activeIcon' : ''"
+                src="{{ icon }}"
+                class="iconImg"
+              />
+            </div>
+          </div>
+          <a class="icon--btn" (click)="iconPost()">Choose</a>
+        </div>
+
+        <div class="MFA--box">
+          <label for="enableMFA">Enable Multifactor Authentication</label>
+          <input
+            type="checkbox"
+            id="enableMFA"
+            *ngIf="MFA"
+            (click)="MFA = !MFA"
+            checked
+          />
+          <input
+            type="checkbox"
+            id="enableMFA"
+            *ngIf="!MFA"
+            (click)="MFA = !MFA"
+          />
+        </div>
+        <div class="input input1" *ngIf="this.MFA">
+          <label for="phone">Phone Number</label>
+          <select name="dc" id="dc" [(ngModel)]="this.code">
+            <option
+              *ngFor="let dialcode of dialcodes"
+              [ngValue]="dialcode.dial_code"
+            >
+              {{ dialcode.code }}
+            </option>
+          </select>
+          <input
+            type="text"
+            id="phone"
+            [(ngModel)]="this.num"
+            class="inputbox inputbox--phone"
+            required
+          />
+        </div>
+
+        <div class="submit">
+          <a (click)="postSettings()" class="icon--btn">Save Settings</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
