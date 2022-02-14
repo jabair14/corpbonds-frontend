@@ -16,7 +16,7 @@ export class UserService {
     observe: 'response' as 'response',
   };
   // urlStr: string = 'http://kmutlog.herokuapp.com/';
-  urlStr: string = 'http://localhost:8500/';
+  urlStr: string = 'http://www.kitemutual.online/loginapi';
 
   constructor(private http: HttpClient, private cookie: CookieService) {}
 
