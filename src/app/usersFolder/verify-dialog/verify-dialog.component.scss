@@ -19,7 +19,7 @@
   font-size: 3rem;
   margin-top: 2rem;
   font-family: $tfont;
-  color: $dblue;
+  color: $navyb;
 }
 
 .form {
@@ -34,12 +34,12 @@
 }
 
 .btn {
-  background-color: $dblue;
+  background-color: $navyb;
   color: $color--nav;
-  border: 1px solid $dblue;
+  border: 1px solid $navyb;
 
   &:hover {
-    color: $dblue;
+    color: $navyb;
     background-color: $color--nav;
   }
 }

@@ -115,6 +115,7 @@ label {
     transform: translateY(-2px);
     size: 1.2;
     transition: all 0.25s;
+    cursor: pointer;
   }
 
   &:active {
@@ -122,6 +123,7 @@ label {
     background-color: $color--dark;
     color: $color--light;
     size: 1;
+    cursor: pointer;
   }
 }
 
@@ -133,6 +135,10 @@ label {
 .register {
   margin-top: 2.5%;
   font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   &--link {
     text-decoration: none;
 
@@ -145,10 +151,14 @@ label {
     padding: 0.4rem 0.6rem;
     font-size: 125%;
     border-radius: 5px;
+    &:last-child {
+      margin-left: 3rem;
+    }
     &:active,
     &:hover {
       background-color: white;
       color: $dorange;
+      cursor: pointer;
     }
   }
 }

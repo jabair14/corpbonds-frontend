@@ -10,9 +10,9 @@ import {
 } from '@angular/animations';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss'],
+  selector: 'app-reset-pass',
+  templateUrl: './reset-pass.component.html',
+  styleUrls: ['./reset-pass.component.scss'],
   animations: [
     trigger('bottomFade', [
       state('void', style({ opacity: 0, transform: 'translateY(2rem)' })),
@@ -21,18 +21,20 @@ import {
     ]),
   ],
 })
-export class RegisterComponent implements OnInit {
-  registerObj: any = {
-    siteName: 'http://www.kitemutual.online/loginapi/',
+export class ResetPassComponent implements OnInit {
+  passObj: any = {
+    email: '',
   };
   constructor(private user: UserService, private router: Router) {}
 
   error: string = '';
 
   ngOnInit(): void {}
-  postMe() {
-    this.user.postRegister(this.registerObj).subscribe((data) => {
-      this.router.navigate(['/home']);
+
+  postEmail() {
+    this.user.postPass(this.passObj).subscribe(() => {
+      alert('Check your Email!');
+      this.router.navigate(['/login']);
     });
   }
 }

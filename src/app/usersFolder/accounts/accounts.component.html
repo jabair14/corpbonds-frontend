@@ -63,19 +63,49 @@
   <div class="Account">
     <ul class="links">
       <li>
-        <a href="#" class="servicelink">Your Insights</a>
-        <a href="#" class="servicelink unselected">Portfolio</a>
-        <a href="#" class="servicelink unselected">I'm a service link</a>
+        <a href="" class="servicelink activeService">Your Insights</a>
         <a routerLink="/account/settings" class="servicelink unselected"
           >Account Settings</a
         >
       </li>
     </ul>
-    <div class="balance" @bottomFade>
-      <div class="money">Your Balance Today: ${{ this.balance }}</div>
-      <div class="muttables">
-        <app-mutual-funds-table></app-mutual-funds-table>
-        <app-stock-investments></app-stock-investments>
+    <div class="balance">
+      <div class="money">
+        <div class="moneytext">Your Balance Today: {{ this.balance }}</div>
+        <div class="balanceinp" *ngIf="flaggy">
+          <input
+            [(ngModel)]="add"
+            type="number"
+            name="balanceinput"
+            id="balanceinput"
+            class="balinp"
+          />
+          <a *ngIf="flaggy" class="btn" (click)="postBal(); flaggy = !flaggy"
+            >add</a
+          >
+        </div>
+        <a *ngIf="!flaggy" class="btn" (click)="flaggy = !flaggy">+</a>
+      </div>
+      <div class="portf portf1">
+        <div class="bondHeader portHeader">YOUR BONDS</div>
+        <app-bondprofile></app-bondprofile>
+      </div>
+      <div class="portf portf1">
+        <div class="bondHeader portHeader">YOUR MUTUAL FUNDS</div>
+        <app-mutual-funds-investments></app-mutual-funds-investments>
+      </div>
+      <div class="portf portf1">
+        <div class="bondHeader portHeader etfHeader">Your ETFS</div>
+        <app-service-table class="etf"></app-service-table>
+      </div>
+      <div class="portf portf1">
+        <div class="bondHeader portHeader">Your Stocks</div>
+        <app-stock-investments-table></app-stock-investments-table>
+      </div>
+
+      <div class="portf portf1">
+        <div class="bondHeader portHeader">Your Closed End Funds</div>
+        <app-cef-user class="cef"></app-cef-user>
       </div>
     </div>
   </div>

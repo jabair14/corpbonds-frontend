@@ -27,7 +27,7 @@ html {
   background-color: $color--nav;
   margin-top: 3%;
   width: 48rem;
-  height: 68.8rem;
+  height: 48rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -68,7 +68,7 @@ html {
 
   &--header {
     font-family: $tfont;
-    font-size: 4.8rem;
+    font-size: 4rem;
 
     color: $color--dark;
     padding: 1.12rem 2.4rem;
@@ -140,4 +140,8 @@ label {
 .input {
   width: 100%;
   margin-top: 2%;
+}
+@import "../../../styles.scss";
+html {
+  font-size: 10px;
 }

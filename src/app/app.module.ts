@@ -10,7 +10,7 @@ import { LoaderService } from './services/loader.service'; //loading screen
 import { LoaderInterceptor } from './interceptors/loader-interceptor.service';
 import { MyLoaderComponent } from './loader/my-loader.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
 
 ///////// COOKIE IMPORT
 import { CookieService } from 'ngx-cookie-service';
@@ -67,7 +67,6 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { CefComponent } from './cefProfile/cef.component';
 
-
 import * as PlotlyJS from 'plotly.js-dist-min';
 import { PlotlyModule } from 'angular-plotly.js';
 import { CommonModule } from '@angular/common';
@@ -82,7 +81,6 @@ import { PurchaseComponent } from './purchasesPlace/purchase/purchase.component'
 //CEF Sells
 import { CefSellComponent } from './cefSellProfile/cefSell/cefSell.component';
 import { CefCreateSellsComponent } from './cefSellProfile/cefCreateSells/cefCreateSells.component';
-
 
 // Mutual Funds Imports
 import { MutualFundsComponent } from './mutual_funds_content/mutual_funds_display/mutual-funds/mutual-funds.component';
@@ -111,6 +109,8 @@ import { MutualFundsInvestmentsComponent } from './mutual_funds_content/mutual_f
 import { MutualFundsBuySellDialogComponent } from './mutual_funds_content/mutual_funds_investments/mutual-funds-buy-sell-dialog/mutual-funds-buy-sell-dialog.component';
 import { MutualFundsBuyDialogComponent } from './mutual_funds_content/mutual_funds_investments/mutual-funds-buy-dialog/mutual-funds-buy-dialog.component';
 import { WhoweareComponent } from './whoweare/whoweare.component';
+import { ResetPassComponent } from './usersFolder/reset-pass/reset-pass.component';
+import { PassTokenComponent } from './usersFolder/pass-token/pass-token.component';
 
 @NgModule({
   declarations: [
@@ -163,7 +163,6 @@ import { WhoweareComponent } from './whoweare/whoweare.component';
     InvestmentComponent,
     BondInvestmentComponent,
 
-
     ConsultantComponent,
     MutualFundsTableComponent,
     MutualFundsSidenavComponent,
@@ -182,6 +181,8 @@ import { WhoweareComponent } from './whoweare/whoweare.component';
     MutualFundsBuySellDialogComponent,
     MutualFundsBuyDialogComponent,
     WhoweareComponent,
+    ResetPassComponent,
+    PassTokenComponent,
   ],
   imports: [
     BrowserModule,

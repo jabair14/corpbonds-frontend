@@ -48,6 +48,7 @@ export class AccountSettingsComponent implements OnInit {
       if (data.body.message === 'login') {
         this.router.navigate(['/login']);
       } else if (data.body.message === 'success') {
+        console.log(data);
         this.iconVal = data.body.data.settings.icon;
         this.MFA = data.body.data.settings.MFA;
       } else {
@@ -78,4 +79,14 @@ export class AccountSettingsComponent implements OnInit {
       this.chooseIcon = false;
     });
   }
+
+  postSettings() {
+    this.user
+      .postSettings({ icon: this.iconVal, MFA: this.MFA, phoneNumber: `${this.code}${this.num}`})
+      .subscribe((data) => {
+        this.chooseIcon = false;
+      });
+  }
+
+
 }

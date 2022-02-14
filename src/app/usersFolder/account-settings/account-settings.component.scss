@@ -9,13 +9,26 @@
 }
 
 .welcome__card {
-  background-image: linear-gradient(to right, $gdorange1, $gdorange2);
   height: 12rem;
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
   justify-content: start;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20.5rem;
+    width: 102%;
+    z-index: -50;
+    background-image: url("./../../../assets/acctbg2.jpg");
+    background-size: cover;
+    filter: grayscale(20%) blur(0.6px);
+  }
 
   & h2 {
     color: $color--nav;
@@ -23,7 +36,7 @@
     font-size: 6rem;
     margin-left: 3rem;
     margin-bottom: 3rem;
-    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.267);
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
   }
 }
 
@@ -41,10 +54,9 @@ ul {
   margin: 0;
   padding: 0;
   width: 100vw;
-  background-image: linear-gradient(to right, $gdorange1, $gdorange2);
+
   display: flex;
   height: 3.3rem;
-  border-bottom: 0.1rem solid $gdorange1;
 }
 
 li {
@@ -64,16 +76,48 @@ li {
   }
 }
 
+.activeService {
+  background-color: $dorange;
+  border-bottom: 0.1rem solid $dorange;
+  color: white;
+}
+
 .unselected {
   background-color: rgb(214, 214, 214);
   border-bottom: 0.1rem solid rgba(0, 0, 0, 0.226);
+  color: $dorange;
 }
 
 .balance {
   width: 100vw;
+  min-height: 45vh;
+  max-height: auto;
+  position: absolute;
   font-family: $logo--font;
   font-size: 2.5rem;
-  margin-top: 4rem;
+  padding-top: 4rem;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    min-height: 45vh;
+    background-image: linear-gradient(to bottom, $dorange, #c854026e, white);
+    transform: translateY(-4rem);
+    z-index: -1;
+    animation: none;
+  }
+  display: flex;
+
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   width: 100%;
+  //   height: 100%;
+  //   top: 21rem;
+  //   z-index: -2;
+  //   left: 0;
+  // }
 }
 
 .butn {
@@ -98,6 +142,7 @@ li {
     transform: translateY(-2px);
     size: 1.2;
     transition: all 0.25s;
+    cursor: pointer;
   }
 
   &:active {
@@ -105,11 +150,8 @@ li {
     background-color: $color--dark;
     color: $color--light;
     size: 1;
+    cursor: pointer;
   }
-}
-
-.money {
-  margin-left: 3rem;
 }
 
 .iconWrapper {
@@ -117,7 +159,7 @@ li {
   height: 40rem;
   padding: 3rem 2rem;
   padding-left: 4rem;
-  margin-left: 10rem;
+  margin-left: 2rem;
   border: 1px solid $lgrey;
   border-radius: 1rem;
   display: flex;
@@ -165,9 +207,61 @@ li {
     background-color: white;
     color: $color--dark;
     size: 1.1;
+    cursor: pointer;
   }
   &:active {
     transform: translateY(2px);
     transition: all 0.2s;
+    cursor: pointer;
   }
+}
+
+.boxy {
+  margin-left: 15rem;
+  background-color: white;
+  height: auto;
+  border-radius: 5px;
+  width: 50rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.329);
+}
+
+.icon--switch,
+.MFA--box,
+.input {
+  margin-left: 4rem;
+}
+
+.icon--switch {
+  margin-top: 3rem;
+}
+
+.iconWrapper {
+  margin-top: 2rem;
+}
+.selectbtn {
+  size: 0.7;
+  margin-left: 2rem;
+}
+
+.MFA--box {
+  margin-top: 1rem;
+}
+
+.submit {
+  margin-top: 2rem;
+  margin-left: 28rem;
+  margin-bottom: 4rem;
+}
+
+.balanceinp {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+#balance {
+  size: 2rem;
+  height: 3rem;
+  width: 10rem;
 }

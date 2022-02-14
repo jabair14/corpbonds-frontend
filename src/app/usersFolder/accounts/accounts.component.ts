@@ -32,6 +32,7 @@ import { VerifyDialogComponent } from '../verify-dialog/verify-dialog.component'
 })
 export class AccountsComponent implements OnInit {
   unpressed: boolean = true;
+  flaggy: boolean = false;
 
   dialcodes: any = [];
 
@@ -45,10 +46,12 @@ export class AccountsComponent implements OnInit {
   num: string = '';
   accountObj: any = {};
   name: string = '';
-  balance: string = '';
+  balance: any;
   ver = {
     verificationCode: '',
   };
+
+  add: string = '0';
 
   profPic: string = '';
   /////////////////////////////////////////constructor
@@ -76,7 +79,10 @@ export class AccountsComponent implements OnInit {
         this.accountDis = true;
         console.log(data.body);
         this.name = data.body.name.split(' ')[0].toLowerCase();
-        this.balance = data.body.data.Account_Balance.toFixed(2);
+        this.balance = Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: 'USD',
+        }).format(data.body.data.Account_Balance);
         this.name = this.name.charAt(0).toUpperCase() + this.name.slice(1);
         this.profPic = `./../../../assets/userIcons/${data.body.data.settings.icon}.png`;
         console.log(this.profPic);
@@ -106,6 +112,13 @@ export class AccountsComponent implements OnInit {
         if (data.body.valid) this.ngOnInit();
         else if (!data.body.valid) this.openDialog();
       });
+    });
+  }
+
+  postBal() {
+    this.user.postBalance({ change: parseInt(this.add) }).subscribe((data) => {
+      console.log('balance added', this.add);
+      this.ngOnInit();
     });
   }
 

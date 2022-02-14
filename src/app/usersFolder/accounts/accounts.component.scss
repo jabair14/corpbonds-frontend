@@ -101,6 +101,7 @@ label {
     transform: translateY(-2px);
     size: 1.2;
     transition: all 0.25s;
+    cursor: pointer;
   }
 
   &:active {
@@ -108,6 +109,7 @@ label {
     background-color: $color--dark;
     color: $color--light;
     size: 1;
+    cursor: pointer;
   }
 }
 
@@ -170,13 +172,28 @@ select {
 }
 
 .welcome__card {
-  background-image: linear-gradient(to right, $gdorange1, $gdorange2);
+  // background-image: linear-gradient(to right, $gdorange1, $gdorange2);
+
   height: 22rem;
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
   justify-content: start;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30.5rem;
+    width: 102%;
+    z-index: -50;
+    background-image: url("./../../../assets/acctbg2.jpg");
+    background-size: cover;
+    filter: grayscale(20%) blur(0.6px);
+  }
 
   & h2 {
     color: $color--nav;
@@ -184,7 +201,7 @@ select {
     font-size: 6rem;
     margin-left: 1.4rem;
     margin-bottom: 3rem;
-    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.267);
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
   }
 }
 
@@ -196,16 +213,17 @@ select {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
+  // background-image: linear-gradient(to right, $gdorange1, $gdorange2);
 }
 
 ul {
   margin: 0;
   padding: 0;
   width: 100vw;
-  background-image: linear-gradient(to right, $gdorange1, $gdorange2);
+  // background-image: linear-gradient(to right, $gdorange1, $gdorange2);
   display: flex;
   height: 3.3rem;
-  border-bottom: 0.1rem solid $gdorange1;
+  // border-bottom: 0.1rem solid $gdorange1;
 }
 
 li {
@@ -218,24 +236,62 @@ li {
   font-family: $text--font;
   background-color: white;
   padding: 1rem 2rem;
-  &:first-child {
-    border-bottom: 0.1rem solid white;
-  }
+  // &:first-child {
+  //   border-bottom: 0.1rem solid white;
+  // }
   &:not(:last-child) {
     border-right: 1px solid rgba(0, 0, 0, 0.226);
   }
 }
 
+.activeService {
+  background-color: $dorange;
+  border-bottom: 0.1rem solid $dorange;
+  color: white;
+}
+
 .unselected {
+  margin-bottom: 3rem;
   background-color: rgb(214, 214, 214);
-  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.226);
+  z-index: -1;
+
+  color: $dorange;
 }
 
 .balance {
   width: 100vw;
+  min-height: 45vw;
+  max-height: auto;
+  position: absolute;
   font-family: $logo--font;
   font-size: 2.5rem;
-  margin-top: 4rem;
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
+  // background-color: white;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 30rem;
+    background-image: linear-gradient(to bottom, $dorange, #c854026e, white);
+    transform: translateY(-4rem);
+    z-index: -10;
+    animation: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 30rem;
+    background-image: white;
+    transform: translateY(-4rem);
+    z-index: -11;
+    animation: none;
+  }
 }
 
 .butn {
@@ -253,6 +309,7 @@ li {
   margin-right: -1;
   margin-right: 4rem;
   margin-top: 2rem;
+  box-shadow: 0px 1px 20px rgba(255, 255, 255, 0.26);
 
   &:hover {
     background-color: azure;
@@ -260,6 +317,7 @@ li {
     transform: translateY(-2px);
     size: 1.2;
     transition: all 0.25s;
+    cursor: pointer;
   }
 
   &:active {
@@ -267,11 +325,81 @@ li {
     background-color: $color--dark;
     color: $color--light;
     size: 1;
+    cursor: pointer;
   }
 }
 
+.money,
+.portf {
+  margin: 0 4rem;
+  // position: relative;
+  border-left: 1px solid $color--dark;
+  border-right: 1px solid $color--dark;
+}
+
 .money {
-  margin-left: 3rem;
+  font-size: 4rem;
+  font-family: $tfont;
+  color: $color--nav;
+  // background-color: $rorange;
+  background-color: $color--dark;
+  border-top: 1px solid $color--dark;
+  border-bottom: 1px solid $color--dark;
+  margin-bottom: 3rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 3rem;
+  -webkit-text-stroke: 0.1px $dgrey;
+}
+
+.portf {
+  min-height: auto;
+  max-height: 50rem;
+  overflow: hidden;
+}
+
+.portf1 {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $color--dark;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  &:last-child {
+    padding-bottom: 2rem;
+    margin-bottom: 5rem;
+  }
+  // overflow: hidden;
+}
+
+.portHeader {
+  justify-self: flex-end;
+  align-self: center;
+  padding: 2rem 2rem;
+  width: 100%;
+  height: 10%;
+  color: white;
+  font-family: $tfont;
+  background-color: $color--dark;
+  margin-bottom: 1rem;
+}
+
+.bondHeader {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 3.5rem;
+  padding-right: 15rem;
+  z-index: 2;
+  // position: absolute;
+  // overflow: hidden;
+}
+
+.etfHeader {
+  margin-bottom: 0;
 }
 
 .userIcon {
@@ -295,4 +423,59 @@ li {
 
 app-mutual-funds-table {
   width: 100%;
+}
+
+.money .btn {
+  margin: 0 2rem;
+  position: relative;
+  background-color: $lgrey;
+  border: 1px solid $lgrey;
+  color: $color--dark;
+}
+.money a {
+  padding: 1rem 2rem;
+  font-size: 2rem;
+
+  // position: absolute;
+  // margin: auto;
+  margin-left: 2rem;
+}
+
+.balanceinp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 0.5rem;
+  font-size: 2rem;
+  width: 8rem;
+  height: 3rem;
+  // margin-bottom: 2rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+.balanceinp a {
+  // margin-bottom: -2rem;
+  margin-top: 2rem;
+  top: 0.5rem;
+}
+
+.balinp {
+  width: 25rem;
+  height: 4.32rem;
+  font-size: 2rem;
+  margin-right: 2rem;
+  border-radius: 5px;
+  // margin-bottom: 2rem;
+}
+
+.cef {
+  transform: translateY(-15rem);
+  z-index: 1;
+}
+
+.etf {
+  width: 100%;
+  margin: 0;
 }
