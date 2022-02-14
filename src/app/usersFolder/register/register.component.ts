@@ -23,7 +23,7 @@ import {
 })
 export class RegisterComponent implements OnInit {
   registerObj: any = {
-    siteName: 'http://www.kitemutual.online/loginapi',
+    siteName: 'http://www.kitemutual.online/loginapi/',
   };
   constructor(private user: UserService, private router: Router) {}
 
